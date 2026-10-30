@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>evals · 00 converter contract</title>
+<link rel="stylesheet" href="../../../assets/deck.css">
+<style>
+  .pseudo::before { content: ""; display: block; width: 20px; height: 20px; background: red; }
+</style>
+</head>
+<body>
+<div class="deck" data-showcase>
+
+<section class="slide theme-archive" data-purpose="触发全部 FORBID" data-role="evidence" data-layout="custom" data-notes="转换器契约压力测试。">
+  <div class="grain"></div>
+  <div class="band" data-anim="fade" style="left:-100px; top:600px; width:1500px; height:80px; background:var(--fg); transform:rotate(-9deg);"></div>
+  <div class="t-h2 fg-fg" style="position:absolute; left:56px; top:56px;">FORBID 全量</div>
+
+  <div class="rect" style="left:60px; top:160px; width:160px; height:60px; box-shadow: 4px 4px 0 #000;"></div>
+  <div class="rect" style="left:240px; top:160px; width:160px; height:60px; background-image:linear-gradient(90deg,#f00,#00f);"></div>
+  <div class="rect" style="left:420px; top:160px; width:160px; height:60px; filter:blur(2px);"></div>
+  <div class="rect" style="left:600px; top:160px; width:160px; height:60px; mix-blend-mode:multiply;"></div>
+  <div class="rect" style="left:780px; top:160px; width:160px; height:60px; z-index:5;"></div>
+  <div class="rect" style="left:960px; top:160px; width:160px; height:60px; position:fixed;"></div>
+
+  <div class="rect" style="left:60px; top:260px; width:160px; height:60px; border-radius:8px;"></div>
+  <div class="rect" style="left:240px; top:260px; width:160px; height:60px; clip-path:circle(50%);"></div>
+  <div class="rect" style="left:420px; top:260px; width:160px; height:60px; transform:translate(20px,10px);"></div>
+  <div class="rect" style="left:600px; top:260px; width:160px; height:60px; transform:scale(1.2);"></div>
+  <div class="rect" style="left:780px; top:260px; width:160px; height:60px; transform:rotate(5deg); transform-origin:0 0;"></div>
+  <div class="t-small fg-fg" style="position:absolute; left:960px; top:260px; width:160px; text-shadow:2px 2px 0 #000;">text-shadow</div>
+
+  <div class="pseudo" style="position:absolute; left:60px; top:360px;"></div>
+  <img src="https://example.com/missing.png" alt="" style="position:absolute; left:120px; top:360px; width:80px; height:80px;">
+  <svg width="80" height="80" style="position:absolute; left:220px; top:360px;"><rect width="80" height="80" fill="red"></rect></svg>
+
+  <div style="position:absolute; left:340px; top:360px; width:100px; height:20px; overflow:hidden;">
+    <div style="height:80px;">overflow content that is clipped</div>
+  </div>
+
+  <div style="position:absolute; left:500px; top:360px; width:240px; height:80px; border:2px solid var(--fg); transform:rotate(10deg);"></div>
+  <div style="position:absolute; left:780px; top:360px; width:240px; height:80px; transform:rotate(8deg);">
+    <div style="position:absolute; left:20px; top:20px; width:120px; height:40px; background:var(--pop); transform:rotate(8deg);"></div>
+  </div>
+
+  <div class="vlabel" data-test="vlabel" style="left:1230px; top:380px; height:220px; color:var(--fg);">VERTICAL LABEL</div>
+  <div class="t-body fg-fg" data-test="single-line-body" style="position:absolute; left:56px; top:540px; width:620px;">这一行只有一次折行，补字也不会越过边界。</div>
+
+  <div class="folio folio--block"><div class="meta">FORBID</div><div class="meta">01 / 02</div></div>
+</section>
+
+<section class="slide theme-signal" data-purpose="data URI 与正常页" data-role="closing" data-layout="custom" data-notes="data URI 图片必须能进 pptx。">
+  <div class="grain"></div>
+  <div class="band" style="left:-100px; top:520px; width:1500px; height:80px; background:var(--pop); transform:rotate(-8deg);"></div>
+  <div class="t-h1 fg-fg" style="position:absolute; left:56px; top:120px;">data URI</div>
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Wl2n1sAAAAASUVORK5CYII=" alt="" style="position:absolute; left:820px; top:180px; width:240px; height:240px;">
+  <div class="folio folio--block"><div class="meta">DATA · URI</div><div class="meta">02 / 02</div></div>
+</section>
+
+</div>
+</body>
+</html>

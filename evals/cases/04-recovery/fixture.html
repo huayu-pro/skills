@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>evals · 04 失败恢复（本文件故意埋错）</title>
+<link rel="stylesheet" href="../../../assets/deck.css">
+</head>
+<body>
+<div class="deck">
+
+<!-- ① 用 1px 发丝线做分隔（违反规则 4） -->
+<section class="slide theme-archive" data-notes="第一页，讲一个主张。">
+  <div class="grain"></div>
+  <div class="t-h2 fg-fg" style="position:absolute; left:56px; top:64px;">四个已知错</div>
+  <div class="t-body fg-fg" style="position:absolute; left:56px; top:220px; width:760px;">这一份 deck 是故意做坏的：这里有 1px 的规线、一个不存在的类、一个内联矢量图形，以及一段冲出画布的正文。修到 validate 零 error 才算完。</div>
+  <div class="rect" style="left:56px; top:400px; width:600px; height:1px; background:var(--fg);"></div>
+  <div class="folio folio--cut">
+    <div class="meta fg-fg">RECOVERY</div>
+    <div class="meta fg-fg">01 / 01</div>
+  </div>
+</section>
+
+<!-- ② 用了 deck.css 里不存在的 .quote-mark；还塞了一个内联 svg 三角形 -->
+<section class="slide theme-archive" data-notes="第二页，引语。">
+  <div class="grain"></div>
+  <div class="quote-mark" style="position:absolute; left:96px; top:96px;">“</div>
+  <div class="t-h2 fg-fg" style="position:absolute; left:56px; top:200px;">引用要落在真实文本上</div>
+  <svg width="120" height="120" style="position:absolute; left:1000px; top:420px;">
+    <polygon points="0,120 120,120 0,0" fill="#D23B2C" />
+  </svg>
+  <div class="t-small fg-fg" style="position:absolute; left:56px; top:330px; width:600px;">转换器不认内联矢量，也不认伪元素。要找三角形的力，用楔形。</div>
+  <div class="folio folio--block">
+    <div class="meta">RECOVERY</div>
+    <div class="meta">02 / 01</div>
+  </div>
+</section>
+
+<!-- ③ 正文越出画布右边界 -->
+<section class="slide theme-archive" data-notes="第三页，数据。">
+  <div class="grain"></div>
+  <div class="t-h3 fg-fg" style="position:absolute; left:56px; top:64px;">越界</div>
+  <div class="t-body fg-fg" style="position:absolute; left:960px; top:180px; width:600px;">这一行的左边界在 960px，宽 600px，右边界会冲到 1560px——画布只有 1280px，所以 BOUNDS 会报错。</div>
+  <div class="folio folio--end">
+    <div class="meta fg-fg">RECOVERY</div>
+    <div class="meta fg-fg">03 / 01</div>
+  </div>
+</section>
+
+</div>
+</body>
+</html>

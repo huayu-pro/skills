@@ -1,0 +1,71 @@
+{
+  "recommended_threshold": 0.34,
+  "description_required_concepts": ["style", "action"],
+  "positive_concepts": {
+    "style": [
+      "构成主义",
+      "俄式构成主义",
+      "康定斯基",
+      "constructivist",
+      "苏联海报",
+      "红黑斜切",
+      "巨构海报",
+      "构成"
+    ],
+    "action": [
+      "演示文稿",
+      "PPT",
+      "ppt",
+      "deck",
+      "幻灯片",
+      "封面",
+      "路演",
+      "海报式",
+      "slides",
+      "presentation"
+    ]
+  },
+  "negative_patterns": ["翻译", "只要总结", "改成图表"],
+  "should_trigger": [
+    {
+      "text": "帮我做一套构成主义风格的演示文稿，10 页左右",
+      "family": "cn_style_deck"
+    },
+    {
+      "text": "要给产品发布会做个俄式构成主义的路演 deck",
+      "family": "cn_style_pitch"
+    },
+    {
+      "text": "做一张苏联海报风的封面幻灯片，红黑大斜切",
+      "family": "cn_style_cover"
+    },
+    {
+      "text": "I need a constructivist-style presentation deck for our launch.",
+      "family": "en_style_deck"
+    }
+  ],
+  "should_not_trigger": [
+    {
+      "text": "总结一下这份季度报告的要点",
+      "family": "summary_only"
+    },
+    {
+      "text": "帮我把这段话翻译成俄语",
+      "family": "translate_only"
+    }
+  ],
+  "near_neighbor": [
+    {
+      "text": "做一个普通的商务 PPT，模板干净一点就行",
+      "family": "generic_ppt_no_style"
+    },
+    {
+      "text": "这份 PPT 里的表格数据帮我改成图表",
+      "family": "edit_existing_not_create"
+    },
+    {
+      "text": "推荐几个好看的 PPT 模板网站",
+      "family": "find_template_only"
+    }
+  ]
+}

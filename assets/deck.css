@@ -1,0 +1,393 @@
+/* ============================================================================
+   constructivist-ppt · deck.css
+   构成主义演示设计系统
+
+   画布 1280×720 px（= 13.333×7.5 in @96dpi）
+   主题清单以 assets/themes.json 为准（gen-themes.mjs 生成下方主题块）；没有 monument
+   硬约束：不用渐变、不用阴影、不用滤镜、不用伪元素画图形、不用 z-index。
+   所有视觉都由真实 DOM 元素承担，这样才能 1:1 转成 PPTX 形状。
+   ========================================================================== */
+
+/* ---------------------------------------------------------------- 画布 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  background: #1a1a1a;
+}
+
+.deck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+.slide {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--f-body);
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  font-kerning: none;
+  font-variant-ligatures: none;
+  flex: 0 0 auto;
+}
+
+/* ------------------------------------------------------------ 主题令牌 */
+/* 角色只有四个：--bg 纸 / --fg 墨 / --pop 爆点 / --alt 次墨
+   （--mute 只给非信息性微字用，不许做副标）
+   构成主义是两墨一纸。多给一个"浅色底"角色，它就一定会被拿去做卡片。 */
+
+/* THEMES:BEGIN 由 scripts/gen-themes.mjs 生成，勿手改 */
+.theme-archive {
+  --bg:   #F2EDE3;
+  --fg:   #141210;
+  --pop:  #D23B2C;
+  --alt:  #8A8175;
+  --mute: #6F675B;
+}
+.theme-signal {
+  --bg:   #F3F0E7;
+  --fg:   #12161F;
+  --pop:  #3464C4;
+  --alt:  #97A2B8;
+  --mute: #59627A;
+}
+.theme-press {
+  --bg:   #F2EDDE;
+  --fg:   #191610;
+  --pop:  #227676;
+  --alt:  #7C786A;
+  --mute: #67624F;
+}
+.theme-c1 {
+  --bg:   #F1E9DC;
+  --fg:   #2E2140;
+  --pop:  #C4612F;
+  --alt:  #A8A83C;
+  --mute: #6E6355;
+}
+.theme-c2 {
+  --bg:   #EDE6D6;
+  --fg:   #122663;
+  --pop:  #DC4E86;
+  --alt:  #6E7C3A;
+  --mute: #655F4C;
+}
+.theme-c3 {
+  --bg:   #F6EFE2;
+  --fg:   #3A2A20;
+  --pop:  #AD7908;
+  --alt:  #1E7C8C;
+  --mute: #6B6050;
+}
+.theme-c4 {
+  --bg:   #F2ECE1;
+  --fg:   #1A1715;
+  --pop:  #B93A2E;
+  --alt:  #1F6E5E;
+  --mute: #675D50;
+}
+.theme-c5 {
+  --bg:   #F3EDE1;
+  --fg:   #2B2530;
+  --pop:  #E0522C;
+  --alt:  #6B5E77;
+  --mute: #6A6060;
+}
+.theme-c6 {
+  --bg:   #F4EFE4;
+  --fg:   #14224A;
+  --pop:  #D6543F;
+  --alt:  #D6B36A;
+  --mute: #6B6455;
+}
+.theme-c7 {
+  --bg:   #EFEADA;
+  --fg:   #191D17;
+  --pop:  #2F7D4F;
+  --alt:  #D8A21E;
+  --mute: #676A5C;
+}
+.theme-archive-ember {
+  --bg:   #EFE6D6;
+  --fg:   #1A1512;
+  --pop:  #BE3B10;
+  --alt:  #7A6E5E;
+  --mute: #6B6055;
+}
+.theme-archive-rust {
+  --bg:   #EDE7DB;
+  --fg:   #121110;
+  --pop:  #A34E1C;
+  --alt:  #776A58;
+  --mute: #68604F;
+}
+/* THEMES:END */
+
+/* 墨底反白页：封面/章节幕/结尾。同时翻转弱化色，否则深灰压深底看不见 */
+.slide--ink {
+  background: var(--fg);
+  color: var(--bg);
+  --mute: #BDB4A4;
+  --alt: #8F8577;
+}
+
+/* ------------------------------------------------------------- 字体栈 */
+.slide {
+  --f-display: "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft YaHei", sans-serif;
+  --f-body:    "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft YaHei", sans-serif;
+  --f-latin:   "Liberation Sans Narrow", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --f-mono:    "DejaVu Sans Mono", Consolas, "Courier New", monospace;
+}
+
+/* ------------------------------------------------------------- 字号阶 */
+.t-hero { font-family: var(--f-display); font-size: 158px; font-weight: 900; line-height: 0.86; letter-spacing: -0.035em; white-space: nowrap; }
+.t-h1   { font-family: var(--f-display); font-size: 96px;  font-weight: 900; line-height: 0.92; letter-spacing: -0.03em;  white-space: nowrap; }
+.t-h2   { font-family: var(--f-display); font-size: 64px;  font-weight: 900; line-height: 1.00; letter-spacing: -0.02em; white-space: nowrap; }
+.t-h3   { font-family: var(--f-display); font-size: 42px;  font-weight: 800; line-height: 1.12; letter-spacing: -0.01em; }
+.t-h4   { font-family: var(--f-display); font-size: 28px;  font-weight: 700; line-height: 1.24; letter-spacing: 0; }
+.t-lead { font-family: var(--f-body);    font-size: 26px;  font-weight: 500; line-height: 1.50; letter-spacing: 0; }
+.t-body { font-family: var(--f-body);    font-size: 19px;  font-weight: 400; line-height: 1.62; letter-spacing: 0.005em; }
+.t-small{ font-family: var(--f-body);    font-size: 18px;  font-weight: 400; line-height: 1.55; letter-spacing: 0.01em; }
+
+/* 元数据：全大写、宽字距，构成主义的"档案标签" */
+.meta {
+  font-family: var(--f-mono);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.micro {
+  font-family: var(--f-mono);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+/* 拉丁展示字：窄体大写，用来和中文黑体咬合 */
+.latin {
+  font-family: var(--f-latin);
+  text-transform: uppercase;
+  font-stretch: condensed;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
+}
+.num {
+  font-family: var(--f-latin);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 0.82;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+/* 颜色工具类 */
+.fg-fg   { color: var(--fg); }
+.fg-bg   { color: var(--bg); }
+.fg-pop  { color: var(--pop); }
+.fg-alt  { color: var(--alt); }
+.fg-mute { color: var(--mute); }
+
+/* --------------------------------------------------------------- 基元 */
+/* 一切位置都用绝对坐标写明；不用 z-index，靠 DOM 顺序叠放。 */
+.abs { position: absolute; }
+
+.rect  { position: absolute; background: var(--fg); }
+.rect--pop  { background: var(--pop); }
+.rect--alt  { background: var(--alt); }
+.rect--bg   { background: var(--bg); }
+
+/* 圆：唯一允许的曲线。宽高必须相等。 */
+.sun {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--pop);
+}
+.sun--outline {
+  background: transparent;
+  border: 10px solid var(--pop);
+}
+
+/* 楔形/斜切：用 clip-path: polygon()，坐标为元素盒的百分比 */
+.wedge {
+  position: absolute;
+  background: var(--pop);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+/* 斜带：一条长矩形 + rotate，旋转原点必须是中心 */
+.band {
+  position: absolute;
+  background: var(--pop);
+  transform-origin: 50% 50%;
+}
+
+/* 线：构成主义的规则线是有重量的，不是 hairline */
+.rule       { position: absolute; background: var(--fg); height: 2px; }
+.rule--pop  { background: var(--pop); height: 6px; }
+.rule--v    { width: 2px; background: var(--fg); }
+
+/* 竖排标签 */
+.vlabel {
+  position: absolute;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--f-mono);
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* 放射线组：容器内若干 .ray，每条是一根细长矩形 */
+.rays { position: absolute; }
+.ray  { position: absolute; transform-origin: 50% 100%; background: var(--pop); }
+
+/* 纸张颗粒/网点：整幅透明 PNG，放在 DOM 最前面当底层 */
+.grain,
+.halftone {
+  position: absolute;
+  left: 0; top: 0; width: 1280px; height: 720px;
+  background-size: 1280px 720px;
+  background-repeat: no-repeat;
+}
+.grain    { background-image: url("textures/grain.svg"); }
+.halftone { background-image: url("textures/halftone.svg"); }
+
+/* ------------------------------------------------------------- 版式件 */
+/* 顶部档头：左标题块 + 右编号格，中间细线分隔 */
+.masthead {
+  position: absolute;
+  left: 56px; top: 44px; width: 1168px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* 编号格：02/08 那种表格 */
+.counter {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.counter__cell {
+  padding: 0 14px;
+  border-left: 2px solid var(--alt);
+}
+.counter__cell:first-child { border-left: none; }
+
+/* 页脚：三种形态，轮流用。
+   两端对齐是古典的对称平衡，构成主义要的是不对称——所以默认贴左。
+   连续三页用同一种，翻页就会露出模板感。 */
+.folio {
+  position: absolute;
+  left: 56px; bottom: 40px;
+  display: flex;
+  align-items: flex-end;
+  gap: 28px;
+}
+/* 短横线压头：有重量，但只占左侧一段 */
+.folio--cut {
+  padding-top: 10px;
+  border-top: 2px solid var(--fg);
+}
+/* 压在色块上：不要线，直接反白 */
+.folio--block {
+  padding: 8px 14px 9px;
+  background: var(--fg);
+  color: var(--bg);
+}
+/* 贯通全幅：只在需要"页码对齐"的正式场合用，别连续用 */
+.folio--end {
+  width: 1168px;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 2px solid var(--fg);
+}
+
+/* 编号卡头：01 / GEOMETRY / 几何构成 */
+.card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  border-top: 4px solid var(--fg);
+  padding-top: 10px;
+}
+
+/* 条形码：一排细竖条，全部是真元素。最细 2px——规则 4 不承认 1px */
+.barcode { display: flex; align-items: stretch; gap: 2px; height: 34px; }
+.barcode i { display: block; width: 2px; background: var(--fg); }
+.barcode i:nth-child(3n)  { width: 5px; }
+.barcode i:nth-child(5n)  { width: 2px; }
+.barcode i:nth-child(7n)  { width: 7px; }
+
+/* ------------------------------------------------------------- 栅格 */
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 22px;
+}
+/* 首栏吃掉别人的份额：面积不均，才有主导元。
+   等宽四栏是"并列 = 等价"的语法，读者判断不出哪条最重要。 */
+.grid4--lead {
+  grid-template-columns: 1.9fr 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+.grid3--lead {
+  grid-template-columns: 1.8fr 1fr 1fr;
+  column-gap: 24px;
+}
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 26px;
+}
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 32px;
+}
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* 安全区：所有正文必须落在这个盒子里 */
+.safe {
+  position: absolute;
+  left: 56px; top: 56px; width: 1168px; height: 608px;
+}
+
+/* ------------------------------------------------------------- 预览壳 */
+/* 只影响浏览器预览，不进 PPTX（转换器会跳过 .ui） */
+.ui {
+  position: fixed;
+  right: 16px; bottom: 16px;
+  font: 12px/1.4 var(--f-mono);
+  color: #888;
+  background: rgba(0,0,0,.6);
+  padding: 6px 10px;
+  border-radius: 3px;
+  z-index: 99;
+}
+@media print {
+  html, body { background: #fff; }
+  .deck { gap: 0; padding: 0; }
+  .ui { display: none; }
+  .slide { page-break-after: always; }
+}

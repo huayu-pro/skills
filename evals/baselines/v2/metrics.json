@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "captured": "2026-10-21",
+  "deck": "examples/constructivism.html",
+  "slides": 10,
+  "pptxBytes": 163720,
+  "specHash": "0c2c687d8d6344ed",
+  "runs": 117,
+  "sps": 151,
+  "validate": {
+    "errors": 0,
+    "warns": 0
+  },
+  "audit": {
+    "errors": 0,
+    "warns": 0
+  },
+  "selfcheck": {
+    "errors": 0,
+    "warns": 0
+  },
+  "verifyPptxMaxPct": 3.44,
+  "verifyRenderMaxPct": 5.85,
+  "pipeline": "11/11, 8/8, 5/5, 6/6; 03/05 manual pending",
+  "notes": "v2 baseline. 02 single-line assertion is a false green; wrap logic still uses ink.lines."
+}
