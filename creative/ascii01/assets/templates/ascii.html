@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASCII 骨架 · 斜向呼吸波</title>
+<!--
+  ascii-web-design 三端骨架之 HTML 版（双击即可运行，零依赖、零网络请求）。
+  视觉契约（SKILL.md §1.2）：RAMP 10 级、Rec.601 亮度、纵横比 0.55、COLS 120、fps 12、强调色 #00FF41。
+  与同目录 ascii.py / ascii.c 同源：同一 ramp、同一列数/行数逻辑、同一强调色、同一帧间隔 1/12s。
+  三端一致性由 scripts/verify_deliverable.py 断言：它抽出下方 "ASCII KERNEL" 段在 node 里跑，
+  与 Python / C 端逐字节比对。改任一端而不同步，校验立即失败。
+-->
+<style>
+  html, body { margin: 0; height: 100%; background: #000; }
+  body { display: grid; place-items: center; overflow: hidden; }
+  .ascii {                        /* SKILL.md §3 排版三件套：等宽 / 禁连字 / 行高 1 */
+    font-family: "JetBrains Mono", "IBM Plex Mono", "Courier New", monospace;
+    font-variant-ligatures: none;
+    white-space: pre;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: #00FF41;               /* 单强调色（SKILL.md §4 第 2 条） */
+    font-size: clamp(6px, 1.1vw, 14px);
+  }
+  .hud {                          /* 承载信息的文字放 <pre> 之外（SKILL.md §4 第 7 条） */
+    position: fixed; left: 16px; bottom: 12px;
+    font: 12px/1.5 system-ui, sans-serif; color: #556;
+  }
+  @media (prefers-reduced-motion: reduce) { .hud { display: none; } }
+</style>
+</head>
+<body>
+  <pre id="out" class="ascii" aria-hidden="true"></pre>
+  <div class="hud">ascii-web-design · 120 cols · 12 fps · 按 R 重播</div>
+
+  <script id="ascii-kernel">
+  // ==== ASCII KERNEL BEGIN ====
+  // 纯函数，不碰 DOM；校验脚本抽此段在 node 里跑，与 Python / C 端逐字节比对
+  const RAMP = ' .:-=+*#%@';       // 亮 → 暗，视觉密度递增（SKILL.md §1.2 契约）
+  const COLS = 120;                // 列数（契约甜点 80–160）
+  const ASPECT = 0.55;             // 纵横比修正（契约区间 0.5–0.66）
+  const FPS = 12;                  // 帧率，三端共用（SKILL.md §1.2 帧率契约）
+  const ACCENT = '#00FF41';        // 单强调色（终端端对应 24-bit ANSI 真彩色）
+  // 演示幅面 16:9：rows = round(COLS × 9/16 × 0.55)，写成整数式保证三端逐位一致
+  const ROWS = Math.floor((COLS * 495 + 800) / 1600);
+
+  // 三角波：整数相位折回 0..1000，全程整数运算，三端不会出现浮点漂移
+  function tri(u) {
+    const m = ((u % 2000) + 2000) % 2000;
+    return m <= 1000 ? m : 2000 - m;
+  }
+  // 演示亮度场（毫单位 0..1000）：两路正交三角波取差 → 斜向移动的呼吸波纹
+  function lum1000(x, y, t) {
+    return Math.abs(tri(x * 200 + t * 160) - tri(y * 350 - t * 110));
+  }
+  // 亮度 → 字符：契约公式 floor(lum × (n−1)) 的整数等价式（v 为 0..1000 毫单位）
+  function charAt1000(v) {
+    return RAMP[Math.floor(v * (RAMP.length - 1) / 1000)];
+  }
+  // 第 t 帧 → 整幅网格（列用 ' ' 补齐，网格永不塌陷）
+  function renderFrame(t) {
+    const lines = [];
+    for (let y = 0; y < ROWS; y++) {
+      let line = '';
+      for (let x = 0; x < COLS; x++) line += charAt1000(lum1000(x, y, t));
+      lines.push(line);
+    }
+    return lines.join('\n');
+  }
+  // ==== ASCII KERNEL END ====
+
+  const out = document.getElementById('out');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let frame = 0, visible = true, acc = 0, last = performance.now();
+
+  if (reduced) {
+    out.textContent = renderFrame(0);              // SKILL.md §5：减弱动效 → 静态帧
+  } else {
+    const STEP = 1000 / FPS;                       // 帧间隔 1/12s，与 Python/C 端一致
+    const loop = (now) => {
+      acc += now - last; last = now;
+      while (acc >= STEP) { frame++; acc -= STEP; }  // 累计误差修正，不丢帧不漂移
+      out.textContent = renderFrame(frame);
+      if (visible) requestAnimationFrame(loop);      // 后台标签页停转（SKILL.md §6）
+    };
+    requestAnimationFrame(loop);
+    addEventListener('keydown', (e) => {
+      if (e.key.toLowerCase() === 'r') { frame = 0; acc = 0; }
+    });
+    document.addEventListener('visibilitychange', () => {
+      visible = !document.hidden;
+      if (visible) { last = performance.now(); requestAnimationFrame(loop); }
+    });
+  }
+  </script>
+</body>
+</html>
