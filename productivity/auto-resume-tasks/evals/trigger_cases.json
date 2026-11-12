@@ -1,0 +1,136 @@
+{
+  "recommended_threshold": 0.34,
+  "description_required_concepts": [
+    "background_task",
+    "failure",
+    "recovery_action"
+  ],
+  "positive_concepts": {
+    "background_task": [
+      "后台任务",
+      "后台作业",
+      "子代理",
+      "子智能体",
+      "工作流",
+      "媒体生成",
+      "图片生成",
+      "视频生成",
+      "subagent",
+      "workflow",
+      "media"
+    ],
+    "failure": [
+      "失败",
+      "挂了",
+      "超时",
+      "中断",
+      "异常",
+      "报错",
+      "卡住",
+      "没响应",
+      "无响应",
+      "429",
+      "failed",
+      "error",
+      "timeout"
+    ],
+    "recovery_action": [
+      "恢复",
+      "重试",
+      "续跑",
+      "重跑",
+      "自动恢复",
+      "退避",
+      "转人工",
+      "resume",
+      "retry"
+    ]
+  },
+  "negative_patterns": [
+    "放弃这个任务",
+    "不要自动重试",
+    "手动处理就好",
+    "修一下这个 bug",
+    "调试这段同步代码",
+    "重启服务",
+    "重启进程",
+    "服务器进程",
+    "定时任务",
+    "cron",
+    "写个复盘"
+  ],
+  "should_trigger": [
+    {
+      "text": "后台的图片生成任务失败了，帮我自动重试一下",
+      "family": "media_retry"
+    },
+    {
+      "text": "帮我重启一下上次失败的后台图片生成任务",
+      "family": "restart_failed_task"
+    },
+    {
+      "text": "子代理跑到一半超时挂了，帮我恢复它",
+      "family": "subagent_resume"
+    },
+    {
+      "text": "收到任务失败回调，workflow 中断了，接下来怎么办",
+      "family": "workflow_signal"
+    },
+    {
+      "text": "这个后台任务一直卡住没响应，要不要转人工？",
+      "family": "stuck_to_human"
+    },
+    {
+      "text": "后台子代理又输出格式错误了，按恢复流程再给它一次机会",
+      "family": "logical_retry"
+    },
+    {
+      "text": "刚才那个后台任务 429 了，退避一下自动重跑",
+      "family": "backoff_retry"
+    },
+    {
+      "text": "后台任务失败好几次了，帮我判断还能不能自动恢复，还是该放弃",
+      "family": "decide_recovery"
+    },
+    {
+      "text": "Auto-resume the failed background subagent task with backoff.",
+      "family": "en_resume"
+    }
+  ],
+  "should_not_trigger": [
+    {
+      "text": "帮我修一下这个登录 bug，跑下测试",
+      "family": "fix_code"
+    },
+    {
+      "text": "调试一下这段同步代码为什么崩溃",
+      "family": "sync_debug"
+    },
+    {
+      "text": "放弃这个任务吧，别恢复了",
+      "family": "abandon_task"
+    },
+    {
+      "text": "总结一下这次部署失败的原因，写个复盘",
+      "family": "report_only"
+    }
+  ],
+  "near_neighbor": [
+    {
+      "text": "服务器进程挂了，帮我重启一下",
+      "family": "ops_restart"
+    },
+    {
+      "text": "帮我把 git 里误删的文件恢复回来",
+      "family": "git_restore"
+    },
+    {
+      "text": "任务队列积压了，帮我优化下消费者吞吐",
+      "family": "queue_perf"
+    },
+    {
+      "text": "检查一下 cron 定时任务为什么没跑",
+      "family": "cron_debug"
+    }
+  ]
+}
