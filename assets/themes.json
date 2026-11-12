@@ -1,0 +1,272 @@
+{
+  "version": 1,
+  "skillVersion": "3.3.1",
+  "substyles": {
+    "A": {
+      "name": "档案红黑",
+      "themes": [
+        "theme-archive",
+        "theme-archive-ember",
+        "theme-archive-rust"
+      ],
+      "summary": "三套同语法、不同油墨：正红最锐，焦墨偏暖，锈橙偏沉。红系承载立场，黑提供结构，米白是主动的负空间。",
+      "mood": "硬、旧、压得住",
+      "use": "文化、品牌、观点型分享、需要档案感的回顾"
+    },
+    "B": {
+      "name": "重墨印刷",
+      "themes": [
+        "theme-signal",
+        "theme-press"
+      ],
+      "summary": "同一套语法换一种墨。不是极简双色：必须有粗斜带、实心墨块和压得住的面积。靛蓝偏科技，青墨偏报刊档案。",
+      "mood": "冷、重、精确",
+      "use": "科技产品、数据汇报、工程/设计分享、报刊档案向内容"
+    },
+    "C": {
+      "name": "彩色巨构",
+      "themes": [
+        "theme-c1",
+        "theme-c2",
+        "theme-c3",
+        "theme-c4",
+        "theme-c5",
+        "theme-c6",
+        "theme-c7"
+      ],
+      "summary": "保留构成主义的构图骨架，把固定的红黑换成撞色。仍是两墨一纸，不是多彩 UI。",
+      "mood": "意外、强烈、有能量",
+      "use": "创意提案、活动、宣言、年轻向内容"
+    }
+  },
+  "themes": {
+    "theme-archive": {
+      "substyle": "A",
+      "name": "档案红黑",
+      "tokens": {
+        "bg": "#F2EDE3",
+        "fg": "#141210",
+        "pop": "#D23B2C",
+        "alt": "#8A8175",
+        "mute": "#6F675B"
+      },
+      "texture": "grain",
+      "area": "bg 45–60 / fg 20–30 / pop 8–15 / alt 5–10",
+      "rules": [
+        "必须有 .grain",
+        "pop 只给一个主张",
+        "反白用 var(--bg)，不要 #FFFFFF"
+      ],
+      "use": "文化、品牌、观点、档案感"
+    },
+    "theme-signal": {
+      "substyle": "B",
+      "name": "靛蓝重墨",
+      "tokens": {
+        "bg": "#F3F0E7",
+        "fg": "#12161F",
+        "pop": "#3464C4",
+        "alt": "#97A2B8",
+        "mute": "#59627A"
+      },
+      "texture": "none",
+      "area": "bg 50–60 / fg 20–30 / pop 10–15 / alt 5–10",
+      "rules": [
+        "必须有 ≥10° 的粗斜带或斜切，宽 ≥48px",
+        "线一律 2px 起",
+        "禁止大面积留白"
+      ],
+      "use": "科技、产品、数据、工程"
+    },
+    "theme-press": {
+      "substyle": "B",
+      "name": "报纸青墨",
+      "tokens": {
+        "bg": "#F2EDDE",
+        "fg": "#191610",
+        "pop": "#227676",
+        "alt": "#7C786A",
+        "mute": "#67624F"
+      },
+      "texture": "grain",
+      "area": "bg 45–60 / fg 20–30 / pop 8–15 / alt 5–10",
+      "rules": [
+        "必须有 .grain 纸张颗粒",
+        "青墨只给一个主张",
+        "反白用 var(--bg)，不要 #FFFFFF"
+      ],
+      "use": "报刊、档案、深度报道、长文分享"
+    },
+    "theme-c1": {
+      "substyle": "C",
+      "name": "暗紫 × 焦橙",
+      "tokens": {
+        "bg": "#F1E9DC",
+        "fg": "#2E2140",
+        "pop": "#C4612F",
+        "alt": "#A8A83C",
+        "mute": "#6E6355"
+      },
+      "texture": "grain",
+      "area": "52 / 26 / 14 / 8",
+      "rules": [
+        "巨物 ≥40% 画布",
+        "一条 ≥10° 斜切",
+        "必须有颗粒"
+      ],
+      "use": "创意提案、活动"
+    },
+    "theme-c2": {
+      "substyle": "C",
+      "name": "宝蓝 × 桃红",
+      "tokens": {
+        "bg": "#EDE6D6",
+        "fg": "#122663",
+        "pop": "#DC4E86",
+        "alt": "#6E7C3A",
+        "mute": "#655F4C"
+      },
+      "texture": "grain",
+      "area": "52 / 26 / 14 / 8",
+      "rules": [
+        "巨物 ≥40% 画布",
+        "一条 ≥10° 斜切",
+        "必须有颗粒"
+      ],
+      "use": "消费品牌、年轻向"
+    },
+    "theme-c3": {
+      "substyle": "C",
+      "name": "深棕 × 芥末黄",
+      "tokens": {
+        "bg": "#F6EFE2",
+        "fg": "#3A2A20",
+        "pop": "#AD7908",
+        "alt": "#1E7C8C",
+        "mute": "#6B6050"
+      },
+      "texture": "grain",
+      "area": "52 / 26 / 14 / 8",
+      "rules": [
+        "巨物 ≥40% 画布",
+        "一条 ≥10° 斜切",
+        "必须有颗粒"
+      ],
+      "use": "文化、出版、餐饮"
+    },
+    "theme-c4": {
+      "substyle": "C",
+      "name": "炭黑 × 酒红",
+      "tokens": {
+        "bg": "#F2ECE1",
+        "fg": "#1A1715",
+        "pop": "#B93A2E",
+        "alt": "#1F6E5E",
+        "mute": "#675D50"
+      },
+      "texture": "grain",
+      "area": "52 / 26 / 14 / 8",
+      "rules": [
+        "巨物 ≥40% 画布",
+        "一条 ≥10° 斜切",
+        "必须有颗粒"
+      ],
+      "use": "严肃议题、纪实"
+    },
+    "theme-c5": {
+      "substyle": "C",
+      "name": "墨紫 × 橙红",
+      "tokens": {
+        "bg": "#F3EDE1",
+        "fg": "#2B2530",
+        "pop": "#E0522C",
+        "alt": "#6B5E77",
+        "mute": "#6A6060"
+      },
+      "texture": "grain",
+      "area": "52 / 26 / 14 / 8",
+      "rules": [
+        "巨物 ≥40% 画布",
+        "一条 ≥10° 斜切",
+        "必须有颗粒"
+      ],
+      "use": "艺术、展览"
+    },
+    "theme-c6": {
+      "substyle": "C",
+      "name": "深蓝 × 珊瑚",
+      "tokens": {
+        "bg": "#F4EFE4",
+        "fg": "#14224A",
+        "pop": "#D6543F",
+        "alt": "#D6B36A",
+        "mute": "#6B6455"
+      },
+      "texture": "grain",
+      "area": "52 / 26 / 14 / 8",
+      "rules": [
+        "巨物 ≥40% 画布",
+        "一条 ≥10° 斜切",
+        "必须有颗粒"
+      ],
+      "use": "生活方式、旅行"
+    },
+    "theme-c7": {
+      "substyle": "C",
+      "name": "炭黑 × 工业绿",
+      "tokens": {
+        "bg": "#EFEADA",
+        "fg": "#191D17",
+        "pop": "#2F7D4F",
+        "alt": "#D8A21E",
+        "mute": "#676A5C"
+      },
+      "texture": "grain",
+      "area": "52 / 26 / 14 / 8",
+      "rules": [
+        "巨物 ≥40% 画布",
+        "一条 ≥10° 斜切",
+        "必须有颗粒"
+      ],
+      "use": "工业、制造、能源、供应链"
+    },
+    "theme-archive-ember": {
+      "substyle": "A",
+      "name": "档案焦墨",
+      "tokens": {
+        "bg": "#EFE6D6",
+        "fg": "#1A1512",
+        "pop": "#BE3B10",
+        "alt": "#7A6E5E",
+        "mute": "#6B6055"
+      },
+      "texture": "grain",
+      "area": "bg 45–60 / fg 20–30 / pop 8–15 / alt 5–10",
+      "rules": [
+        "必须有 .grain",
+        "pop 只给一个主张",
+        "反白用 var(--bg)，不要 #FFFFFF"
+      ],
+      "use": "文化、品牌、观点、档案感；比 archive 更暖、更旧"
+    },
+    "theme-archive-rust": {
+      "substyle": "A",
+      "name": "档案锈橙",
+      "tokens": {
+        "bg": "#EDE7DB",
+        "fg": "#121110",
+        "pop": "#A34E1C",
+        "alt": "#776A58",
+        "mute": "#68604F"
+      },
+      "texture": "grain",
+      "area": "bg 45–60 / fg 20–30 / pop 8–15 / alt 5–10",
+      "rules": [
+        "必须有 .grain",
+        "pop 只给一个主张",
+        "反白用 var(--bg)，不要 #FFFFFF"
+      ],
+      "use": "工业、制造、历史档案向；锈色比正红更沉"
+    }
+  }
+}

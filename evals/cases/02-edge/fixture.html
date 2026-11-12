@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>evals · 02 边界场景</title>
+<link rel="stylesheet" href="../../../assets/deck.css">
+</head>
+<body>
+<!-- 三套主题是刻意的边界对照，显式豁免"一份 deck 一套主题" -->
+<div class="deck" data-showcase>
+
+<!-- ① 色板展示页：合法突破四色上限，用 data-palette-ok 显式豁免；
+      正交版面容许，用 data-axis-ok -->
+<section class="slide theme-archive" data-axis-ok data-palette-ok data-notes="色板页，说明每套主题的适用场景。">
+  <div class="grain"></div>
+  <div class="t-h2 fg-fg" style="position:absolute; left:56px; top:64px;">三套基础 + 六套撞色</div>
+  <div class="t-small fg-fg" style="position:absolute; left:56px; top:150px; width:700px;">每套主题四色，面积严重不均。选定一套之后全篇统一，不要中途换色。</div>
+
+  <div class="rect rect--pop"  style="left:56px;  top:300px; width:376px; height:216px;"></div>
+  <div class="rect"             style="left:56px;  top:532px; width:376px; height:40px;"></div>
+  <div class="meta fg-fg" style="position:absolute; left:56px; top:584px;">POP / FG</div>
+
+  <div class="rect rect--alt"  style="left:448px; top:300px; width:176px; height:40px;"></div>
+  <div class="rect rect--pop"  style="left:448px; top:356px; width:176px; height:40px;"></div>
+  <div class="meta fg-fg" style="position:absolute; left:448px; top:410px;">ALT / POP</div>
+
+  <div class="sun"             style="left:700px; top:300px; width:140px; height:140px;"></div>
+  <div class="meta fg-fg" style="position:absolute; left:700px; top:452px;">SUN</div>
+
+  <div class="rule rule--pop" style="left:900px; top:300px; width:280px;"></div>
+  <div class="t-body fg-fg" style="position:absolute; left:900px; top:332px; width:324px;">爆点短线只做标点，不做分隔。</div>
+  <div class="meta fg-fg" style="position:absolute; left:900px; top:452px;">RULE</div>
+
+  <div class="folio">
+    <div class="meta fg-fg">ARCHIVE</div>
+    <div class="meta fg-fg">01 / 04</div>
+  </div>
+</section>
+
+<!-- ② .sun--outline：v1 会在这里多出一个方框 -->
+<section class="slide theme-signal" data-notes="穿透感靠描边圆实现。">
+  <div class="grain"></div>
+  <div class="band" style="left:-120px; top:520px; width:760px; height:120px; background:var(--fg); transform:rotate(-8deg);"></div>
+  <div class="sun sun--outline" style="left:850px; top:200px; width:340px; height:340px; border-color:var(--pop);"></div>
+  <div class="vlabel" data-test="vlabel" style="left:1210px; top:120px; height:260px; color:var(--fg);">SERIAL EXPERIMENTS 04</div>
+  <div class="t-h1 fg-fg" style="position:absolute; left:56px; top:120px;">一条线</div>
+  <div class="t-h1 fg-fg" style="position:absolute; left:56px; top:216px;">两个圆</div>
+  <div class="t-body fg-fg" style="position:absolute; left:56px; top:340px; width:600px;">描边圆负责让画面有呼吸；换成实心就堵住了。</div>
+  <div class="folio folio--block">
+    <div class="meta">SIGNAL</div>
+    <div class="meta">02 / 04</div>
+  </div>
+</section>
+
+<!-- ③ 1.9fr 首栏：BALANCE 的下限边界 -->
+<section class="slide theme-archive" data-notes="四栏里首栏吃掉别人的份额。">
+  <div class="grain"></div>
+  <div class="band" style="left:-140px; top:600px; width:1560px; height:60px; background:var(--fg); transform:rotate(-11deg);"></div>
+
+  <div class="grid4 grid4--lead" style="position:absolute; left:56px; top:180px; width:1168px;">
+    <div style="position:relative;">
+      <div class="card-head">
+        <span class="num fg-pop" style="font-size:34px;">01</span>
+        <span class="meta fg-fg">LEAD</span>
+      </div>
+      <div class="t-h3 fg-fg" style="margin-top:10px;">首栏</div>
+      <div class="t-small fg-fg" style="margin-top:6px; width:520px;">这一栏吃掉别人的份额，面积不均才有主导元。等宽四栏读者读不出哪条最重要。</div>
+    </div>
+    <div style="position:relative;">
+      <div class="card-head"><span class="num fg-pop" style="font-size:34px;">02</span><span class="meta fg-fg">TWO</span></div>
+      <div class="t-small fg-fg" style="margin-top:10px;">次栏。</div>
+    </div>
+    <div style="position:relative;">
+      <div class="card-head"><span class="num fg-pop" style="font-size:34px;">03</span><span class="meta fg-fg">THREE</span></div>
+      <div class="t-small fg-fg" style="margin-top:10px;">次栏。</div>
+    </div>
+    <div style="position:relative;">
+      <div class="card-head"><span class="num fg-pop" style="font-size:34px;">04</span><span class="meta fg-fg">FOUR</span></div>
+      <div class="t-small fg-fg" style="margin-top:10px;">次栏。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ 单行正文：必须 wrap=true -->
+<section class="slide theme-c1" data-notes="单行正文也要能重排。">
+  <div class="grain"></div>
+  <div class="wedge" style="left:760px; top:-80px; width:720px; height:880px; background:var(--fg); clip-path:polygon(38% 0, 100% 0, 100% 100%, 0% 100%);"></div>
+  <div class="t-h2 fg-fg" style="position:absolute; left:56px; top:64px;">四个元素，四种写法</div>
+  <div class="t-body fg-fg" data-test="single-line-body" style="position:absolute; left:56px; top:280px; width:620px;">这一行只有一次折行，补字也不会越过边界。</div>
+  <div class="folio folio--block">
+    <div class="meta">C1 · EDGE</div>
+    <div class="meta">04 / 04</div>
+  </div>
+</section>
+
+</div>
+</body>
+</html>

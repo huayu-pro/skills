@@ -1,0 +1,9 @@
+{
+  "capturedAt": "2026-10-21",
+  "command": "node evals/run.mjs --pipeline",
+  "01-normal": "11/11",
+  "02-edge": "8/8",
+  "03-negative": "3 条自动断言待 agent 运行（needs-agent-run）",
+  "04-recovery": "5/5",
+  "05-delivery": "6/6 自动通过，回复三件事待 agent 运行"
+}

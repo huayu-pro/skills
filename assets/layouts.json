@@ -1,0 +1,1359 @@
+{
+  "version": 1,
+  "skillVersion": "3.3.1",
+  "canvas": {
+    "w": 1280,
+    "h": 720,
+    "safe": 56,
+    "contentW": 1168
+  },
+  "roles": [
+    "cover",
+    "context",
+    "thesis",
+    "method",
+    "evidence",
+    "data",
+    "comparison",
+    "sequence",
+    "case",
+    "quote",
+    "section",
+    "closing"
+  ],
+  "plan": {
+    "minSlides": 8,
+    "maxSlides": 20,
+    "hardMin": 4,
+    "hardMax": 24,
+    "minutesTolerance": 0.2,
+    "maxSameLayoutRun": 2,
+    "maxShare": 0.4
+  },
+  "layouts": [
+    {
+      "id": "L01",
+      "name": "巨构封面",
+      "family": "hero",
+      "roles": [
+        "cover"
+      ],
+      "motif": "sun+band",
+      "axis": {
+        "kind": "band"
+      },
+      "axisDegSign": "negative",
+      "slots": {
+        "kicker": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 16
+        },
+        "latin": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 24
+        },
+        "title1": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 6
+        },
+        "title2": {
+          "form": "T1",
+          "required": false,
+          "maxCJK": 6
+        },
+        "lead": {
+          "form": "T2",
+          "required": true,
+          "maxCJK": 60,
+          "maxLines": 2
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "end",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L02",
+      "name": "档案封面",
+      "family": "archive",
+      "roles": [
+        "cover",
+        "context"
+      ],
+      "motif": "masthead+counter",
+      "axis": {
+        "kind": "band"
+      },
+      "slots": {
+        "masthead": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 20
+        },
+        "title1": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 6
+        },
+        "title2": {
+          "form": "T1",
+          "required": false,
+          "maxCJK": 6
+        },
+        "subtitle": {
+          "form": "T2",
+          "required": false,
+          "maxCJK": 40,
+          "maxLines": 2
+        },
+        "counter1": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 4
+        },
+        "counter2": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 4
+        },
+        "lead": {
+          "form": "T2",
+          "required": false,
+          "maxCJK": 90,
+          "maxLines": 4
+        },
+        "photo": {
+          "form": "media",
+          "required": false
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "cut",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L03",
+      "name": "章节幕",
+      "family": "section",
+      "roles": [
+        "section"
+      ],
+      "motif": "number+circle",
+      "axis": {
+        "kind": "band"
+      },
+      "slots": {
+        "number": {
+          "form": "T3",
+          "required": true,
+          "maxCJK": 3
+        },
+        "chapter": {
+          "form": "T3",
+          "required": true,
+          "maxCJK": 10
+        },
+        "title1": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 8
+        },
+        "title2": {
+          "form": "T1",
+          "required": false,
+          "maxCJK": 8
+        }
+      },
+      "ink": true,
+      "folio": {
+        "variant": "plain",
+        "tone": "ink"
+      }
+    },
+    {
+      "id": "L04",
+      "name": "1+3 方法页",
+      "family": "grid",
+      "roles": [
+        "method"
+      ],
+      "motif": "lead+three",
+      "axis": {
+        "kind": "band"
+      },
+      "slots": {
+        "kicker": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 16
+        },
+        "title": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 12
+        },
+        "lead": {
+          "form": "T2",
+          "required": false,
+          "maxCJK": 70,
+          "maxLines": 2
+        }
+      },
+      "groups": {
+        "items": {
+          "count": 4,
+          "exact": true,
+          "slots": {
+            "num": {
+              "form": "T3",
+              "maxCJK": 3
+            },
+            "label": {
+              "form": "T3",
+              "maxCJK": 8
+            },
+            "head": {
+              "form": "T1",
+              "maxCJK": 6
+            },
+            "body": {
+              "form": "T2",
+              "maxCJK": 45,
+              "maxLines": 3
+            }
+          }
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "cut",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L05",
+      "name": "巨号数据 / 时间轴",
+      "family": "timeline",
+      "roles": [
+        "data",
+        "sequence"
+      ],
+      "motif": "big-numbers",
+      "axis": {
+        "kind": "band"
+      },
+      "axisDegSign": "negative",
+      "slots": {
+        "kicker": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 16
+        },
+        "title": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 10
+        },
+        "lead": {
+          "form": "T2",
+          "required": false,
+          "maxCJK": 70,
+          "maxLines": 2
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "groups": {
+        "items": {
+          "count": 4,
+          "min": 3,
+          "slots": {
+            "num": {
+              "form": "T3",
+              "maxCJK": 4
+            },
+            "label": {
+              "form": "T3",
+              "maxCJK": 8
+            },
+            "text": {
+              "form": "T2",
+              "maxCJK": 30,
+              "maxLines": 2
+            }
+          }
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "plain",
+        "tone": "ink"
+      }
+    },
+    {
+      "id": "L06",
+      "name": "左右硬切",
+      "family": "split",
+      "roles": [
+        "context",
+        "thesis",
+        "evidence"
+      ],
+      "motif": "hard-split",
+      "axis": {
+        "kind": "band"
+      },
+      "slots": {
+        "kicker": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 16
+        },
+        "title1": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 6
+        },
+        "title2": {
+          "form": "T1",
+          "required": false,
+          "maxCJK": 6
+        },
+        "body": {
+          "form": "T2",
+          "required": true,
+          "maxCJK": 80,
+          "maxLines": 4
+        },
+        "bigNumber": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 4
+        },
+        "caption": {
+          "form": "T2",
+          "required": false,
+          "maxCJK": 30,
+          "maxLines": 2
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        },
+        "photo": {
+          "form": "media",
+          "required": false
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "plain",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L07",
+      "name": "斜切宣言",
+      "family": "wedge",
+      "roles": [
+        "thesis",
+        "context"
+      ],
+      "motif": "wedge",
+      "axis": {
+        "kind": "wedge"
+      },
+      "slots": {
+        "title1": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 7
+        },
+        "title2": {
+          "form": "T1",
+          "required": false,
+          "maxCJK": 7
+        },
+        "body": {
+          "form": "T2",
+          "required": true,
+          "maxCJK": 70,
+          "maxLines": 4
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "cut",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L09",
+      "name": "双栏对比",
+      "family": "compare",
+      "roles": [
+        "comparison"
+      ],
+      "motif": "two-columns",
+      "axis": {
+        "kind": "band"
+      },
+      "slots": {
+        "title": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 12
+        },
+        "leftHead": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 6
+        },
+        "rightHead": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 6
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "groups": {
+        "leftPoints": {
+          "count": 3,
+          "exact": true,
+          "slots": {
+            "text": {
+              "form": "T2",
+              "maxCJK": 30,
+              "maxLines": 2
+            }
+          }
+        },
+        "rightPoints": {
+          "count": 3,
+          "exact": true,
+          "slots": {
+            "text": {
+              "form": "T2",
+              "maxCJK": 30,
+              "maxLines": 2
+            }
+          }
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "cut",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L10",
+      "name": "引语",
+      "family": "quote",
+      "roles": [
+        "quote"
+      ],
+      "motif": "quote-bar",
+      "axis": {
+        "kind": "band"
+      },
+      "slots": {
+        "kicker": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 16
+        },
+        "quote1": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 14
+        },
+        "quote2": {
+          "form": "T1",
+          "required": false,
+          "maxCJK": 14
+        },
+        "attribution": {
+          "form": "T3",
+          "required": true,
+          "maxCJK": 12
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "plain",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L11",
+      "name": "条形图",
+      "family": "chart",
+      "roles": [
+        "data",
+        "evidence"
+      ],
+      "motif": "bars",
+      "axis": {
+        "kind": "band"
+      },
+      "slots": {
+        "title": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 10
+        },
+        "lead": {
+          "form": "T2",
+          "required": false,
+          "maxCJK": 50,
+          "maxLines": 2
+        },
+        "maxValue": {
+          "form": "T3",
+          "required": true,
+          "maxCJK": 6
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "groups": {
+        "items": {
+          "count": 5,
+          "min": 3,
+          "slots": {
+            "label": {
+              "form": "T3",
+              "maxCJK": 8
+            },
+            "value": {
+              "form": "T3",
+              "maxCJK": 6
+            },
+            "display": {
+              "form": "T3",
+              "maxCJK": 6
+            }
+          }
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "plain",
+        "tone": "paper"
+      },
+      "balanceOk": true
+    },
+    {
+      "id": "L12",
+      "name": "人物 / 作品卡",
+      "family": "cards",
+      "roles": [
+        "case",
+        "evidence"
+      ],
+      "motif": "stair-cards",
+      "axis": {
+        "kind": "band"
+      },
+      "axisDegSign": "negative",
+      "slots": {
+        "title": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 12
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        },
+        "portrait": {
+          "form": "media",
+          "required": false
+        }
+      },
+      "groups": {
+        "items": {
+          "count": 4,
+          "exact": true,
+          "slots": {
+            "letter": {
+              "form": "T3",
+              "maxCJK": 2
+            },
+            "name": {
+              "form": "T1",
+              "maxCJK": 6
+            },
+            "meta": {
+              "form": "T3",
+              "maxCJK": 10
+            },
+            "text": {
+              "form": "T2",
+              "maxCJK": 30,
+              "maxLines": 2
+            }
+          }
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "cut",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L13",
+      "name": "全图压字",
+      "family": "image",
+      "roles": [
+        "case",
+        "evidence"
+      ],
+      "motif": "full-image",
+      "axis": {
+        "kind": "band"
+      },
+      "slots": {
+        "image": {
+          "form": "media",
+          "required": true
+        },
+        "kicker": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 16
+        },
+        "title1": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 7
+        },
+        "title2": {
+          "form": "T1",
+          "required": false,
+          "maxCJK": 7
+        },
+        "caption": {
+          "form": "T2",
+          "required": false,
+          "maxCJK": 40,
+          "maxLines": 2
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "block",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L14",
+      "name": "目录索引",
+      "family": "contents",
+      "roles": [
+        "context",
+        "sequence"
+      ],
+      "motif": "index-rows",
+      "axis": {
+        "kind": "band"
+      },
+      "slots": {
+        "title": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 10
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "groups": {
+        "items": {
+          "count": 4,
+          "exact": true,
+          "slots": {
+            "num": {
+              "form": "T3",
+              "maxCJK": 4
+            },
+            "name": {
+              "form": "T2",
+              "maxCJK": 20,
+              "maxLines": 1
+            },
+            "date": {
+              "form": "T3",
+              "maxCJK": 12
+            }
+          }
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "cut",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L15",
+      "name": "清单 / 表",
+      "family": "table",
+      "roles": [
+        "data",
+        "evidence"
+      ],
+      "motif": "rules-only-table",
+      "axis": {
+        "kind": "band"
+      },
+      "axisDegSign": "negative",
+      "slots": {
+        "title": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 12
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "groups": {
+        "headers": {
+          "count": 4,
+          "exact": true,
+          "slots": {
+            "text": {
+              "form": "T3",
+              "maxCJK": 10
+            }
+          }
+        },
+        "rows": {
+          "count": 4,
+          "min": 3,
+          "max": 6,
+          "slots": {
+            "c1": {
+              "form": "T2",
+              "maxCJK": 20,
+              "maxLines": 1
+            },
+            "c2": {
+              "form": "T3",
+              "maxCJK": 10
+            },
+            "c3": {
+              "form": "T2",
+              "maxCJK": 20,
+              "maxLines": 1
+            },
+            "c4": {
+              "form": "T3",
+              "maxCJK": 10
+            }
+          }
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "plain",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L16",
+      "name": "行动结尾",
+      "family": "closing",
+      "roles": [
+        "closing"
+      ],
+      "motif": "action",
+      "axis": {
+        "kind": "band"
+      },
+      "slots": {
+        "title1": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 7
+        },
+        "title2": {
+          "form": "T1",
+          "required": false,
+          "maxCJK": 7
+        },
+        "action": {
+          "form": "T2",
+          "required": true,
+          "maxCJK": 40,
+          "maxLines": 2
+        },
+        "photo": {
+          "form": "media",
+          "required": false
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "ink": true,
+      "folio": {
+        "variant": "plain",
+        "tone": "ink"
+      }
+    },
+    {
+      "id": "L17",
+      "name": "大圆聚焦",
+      "family": "focus",
+      "roles": [
+        "case",
+        "thesis",
+        "evidence"
+      ],
+      "motif": "sun-orbit",
+      "axis": {
+        "kind": "band"
+      },
+      "slots": {
+        "kicker": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 16
+        },
+        "title1": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 6
+        },
+        "title2": {
+          "form": "T1",
+          "required": false,
+          "maxCJK": 6
+        },
+        "body": {
+          "form": "T2",
+          "required": true,
+          "maxCJK": 70,
+          "maxLines": 4
+        },
+        "stat": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 4
+        },
+        "statNote": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 10
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "plain",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L18",
+      "name": "台阶进程",
+      "family": "stair",
+      "roles": [
+        "method",
+        "sequence"
+      ],
+      "motif": "ascending-steps",
+      "axis": {
+        "kind": "wedge"
+      },
+      "slots": {
+        "kicker": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 16
+        },
+        "title": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 8
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "groups": {
+        "steps": {
+          "count": 4,
+          "min": 3,
+          "slots": {
+            "num": {
+              "form": "T3",
+              "maxCJK": 4
+            },
+            "label": {
+              "form": "T3",
+              "maxCJK": 8
+            },
+            "text": {
+              "form": "T2",
+              "maxCJK": 22,
+              "maxLines": 2
+            }
+          }
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "cut",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L19",
+      "name": "拼贴档案",
+      "family": "collage",
+      "roles": [
+        "context",
+        "evidence",
+        "case"
+      ],
+      "motif": "collage-cells",
+      "axis": {
+        "kind": "band"
+      },
+      "slots": {
+        "kicker": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 16
+        },
+        "title": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 12
+        },
+        "bigImage": {
+          "form": "media",
+          "required": false
+        },
+        "bigLabel": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 10
+        },
+        "cellBHead": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 6
+        },
+        "cellBText": {
+          "form": "T2",
+          "required": false,
+          "maxCJK": 22,
+          "maxLines": 2
+        },
+        "cellCHead": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 6
+        },
+        "cellCText": {
+          "form": "T2",
+          "required": false,
+          "maxCJK": 20,
+          "maxLines": 2
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "plain",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L20",
+      "name": "横向时间轴",
+      "family": "timeline",
+      "roles": [
+        "sequence",
+        "data"
+      ],
+      "motif": "spine-nodes",
+      "axis": {
+        "kind": "wedge"
+      },
+      "slots": {
+        "kicker": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 16
+        },
+        "title": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 10
+        },
+        "lead": {
+          "form": "T2",
+          "required": false,
+          "maxCJK": 46,
+          "maxLines": 2
+        }
+      },
+      "groups": {
+        "nodes": {
+          "count": 4,
+          "min": 3,
+          "slots": {
+            "date": {
+              "form": "T3",
+              "maxCJK": 6
+            },
+            "label": {
+              "form": "T3",
+              "maxCJK": 8
+            },
+            "text": {
+              "form": "T2",
+              "maxCJK": 16,
+              "maxLines": 2
+            }
+          }
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "plain",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L21",
+      "name": "图文对切",
+      "family": "image-split",
+      "roles": [
+        "case",
+        "evidence",
+        "context"
+      ],
+      "motif": "image-half",
+      "axis": {
+        "kind": "band"
+      },
+      "slots": {
+        "kicker": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 16
+        },
+        "title1": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 6
+        },
+        "title2": {
+          "form": "T1",
+          "required": false,
+          "maxCJK": 6
+        },
+        "body": {
+          "form": "T2",
+          "required": true,
+          "maxCJK": 80,
+          "maxLines": 4
+        },
+        "image": {
+          "form": "media",
+          "required": false
+        },
+        "caption": {
+          "form": "T2",
+          "required": false,
+          "maxCJK": 22,
+          "maxLines": 1
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "block",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L22",
+      "name": "体量对比",
+      "family": "contrast",
+      "roles": [
+        "comparison"
+      ],
+      "motif": "two-scale",
+      "axis": {
+        "kind": "band"
+      },
+      "axisDegSign": "positive",
+      "slots": {
+        "kicker": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 16
+        },
+        "title": {
+          "form": "T2",
+          "required": true,
+          "maxCJK": 12
+        },
+        "leftLabel": {
+          "form": "T3",
+          "required": true,
+          "maxCJK": 8
+        },
+        "leftNum": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 6
+        },
+        "leftNote": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 40,
+          "maxLines": 2
+        },
+        "rightLabel": {
+          "form": "T3",
+          "required": true,
+          "maxCJK": 8
+        },
+        "rightNum": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 6
+        },
+        "rightNote": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 40,
+          "maxLines": 2
+        },
+        "takeaway": {
+          "form": "T2",
+          "required": true,
+          "maxCJK": 40,
+          "maxLines": 2
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "block",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L23",
+      "name": "巨引语",
+      "family": "quote",
+      "roles": [
+        "quote"
+      ],
+      "motif": "ink-slab",
+      "axis": {
+        "kind": "band"
+      },
+      "axisDegSign": "negative",
+      "slots": {
+        "kicker": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 16
+        },
+        "quote1": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 10
+        },
+        "quote2": {
+          "form": "T1",
+          "required": false,
+          "maxCJK": 10
+        },
+        "attribution": {
+          "form": "T3",
+          "required": true,
+          "maxCJK": 16
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 40
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "plain",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L24",
+      "name": "斜切章节",
+      "family": "divider",
+      "roles": [
+        "section"
+      ],
+      "motif": "wedge-number",
+      "axis": {
+        "kind": "wedge"
+      },
+      "axisDegSign": null,
+      "slots": {
+        "number": {
+          "form": "T3",
+          "required": true,
+          "maxCJK": 3
+        },
+        "chapter": {
+          "form": "T3",
+          "required": true,
+          "maxCJK": 10
+        },
+        "title1": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 8
+        },
+        "title2": {
+          "form": "T1",
+          "required": false,
+          "maxCJK": 8
+        },
+        "lead": {
+          "form": "T2",
+          "required": false,
+          "maxCJK": 40,
+          "maxLines": 2
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "plain",
+        "tone": "paper"
+      }
+    },
+    {
+      "id": "L25",
+      "name": "横幅收束",
+      "family": "closing",
+      "roles": [
+        "closing"
+      ],
+      "motif": "banner-action",
+      "axis": {
+        "kind": "band"
+      },
+      "axisDegSign": "positive",
+      "slots": {
+        "title1": {
+          "form": "T1",
+          "required": true,
+          "maxCJK": 7
+        },
+        "title2": {
+          "form": "T1",
+          "required": false,
+          "maxCJK": 7
+        },
+        "action": {
+          "form": "T2",
+          "required": true,
+          "maxCJK": 30,
+          "maxLines": 2
+        },
+        "contact": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 60,
+          "maxLines": 2
+        },
+        "meta": {
+          "form": "T3",
+          "required": false,
+          "maxCJK": 30
+        }
+      },
+      "ink": false,
+      "folio": {
+        "variant": "plain",
+        "tone": "paper"
+      }
+    }
+  ]
+}

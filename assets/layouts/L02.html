@@ -1,0 +1,30 @@
+{{texture}}
+<div class="band" data-axis style="left:960px; top:-80px; width:360px; height:880px; background:var(--fg); transform:rotate({{axisDeg}}deg);"></div>
+
+<div class="rect rect--alt" style="left:880px; top:100px; width:340px; height:340px;"></div>
+<div class="sun" style="left:950px; top:170px; width:200px; height:200px;"></div>
+<div data-slot-block="photo"><img data-slot="photo" src="{{slot:photo}}" alt="" style="position:absolute; left:880px; top:100px; width:340px; height:340px; object-fit:cover;"></div>
+
+<div class="meta fg-fg" data-slot="masthead" style="position:absolute; left:56px; top:48px;">{{slot:masthead}}</div>
+<div class="t-h1 fg-fg" data-slot="title1" style="position:absolute; left:56px; top:140px;">{{slot:title1}}</div>
+<div data-slot-block="title2"><div class="t-h1 fg-pop" data-slot="title2" style="position:absolute; left:56px; top:244px;">{{slot:title2}}</div></div>
+
+<div class="rule rule--pop" style="left:56px; top:366px; width:96px;"></div>
+<div class="t-lead fg-fg" data-slot="subtitle" style="position:absolute; left:56px; top:392px; width:720px;">{{slot:subtitle}}</div>
+<div class="t-small fg-fg" data-slot="lead" style="position:absolute; left:56px; top:500px; width:740px;">{{slot:lead}}</div>
+
+<div data-slot-block="counter1" style="position:absolute; left:1000px; top:500px;">
+  <div class="counter">
+    <div class="counter__cell">
+      <div class="num fg-bg" data-slot="counter1" style="font-size:56px;">{{slot:counter1}}</div>
+      <div class="micro fg-bg">/ 100</div>
+    </div>
+    <div class="counter__cell">
+      <div class="num fg-bg" data-slot="counter2" style="font-size:56px;">{{slot:counter2}}</div>
+      <div class="micro fg-bg">/ 12</div>
+    </div>
+  </div>
+</div>
+
+<div class="meta fg-fg" data-slot="meta" style="position:absolute; left:56px; top:620px;">{{slot:meta}}</div>
+{{folio}}

@@ -1,0 +1,644 @@
+{
+  "version": "3.3.1",
+  "updated": "2026-10-25",
+  "canvas": {
+    "w": 1280,
+    "h": 720,
+    "safe": 56,
+    "contentW": 1168
+  },
+  "palette": {
+    "roles": [
+      "bg",
+      "fg",
+      "pop",
+      "alt"
+    ],
+    "labelOnly": "mute",
+    "inkMaxColors": 4,
+    "note": "两墨一纸。--mute 只给 ≤15px 的非信息微字，不计入四色。"
+  },
+  "thresholds": {
+    "balance": {
+      "minRatio": 1.7,
+      "idealRatio": 2,
+      "recipeFr": 1.9,
+      "minBlockAreaPct": 0.01,
+      "minRunnerUpPct": 0.015,
+      "minBlocks": 3
+    },
+    "weight": {
+      "minLinePx": 2
+    },
+    "font": {
+      "bodyPx": 18,
+      "labelPx": 15,
+      "microPx": 13,
+      "labelMaxCJK": 12
+    },
+    "textArea": {
+      "max": 0.15,
+      "maxPercent": 15,
+      "displayPx": 48
+    },
+    "ink": {
+      "minFillAreaPct": 0.01,
+      "infoTextPx": 18
+    },
+    "density": {
+      "maxChars": 240
+    },
+    "contrast": {
+      "body": 4.5,
+      "large": 3,
+      "largePx": 28,
+      "largeWeight": 700,
+      "tolerance": 0.3
+    },
+    "axis": {
+      "minDeg": 0.5,
+      "bandMinDeg": 4,
+      "bandMaxDeg": 20,
+      "recommendMinDeg": 6,
+      "recommendMaxDeg": 12,
+      "dominantMinAreaPct": 0.03,
+      "longSidePct": 0.3,
+      "rivalAreaPct": 0.25
+    },
+    "bounds": {
+      "tolerancePx": 1
+    },
+    "overflow": {
+      "tolerancePx": 2
+    },
+    "overlap": {
+      "minPx": 6,
+      "minRatio": 0.02,
+      "errorRatio": 0.15
+    },
+    "safe": {
+      "warnPx": 8,
+      "errorPx": 24
+    },
+    "width": {
+      "minGapPx": 8
+    },
+    "occlude": {
+      "samples": 9,
+      "warnHits": 3,
+      "errorHits": 6
+    },
+    "structure": {
+      "minSlides": 8,
+      "hardMin": 4,
+      "hardMax": 24,
+      "maxSameRun": 2,
+      "maxShare": 0.4
+    },
+    "plan": {
+      "minSlides": 8,
+      "maxSlides": 20,
+      "hardMin": 4,
+      "hardMax": 24,
+      "minutesTolerance": 0.2
+    },
+    "rhythm": {
+      "bucketPx": 4000
+    },
+    "opacity": {
+      "min": 0.99,
+      "shape": 0.99,
+      "text": 0.95
+    },
+    "classes": {
+      "scanMinAreaPx": 1500
+    },
+    "wrap": {
+      "classes": [
+        "t-hero",
+        "t-h1",
+        "t-h2"
+      ]
+    }
+  },
+  "codes": {
+    "AXIS": {
+      "rule": 1,
+      "level": "error",
+      "summary": "一页只有一条主斜线，且它必须主导画面（面积 ≥{axis.dominantMinAreaPct}，长边 ≥{axis.longSidePct} 画布宽）",
+      "fix": "放大主斜带到贯穿画面，统一角度或删掉竞争的那条；确需正交版面加 data-axis-ok"
+    },
+    "BALANCE": {
+      "rule": 2,
+      "level": "error",
+      "summary": "面积必须不均，首栏 ≥{balance.minRatio}× 第二栏",
+      "fix": "抬高首栏或压缩次栏；确需等价并列加 data-balance-ok"
+    },
+    "INK": {
+      "rule": 3,
+      "level": "error",
+      "summary": "一页最多 {palette.inkMaxColors} 色（纸 + 主墨 + 爆点 + 次墨；--mute 不计入），且必须来自当前主题 token",
+      "fix": "删掉多余颜色；反白用 var(--bg)；色板展示页加 data-palette-ok"
+    },
+    "WEIGHT": {
+      "rule": 4,
+      "level": "error",
+      "summary": "线宽 ≥{weight.minLinePx}px",
+      "fix": "1px 发丝线是编辑设计，不是构成主义；改成 2px 或用色块"
+    },
+    "WRAP": {
+      "rule": 5,
+      "level": "error",
+      "summary": "展示字（.t-hero/.t-h1/.t-h2）必须 nowrap，一行一个元素",
+      "fix": "要两行就写两个 div 各自定位，不要靠自动折行"
+    },
+    "TEXTAREA": {
+      "rule": 6,
+      "level": "error",
+      "summary": "正文面积 ≤{textArea.maxPercent}% 画布",
+      "fix": "删减正文或拆页；构成主义靠面积差说话，不靠字数"
+    },
+    "CLASS": {
+      "rule": 7,
+      "level": "error",
+      "summary": "只用 deck.css 里已定义的类",
+      "fix": "浏览器对未定义类静默 fallback，版式会塌；先查 references/components.md"
+    },
+    "CONTRAST": {
+      "rule": 8,
+      "level": "error",
+      "summary": "正文 ≥{contrast.body}，≥{contrast.largePx}px 或 ≥{contrast.largeWeight} 字重时 ≥{contrast.large}",
+      "fix": "换墨色、加深底色，或把字号提到大字号档"
+    },
+    "FONT": {
+      "rule": 9,
+      "level": "error",
+      "summary": "信息文本 ≥{font.bodyPx}px，标签 ≥{font.labelPx}px，微字 ≥{font.microPx}px 且只做装饰",
+      "fix": "升一档字号阶梯，或把内容移出标签"
+    },
+    "DENSITY": {
+      "rule": 10,
+      "level": "warn",
+      "summary": "每页 ≤{density.maxChars} 字（汉字 + 拉丁词）",
+      "fix": "删到只留一个主张；支撑点移进讲稿"
+    },
+    "PURPOSE": {
+      "rule": null,
+      "level": "error",
+      "summary": "每页必须有 data-purpose：这页要让观众记住什么",
+      "fix": "补一句“任务”；结构化 deck 缺它直接报错，短稿至少报警"
+    },
+    "NOTES": {
+      "rule": null,
+      "level": "error",
+      "summary": "每页必须有 data-notes 讲稿",
+      "fix": "写 1–3 句能直接照读的话；封面/证据/结尾至少 2 句"
+    },
+    "FOOTER": {
+      "rule": 11,
+      "level": "warn",
+      "summary": "页脚不许连续三页同一种形态",
+      "fix": "在默认贴左、`.folio--cut`、`.folio--block`、`.folio--end` 之间轮换"
+    },
+    "GATE": {
+      "rule": 12,
+      "level": "gate",
+      "summary": "交付前跑完验证链：validate / audit-text / render --sheet / build / verify-pptx（有 LO 再 verify-render）",
+      "fix": "没跑完 gate 不算交付"
+    },
+    "BOUNDS": {
+      "rule": null,
+      "level": "error",
+      "summary": "文字越出 1280×720 画布（容差 ±{bounds.tolerancePx}px）",
+      "fix": "改坐标或拆行；色块出血是刻意的，只有文字算错"
+    },
+    "OVERFLOW": {
+      "rule": null,
+      "level": "error",
+      "summary": "文字被容器裁切",
+      "fix": "PPT 没有裁切概念，被切掉的内容会直接消失"
+    },
+    "OVERLAP": {
+      "rule": null,
+      "level": "warn",
+      "summary": "两段文字相互压叠",
+      "fix": "挪开；构图上的故意压字加 data-overlap-ok"
+    },
+    "RHYTHM": {
+      "rule": null,
+      "level": "warn",
+      "summary": "相邻两页色块面积指纹完全相同",
+      "fix": "换骨架；联系表上一眼就能看出连续同版式"
+    },
+    "OPACITY": {
+      "rule": null,
+      "level": "warn",
+      "summary": "元素半透明：文本 <{opacity.text} error，形状 <{opacity.shape} warn；PPTX 会拍平",
+      "fix": "文字必须不透明；形状改预混实色，或用 --alt 做层级"
+    },
+    "THEME": {
+      "rule": null,
+      "level": "error",
+      "summary": "一份 deck 只用一套主题；样张可用 data-showcase 豁免",
+      "fix": "选定一套 theme-*，其余页统一；风格对照交给 style-preview.mjs"
+    },
+    "FORBID": {
+      "rule": null,
+      "level": "error",
+      "summary": "用了转换器表达不了的 CSS（渐变/阴影/滤镜/混合/层级/fixed/伪元素/嵌套变换/裁切/svg/transform/远程图）",
+      "fix": "删掉该属性，或用真实 DOM 元素重做"
+    },
+    "DECK": {
+      "rule": null,
+      "level": "error",
+      "summary": "空 deck 或 --slide 越界",
+      "fix": "每页一个 section.slide；--slide 取 1–页数，不能拿“0 页 0 问题”当通过"
+    },
+    "SAFE": {
+      "rule": null,
+      "level": "error",
+      "summary": "正文越出 {canvas.safe}px 安全区",
+      "fix": "正文收回安全区；展示字可以出血，但正文不出。确需出血加 data-safe-ok"
+    },
+    "OCCLUDE": {
+      "rule": null,
+      "level": "error",
+      "summary": "文字被后序不透明色块盖住",
+      "fix": "把文字放到色块之后（DOM 后序），或挪开色块；故意的叠压加 data-overlap-ok"
+    },
+    "MUTE": {
+      "rule": 3,
+      "level": "error",
+      "summary": "--mute 只给 ≤{font.labelPx}px 的非信息微字，不能做副标",
+      "fix": "信息文本改用 --fg 或 --alt；--mute 不进入四色统计"
+    },
+    "STRUCTURE": {
+      "rule": null,
+      "level": "error",
+      "summary": "结构化 deck 每页必须有 data-role + data-layout，且首 cover、尾 closing、版式有轮换",
+      "fix": "补 data-role/data-layout；连续同版式不超过 2 页，单版式占比不超过 40%"
+    },
+    "LAYOUT": {
+      "rule": null,
+      "level": "error",
+      "summary": "data-layout 不在 layouts.json 里，或 layout 不支持该 role",
+      "fix": "用目录里的 L01–L21；自定义版式写 data-layout=\"custom\""
+    },
+    "SLOTS": {
+      "rule": null,
+      "level": "error",
+      "summary": "目录版式缺少必填槽位、槽位超字数或展示字折行",
+      "fix": "按 references/layout-specs.md 的槽位表补齐；超字数先删内容再调坐标"
+    },
+    "WIDTH": {
+      "rule": 5,
+      "level": "warn",
+      "summary": "单行正文没有显式 width，文本框贴着墨迹",
+      "fix": "给 T2 正文写 width；否则用户在 PPT 里加字不会重排"
+    },
+    "TRANSFORM": {
+      "rule": null,
+      "level": "error",
+      "summary": "静态 translate/scale/skew/matrix 不是纯 rotate",
+      "fix": "只允许单层 rotate；位移用 left/top，缩放用真实尺寸，斜切用 polygon"
+    },
+    "PLACEHOLDER": {
+      "rule": null,
+      "level": "error",
+      "summary": "不得残留占位文案（TODO/待补/xxx）",
+      "fix": "换成真实内容；占位文案进了 PPT 就是交付事故"
+    },
+    "DUPLICATE": {
+      "rule": 10,
+      "level": "error",
+      "summary": "同一 deck 内不得出现重复的整句主张",
+      "fix": "合并重复页，或改写其中一页的主张"
+    },
+    "SPACING": {
+      "rule": null,
+      "level": "warn",
+      "summary": "中文与拉丁词之间要有空格",
+      "fix": "补空格；排版细节影响可读性"
+    },
+    "PUNCT": {
+      "rule": null,
+      "level": "warn",
+      "summary": "标点不得连用或中英文混用",
+      "fix": "统一中文标点；连用只保留一个"
+    },
+    "QUOTE": {
+      "rule": null,
+      "level": "warn",
+      "summary": "中文正文用「」而非弯引号",
+      "fix": "改成「」；弯引号在中文字体里字重不对"
+    },
+    "EMPTY": {
+      "rule": 10,
+      "level": "warn",
+      "summary": "几乎空页（汉字+词数过少）",
+      "fix": "补内容或删掉这一页；空页在投影上是尴尬"
+    },
+    "TERM": {
+      "rule": null,
+      "level": "warn",
+      "summary": "同一术语大小写不一致",
+      "fix": "全 deck 统一写法"
+    }
+  },
+  "rules": [
+    {
+      "id": 1,
+      "title": "一页只有一条主斜线",
+      "criterion": "主斜线面积 ≥{axis.dominantMinAreaPct} 画布、长边 ≥{axis.longSidePct} 画布宽；其余元素要么与它平行，要么严格水平/垂直",
+      "codes": [
+        "AXIS"
+      ],
+      "exempt": [
+        "data-axis-ok"
+      ],
+      "rationale": "两条竞争的角度是噪音，读者不知道该沿哪条线看。",
+      "doc": "references/layouts.md"
+    },
+    {
+      "id": 2,
+      "title": "面积必须不均",
+      "criterion": "首栏 ≥{balance.minRatio}× 第二栏；理想 {balance.idealRatio}×；骨架配方 {balance.recipeFr}fr",
+      "codes": [
+        "BALANCE"
+      ],
+      "exempt": [
+        "data-balance-ok"
+      ],
+      "rationale": "三个以上色块面积接近 = 等价并列，读者判断不出主次。",
+      "doc": "references/layouts.md"
+    },
+    {
+      "id": 3,
+      "title": "一页最多四色",
+      "criterion": "纸 + 主墨 + 爆点 + 次墨；全部取自当前主题 token",
+      "codes": [
+        "INK",
+        "THEME"
+      ],
+      "exempt": [
+        "data-palette-ok",
+        "data-showcase"
+      ],
+      "rationale": "构成主义是两墨一纸。多给一个浅色角色，它就一定会被拿去做卡片。",
+      "doc": "references/palettes.md"
+    },
+    {
+      "id": 4,
+      "title": "线有重量",
+      "criterion": "≥{weight.minLinePx}px；1px 发丝线不属于这套语言",
+      "codes": [
+        "WEIGHT"
+      ],
+      "exempt": [],
+      "rationale": "线的粗细是版面重量的一部分，发丝线读作编辑设计而非构成。",
+      "doc": "references/components.md"
+    },
+    {
+      "id": 5,
+      "title": "展示字一行一个元素",
+      "criterion": ".t-hero/.t-h1/.t-h2 必须 nowrap；要两行写两个 div 各自定位",
+      "codes": [
+        "WRAP"
+      ],
+      "exempt": [],
+      "rationale": "自动折行的断点由字体决定，换台机器就变；构成主义的断行是设计决定。",
+      "doc": "references/typography.md"
+    },
+    {
+      "id": 6,
+      "title": "正文面积受限",
+      "criterion": "≤{textArea.maxPercent}% 画布",
+      "codes": [
+        "TEXTAREA"
+      ],
+      "exempt": [],
+      "rationale": "构成主义靠面积差说话，不靠字数。",
+      "doc": "references/visual-system.md"
+    },
+    {
+      "id": 7,
+      "title": "只用 deck.css 已有的类",
+      "criterion": "未定义类会让浏览器静默 fallback，版式莫名其妙地塌",
+      "codes": [
+        "CLASS"
+      ],
+      "exempt": [],
+      "rationale": "转换器读的是计算样式，fallback 不会报错，只会在成品里显形。",
+      "doc": "references/components.md"
+    },
+    {
+      "id": 8,
+      "title": "对比度",
+      "criterion": "正文 ≥{contrast.body}；≥{contrast.largePx}px 或 ≥{contrast.largeWeight} 字重时 ≥{contrast.large}",
+      "codes": [
+        "CONTRAST"
+      ],
+      "exempt": [],
+      "rationale": "投影环境比屏幕亮，低对比在会议室里直接消失。",
+      "doc": "references/typography.md"
+    },
+    {
+      "id": 9,
+      "title": "字号地板",
+      "criterion": "正文 {font.bodyPx}px / 标签 {font.labelPx}px / 微字 {font.microPx}px",
+      "codes": [
+        "FONT"
+      ],
+      "exempt": [],
+      "rationale": "投影时 12pt 以下等于没写。",
+      "doc": "references/typography.md"
+    },
+    {
+      "id": 10,
+      "title": "一页一个主张",
+      "criterion": "≤{density.maxChars} 字（汉字 + 拉丁词）",
+      "codes": [
+        "DENSITY"
+      ],
+      "exempt": [],
+      "rationale": "字数超了，说明这一页想说两件事。",
+      "doc": "references/visual-system.md"
+    },
+    {
+      "id": 11,
+      "title": "页脚形态轮换",
+      "criterion": "不许连续三页同一种形态",
+      "codes": [
+        "FOOTER"
+      ],
+      "exempt": [],
+      "rationale": "页脚是节奏器，连续同形会让翻页失去标点。",
+      "doc": "references/components.md"
+    },
+    {
+      "id": 12,
+      "title": "交付前跑完验证链",
+      "criterion": "validate 零 error / audit-text 零占位 / 看过联系表 / build 成功 / verify-pptx 无异常",
+      "codes": [
+        "GATE"
+      ],
+      "exempt": [],
+      "rationale": "规范不可执行就只是建议；没跑完 gate 不算交付。",
+      "doc": "references/checklist.md"
+    }
+  ],
+  "forbid": [
+    {
+      "id": "gradient",
+      "label": "渐变",
+      "msg": "background-image 含 gradient，PPTX 无渐变填充"
+    },
+    {
+      "id": "shadow",
+      "label": "box-shadow",
+      "msg": "阴影无法表达，会被拍平"
+    },
+    {
+      "id": "filter",
+      "label": "filter",
+      "msg": "滤镜无法表达"
+    },
+    {
+      "id": "blend",
+      "label": "mix-blend-mode",
+      "msg": "混合模式无法表达，叠色会变"
+    },
+    {
+      "id": "zindex",
+      "label": "z-index",
+      "msg": "只认 DOM 顺序，层级会被打乱"
+    },
+    {
+      "id": "fixed",
+      "label": "position:fixed",
+      "msg": "会串页，坐标链断裂"
+    },
+    {
+      "id": "pseudo",
+      "label": "伪元素画图形",
+      "msg": "没有真实 DOM 盒子，量不到也就转不出"
+    },
+    {
+      "id": "nested",
+      "label": "嵌套 transform",
+      "msg": "PPT 没有 group，父子旋转叠加必然错位"
+    },
+    {
+      "id": "overflow",
+      "label": "容器级 overflow 裁切",
+      "msg": "只有 .slide 允许裁切；其余内容会溢出到框外"
+    },
+    {
+      "id": "svg",
+      "label": "内联 svg / canvas",
+      "msg": "没有形状也没有文字，转换后直接消失"
+    },
+    {
+      "id": "transform",
+      "label": "scale / skew / 非中心 origin",
+      "msg": "只支持单层 rotate；缩放/斜切/偏心旋转会错位"
+    },
+    {
+      "id": "translate",
+      "label": "translate()",
+      "msg": "布局盒与 PPT 坐标脱节，元素会落在错误位置"
+    },
+    {
+      "id": "clip",
+      "label": "非 polygon 的 clip-path",
+      "msg": "只有 polygon() 能转成自定义形状"
+    },
+    {
+      "id": "radius",
+      "label": "非 50% 圆角",
+      "msg": "只有 50% 正圆能转换；其他圆角会被丢弃"
+    },
+    {
+      "id": "remote",
+      "label": "远程图片",
+      "msg": "PPTX 不会自动下载远程图，交付会缺图"
+    }
+  ],
+  "classes": {
+    "deprecated": {
+      "quote-mark": ".t-hero + 真文本引号「」",
+      "rule--hair": ".rule（2px）",
+      "rect--pale": ".rect--bg"
+    },
+    "ignoreInDocs": [
+      "md",
+      "html",
+      "css",
+      "js",
+      "mjs",
+      "json",
+      "png",
+      "jpg",
+      "svg",
+      "ttf",
+      "otf",
+      "yml",
+      "yaml",
+      "pptx",
+      "env",
+      "zip",
+      "txt",
+      "xml",
+      "csv",
+      "sh",
+      "pptx"
+    ]
+  },
+  "generatedBlocks": {
+    "SKILL.md": [
+      "RULES"
+    ],
+    "references/troubleshooting.md": [
+      "CODES"
+    ]
+  },
+  "auditOnlyCodes": [
+    "PURPOSE",
+    "NOTES",
+    "PLACEHOLDER",
+    "DUPLICATE",
+    "SPACING",
+    "PUNCT",
+    "QUOTE",
+    "EMPTY",
+    "TERM"
+  ],
+  "compat": {
+    "v2": {
+      "downgrade": [
+        "SAFE",
+        "OCCLUDE",
+        "MUTE",
+        "STRUCTURE",
+        "LAYOUT",
+        "SLOTS",
+        "WIDTH",
+        "TRANSFORM"
+      ],
+      "note": "新检查降为 warn；DECK 与 FORBID 仍为 error。"
+    }
+  },
+  "staleClaims": [
+    "没有 LibreOffice",
+    "暂时只保留 data-notes",
+    "data-fidelity=\"image\"",
+    "九套配色",
+    "十份 references",
+    "九个脚本",
+    "B 极简双色",
+    "左上到右下 -12",
+    "8–12%",
+    "4px / 6px",
+    "规则 11/12 由人工"
+  ]
+}

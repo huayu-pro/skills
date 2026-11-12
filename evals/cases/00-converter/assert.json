@@ -1,0 +1,1 @@
+{ "note": "判据写在 run.mjs 的 CASES['00-converter']", "dimension": "T 信任 / R 可靠性（写盘前失败、无静默降级）" }

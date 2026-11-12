@@ -1,0 +1,71 @@
+{
+  "version": "3.0.0",
+  "ok": true,
+  "deck": "/home/huayu/桌面/优化2/constructivist-ppt/examples/demo-31.html",
+  "plan": "/home/huayu/桌面/优化2/constructivist-ppt/examples/demo-31.json",
+  "pages": 12,
+  "generatedAt": "2026-10-24T11:43:31.916Z",
+  "node": "22.22.1",
+  "steps": [
+    {
+      "name": "doctor",
+      "code": 0,
+      "ok": true,
+      "ms": 564
+    },
+    {
+      "name": "plan-check",
+      "code": 0,
+      "ok": true,
+      "ms": 89
+    },
+    {
+      "name": "plan-deck",
+      "code": 0,
+      "ok": true,
+      "ms": 100
+    },
+    {
+      "name": "validate",
+      "code": 0,
+      "ok": true,
+      "ms": 850
+    },
+    {
+      "name": "audit-text",
+      "code": 0,
+      "ok": true,
+      "ms": 78
+    },
+    {
+      "name": "render",
+      "code": 0,
+      "ok": true,
+      "ms": 3312
+    },
+    {
+      "name": "build",
+      "code": 0,
+      "ok": true,
+      "ms": 839
+    },
+    {
+      "name": "verify-pptx",
+      "code": 0,
+      "ok": true,
+      "ms": 2047
+    },
+    {
+      "name": "verify-render",
+      "code": 0,
+      "ok": true,
+      "ms": 4825
+    }
+  ],
+  "artifacts": {
+    "preview": "/home/huayu/桌面/优化2/constructivist-ppt/examples/preview",
+    "pptx": "/home/huayu/桌面/优化2/constructivist-ppt/examples/deck.pptx",
+    "pptxRender": "/home/huayu/桌面/优化2/constructivist-ppt/examples/pptx-render",
+    "render": "/home/huayu/桌面/优化2/constructivist-ppt/examples/render"
+  }
+}

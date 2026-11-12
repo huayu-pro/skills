@@ -1,0 +1,20 @@
+{{texture}}
+<div class="rect" style="left:660px; top:0; width:620px; height:720px; background:var(--fg);"></div>
+<div class="band" data-axis style="left:700px; top:-100px; width:240px; height:900px; background:var(--pop); transform:rotate({{axisDeg}}deg);"></div>
+
+<div class="meta fg-fg" data-slot="kicker" style="position:absolute; left:56px; top:56px;">{{slot:kicker}}</div>
+<div class="t-h1 fg-fg" data-slot="title1" style="position:absolute; left:56px; top:120px;">{{slot:title1}}</div>
+<div data-slot-block="title2"><div class="t-h1 fg-pop" data-slot="title2" style="position:absolute; left:56px; top:220px;">{{slot:title2}}</div></div>
+<div class="rule rule--pop" style="left:56px; top:330px; width:96px;"></div>
+<div class="t-body fg-fg" data-slot="body" style="position:absolute; left:56px; top:360px; width:520px;">{{slot:body}}</div>
+<div class="meta fg-fg" data-slot="meta" style="position:absolute; left:56px; top:620px;">{{slot:meta}}</div>
+
+<div class="rect" style="left:690px; top:380px; width:500px; height:80px; background:var(--fg);"></div>
+<div class="num fg-bg" data-slot="bigNumber" style="position:absolute; left:700px; top:120px; font-size:220px;">{{slot:bigNumber}}</div>
+<div class="rule rule--pop" style="left:706px; top:360px; width:120px;"></div>
+<div class="t-small fg-bg" data-slot="caption" style="position:absolute; left:706px; top:390px; width:480px;">{{slot:caption}}</div>
+
+<div class="rect rect--alt" style="left:690px; top:460px; width:530px; height:204px;"></div>
+<div class="wedge" style="left:1000px; top:460px; width:220px; height:204px; clip-path:polygon(0 0, 100% 100%, 100% 0);"></div>
+<div data-slot-block="photo"><img data-slot="photo" src="{{slot:photo}}" alt="" style="position:absolute; left:690px; top:460px; width:530px; height:204px; object-fit:cover;"></div>
+{{folio}}

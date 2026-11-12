@@ -1,0 +1,96 @@
+{
+  "note": "post-refactor 基线（v2）",
+  "capturedAt": "2026-10-21",
+  "version": "v2",
+  "validate": "0 error / 0 warn",
+  "pptx": {
+    "bytes": 163720
+  },
+  "pages": [
+    {
+      "page": 1,
+      "shapes": 12,
+      "text": 7,
+      "shape": 4,
+      "img": 1,
+      "warnings": 0
+    },
+    {
+      "page": 2,
+      "shapes": 14,
+      "text": 10,
+      "shape": 3,
+      "img": 1,
+      "warnings": 0
+    },
+    {
+      "page": 3,
+      "shapes": 30,
+      "text": 20,
+      "shape": 9,
+      "img": 1,
+      "warnings": 0
+    },
+    {
+      "page": 4,
+      "shapes": 10,
+      "text": 7,
+      "shape": 3,
+      "img": 0,
+      "warnings": 0
+    },
+    {
+      "page": 5,
+      "shapes": 19,
+      "text": 17,
+      "shape": 2,
+      "img": 0,
+      "warnings": 0
+    },
+    {
+      "page": 6,
+      "shapes": 25,
+      "text": 20,
+      "shape": 4,
+      "img": 1,
+      "warnings": 0
+    },
+    {
+      "page": 7,
+      "shapes": 12,
+      "text": 7,
+      "shape": 4,
+      "img": 1,
+      "warnings": 0
+    },
+    {
+      "page": 8,
+      "shapes": 19,
+      "text": 9,
+      "shape": 10,
+      "img": 0,
+      "warnings": 0
+    },
+    {
+      "page": 9,
+      "shapes": 6,
+      "text": 4,
+      "shape": 1,
+      "img": 1,
+      "warnings": 0
+    },
+    {
+      "page": 10,
+      "shapes": 11,
+      "text": 6,
+      "shape": 4,
+      "img": 1,
+      "warnings": 0
+    }
+  ],
+  "fixed": {
+    "P4.sun--outline": "细矩形 5→1；椭圆只走 outline",
+    "t-h2": "deck.css:92 已补 nowrap，并有 WRAP 规则守住",
+    "wrap": "单行正文 wrap=true（P05 wrap=false 14→13，wrap=true 3→4）"
+  }
+}
