@@ -104,8 +104,36 @@
   --color-action:          var(--color-primary-500);
   --color-action-hover:    var(--color-primary-600);
   --color-action-subtle:   var(--color-primary-100);
+  /* --- primitive: motion — v5.0 dt-based system ----------------------- */
+  --dur-instant: 0ms;     --dur-micro: 120ms;  --dur-short: 180ms;
+  --dur-base: 240ms;      --dur-medium: 320ms; --dur-long: 480ms;
+  --dur-attention: 720ms;
+  --ease-enter: cubic-bezier(.16,1,.3,1);
+  --ease-exit: cubic-bezier(.4,0,1,1);
+  --ease-move: cubic-bezier(.4,0,.2,1);
+  --ease-emphasis: cubic-bezier(.22,.8,.2,1);
+  --dist-xs: 4px; --dist-sm: 8px; --dist-md: 16px; --dist-lg: 32px;
+  --stagger-step: 40ms; --stagger-max: 300ms;
+  --spring-settle: 1.0/12; --spring-soft: .85/10; --spring-snappy: .7/20;
+  --lambda-calm: 8; --lambda-normal: 11; --lambda-quick: 14;
+
+  /* semantic motion register: product. utility/expressive override profile. */
+  --dur-feedback: var(--dur-short);
+  --dur-attention: var(--dur-attention);
+  --ease-feedback: var(--ease-move);
+  --dist-attention: var(--dist-md);
+
 }
 
 /* Verify before shipping: every text-on-background pair must clear
  * §5.6 — 4.5:1 for normal text, 3:1 for large. Declare only real text pairs;
  * decorative borders are not text (§2.7.2). */
+
+/* --- v5.0 motion profiles ------------------------------------------------ */
+:root[data-motion="utility"] { --dur-attention: 0ms; --dur-feedback: var(--dur-short); }
+:root[data-motion="expressive"] { --dur-attention: var(--dur-attention); }
+:root[data-motion="product"] { --dur-attention: var(--dur-long); }
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-attention: 0ms; --dur-feedback: 0ms; }
+  *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

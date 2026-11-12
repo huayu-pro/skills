@@ -189,6 +189,19 @@ def emit_preview(tokens: dict) -> str:
 """
 
 
+MOTION_PROFILES = {
+    'expressive': {'dur-attention': '720ms', 'dur-feedback': '180ms', 'attention': '1', 'ambient': '2'},
+    'product': {'dur-attention': '480ms', 'dur-feedback': '180ms', 'attention': '1', 'ambient': '1'},
+    'utility': {'dur-attention': '0ms', 'dur-feedback': '120ms', 'attention': '0', 'ambient': '0'},
+}
+
+
+def emit_motion(profile: str) -> str:
+    p = MOTION_PROFILES[profile]
+    return (f":root[data-motion='{profile}'] {{\n" +
+            ''.join(f'  --motion-{k}: {v};\n' for k, v in p.items()) + '}\n')
+
+
 FORMATS = {'v4': ('theme.css', emit_v4), 'v3': ('tailwind.config.js', emit_v3),
            'css': ('tokens.css', emit_css), 'preview': ('preview.html', emit_preview)}
 
@@ -196,11 +209,25 @@ FORMATS = {'v4': ('theme.css', emit_v4), 'v3': ('tailwind.config.js', emit_v3),
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('tokens', help='path to design-tokens.json')
+    ap.add_argument('tokens', nargs='?', help='path to design-tokens.json')
     ap.add_argument('--format', choices=list(FORMATS) + ['all'], default='v4')
     ap.add_argument('--out', help='directory to write into (default: stdout)')
+    ap.add_argument('--motion-profile', choices=list(MOTION_PROFILES), help='emit v5.0 motion register CSS and exit')
     a = ap.parse_args()
 
+    if a.motion_profile:
+        body = emit_motion(a.motion_profile)
+        if a.out:
+            os.makedirs(a.out, exist_ok=True)
+            out = os.path.join(a.out, 'motion-profile.css')
+            with open(out, 'w', encoding='utf-8') as fh: fh.write(body)
+            print(f'wrote {out}', file=sys.stderr)
+        else:
+            print(body)
+        return 0
+
+    if not a.tokens:
+        ap.error('tokens is required unless --motion-profile is used')
     try:
         with open(a.tokens, encoding='utf-8') as handle:
             tokens = json.load(handle)

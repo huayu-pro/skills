@@ -1,6 +1,10 @@
 # Motion prompts — 10
 
 > 每节用 `## <id>` 包住；`query_corpus.py --motion --kind prompts` 仍按 id 检索。
+>
+> v5.0：下文时长/缓动是 `observed` 案例值，不是默认。生成新页面时先把它们映射到
+> `references/28-motion-system.md` 的 register token，做 motion casting，并写 MOTION MAP；
+> 需要特例时在简报里写理由，不要把「只允许三档时长」当成跨案例规范。
 
 <a id="F1-magnet-lover-long-scroll.prompt"></a>
 ## F1-magnet-lover-long-scroll.prompt

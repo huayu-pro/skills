@@ -195,3 +195,19 @@ P0 必须报告，即使用户只问了别的事。
 - 各镜的规则细节：`02`–`11` 各章
 - 症状→诊断：`13-antipatterns.md`
 - 偏离原型的判定：`14-pattern-library.md`（Workflow B 选定原型后，D 要检查 token 契约）
+
+
+## v5.0 · 加权 rubric 与三层报告
+
+| profile | 题材 | 物理 | 排版 | 构图 | 克制 | 完成度 | 动效 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| expressive | 20 | 20 | 15 | 20 | 10 | 10 | 5 |
+| product | 15 | 10 | 20 | 10 | 15 | 20 | 10 |
+| utility | 5 | 5 | 15 | 5 | 25 | 35 | 10 |
+| editorial | 15 | 10 | 25 | 15 | 10 | 15 | 10 |
+| catalog | 10 | 10 | 15 | 10 | 20 | 25 | 10 |
+
+加权 ≥4.0、无单项 ≤2。utility 的克制/工艺 ≥3；distinctive 但不得体直接 fail。
+报告写 `Profile / Compliance / Quality / Appropriateness / Provenance / Accepted / Skipped`；
+裁决顺序：用户指令 > 人工质量评审 > 运行时 > 静态。脚本全绿不能压过 quality fail。
+动效质量维度与权重见 `28-motion-system.md`。

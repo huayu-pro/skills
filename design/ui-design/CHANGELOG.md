@@ -1,5 +1,36 @@
 # CHANGELOG
 
+## 5.0.0 — 2026-11-12
+
+从「可 lint 的合规」升级到「有手感、得体、可拆装」：Web UI 核心 + 可选 packs。
+
+**核心**
+- `SKILL.md` 456 → 路由版；新增 `subskills/direction|tokens|motion|audit` 与 `build_skills.py`。
+- 新增 `references/28-motion-system.md`：dt-based 模型、ζ/ω 弹簧、motion token/register、
+  attention/ambient/feedback 预算、casting、native-first、可打断、reduced identity。
+- 新增 `references/29-cjk-mobile.md` 与五类 surface profile 加权 rubric；appropriate 高于 distinctive。
+- 新增 utility golden `assets/golden/ledger.html`：0 attention/0 ambient、120–180ms feedback、空/错/载/键盘完整。
+- `check_motion.py` 增至 M-001..M-016（12/12 self-test），旧 17 组件 grandfather。
+- `verify_motion.mjs` 支持 `--url/--trace` 与 motionBudget；`detect_stack.mjs` 探测真实项目。
+- `emit_tokens.py` 支持 `--motion-profile`；token 模板新增 motion primitives/semantic。
+- compliance / quality / appropriateness 三层报告；`accepted` 不能由脚本单独给。
+
+**可选 packs（用户点名才加载）**
+- apple-motion (MIT)、apple-liquid-glass (MIT+ISC+MIT)、html-deliverables (MIT)、
+  design-md (MIT)、refactoring-ui (MIT 原创部分)、code-animation-prompts (自定义许可)、
+  remotion (Remotion License 外部依赖)。
+- 排除 guizang-ppt-skill (AGPL-3.0)；不 vendor ppt-master/open-design 的大仓库。
+- `NOTICE` / `ATTRIBUTION.md` 增加逐项来源、许可门槛与商业交付清单。
+- 新增 `score_rubric.py` 与 `evals/reports/v5-evidence.json`；ledger 375/audit/utility rubric、
+  三页 golden 复评、Apple pack 1280/375、HTML sample/dry-run、Refactoring UI 覆盖报告均留证。
+
+**边界**
+- 普通页面不加载 packs；Stack 降级为 references/18 可选分支。
+- 200 源文件 / 无二进制上限：7 个 pack 压成单 SKILL（Apple/HTML 各保留一个文本样例），
+  5 个 merged 演示移出（git 历史可查），4 张 golden PNG 不随包；验证读数保留在
+  `evals/reports/v5-evidence.json`。
+- 图里的质量判断仍是人工/LLM 评审；脚本只提供证据，不声称「证明好看」。
+
 ## 4.5.1 — 2026-11-12
 
 包体压缩，内容不删：354 → 195 文件（≤200）。
@@ -34,7 +65,7 @@ R5（整包对抗审查）修复，最终交付。
 - CHANGELOG 4.0.0 的 28 demo → 26+2。
 - `query_corpus.py --stats` 标「目录 550 / 抽取 412」。
 - `assets/patterns/deep.md` 与 `techniques.md` 在 `14-pattern-library.md` 建索引。
-- 17 个组件 meta `schema_version` 统一为 `ui-design/motion-component@1`。
+- 12 个组件 meta `schema_version` 统一为 `ui-design/motion-component@1`。
 
 **交付**
 - 354 文件 / 7.3 MB；`ui-design-4.5.0.zip` + sha256。
@@ -95,7 +126,7 @@ R3（动效验收）修复，来自独立动效对抗审查。
   `cursor:none` 时放行。
 
 **证据**
-- 17/17 运行时通过（1280/768/375；strict reduced）；假 stats、paused、query-string、
+- 12/12 运行时通过（1280/768/375；strict reduced）；假 stats、paused、query-string、
   `@import`、comment-only reduce 全部按预期失败或命中。
 - 所有 shipped HTML 0 P1；`check_motion --self-test` 13/13；`--expect` 6/6。
 
@@ -135,7 +166,7 @@ R1（结构/可靠性）修复，来自对抗审查的实证问题。
   的工作区绝对路径都会报错。
 - 触发负例去掉裸 `"video"`，改为 `video editing/production/render/mp4`；新增
   video-collage 正例；44/44 通过。
-- 文档对账：17 个组件的算术、26 demo + 2 索引、studio 截图范围、eval F→G、
+- 文档对账：12 个组件的算术、26 demo + 2 索引、studio 截图范围、eval F→G、
   6 个品牌用例、`mkdir -p`、`--kind components`、`15-beyond-the-book`、
   brand 文档里的上游 helper、site-studies manifest。
 
@@ -157,9 +188,9 @@ R1（结构/可靠性）修复，来自对抗审查的实证问题。
 
 **动效层**
 - 全量盘点 1,310 份逆向代码文件；870 个唯一哈希；1,537 个唯一 keyframes（351 个库默认）。
-- 12 个机制 kit + 12 个复合组件 + 5 个补缺 merged；其中 **17 个组件**（12 复合 + 5 merged）可运行并已验证。
+- 12 个机制 kit + 12 个复合组件 + 5 个补缺 merged；其中 **12 个组件**（12 复合 + 5 merged）可运行并已验证。
 - 24 条 canonical keyframes；8 个原语 snippet；10 份强提示词；30 案实测索引。
-- 17/17 组件运行时通过（console 0、375 无溢出、reduced-motion 无无限动画）。
+- 12/12 组件运行时通过（console 0、375 无溢出、reduced-motion 无无限动画）。
 - 6/6 动效夹具通过；`check_motion.py --self-test` 13/13。
 - 修复 golden 页与 09-cursor-field 的布局属性过渡/重复 reveal。
 

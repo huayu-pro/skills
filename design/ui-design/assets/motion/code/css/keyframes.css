@@ -10,9 +10,10 @@
  * F11 belt, F12 scan/VHS, F14 state.
  */
 
-/* F1 — standard entrance. 450ms / 16px / cubic-bezier(0,0,.2,1). */
+/* F1 — standard entrance geometry. Duration/easing come from motion tokens.
+ * Observed 450ms / 16px is NOT a default; see references/28. */
 @keyframes kf-fade-up {
-  from { opacity: 0; transform: translate3d(0, 16px, 0); }
+  from { opacity: 0; transform: translate3d(0, var(--kf-shift, 16px), 0); }
   to   { opacity: 1; transform: none; }
 }
 

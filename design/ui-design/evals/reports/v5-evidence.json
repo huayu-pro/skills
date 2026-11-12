@@ -1,0 +1,514 @@
+{
+  "version": "5.0.0",
+  "generated": "2026-11-12",
+  "ledger": {
+    "audit": {
+      "engine": "scripts/audit.py",
+      "root": "ledger.html",
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "findings": [],
+      "skipped": []
+    },
+    "verify": {
+      "engine": "scripts/verify_motion.mjs --url",
+      "verified": true,
+      "accepted": false,
+      "overflow": {},
+      "console_errors": [],
+      "motionBudget": {
+        "attention": 0,
+        "ambient": 0,
+        "feedback": 2,
+        "catalog": 0,
+        "running": 0,
+        "profile": "utility",
+        "trace": true
+      },
+      "traceSamples": 63,
+      "throttle": {
+        "cpuRate": 4,
+        "latencyMs": 150,
+        "profile": "Fast-3G-like"
+      },
+      "notes": [
+        "compliance only; quality and appropriateness require human review",
+        "trace is sampled computed style, not a quality verdict"
+      ]
+    },
+    "rubric": {
+      "label": "ledger",
+      "profile": "utility",
+      "scores": {
+        "subject": 5,
+        "physical": 4,
+        "type": 4,
+        "composition": 3,
+        "restraint": 5,
+        "finish": 4,
+        "motion": 4
+      },
+      "weights": {
+        "subject": 5,
+        "physical": 5,
+        "type": 15,
+        "composition": 5,
+        "restraint": 25,
+        "finish": 35,
+        "motion": 10
+      },
+      "weighted": 4.25,
+      "pass": true,
+      "gates": {
+        "weighted_ge_4": true,
+        "no_dimension_le_2": true,
+        "profile_gate": true
+      },
+      "evidence": "1280/375 URL verify; audit 0 P0; screenshot inspected",
+      "accepted": false,
+      "note": "rubric score is evidence-backed human/LLM review; accepted also requires compliance + appropriateness",
+      "engine": "scripts/score_rubric.py"
+    },
+    "screenshots": []
+  },
+  "golden": {
+    "aperture": {
+      "profile": "expressive",
+      "audit": {
+        "engine": "scripts/audit.py",
+        "root": "aperture.html",
+        "p0": 0,
+        "p1": 1,
+        "p2": 0,
+        "findings": [
+          {
+            "id": "TS-001",
+            "severity": "P1",
+            "lens": "typography",
+            "rule": "§4.1",
+            "now": "字阶相邻档比值过密：13→13.5(1.04×)、13.5→15(1.11×)、15→17(1.13×)、26→29(1.12×)（理想 ≥ 1.2，最密一档 1.04×）"
+          }
+        ],
+        "skipped": []
+      },
+      "verify": {
+        "engine": "scripts/verify_motion.mjs --url",
+        "verified": true,
+        "accepted": false,
+        "overflow": {},
+        "console_errors": [],
+        "motionBudget": {
+          "attention": 0,
+          "ambient": 0,
+          "feedback": 0,
+          "catalog": 0,
+          "running": 1,
+          "profile": "expressive",
+          "trace": false
+        },
+        "traceSamples": "skipped",
+        "throttle": null,
+        "notes": [
+          "compliance only; quality and appropriateness require human review",
+          "trace is sampled computed style, not a quality verdict"
+        ]
+      },
+      "rubric": {
+        "label": "aperture",
+        "profile": "expressive",
+        "scores": {
+          "subject": 5,
+          "physical": 5,
+          "type": 5,
+          "composition": 5,
+          "restraint": 4,
+          "finish": 5,
+          "motion": 4
+        },
+        "weights": {
+          "subject": 20,
+          "physical": 20,
+          "type": 15,
+          "composition": 20,
+          "restraint": 10,
+          "finish": 10,
+          "motion": 5
+        },
+        "weighted": 4.85,
+        "pass": true,
+        "gates": {
+          "weighted_ge_4": true,
+          "no_dimension_le_2": true,
+          "profile_gate": true
+        },
+        "evidence": "1280/375 verify; audit P0=0 P1=1 (tight editorial scale, intentional); screenshot inspected",
+        "accepted": false,
+        "note": "rubric score is evidence-backed human/LLM review; accepted also requires compliance + appropriateness",
+        "engine": "scripts/score_rubric.py"
+      }
+    },
+    "atelier-north": {
+      "profile": "expressive",
+      "audit": {
+        "engine": "scripts/audit.py",
+        "root": "atelier-north.html",
+        "p0": 0,
+        "p1": 0,
+        "p2": 0,
+        "findings": [],
+        "skipped": []
+      },
+      "verify": {
+        "engine": "scripts/verify_motion.mjs --url",
+        "verified": true,
+        "accepted": false,
+        "overflow": {},
+        "console_errors": [],
+        "motionBudget": {
+          "attention": 0,
+          "ambient": 0,
+          "feedback": 0,
+          "catalog": 0,
+          "running": 0,
+          "profile": "expressive",
+          "trace": false
+        },
+        "traceSamples": "skipped",
+        "throttle": null,
+        "notes": [
+          "compliance only; quality and appropriateness require human review",
+          "trace is sampled computed style, not a quality verdict"
+        ]
+      },
+      "rubric": {
+        "label": "atelier-north",
+        "profile": "expressive",
+        "scores": {
+          "subject": 5,
+          "physical": 5,
+          "type": 5,
+          "composition": 5,
+          "restraint": 5,
+          "finish": 5,
+          "motion": 4
+        },
+        "weights": {
+          "subject": 20,
+          "physical": 20,
+          "type": 15,
+          "composition": 20,
+          "restraint": 10,
+          "finish": 10,
+          "motion": 5
+        },
+        "weighted": 4.95,
+        "pass": true,
+        "gates": {
+          "weighted_ge_4": true,
+          "no_dimension_le_2": true,
+          "profile_gate": true
+        },
+        "evidence": "1280/375 verify; audit 0 findings; screenshot inspected",
+        "accepted": false,
+        "note": "rubric score is evidence-backed human/LLM review; accepted also requires compliance + appropriateness",
+        "engine": "scripts/score_rubric.py"
+      }
+    },
+    "studio": {
+      "profile": "catalog",
+      "audit": {
+        "engine": "scripts/audit.py",
+        "root": "studio.html",
+        "p0": 0,
+        "p1": 9,
+        "p2": 6,
+        "findings": [
+          {
+            "id": "TS-001",
+            "severity": "P1",
+            "lens": "typography",
+            "rule": "§4.1",
+            "now": "字阶相邻档比值过密：13→14(1.08×)、18→19(1.06×)、19→20(1.05×)（理想 ≥ 1.2，最密一档 1.05×）"
+          },
+          {
+            "id": "V-001",
+            "severity": "P1",
+            "lens": "depth",
+            "rule": "§6.2 §6.3",
+            "now": "静态表面用了模态级阴影（y=30px blur=80px）：0 30px 80px -40px color-mix(in srgb, var(--accent) 60%, tran"
+          },
+          {
+            "id": "V-002",
+            "severity": "P1",
+            "lens": "depth",
+            "rule": "§6.2 §6.3",
+            "now": "静态表面用了模态级阴影（y=30px blur=70px）：0 30px 70px -36px rgba(0, 0, 0, .9)"
+          },
+          {
+            "id": "V-003",
+            "severity": "P1",
+            "lens": "depth",
+            "rule": "§6.2 §6.3",
+            "now": "静态表面用了模态级阴影（y=30px blur=80px）：0 0 0 2px var(--accent), 0 30px 80px -36px rgba(0, 0, 0, .9)"
+          },
+          {
+            "id": "V-004",
+            "severity": "P1",
+            "lens": "depth",
+            "rule": "§6.2 §6.3",
+            "now": "静态表面用了模态级阴影（y=34px blur=80px）：0 34px 80px -40px rgba(0, 0, 0, .9)"
+          },
+          {
+            "id": "V-005",
+            "severity": "P1",
+            "lens": "depth",
+            "rule": "§6.2 §6.3",
+            "now": "静态表面用了模态级阴影（y=34px blur=90px）：0 0 0 2px var(--accent), 0 34px 90px -36px rgba(0, 0, 0, .9)"
+          },
+          {
+            "id": "V-006",
+            "severity": "P1",
+            "lens": "depth",
+            "rule": "§6.2 §6.3",
+            "now": "静态表面用了模态级阴影（y=20px blur=60px）：0 20px 60px -34px color-mix(in srgb, var(--ink) 50%, transpa"
+          },
+          {
+            "id": "V-007",
+            "severity": "P1",
+            "lens": "depth",
+            "rule": "§6.2 §6.3",
+            "now": "静态表面用了模态级阴影（y=50px blur=100px）：0 50px 100px -50px rgba(0, 0, 0, .9)"
+          },
+          {
+            "id": "V-008",
+            "severity": "P1",
+            "lens": "depth",
+            "rule": "§6.2 §6.3",
+            "now": "静态表面用了模态级阴影（y=70px blur=160px）：0 70px 160px -60px rgba(0, 0, 0, .9)"
+          },
+          {
+            "id": "O-001",
+            "severity": "P2",
+            "lens": "imagery",
+            "rule": "§8.1 §7.4",
+            "now": "用 emoji 当图标（5 处）"
+          },
+          {
+            "id": "D-001",
+            "severity": "P2",
+            "lens": "depth",
+            "rule": "§6.2",
+            "now": "单层阴影 0 30px 70px -36px rgba(0, 0, 0, .9)"
+          },
+          {
+            "id": "D-002",
+            "severity": "P2",
+            "lens": "depth",
+            "rule": "§6.2",
+            "now": "单层阴影 0 34px 80px -40px rgba(0, 0, 0, .9)"
+          },
+          {
+            "id": "D-003",
+            "severity": "P2",
+            "lens": "depth",
+            "rule": "§6.2",
+            "now": "单层阴影 0 70px 160px -60px rgba(0, 0, 0, .9)"
+          },
+          {
+            "id": "D-004",
+            "severity": "P2",
+            "lens": "depth",
+            "rule": "§6.2",
+            "now": "单层阴影 0 50px 100px -50px rgba(0, 0, 0, .9)"
+          },
+          {
+            "id": "D-005",
+            "severity": "P2",
+            "lens": "depth",
+            "rule": "§6.2",
+            "now": "单层阴影 0 70px 160px -60px rgba(0, 0, 0, .9)"
+          }
+        ],
+        "skipped": []
+      },
+      "verify": {
+        "engine": "scripts/verify_motion.mjs --url",
+        "verified": true,
+        "accepted": false,
+        "overflow": {},
+        "console_errors": [],
+        "motionBudget": {
+          "attention": 0,
+          "ambient": 0,
+          "feedback": 0,
+          "catalog": 1,
+          "running": 18,
+          "profile": "catalog",
+          "trace": false
+        },
+        "traceSamples": "skipped",
+        "throttle": null,
+        "notes": [
+          "compliance only; quality and appropriateness require human review",
+          "trace is sampled computed style, not a quality verdict"
+        ]
+      },
+      "rubric": {
+        "label": "studio",
+        "profile": "catalog",
+        "scores": {
+          "subject": 4,
+          "physical": 4,
+          "type": 4,
+          "composition": 4,
+          "restraint": 4,
+          "finish": 5,
+          "motion": 4
+        },
+        "weights": {
+          "subject": 10,
+          "physical": 10,
+          "type": 15,
+          "composition": 10,
+          "restraint": 20,
+          "finish": 25,
+          "motion": 10
+        },
+        "weighted": 4.25,
+        "pass": true,
+        "gates": {
+          "weighted_ge_4": true,
+          "no_dimension_le_2": true,
+          "profile_gate": true
+        },
+        "evidence": "1280/375 verify; catalog profile; audit P0=0 P1=9 (large shadows/tight instrument labels, intentional to mechanism catalog)",
+        "accepted": false,
+        "note": "rubric score is evidence-backed human/LLM review; accepted also requires compliance + appropriateness",
+        "engine": "scripts/score_rubric.py"
+      }
+    }
+  },
+  "apple-liquid-glass": {
+    "audit": {
+      "engine": "scripts/audit.py",
+      "root": "reference.html",
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "findings": [],
+      "skipped": []
+    },
+    "verify": {
+      "engine": "scripts/verify_motion.mjs --url",
+      "verified": true,
+      "accepted": false,
+      "overflow": {},
+      "console_errors": [],
+      "motionBudget": {
+        "attention": 0,
+        "ambient": 0,
+        "feedback": 4,
+        "catalog": 0,
+        "running": 0,
+        "profile": "product",
+        "trace": false
+      },
+      "traceSamples": "skipped",
+      "throttle": null,
+      "notes": [
+        "compliance only; quality and appropriateness require human review",
+        "trace is sampled computed style, not a quality verdict"
+      ]
+    },
+    "rubric": {
+      "label": "apple-liquid-glass",
+      "profile": "product",
+      "scores": {
+        "subject": 4,
+        "physical": 4,
+        "type": 4,
+        "composition": 3,
+        "restraint": 5,
+        "finish": 4,
+        "motion": 4
+      },
+      "weights": {
+        "subject": 15,
+        "physical": 10,
+        "type": 20,
+        "composition": 10,
+        "restraint": 15,
+        "finish": 20,
+        "motion": 10
+      },
+      "weighted": 4.05,
+      "pass": true,
+      "gates": {
+        "weighted_ge_4": true,
+        "no_dimension_le_2": true,
+        "profile_gate": true
+      },
+      "evidence": "1280/375 verify; audit 0 P0/P1/P2; screenshots inspected; glass only on sticky bar",
+      "accepted": false,
+      "note": "rubric score is evidence-backed human/LLM review; accepted also requires compliance + appropriateness",
+      "engine": "scripts/score_rubric.py"
+    },
+    "screenshots": []
+  },
+  "html-deliverables": {
+    "audit": {
+      "engine": "scripts/audit.py",
+      "root": "sample.html",
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "findings": [],
+      "skipped": []
+    },
+    "screenshots": [],
+    "exportSmoke": {
+      "mp4": {
+        "path": "/tmp/html-deliverables-smoke.mp4",
+        "bytes": 81234,
+        "duration": "2s"
+      },
+      "gif": {
+        "path": "/tmp/html-deliverables-smoke.gif",
+        "bytes": 1098562,
+        "duration": "1s"
+      },
+      "pptx": "skipped: HTML-to-PPTX converter not part of this pack; external engineering required"
+    },
+    "note": "MP4/GIF are static-image smoke tests of the encoder path, not an animated deck; sample has no timeline.",
+    "verify": {
+      "engine": "scripts/verify_motion.mjs --url",
+      "verified": true,
+      "accepted": false,
+      "overflow": {},
+      "console_errors": [],
+      "motionBudget": {
+        "attention": 0,
+        "ambient": 0,
+        "feedback": 0,
+        "catalog": 0,
+        "running": 0,
+        "profile": "product",
+        "trace": false
+      }
+    }
+  },
+  "refactoring-ui": {
+    "report": "packs/refactoring-ui/coverage-report.md",
+    "total": 151,
+    "covered": 138,
+    "partial": 7,
+    "gap": 6
+  },
+  "limits": [
+    "Rubric scores are evidence-backed human/LLM review; accepted remains false until appropriateness/compliance sign-off.",
+    "Golden P1 findings are documented art-direction exceptions, not silent passes.",
+    "No real user React/Vue/SSR project or real-device performance was tested."
+  ],
+  "binaryPolicy": "No binary files shipped: golden/Apple/HTML screenshots were rendered during review but are not stored in the skill package."
+}

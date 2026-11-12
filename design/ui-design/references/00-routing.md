@@ -51,3 +51,9 @@
 
 正文中文；规则 ID、类名、命令、文件路径保持英文/原文。
 交付物的语言跟随用户：用户中文就中文，用户英文就英文。
+
+## v5.0 路由
+
+根 `SKILL.md` 只做路由。四个入口：`subskills/direction`、`tokens`、`motion`、`audit`。
+Packs 按根 `SKILL.md` 的触发表加载，一次最多 2 个；普通页面 0 个。
+Stack（15–18）与 packs 都不进入默认审美/动效路径。

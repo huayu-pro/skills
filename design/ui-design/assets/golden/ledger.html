@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ledger — Utility golden</title>
+<style>
+:root{
+  color-scheme:light;
+  --canvas:#f3f5f7; --surface:#ffffff; --ink:#17212b; --muted:#5b6875;
+  --line:#d7dde3; --line-strong:#aeb8c2; --accent:#155e75; --danger:#9b2c2c;
+  --dur-short:180ms; --ease-move:cubic-bezier(.4,0,.2,1); --dist-sm:8px;
+  --font:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Noto Sans CJK SC",sans-serif;
+}
+*{box-sizing:border-box} html{font:14px/1.6 var(--font);color:var(--ink);background:var(--canvas)}
+body{margin:0} a{color:var(--accent)}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;background:#fff;padding:8px;border:1px solid var(--line-strong)}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px;background:var(--surface);border-bottom:1px solid var(--line)}
+.brand{font-weight:650;letter-spacing:-.01em}.brand small{font-weight:400;color:var(--muted);margin-left:8px}
+nav{display:flex;gap:20px;color:var(--muted)}nav a{text-decoration:none;color:inherit}nav a[aria-current]{color:var(--ink);font-weight:600}
+main{max-width:1120px;margin:0 auto;padding:28px 24px 64px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px}main>*{min-width:0}
+aside{border-right:1px solid var(--line);padding-right:20px}aside h2{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 10px}
+aside ul{list-style:none;margin:0;padding:0}aside li{margin:2px 0}aside a{display:block;padding:7px 8px;border-radius:4px;text-decoration:none;color:var(--muted)}
+aside a[aria-current]{background:#e7edf1;color:var(--ink);font-weight:600}
+h1{font-size:28px;line-height:1.2;letter-spacing:-.02em;margin:0 0 4px}.sub{color:var(--muted);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.metric{background:var(--surface);border:1px solid var(--line);padding:14px 16px}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{font-size:22px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.panel{background:var(--surface);border:1px solid var(--line)}.panel>div{padding:14px 16px;border-bottom:1px solid var(--line)}.panel>div:last-child{border-bottom:0}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f8fafb}.panel-head h2{font-size:14px;margin:0}
+button{font:inherit;padding:7px 12px;border:1px solid var(--line-strong);background:#fff;color:var(--ink);border-radius:4px;cursor:pointer;transition:background var(--dur-short) var(--ease-move),border-color var(--dur-short) var(--ease-move)}
+button:hover{background:#eef3f6;border-color:#7f8c98}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line)}th{font-size:12px;color:var(--muted);font-weight:600;background:#fbfcfd}td:last-child,th:last-child{text-align:right}tr:last-child td{border-bottom:0}
+.status{display:inline-flex;align-items:center;gap:6px;padding:2px 7px;border:1px solid var(--line);border-radius:999px;font-size:12px;color:var(--muted)}.status::before{content:"";width:6px;height:6px;border-radius:50%;background:#4b735f}.status.warn::before{background:#b26b12}.status.warn{color:#7a4a0b;border-color:#e1c491}
+.empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line-strong)}.empty strong{display:block;color:var(--ink)}
+form{display:grid;grid-template-columns:1fr 160px auto;gap:8px;padding:14px 16px;background:#fbfcfd;border-top:1px solid var(--line)}input{font:inherit;padding:7px 9px;border:1px solid var(--line-strong);border-radius:4px;background:#fff}
+.note{color:var(--muted);font-size:12px;margin-top:12px}
+@media(max-width:720px){main{grid-template-columns:minmax(0,1fr);padding:20px 14px}.grid{grid-template-columns:minmax(0,1fr)}.panel,.grid,.metric{min-width:0}aside{border-right:0;border-bottom:1px solid var(--line);padding:0 0 12px}aside ul{display:flex;flex-wrap:wrap;gap:4px}form{grid-template-columns:1fr}table{font-size:14px}th,td{padding:8px 7px}nav{display:none}}
+@media(prefers-reduced-motion:reduce){button{transition:none}}
+@media(prefers-contrast:more){:root{--line:#5f6b76;--line-strong:#28313a;--muted:#33414c}}
+</style>
+</head>
+<body data-profile="utility" data-motion="utility">
+<a class="skip" href="#content">Skip to content</a>
+<header><div class="brand">Ledger <small>Finance / Settings</small></div><nav aria-label="Primary"><a href="#" aria-current="page">Transactions</a><a href="#">Accounts</a><a href="#">Exports</a><a href="#">Settings</a></nav></header>
+<main>
+<aside><h2>Workspace</h2><ul><li><a href="#" aria-current="page">All transactions</a></li><li><a href="#">Needs review</a></li><li><a href="#">Reconciled</a></li><li><a href="#">Rules</a></li><li><a href="#">Audit log</a></li></ul></aside>
+<section id="content" aria-labelledby="page-title">
+<h1 id="page-title">Transactions</h1><p class="sub">October 2026 · USD · 4 accounts connected</p>
+<div class="grid"><div class="metric"><span>Net change</span><strong>+$18,240.50</strong></div><div class="metric"><span>Awaiting review</span><strong>7</strong></div><div class="metric"><span>Unreconciled</span><strong>2</strong></div></div>
+<div class="panel">
+<div class="panel-head"><h2>Recent activity</h2><button class="primary" type="button" data-motion-role="feedback">Export CSV</button></div>
+<div style="padding:0;overflow-x:auto"><table><caption class="skip">Recent transactions</caption><thead><tr><th>Date</th><th>Counterparty</th><th>Account</th><th>Status</th><th>Amount</th></tr></thead><tbody><tr><td>2026-10-31</td><td>Northwind Studio</td><td>Operating ·· 4412</td><td><span class="status">Reconciled</span></td><td>+$6,400.00</td></tr><tr><td>2026-10-30</td><td>Cloud Harbor</td><td>Operating ·· 4412</td><td><span class="status warn">Needs review</span></td><td>−$214.80</td></tr><tr><td>2026-10-29</td><td>Aperture Labs</td><td>Reserve ·· 9081</td><td><span class="status">Reconciled</span></td><td>+$12,055.30</td></tr></tbody></table></div>
+<form aria-label="Add transaction rule"><label class="skip" for="rule">Rule name</label><input id="rule" placeholder="Rule name"><select aria-label="Match field" style="font:inherit;padding:7px;border:1px solid var(--line-strong);border-radius:4px;background:#fff"><option>Match counterparty</option><option>Match amount</option></select><button type="button" data-motion-role="feedback">Add rule</button></form>
+</div>
+<div class="empty" style="margin-top:20px"><strong>No failed imports</strong>All connected accounts synced at 09:42. <a href="#">View audit log</a></div>
+<p class="note">Utility profile: 0 attention, 0 ambient, 120–180ms feedback only. Empty/error/loading states and keyboard focus are part of the design.</p>
+</section>
+</main>
+</body>
+</html>

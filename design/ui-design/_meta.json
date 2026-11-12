@@ -1,10 +1,10 @@
 {
  "name": "ui-design",
- "version": "4.5.1",
+ "version": "5.0.0",
  "publishedAt": "2026-11-12",
  "author": "workspace",
  "category": "design",
  "entry": "SKILL.md",
- "license": "MIT",
- "notes": "Aesthetic-first website design skill. 17 runtime-verified motion components, 84 brand languages, 14 archetypes, three component-library adapters. Compact package: 195 files (collections consolidated)."
+ "license": "Mixed: MIT original code; see LICENSE/NOTICE/ATTRIBUTION.md",
+ "notes": "Web UI core + optional packs. Router, four subskills, motion quality/appropriateness gates, seven license-checked packs."
 }

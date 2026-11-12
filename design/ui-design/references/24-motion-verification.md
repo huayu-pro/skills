@@ -151,3 +151,10 @@ node scripts/verify_motion.mjs --dir evals/motion --viewports 1280,375
 `check_motion.py` 管动效模式；`verify_motion.mjs` 管运行时。
 三者输出同一套 finding schema（P0/P1/P2 + 规则 ID + 位置 + 建议），
 在 `12-audit-rubric.md` 里合并成一份报告。**不要用一个的全绿代替另一个。**
+
+## v5.0 · Compliance / Quality 分离
+
+`verified:true` 只表示运行时通过；`accepted` 需要 compliance + quality + appropriateness。
+Quality 用 `28` 的 6 维加权 rubric；attention 至少五帧（0/25/50/75/100%）或 3s 录屏 +
+`trace.json`（16ms transform/opacity 采样）。`quality-bad-compliant.html` 必须
+compliance 过、quality fail。报告不得由脚本单独写 `accepted:true`。

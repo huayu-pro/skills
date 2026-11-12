@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-style="apple-liquid-glass" data-motion="product">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>Apple Liquid Glass — reference</title>
+<style>
+/* Apple Liquid Glass — distilled tokens. Do not apply as global default.
+ * Source: naplesblue/apple-design-skill (MIT); adapted, not copied verbatim. */
+:root[data-style="apple-liquid-glass"] {
+  --al-ground: #f5f5f7;
+  --al-surface: #ffffff;
+  --al-ink: #1d1d1f;
+  --al-muted: #6e6e73;
+  --al-hairline: rgba(0, 0, 0, 0.10);
+  --al-accent: #0066cc;
+  --al-radius-surface: 18px;
+  --al-radius-control: 999px;
+  --al-shadow-surface: 0 1px 2px rgba(0,0,0,.04), 0 8px 30px rgba(0,0,0,.06);
+  --al-glass-bg: rgba(255,255,255,.72);
+  --al-glass-blur: saturate(180%) blur(18px);
+  --al-title-tracking: -.035em;
+  --al-dur-feedback: var(--dur-short, 180ms);
+  --al-ease-feedback: var(--ease-move, cubic-bezier(.4,0,.2,1));
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root[data-style="apple-liquid-glass"] {
+    --al-glass-bg: var(--al-surface);
+    --al-glass-blur: none;
+  }
+}
+@media (prefers-contrast: more) {
+  :root[data-style="apple-liquid-glass"] {
+    --al-hairline: rgba(0,0,0,.42);
+    --al-muted: #3a3a3c;
+  }
+}
+
+</style>
+<style>
+  *{box-sizing:border-box}
+  html{font:15px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI","Noto Sans CJK SC",sans-serif;color:var(--al-ink);background:var(--al-ground)}
+  body{margin:0}
+  a{color:var(--al-accent)}
+  .skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:16px;background:var(--al-surface);padding:8px;border:1px solid var(--al-hairline);border-radius:8px}
+  header{position:sticky;top:0;z-index:10;background:var(--al-glass-bg);backdrop-filter:var(--al-glass-blur);border-bottom:1px solid var(--al-hairline)}
+  .bar{max-width:1040px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{font-weight:650;letter-spacing:var(--al-title-tracking)}
+  nav{display:flex;gap:20px;font-size:15px}nav a{text-decoration:none;color:var(--al-muted)}nav a[aria-current]{color:var(--al-ink);font-weight:600}
+  main{max-width:1040px;margin:0 auto;padding:36px 24px 64px}
+  h1{font-size:34px;line-height:1.1;letter-spacing:var(--al-title-tracking);margin:0 0 6px}
+  .sub{color:var(--al-muted);margin:0 0 26px}
+  h2{font-size:22px;line-height:1.2;letter-spacing:-.02em;margin:0}
+  .surface{background:var(--al-surface);border:1px solid var(--al-hairline);border-radius:var(--al-radius-surface);box-shadow:var(--al-shadow-surface)}
+  .hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:0;overflow:hidden}
+  .hero>div{padding:28px}
+  .hero>div+div{border-left:1px solid var(--al-hairline);background:linear-gradient(180deg,var(--al-surface),var(--al-ground))}
+  .eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--al-muted);margin:0 0 10px}
+  .metric{font-size:28px;line-height:1.1;font-variant-numeric:tabular-nums;letter-spacing:-.03em;margin:8px 0 0}
+  .meter{height:10px;border-radius:999px;background:var(--al-hairline);overflow:hidden;margin:14px 0 8px}
+  .meter span{display:block;width:69%;height:100%;background:var(--al-accent)}
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  button{font:inherit;border:0;border-radius:var(--al-radius-control);padding:9px 16px;cursor:pointer;transition:background var(--al-dur-feedback) var(--al-ease-feedback),color var(--al-dur-feedback) var(--al-ease-feedback)}
+  button.primary{background:var(--al-accent);color:var(--al-surface)}button.primary:hover{background:#005fb8}
+  button.secondary{background:var(--al-ground);color:var(--al-accent)}button.secondary:hover{background:#e8e8ed}
+  button:focus-visible,a:focus-visible{outline:2px solid var(--al-accent);outline-offset:3px}
+  .group{margin-top:26px}.group-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:0 2px 10px}
+  .group-head span{font-size:12px;color:var(--al-muted)}
+  .rows{border-radius:var(--al-radius-surface);overflow:hidden}
+  .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 18px;border-bottom:1px solid var(--al-hairline)}
+  .row:last-child{border-bottom:0}.row b{display:block;font-weight:600}.row small{display:block;color:var(--al-muted);font-size:12px;margin-top:2px}
+  .value{font-size:15px;color:var(--al-muted);text-align:right}.danger{color:#a4262c}
+  .note{color:var(--al-muted);font-size:12px;margin:16px 2px 0}
+  @media(max-width:720px){
+    .bar{padding:11px 16px}nav{display:none}main{padding:24px 16px 48px}
+    h1{font-size:28px}.hero{grid-template-columns:minmax(0,1fr)}
+    .hero>div{padding:22px}.hero>div+div{border-left:0;border-top:1px solid var(--al-hairline)}
+    .row{grid-template-columns:minmax(0,1fr);gap:6px}.value{text-align:left}
+  }
+  @media(prefers-reduced-motion:reduce){button{transition:none}}
+  @media(prefers-reduced-transparency:reduce){header{background:var(--al-surface);backdrop-filter:none}}
+  @media(prefers-contrast:more){:root[data-style="apple-liquid-glass"]{--al-hairline:rgba(0,0,0,.42);--al-muted:#3a3a3c}}
+</style>
+</head>
+<body data-motion="product">
+<a class="skip" href="#content">Skip to content</a>
+<header><div class="bar"><div class="brand">Aperture Account</div><nav aria-label="Account"><a href="#" aria-current="page">Overview</a><a href="#">Storage</a><a href="#">Billing</a><a href="#">Security</a></nav></div></header>
+<main id="content">
+  <h1>Account</h1><p class="sub">One surface, one accent, hairline structure. Glass is used only on the sticky bar.</p>
+  <section class="surface hero" aria-labelledby="plan-title">
+    <div>
+      <p class="eyebrow">Current plan</p><h2 id="plan-title">Studio · 12 seats</h2>
+      <p style="color:var(--al-muted);margin:8px 0 0">Renews 12 December 2026. Shared storage and priority support.</p>
+      <div class="actions"><button class="primary" type="button" data-motion-role="feedback">Upgrade plan</button><button class="secondary" type="button" data-motion-role="feedback">Manage billing</button></div>
+    </div>
+    <div>
+      <p class="eyebrow">Storage</p><p class="metric">138.4 GB <span style="font-size:15px;color:var(--al-muted);font-variant-numeric:normal">of 200 GB</span></p>
+      <div class="meter" role="img" aria-label="69 percent of storage used"><span></span></div><p class="note" style="margin-top:0">69% used · 61.6 GB available</p>
+    </div>
+  </section>
+  <section class="group" aria-labelledby="prefs-title">
+    <div class="group-head"><h2 id="prefs-title">Preferences</h2><span>Applies to this account</span></div>
+    <div class="surface rows">
+      <div class="row"><div><b>Language</b><small>Interface and notification language</small></div><div class="value">English (US)</div></div>
+      <div class="row"><div><b>Two-factor authentication</b><small>Required for admin actions</small></div><div class="value">Enabled</div></div>
+      <div class="row"><div><b>Session timeout</b><small>Sign out inactive sessions</small></div><div class="value">30 minutes</div></div>
+    </div>
+  </section>
+  <section class="group" aria-labelledby="danger-title">
+    <div class="group-head"><h2 id="danger-title">Account actions</h2></div>
+    <div class="surface rows">
+      <div class="row"><div><b>Export account data</b><small>JSON archive, usually ready in 10 minutes</small></div><button class="secondary" type="button" data-motion-role="feedback">Request export</button></div>
+      <div class="row"><div><b class="danger">Delete workspace</b><small>This cannot be undone; 30-day grace period</small></div><button class="secondary danger" type="button" data-motion-role="feedback">Delete…</button></div>
+    </div>
+  </section>
+  <p class="note">Utility-like product surface: 0 attention, 0 ambient, 180ms feedback only. Glass is confined to the sticky bar; contrast and reduced-transparency fallbacks are tokenized.</p>
+</main>
+</body>
+</html>

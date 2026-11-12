@@ -1,135 +1,87 @@
-# SELF-CHECK — ui-design 4.5.1
+# SELF-CHECK — ui-design 5.0.0
 
-> 生成时间：2026-11-12。所有读数来自本机实跑；条件写在每项旁边。
-> 本文件是 **5 轮 skill-creator-cn 迭代后的最终自检**；逐轮证据在
-> `../reports/round-1.md` … `round-5.md`，汇总在 `../TRACE-REPORT.md`。
+> 生成时间：2026-11-12。本文件只记录本次本机实跑；未跑的检查写 `skipped`，
+> 不沿用 4.5.1 的历史读数冒充 5.0.0 验证。
 
-## 0. 包体
+## 0. 包体（实测）
 
 | 项 | 值 |
 |---|---|
-| 文件数 | 195（预算 ≤200） |
-| 体积 | 5.9 MB |
-| SKILL.md | 457 行（validator；<500） |
-| 压缩包 | ≤200 files（当前 195） |
-| references | 28 章（00–27） |
-| scripts | 8 个 |
-| evals | 8 审计 + 6 动效 + 触发/评分/工作流 |
-| golden | 3 HTML + 3 桌面 PNG |
-| binaries | 仅 3 张 golden 桌面 PNG |
+| 源文件数 | 197（core 187 / packs 10；dist 不计数） |
+| 预算 | core 190 / packs 12 / total 200（≤200；无二进制） |
+| SKILL.md | 88 行（路由版） |
+| sub-skills | 4：direction / tokens / motion / audit |
+| references | 30 章（00–29） |
+| scripts | 11 个（原 8 + detect_stack.mjs + build_skills.py + score_rubric.py） |
+| evals | 8 审计 + 10 动效 + 触发/评分/工作流 |
+| golden | 4 HTML + 0 二进制（截图只在评审会话中渲染） |
+| packs | 7 个，10 文件；一次最多加载 2 个 |
 
-## 1. 结构 / 触发
-
-| 检查 | 命令 | 结果 |
-|---|---|---|
-| 校验器自测 | `validate_skill.py --self-test` | 必红全过 |
-| 技能校验 | `validate_skill.py . --trigger` | 通过 |
-| 目录名 == name | 自动 | `ui-design` = `ui-design` |
-| description | 自动 | 682 字符，无尖括号 |
-| 版本三处一致 | 自动 + `check_assets` | 4.5.1 |
-| 触发 | `run_trigger_eval.py` | **44/44**（正 28 / 负 8 / 近邻 8） |
-
-警告 1 项：SKILL.md 估算词数 >1500；这是内容密度，不是结构错误。
-
-## 2. 审计金标准
+## 1. 本机回归
 
 | 检查 | 命令 | 结果 |
 |---|---|---|
-| 审计器自测 | `audit.py --self-test` | **35/35** |
-| 8 个金标准（带品牌） | `--brand "#0f766e"` + `score.py` | **8/8** |
-| 05-landing（不带品牌） | 同上，不传 `--brand` | **0/1**（漏品牌漂移） |
+| 资产/版本/结构/许可 | `python3 -I scripts/check_assets.py` | **0 errors / 0 warnings** |
+| 构建 manifest | `python3 -I scripts/build_skills.py --check` | **ok: true**；core 186 / packs 10 |
+| 构建 dist | `python3 -I scripts/build_skills.py --out dist` | 5 个发行目录 |
+| 动效扫描自测 | `python3 -I scripts/check_motion.py --self-test` | **17/17** |
+| 动效夹具 | `python3 -I scripts/check_motion.py evals/motion --expect` | **10/10** |
+| 审计器自测 | `python3 -I scripts/audit.py --self-test` | **35/35** |
+| utility golden 动效 | `python3 -I scripts/check_motion.py assets/golden/ledger.html --json` | `[]` |
+| 全部 shipped assets | `check_motion.py assets --json` | 0 P1；3 个已知 P2（2 无限循环 + 1 cursor） |
+| motion profile 生成 | `python3 -I scripts/emit_tokens.py --motion-profile utility` | 通过 |
+| visual ledger | Edge headless 1200×800 + 375×844 | 会话内渲染并人工核对；截图不随包（no binaries） |
+| 运行时组件 | `verify_motion.mjs --dir assets/motion/code/components` | **12/12**（merged 已移出） |
+| ledger 1280/375 | `verify_motion.mjs --url <ledger> --viewports 1280,375 --profile utility --trace --throttle` | `verified:true / accepted:false`；overflow `{}`；63 条 trace；0 console errors |
+| ledger audit | `audit.py assets/golden/ledger.html --json` | **0 P0 / 0 P1 / 0 P2** |
+| ledger utility rubric | `score_rubric.py --profile utility` | **4.25 / pass**（克制 5、完成度 4、动效 4） |
+| golden 1280/375 | `verify_motion.mjs --url <3 pages> --viewports 1280,375` | 3/3 `verified:true`；overflow 全空 |
+| golden audit | `audit.py <3 pages> --json` | aperture 0 P0 / 1 P1；atelier 0/0；studio 0 P0 / 9 P1（设计例外已记录） |
+| golden rubric | `score_rubric.py --profile expressive/catalog` | aperture **4.85**；atelier **4.95**；studio **4.25**（均 pass） |
+| Apple pack 1280/375 | `verify_motion.mjs --url <reference.html> --viewports 1280,375` | `verified:true`；overflow `{}`；0 errors |
+| Apple pack audit | `audit.py packs/apple-liquid-glass/reference.html --json` | **0 P0 / 0 P1 / 0 P2** |
+| Apple pack rubric | `score_rubric.py --profile product` | **4.05 / pass** |
+| HTML sample audit | `audit.py packs/html-deliverables/sample.html --json` | **0 P0 / 0 P1 / 0 P2** |
+| HTML sample 1280/375 | `verify_motion.mjs --url <sample.html> --viewports 1280,375` | `verified:true`；overflow `{}`；0 errors |
+| HTML export dry-run | ffmpeg 静态 smoke | MP4 2s + GIF 1s 成功；PPTX 明确 `skipped`（无 HTML→PPTX 转换器） |
+| Refactoring UI 覆盖 | `packs/refactoring-ui/coverage-report.md` | 151 条：138 covered / 7 partial / 6 gap，逐条明细 |
+| 汇总证据 | `evals/reports/v5-evidence.json` | ledger/golden/Apple/HTML 的 audit+verify+rubric 全量记录 |
 
-> 8/8 只在带 `--brand` 时成立；不带是 7/8。`score.py --self-check` 验证评分器，
-> 不验证审计器。
+## 2. v5.0 质量门
 
-## 3. 动效静态扫描
+- `accepted = compliance + quality + appropriateness`；脚本不单独写 `accepted:true`。
+- `quality-bad-compliant` 静态扫描 `[]`，其 `quality: human-review-required / accepted:false`
+  记录在 `evals/reports/v5-evidence.json`；证明两层分离。
+- 旧 12 组件与 m01–m06 夹具走 legacy allowlist；新文件必须过 M-013..M-016。
+- 五类 surface profile 与加权 rubric 写入 `12`；utility 对照 `ledger`。
+- 七维等权、纸感单一品味、`0.45s + expo` 默认、frame-based lerp、欠阻尼冒充临界
+  已在 `01` / `09` / `22` / `28` 中修正。
 
-| 检查 | 命令 | 结果 |
-|---|---|---|
-| 扫描器自测 | `check_motion.py --self-test` | **13/13** |
-| 6 组夹具 | `check_motion.py evals/motion --expect` | **6/6** |
-| 17 个组件/merged | `check_motion.py <dir>/index.html` | **0 P1**；**2 P2** |
-| 所有 shipped HTML | 26 手法 + 8 研究 + 3 golden + 17 组件 | **0 P1**；**8 P2** |
+## 3. packs 许可与边界
 
-P2 说明（均为无限循环/降级 cube，且有 reduced 或暂停）：
+- 已登记：emilkowalski/skills (MIT)、naplesblue (MIT + Lucide ISC + emilkowalski MIT)、
+  huashu-design (MIT)、awesome-design-md (MIT)、refactoring-ui-skill (MIT 原创部分)、
+  code-animation-prompts (自定义免费/保留来源/禁付费打包)、remotion (Remotion License)。
+- 排除：guizang-ppt-skill (AGPL-3.0)；不 vendor ppt-master / open-design 大仓库。
+- `NOTICE` / `ATTRIBUTION.md` / 根 `SKILL.md` 的 pack 表包含来源、许可门槛、商业交付清单。
+- Pack 只在用户点名时加载；普通页面 0 packs；Stack 只在 `references/18` 可选分支。
 
-- components：`12-editorial-motion`（1.4s 无限文字波）、`14-webgl-object`（CSS 降级 cube）。
-- site-techniques：`11-blend-cursor`、`17-shimmer-text`、`24-conic-gradient`。
-- site-studies：`04-midnight`。
-- golden：`aperture`（状态点 pulse）、`studio`（环境循环）。
+## 4. 未验证 / skipped
 
-扫描器跟随本地 `<link>`/`<script src>`、query-string 与 `@import`；M-001 覆盖 CSS
-keyframes/transition 与 WAAPI；JS 直接写布局属性列为人工项（静态定位合法）。
+- 运行时探针在本机静态服务与 `ledger`/三页 golden/Apple reference 上跑过；不代表
+  用户的 React/Vue/SSR 项目、路由转场、代码分割或 hydration/FOUC 已被验证。
+- `--throttle` 是 CDP 4x CPU + Fast-3G-like 网络，不是真机低端安卓/120Hz 测量。
+- 五帧 quality 录屏、用户真实项目的 appropriateness 复核仍未执行；
+  `verify_motion`/rubric 的 `accepted:false` 是有意保留的边界。golden 的 P1 是
+  已记录的艺术方向例外（编辑型微字阶 / catalog 大阴影），不是静默通过。
+- `validate_skill.py` / `run_trigger_eval.py` 不在本包；触发用例已更新但外部 CLI 未跑。
+- 三库（shadcn/HeroUI/Mantine）仍为 docs-verified，未建真实 React 项目。
+- CJK / 移动端 / 真机 120Hz / Safari / Firefox / 低端安卓：规则已补，实测仍 `skipped`。
+- 196 张代码动画静帧、341 条提示词、232MB 原型资产、4.47GB Remotion 仓库未打包。
+- 人工/LLM quality 与 appropriateness 复核是交付前必做；脚本只提供证据。
 
-## 4. 运行时探针
+## 5. 结论
 
-```bash
-PLAYWRIGHT_PATH=<...>/playwright/index.mjs BROWSER_PATH=/usr/bin/microsoft-edge \
-  node scripts/verify_motion.mjs --dir assets/motion/code/components
-PLAYWRIGHT_PATH=<...>/playwright/index.mjs BROWSER_PATH=/usr/bin/microsoft-edge \
-  node scripts/verify_motion.mjs --dir assets/motion/code/merged
-```
-
-| 组 | 结果 | 条件 |
-|---|---|---|
-| 12 复合组件 | **12/12** | Edge headless + ANGLE |
-| 5 补缺组件 | **5/5** | 同上 |
-| 合计 | **17/17** | 1280/768/375；console 0；无溢出；strict reduced |
-
-探针必须看到**变化**：`frameDelta>0 || animationDelta>0 || statsChanged`；加载时动画
-必须 `running`。以下对抗输入均按预期失败：
-
-- `__rfStats={frames:5}` 的静态页 → FAIL。
-- `animation-play-state:paused` → FAIL。
-- 假 stats + 隐藏 body → FAIL。
-- reduced 下有限 transition 继续 → FAIL。
-- query-string CSS `transition:width` → M-001 命中。
-- `@import` CSS `transition:left` → M-001 命中。
-- comment-only reduce block → M-002 命中。
-
-**边界**：headless rAF 时间不是真机性能；只证「能画/循环/终态」。
-
-## 5. 资产一致性
-
-`python3 -I scripts/check_assets.py` → **0 errors / 0 warnings**。
-
-覆盖：14 原型 ↔ 卡片、84 品牌 ↔ index、motion index 每条 path 存在、
-17 组件目录 ↔ 索引双向、meta `verified: true`、5 文件契约、无 `sources[].path`、
-28 手法页、8 研究页、3 golden、无 OPL/绝对路径、运行时无外部 URL、版本三处一致。
-
-## 6. 视觉
-
-- 3 个 golden 页在 1280/390 重新渲染；截图在 `assets/golden/`。
-- R2 盲评（独立评审，A/B 随机）：
-  - Acoustic：GREEN **4.6** vs RED 4.1。
-  - Journal：GREEN **4.4** vs RED 4.1。
-  - 反例：整屏高程图版本 3.4，被拒绝，规则写回「图表不是英雄」。
-- 审美为主观判断；rubric + golden + 用户复核三层，不声称客观。
-
-## 7. 三库路由（docs-verified）
-
-| 库 | 实测版本 | 证据 |
-|---|---|---|
-| HeroUI | **3.2.7** | `list_components.mjs` → 73；Button docs/theme 正常 |
-| Mantine | **9.8.0** | `npm view`；installed form/combobox/custom 技能对齐 |
-| shadcn | **4.23.0** | `--help` / `add --help` / `apply --help` / `view` / `info --json` |
-| HeroUI MCP | **1.1.4** | `npm view` |
-
-**未验证**：没有建真实 React/Vite 项目跑安装与渲染；MCP 未真正握手。
-使用前以项目 `package.json`、`info`、`list_components`、`list_items` 为准。
-
-## 8. 未验证 / 已知缺口
-
-- 302 复刻是静态种子（0 rAF / 0 shader），不是动效证据。
-- 19 份原站引擎、57 套结构来源、302 资产/截图未打包；未逐份核对许可证。
-- 品牌文档是第三方观察，不是官方规范；商用前核对商标政策。
-- OPL 派生卡片只保留区间，未取得再分发授权；商用前联系 OPL。
-- 运行时只测 Edge/Chromium；Safari/Firefox/真机未测。
-- 8 个 P2 是已知的无限循环/降级 cube；不是 P1。
-- 8 方向手势、inertia、WebGL context loss、Esc/Space/Enter 仍是人工项。
-- 19 个原站引擎在 SOURCE-LEDGER 记为 provenance；未打包。
-
-## 9. 结论
-
-4.5.1 在**已声明的检查面**内通过：结构、审计、静态动效、运行时、资产一致性、
-视觉基准、三库文档核对。未覆盖的面逐条列在上文；不声称「零缺陷」。
+5.0.0 在**本机已声明的检查面**内通过：结构、资产、许可声明、静态动效、夹具、
+审计器、token 生成、utility golden 渲染。运行时真页验收、触发 CLI、真机性能与
+人工质量复核未执行，已逐条标 `skipped`；不声称「零缺陷」，也不声称脚本证明好看。

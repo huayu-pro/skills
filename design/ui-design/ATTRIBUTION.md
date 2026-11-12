@@ -30,7 +30,7 @@ One Page Love 数据无明确再分发许可；**本包仅供内部设计参考�
 - `assets/motion/code/kits/`：reverse-302 复刻期自写的 12 个机制 kit。
 - `assets/motion/code/components/`：reverse-final 自写的 12 个复合组件（HTML/CSS/JS 全部自写，
   视觉素材为渐变/SVG/canvas 自绘，无原站图片/字体/视频/shader 源码）。
-- `assets/motion/code/merged/`：本包新写的 5 个补缺组件。
+- merged 示例（5 个）已因 200 源文件上限移出，历史版本可查；当前只保留 12 复合组件与 12 kit。
 - `assets/motion/code/css/keyframes.css`：从 1,537 个观察块归并/重写的 24 条 canonical 配方。
 - `assets/motion/code/snippets/`：本包自写的 8 个原语。
 - `assets/motion/prompts/`：reverse-pilots 的 10 份自写强提示词。
@@ -68,3 +68,24 @@ One Page Love 数据无明确再分发许可；**本包仅供内部设计参考�
 | 14 原型卡 | 只引用区间；不要声称为原始站点数据 |
 | 30 案索引 | 可引用机制/参数；截图不随包 |
 | 原始语料/302 证据 | 不对外分发 |
+## 9. v5.0 packs
+
+| Pack | 来源 | 许可 | 改写方式 |
+|---|---|---|---|
+| apple-motion | emilkowalski/skills | MIT | 独立提炼词汇/评审规则，不复制原文 |
+| apple-liquid-glass | naplesblue/apple-design-skill | MIT + Lucide ISC + emilkowalski MIT | 独立散文 + 原创 CSS；不含截图/图标路径 |
+| html-deliverables | alchaincyf/huashu-design | MIT | 提炼工作流与评审维度；不打包 232MB 资产 |
+| design-md | VoltAgent/awesome-design-md | MIT | 工作流说明；复用已有 brands.json，不重复打包 |
+| refactoring-ui | edisonmbli/refactoring-ui-skill | MIT 原创部分 | 规则 ID 映射；不复制书正文，非官方 |
+| code-animation-prompts | XiaoyeCodes | 自定义免费/保留来源/禁付费打包 | 原创分类；不含 341 prompts/196 静帧 |
+| remotion | remotion-dev/remotion | Remotion License | 外部依赖适配；不 vendor 代码；先过许可门槛 |
+
+**排除**：guizang-ppt-skill（AGPL-3.0）不纳入，不复制代码或版式实现；ppt-master 与
+open-design 保持外部。完整许可声明与商业交付清单见 `NOTICE`。
+
+## 10. 语料偏差
+
+302 个逆向站点与 84 份品牌 DESIGN 文档偏向拉丁语、桌面鼠标、作品集/代理站，不足以代表
+CJK、utility、移动端或财务/后台界面。v5.0 用 `references/29-cjk-mobile.md`、
+surface profiles 与 `assets/golden/ledger.html` 补边界；这些补充标 `inferred` 或
+`authored`，不冒充 302 站点的 observed 结论。

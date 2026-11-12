@@ -7,7 +7,7 @@ relicense third-party or derived material.
 ## Original code
 
 - `scripts/`, `references/` (original text), `assets/motion/code/kits/`,
-  `assets/motion/code/merged/`, `assets/motion/code/snippets/`,
+  `assets/motion/code/snippets/`,
   `assets/motion/prompts/`, and the skill's own docs: MIT.
 
 ## Third-party
@@ -23,8 +23,9 @@ relicense third-party or derived material.
   order), not copies of site assets. They are provided for internal design
   reference only and are **not** cleared for commercial redistribution. No
   original corpus, screenshots, or site assets are included.
-- **reverse corpora** — the 12 kits, 12 composite components, 5 merged
-  components, 10 prompts, and 24 keyframe recipes are self-written rewrites.
+- **reverse corpora** — the 12 kits, 12 composite components, 10 prompts, and
+  24 keyframe recipes are self-written rewrites. The 5 merged examples were
+  removed to meet the 200-source-file / no-binary cap and remain in git history.
   No original site scripts, images, videos, fonts, or shader source are
   included. The 19 original engine scripts and 57 structure sources are
   excluded from this package.
@@ -35,3 +36,55 @@ This package is delivered for the user's internal design work. Before
 publishing, redistributing, or selling it, review `ATTRIBUTION.md` and confirm
 the upstream licenses and the One Page Love terms. The presence of the MIT
 `LICENSE` file does not grant rights to the third-party or derived material.
+
+## v5.0 optional packs — provenance and license gates
+
+- **emilkowalski/skills** — MIT, Copyright (c) 2026 Emil Kowalski.
+  `packs/apple-motion/` distills `apple-design`, `animation-vocabulary`,
+  `improve-animations`, `review-animations`, `remove-animations`, and
+  `animation-performance` into independent notes. No repository files are vendored.
+- **naplesblue/apple-design-skill** — MIT, Copyright (c) 2026 naplesblue.
+  Its `motion.md` is adapted from emilkowalski/skills (MIT, Copyright (c) 2026
+  Emil Kowalski). Line-icon SVG paths come from Lucide (ISC, Copyright (c) 2022
+  Lucide Contributors). `packs/apple-liquid-glass/` contains independent prose
+  and original CSS only; no screenshots, brand icons, or Lucide path data.
+- **alchaincyf/huashu-design** — MIT. `packs/html-deliverables/` distills the
+  HTML prototype/slide/infographic workflow and five-dimension review. The 232 MB
+  repository, demos, image/font/video assets, and PPTX tooling are not included.
+- **VoltAgent/awesome-design-md** — MIT, Copyright (c) VoltAgent. `packs/design-md/`
+  describes the DESIGN.md workflow; the existing 84 brand analyses are third-party
+  observations, not official brand specifications. Brand names/trademarks belong
+  to their respective owners.
+- **edisonmbli/refactoring-ui-skill** — MIT, Copyright (c) 2026 Edison Li.
+  `packs/refactoring-ui/` maps original skill rules to this package's IDs. It is
+  unofficial and does not copy or replace *Refactoring UI* by Adam Wathan and
+  Steve Schoger; the book remains separately copyrighted.
+- **XiaoyeCodes/code-animation-prompts** — custom "来源、许可与免责分配约定":
+  free to use and pass on; redistributions must remain free; keep provenance and
+  this notice; do not package the collection as a paid course, paid skills, or any
+  paid product. `packs/code-animation-prompts/` contains an original taxonomy only;
+  no 341 prompts, 196 reference stills, offline picker, or third-party files.
+- **remotion-dev/remotion** — Remotion License (source-available, dual tier).
+  Individuals, for-profit organizations with up to 3 employees, non-profits, and
+  evaluation use may create videos/images for free; larger for-profit entities need
+  a Company License. Copying/modifying Remotion code to sell, rent, license,
+  relicense, or sublicense a derivative is prohibited. `packs/remotion/` is an
+  external-dependency adapter with an original example; no Remotion code or assets
+  are vendored. See https://www.remotion.dev/license before commercial use.
+
+## Excluded sources
+
+- **guizang-ppt-skill** is AGPL-3.0 and is deliberately excluded. No code,
+  layouts, prompts, or assets from it are copied. Linking to the upstream project
+  is permitted; a user must evaluate AGPL obligations independently.
+- **ppt-master** and **open-design** are not vendored; their toolchains and
+  workspaces remain external.
+- Do not bundle `packs/code-animation-prompts/` or Remotion-derived material into
+  a paid derivative without resolving their custom license terms.
+
+## Commercial delivery checklist
+
+Before publishing, redistributing, or selling a deliverable that used a pack:
+record the pack name, source URL, license, modifications, and whether any
+third-party asset remains. Run `ui-audit` provenance. If any term cannot be
+confirmed, mark the deliverable `skipped: license review`, not `accepted`.

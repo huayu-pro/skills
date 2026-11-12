@@ -186,7 +186,7 @@ def check_motion():
     if index is None:
         return
     for key, expected in (
-        ("kits", 12), ("components", 12), ("merged", 5), ("prompts", 10),
+        ("kits", 12), ("components", 12), ("prompts", 10),
         ("keyframes", 24), ("snippets", 8),
     ):
         items = index.get(key, [])
@@ -202,7 +202,8 @@ def check_motion():
     indexed = {item.get("id") for item in index.get("components", []) + index.get("merged", [])}
     on_disk = set()
     component_dirs = list((folder / "code" / "components").iterdir())
-    merged_dirs = list((folder / "code" / "merged").iterdir())
+    merged_root = folder / "code" / "merged"
+    merged_dirs = list(merged_root.iterdir()) if merged_root.exists() else []
     for path in component_dirs + merged_dirs:
         if not path.is_dir():
             continue
@@ -313,10 +314,35 @@ def check_site_assets():
         if len(studies) != 8:
             error("site-studies has %d html files (expected 8)" % len(studies))
     golden = list((ROOT / "assets" / "golden").glob("*.html"))
-    if len(golden) != 3:
-        error("golden has %d html files (expected 3)" % len(golden))
-    if not (ROOT / "assets" / "golden" / "studio-desktop.png").exists():
-        warn("studio-desktop.png not rendered yet")
+    if len(golden) != 4:
+        error("golden has %d html files (expected 4)" % len(golden))
+
+
+def check_v5_structure():
+    for rel in ["subskills/direction/SKILL.md", "subskills/tokens/SKILL.md",
+                "subskills/motion/SKILL.md", "subskills/audit/SKILL.md",
+                "references/28-motion-system.md", "references/29-cjk-mobile.md",
+                "assets/golden/ledger.html", "NOTICE"]:
+        if not (ROOT / rel).exists():
+            error("v5.0 missing: " + rel)
+    packs = sorted(p for p in (ROOT / "packs").iterdir() if p.is_dir()) if (ROOT / "packs").exists() else []
+    if len(packs) != 7:
+        error("packs has %d dirs (expected 7)" % len(packs))
+    for pack in packs:
+        if not (pack / "SKILL.md").exists():
+            error("pack missing SKILL.md: " + pack.name)
+    notice = (ROOT / "NOTICE").read_text(encoding="utf-8", errors="replace")
+    for needle in ["naplesblue", "Emil Kowalski", "Lucide", "Edison Li", "XiaoyeCodes", "Remotion"]:
+        if needle not in notice:
+            error("NOTICE missing attribution: " + needle)
+    notice = (ROOT / "NOTICE").read_text(encoding="utf-8", errors="replace")
+    if "AGPL" not in notice or "guizang" not in notice:
+        error("NOTICE missing AGPL exclusion")
+
+    binary_suffixes = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".avif", ".ico", ".pdf", ".zip", ".woff", ".woff2", ".ttf", ".otf", ".mp4", ".webm", ".mov", ".psd", ".ai"}
+    for path in ROOT.rglob("*"):
+        if path.is_file() and ".git" not in path.parts and "dist" not in path.parts and path.suffix.lower() in binary_suffixes:
+            error("binary file is not allowed: " + str(path.relative_to(ROOT)))
 
 
 def check_text():
@@ -346,9 +372,15 @@ def check_text():
 
 
 def check_file_budget():
-    count = sum(1 for p in ROOT.rglob("*") if p.is_file())
-    if count > 200:
-        error("skill has %d files (budget 200)" % count)
+    all_files = [p for p in ROOT.rglob("*") if p.is_file() and ".git" not in p.parts and "dist" not in p.parts]
+    core = [p for p in all_files if "packs" not in p.parts]
+    packs = [p for p in all_files if "packs" in p.parts]
+    if len(core) > 190:
+        error("core has %d files (budget 190)" % len(core))
+    if len(packs) > 12:
+        error("packs have %d files (budget 12)" % len(packs))
+    if len(all_files) > 200:
+        error("skill has %d files (budget 200)" % len(all_files))
 
 
 def check_evals():
@@ -356,8 +388,8 @@ def check_evals():
     if len(cases) != 8:
         error("evals/cases has %d dirs (expected 8)" % len(cases))
     motion = [p for p in (ROOT / "evals" / "motion").iterdir() if p.is_dir()]
-    if len(motion) != 6:
-        error("evals/motion has %d dirs (expected 6)" % len(motion))
+    if len(motion) != 10:
+        error("evals/motion has %d dirs (expected 10)" % len(motion))
     for path in motion:
         if not (path / "expected.json").exists():
             error("%s missing expected.json" % path.name)
@@ -375,6 +407,7 @@ def main():
     check_site_assets()
     check_text()
     check_evals()
+    check_v5_structure()
     check_file_budget()
 
     report = {"errors": ERRORS, "warnings": WARNINGS, "ok": not ERRORS}

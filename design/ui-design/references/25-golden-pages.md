@@ -2,7 +2,7 @@
 
 > 这三页不是模板，是**质量地板**。它们证明这个技能要求的审美高度是可达到的；
 > 不是让你照着它们做，而是让你在自评时有一个可对照的实物。
-> 截图在 `assets/golden/`；HTML 可直接打开。
+> HTML 可直接打开；按 no-binary 约束，仓库不携带截图/PNG。
 
 ## 怎么用
 
@@ -14,7 +14,7 @@
 ## 1. Aperture — 编辑型技术产品页
 
 **文件**：`assets/golden/aperture.html`（22 KB，自包含）
-**截图**：`aperture-desktop-full.png`
+**截图**：评审时渲染；不随包分发（no binaries）。
 
 **题材**：一个「每个决策都需要证据」的分析产品。不是 SaaS 工具，是一份**立场文件**。
 
@@ -42,7 +42,7 @@
 ## 2. Atelier North — 建筑事务所的图纸页
 
 **文件**：`assets/golden/atelier-north.html`（20 KB，自包含）
-**截图**：`atelier-north-desktop-full.png`
+**截图**：评审时渲染；不随包分发（no binaries）。
 
 **题材**：建筑、室内、物件的实践。页面不是「作品集网格」，是一张**图纸**。
 
@@ -70,7 +70,7 @@
 ## 3. Studio — 12 机制的动效实验室
 
 **文件**：`assets/golden/studio.html`（115 KB，自包含，单脚本）
-**截图**：`studio-desktop.png`（构建时渲染）
+**截图**：评审时渲染；不随包分发（no binaries）。
 
 **题材**：一个动效研究页，把 12 个机制放在同一页，共享 state 与主循环。
 页头写「302 → 30 → 12 → this page」，它是整个逆向工作的索引。
@@ -104,7 +104,7 @@
    studio 的机制有文字与参数。图表是支撑，不是英雄。
 4. **一个注意瞬间**：状态点、hover 线、或每个 demo 自己的主机制。
 5. **边缘收口**：1px 线、基线、页脚结束方式都对齐。
-6. **移动端是重新排**，不是缩小：aperture/atelier 的 375 截图都保持同一套网格与字角色。
+6. **移动端是重新排**，不是缩小：aperture/atelier 的 375 渲染都保持同一套网格与字角色。
 
 ## 自评对照表
 
@@ -115,5 +115,17 @@
 | 我的颜色有没有职责？ | aperture 的红/蓝 |
 | 我的表面是不是只有一个？ | 三页都有 |
 | 我的动效是不是只有一个注意瞬间？ | aperture 的状态点 / studio 的分区 |
-| 我的 375 是不是重新排？ | 三页的 mobile 截图 |
+| 我的 375 是不是重新排？ | 三页的 mobile 渲染 |
 | 我的边缘有没有毛？ | atelier 的 title block 线 |
+
+## v5.0 · 按 profile 选对照页
+
+| profile | 对照 | 看什么 |
+|---|---|---|
+| expressive/editorial | aperture / atelier-north | 结构、字角色、收口 |
+| catalog | studio | 分区、共享时钟、暂停 |
+| utility/product | ledger | 克制、状态、反馈、信息密度 |
+
+三页纸感/图纸/近黑是具体题材的答案，不是通用品味。`ledger.html` 是安静的财务/设置页：
+冷灰、无衬线、tabular numerals、1px 分隔、无纸感/无阴影；0 attention / 0 ambient，
+动效只有 120–200ms 反馈。它证明「得体的安静」也能达到 4.5–5。

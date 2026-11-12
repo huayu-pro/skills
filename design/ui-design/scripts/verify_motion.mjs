@@ -6,7 +6,6 @@
  *
  * Usage:
  *   node scripts/verify_motion.mjs --component assets/motion/code/components/10-scroll-narrative
- *   node scripts/verify_motion.mjs --dir assets/motion/code/merged --viewports 1280,375
  *   PLAYWRIGHT_PATH=/path/to/playwright/index.mjs BROWSER_PATH=/usr/bin/microsoft-edge \
  *     node scripts/verify_motion.mjs --dir evals/motion
  */
@@ -35,12 +34,16 @@ function parseArgs(argv) {
     console.log("usage: verify_motion.mjs --component <dir> | --dir <parent> [--viewports 1280,375] [--json] [--timeout ms]");
     process.exit(0);
   }
-  const args = { components: [], dirs: [], viewports: [1280, 768, 375], json: false, timeout: 20000 };
+  const args = { components: [], dirs: [], url: null, trace: false, viewports: [1280, 768, 375], json: false, timeout: 20000 };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     if (arg === "--component") args.components.push(argv[++i]);
     else if (arg === "--dir") args.dirs.push(argv[++i]);
     else if (arg === "--viewports") args.viewports = argv[++i].split(",").map(Number).filter(Boolean);
+    else if (arg === "--url") args.url = argv[++i];
+    else if (arg === "--trace") args.trace = true;
+    else if (arg === "--profile") args.profile = argv[++i];
+    else if (arg === "--throttle") args.throttle = true;
     else if (arg === "--json") args.json = true;
     else if (arg === "--timeout") args.timeout = Number(argv[++i]) || 20000;
   }
@@ -104,6 +107,15 @@ async function snapshot(page) {
     });
     const infinite = animations.filter((item) => item.iterations === Infinity).length;
     const stats = window.__rfStats ? JSON.parse(JSON.stringify(window.__rfStats)) : null;
+    const motionBudget = {
+      attention: document.querySelectorAll('[data-motion-role="attention"]').length,
+      ambient: document.querySelectorAll('[data-motion-role="ambient"]').length,
+      feedback: document.querySelectorAll('[data-motion-role="feedback"]').length,
+      catalog: document.querySelectorAll('[data-motion-role="catalog"]').length,
+      running: document.getAnimations().filter(a => a.playState === "running").length,
+      profile: document.body.dataset.motion || document.documentElement.dataset.motion || "unknown",
+      trace: Boolean(window.__motionTrace)
+    };
     const focusables = Array.from(document.querySelectorAll(
       "a[href], button, input, select, textarea, [tabindex]:not([tabindex='-1'])"
     )).length;
@@ -112,6 +124,7 @@ async function snapshot(page) {
       animations: animations,
       infinite: infinite,
       stats: stats,
+      motionBudget: motionBudget,
       focusables: focusables,
       bodyVisibility: bodyStyle.visibility,
       bodyOpacity: bodyStyle.opacity,
@@ -284,8 +297,80 @@ function entriesFrom(componentDir) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
+  if (args.url) {
+    const playwright = await loadPlaywright();
+    if (!playwright || !playwright.chromium) {
+      console.error("SKIP: playwright not available for --url");
+      process.exit(2);
+    }
+    const browser = await playwright.chromium.launch({ headless: true, executablePath: browserPath(), args: ["--no-sandbox"] });
+    const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+    await page.route("**/favicon.ico", route => route.fulfill({ status: 204, body: "" }));
+    const errors = [];
+    page.on("console", m => { if (m.type() === "error") errors.push(m.text()); });
+    page.on("pageerror", e => errors.push(String(e)));
+    let throttle = null;
+    if (args.throttle) {
+      const cdp = await page.context().newCDPSession(page);
+      await cdp.send("Emulation.setCPUThrottlingRate", { rate: 4 });
+      await cdp.send("Network.enable");
+      await cdp.send("Network.emulateNetworkConditions", {
+        offline: false, latency: 150,
+        downloadThroughput: 1.6 * 1024 * 1024 / 8,
+        uploadThroughput: 750 * 1024 / 8,
+      });
+      throttle = { cpuRate: 4, latencyMs: 150, profile: "Fast-3G-like" };
+    }
+    const views = args.viewports && args.viewports.length ? args.viewports : [1280, 375];
+    const snapshots = {};
+    for (const width of views) {
+      const height = width <= 480 ? 844 : 900;
+      await page.setViewportSize({ width, height });
+      await page.goto(args.url, { waitUntil: "load", timeout: args.timeout });
+      await page.waitForTimeout(700);
+      snapshots[String(width)] = await snapshot(page);
+    }
+    // Restore desktop for trace/profile reporting.
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto(args.url, { waitUntil: "load", timeout: args.timeout });
+    await page.waitForTimeout(500);
+    let trace = "skipped";
+    if (args.trace) {
+      await page.evaluate(() => {
+        window.__motionTrace = [];
+        const targets = Array.from(document.querySelectorAll('[data-motion-role], [data-motion], body')).slice(0, 12);
+        const started = performance.now();
+        const timer = setInterval(() => {
+          const t = Math.round(performance.now() - started);
+          const samples = targets.map(el => {
+            const cs = getComputedStyle(el);
+            return { role: el.dataset.motionRole || el.tagName.toLowerCase(), transform: cs.transform, opacity: cs.opacity };
+          });
+          window.__motionTrace.push({ t, samples });
+          if (t >= 1000) clearInterval(timer);
+        }, 16);
+      });
+      await page.waitForTimeout(1100);
+      trace = await page.evaluate(() => window.__motionTrace || []);
+    }
+    const snap = await snapshot(page);
+    const overflow = {};
+    for (const [width, item] of Object.entries(snapshots)) {
+      if (item.scrollWidth > item.innerWidth + 1) {
+        overflow[width] = { scrollWidth: item.scrollWidth, innerWidth: item.innerWidth };
+      }
+    }
+    const report = { mode: "url", url: args.url, profile: args.profile || snap.motionBudget.profile,
+      throttle: throttle, trace: trace,
+      console_errors: errors, viewports: snapshots, overflow: overflow, motionBudget: snap.motionBudget,
+      verified: errors.length === 0 && Object.keys(overflow).length === 0,
+      accepted: false, notes: ["compliance only; quality and appropriateness require human review", "trace is sampled computed style, not a quality verdict"] };
+    if (args.json) console.log(JSON.stringify(report, null, 2)); else console.log(JSON.stringify(report, null, 2));
+    await browser.close();
+    process.exit(report.verified ? 0 : 1);
+  }
   if (!args.components.length && !args.dirs.length) {
-    console.error("usage: --component <dir> or --dir <parent-dir>");
+    console.error("usage: --component <dir> | --dir <parent-dir> | --url <page>");
     process.exit(2);
   }
   const playwright = await loadPlaywright();

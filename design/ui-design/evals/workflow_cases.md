@@ -160,3 +160,19 @@
 
 这张表是诚实的缺口清单。补齐 C 需要一个人工改造前后对照；补齐 A 需要把 `generate_palette.py`
 的输出与预期色阶做快照比对。
+
+
+## v5.0 · packs 与质量门
+
+| 输入 | 必须路由 | fail 线 |
+|---|---|---|
+| 「做个 apple.com 风格的设置页」 | direction + apple-liquid-glass | 把玻璃铺满内容区 / 没有对比度回退 |
+| 「帮我看这个弹簧动画」 | motion + apple-motion | 只看 first/last frame / 没写 ζ/ω |
+| 「做高保真 HTML 原型并导出」 | direction + html-deliverables | 跳过七镜 / 把命令草案写成成品 |
+| 「生成 DESIGN.md」 | tokens + design-md | 只有 token 没有 prose / CLI 缺失未写 skipped |
+| 「按 Refactoring UI 审一下」 | audit + refactoring-ui | 新增平行规则编号 / 复制书正文 |
+| 「找代码动画提示词」 | motion + code-animation-prompts | 打包 196 静帧 / 忽略禁付费条款 |
+| 「用 Remotion 做视频」 | motion + remotion | vendor 源码 / 未过许可门槛 |
+| 「做个设置页」 | tokens + direction，不加载 packs | 误加载 Apple/视频/PPT pack |
+
+`quality-bad-compliant` 必须 compliance 过、quality fail；脚本不得写 `accepted:true`。

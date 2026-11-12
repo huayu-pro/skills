@@ -58,21 +58,26 @@ raf = requestAnimationFrame(frame);
 ### 2.2 lerp / 弹簧 / 摩擦
 
 ```js
-const lerp = (a, b, t) => a + (b - a) * t;
-// 追目标：t 取 0.08–0.18（60fps 下）
-x = lerp(x, target, 0.15);
+// v5.0：所有新代码统一用 dt（秒），dt 上限 1/30。
+const alpha = 1 - Math.exp(-lambda * dt); // 追目标，lambda 8–14 s^-1
+x += (target - x) * alpha;
 
 // 指数摩擦（与帧率无关）
 velocity *= Math.exp(-friction * dt); // friction 1.1–4
 
-// 临界弹簧（无回弹）
-const stiffness = 120, damping = 20;
-const accel = -stiffness * (x - target) - damping * v;
+// 弹簧显式 ζ/ω；ζ=1 才叫临界（无回弹）
+const omega = 2 * Math.PI * hz;
+const accel = omega * omega * (target - x) - 2 * zeta * omega * v;
 v += accel * dt; x += v * dt;
 ```
 
-实测组：`lerp .15`、`decay .95/.92`、`velocity*(touch?12:8)`、边界 `*0.15`；
-传送带 `BASE=62`、`MAX=900`、`friction=1.1`。这些是**起点**，不是宇宙常数。
+`k=120, damping=20` 对应 `ζ≈0.91`，是**欠阻尼**、有轻微回弹，不能写成
+「临界弹簧（无回弹）」；`lerp .15` 是 60fps 的 frame-based 观测，只允许出现在
+标为 `legacy/observed frame-based` 的旧案例。统一规范见 `28-motion-system.md`。
+
+实测组 `decay .95/.92`、`velocity*(touch?12:8)`、边界 `*0.15`、
+传送带 `BASE=62 / MAX=900 / friction=1.1` 是**起点**，不是宇宙常数；新代码先把它们
+换算成 `--spring-* / --lambda-* / --dur-*` token，再写理由。
 
 ### 2.3 IO reveal
 
@@ -87,7 +92,7 @@ const io = new IntersectionObserver((entries) => {
 ```
 
 实测：343 站里 `rootMargin: "200px"` 87 站、`threshold: 0` 97 站。
-进入用 450ms / 16px / `cubic-bezier(0,0,.2,1)`；只对同组元素错峰 20–50ms。
+进入用 `var(--dur-long) / var(--dist-md) / var(--ease-enter)`；只对同组元素错峰 `var(--stagger-step)`。观测值 450ms / 16px 不是默认。
 
 ### 2.4 指针手势
 
@@ -163,9 +168,9 @@ void main(){
 ### F1 滚动叙事
 
 - DOM：`section.reveal` 若干 + 一个 `position: sticky` 的 pin 容器。
-- CSS：`.reveal{opacity:0;transform:translateY(16px)} .reveal.is-in{opacity:1;transform:none;transition:450ms cubic-bezier(0,0,.2,1)}`。
-- JS：IO + pin 容器高度 `320vh`，进度 `p = (scrollY - start) / (height - innerHeight)`。
-- 降级：reduced-motion 直接 `is-in`，pin 改三段堆叠。
+- CSS：`.reveal{opacity:0;transform:translateY(var(--dist-md))} .reveal.is-in{opacity:1;transform:none;transition:var(--dur-long) var(--ease-enter)}`。
+- JS：native-first 用 `animation-timeline: view()`；需要惯性时 IO + pin 容器高度 `320vh`，进度 `p = (scrollY - start) / (height - innerHeight)`。
+- 降级：reduced-motion 直接 `is-in`，pin 改三段堆叠，并保留剖面/进度的静态刻度身份。
 - 资产：`kits/01-scroll-narrative.js`、`components/10-scroll-narrative`。
 
 ### F2 横向轨道
@@ -173,8 +178,8 @@ void main(){
 - DOM：`track` + N 个 `panel`；容器 `overflow: hidden`。
 - CSS：`track{display:flex;gap:24px;will-change:transform}`。
 - JS：wheel/drag → `targetX`，`x = lerp(x, targetX, .15)`；边界 `if (x < min) x = min + (x-min)*.15`。
-- 降级：reduced-motion 改为原生横向滚动（`overflow-x:auto; scroll-snap`）。
-- 资产：`kits/02-horizontal.js`、`merged/13-horizontal-rail`。
+- 降级：reduced-motion 改为原生横向滚动（`overflow-x:auto; scroll-snap`）+ 静态位置刻度。
+- 资产：`kits/02-horizontal.js`、`kits/02-horizontal-rail`。
 
 ### F3 全屏 shader
 
@@ -189,14 +194,14 @@ void main(){
 - 用裸 WebGL：一个立方体/平面，`mat4` 透视 + 相机 + 旋转；不用 Three.js 保持零依赖。
 - 深度线索：大小、雾化（fog）、亮度、遮挡顺序。
 - 降级：无 WebGL → CSS 3D `transform-style: preserve-3d` 的卡片。
-- 资产：`merged/14-webgl-object`；Three.js 版本见提示词 `F4-tristan-rain-scene`。
+- 资产：`kits/10-webgl-object`；Three.js 版本见提示词 `F4-tristan-rain-scene`。
 
 ### F5 像素 canvas
 
 - 低分辨率离屏 canvas（如 160×120），`imageSmoothingEnabled=false`，整数倍放大。
 - 调色板 ≤8 色；逐字/逐像素用整数索引，不用浮点采样。
 - 降级：reduced-motion 只画终帧。
-- 资产：`kits/04-canvas-2d.js`、`merged/15-pixel-canvas`。
+- 资产：`kits/04-canvas-2d.js`、`kits/04-pixel-canvas`。
 
 ### F6 排版动效
 
@@ -250,14 +255,14 @@ void main(){
 - 扫描线用 `repeating-linear-gradient`，噪点用 SVG `feTurbulence` 或 canvas 随机像素。
 - glitch：`clip-path: inset()` 随机切片 + `translateX` 抖动，持续 80–160ms，不要常驻。
 - 降级：reduced-motion 只保留静态纹理。
-- 资产：`merged/16-scan-vhs`、`code/css/keyframes.css`。
+- 资产：`keyframes-scan-vhs`、`code/css/keyframes.css`。
 
 ### F13 视频拼贴
 
 - 多 `<video muted playsinline preload="metadata">`，封面用 `poster`；用户手势后再 `play()`。
 - 布局：绝对定位 + `object-fit: cover`，每块有不同延迟/视差。
 - 网络差/离屏：`IntersectionObserver` 暂停；`prefers-reduced-motion` 只显示 poster。
-- 资产：`kits/08-collage.js`、`merged/17-video-collage`。
+- 资产：`kits/08-collage.js`、`kits/08-video-collage`。
 
 ### F14 状态机/产品演示
 
@@ -284,7 +289,7 @@ void main(){
 - 390px 宽必须 `scrollWidth <= innerWidth`；横向轨道用 `overflow-x: clip` 不要 `hidden`（会破坏 sticky）。
 - 触控目标 ≥44×44px；核心手势不超过 1 个。
 - hover-only 的信息在触屏不存在：默认可见或点击展开。
-- `prefers-reduced-motion`：所有族都要有终态；不是「关掉动画」而是「直接到结果」。
+- `prefers-reduced-motion`：到终态并保留物理/功能身份；见 `28` 的 identity matrix。状态变化给 ≤120ms 的颜色/徽标提示。
 - `prefers-reduced-transparency` / `prefers-contrast`：玻璃/低对比表面要给不透明/高对比回退。
 - 无 JS：F1 的 reveal 默认可见（`no-js` class 或 `<noscript>` 样式），不要空白。
 
@@ -293,18 +298,18 @@ void main(){
 | 想做什么 | 先读 | 再抄 |
 |---|---|---|
 | 滚动揭示/长页 | `09` §7 + `kits/01` | `components/10` |
-| 横向作品集 | `09` §3 + `kits/02` | `merged/13` |
+| 横向作品集 | `09` §3 + `kits/02` | `kits/02` |
 | 全屏背景 | `09` §12 + `kits/03` | `components/05` |
-| 3D 物体 | `kits/10` 的相机数学 | `merged/14` |
-| 像素/字符 | `kits/04` | `merged/15` |
+| 3D 物体 | `kits/10` 的相机数学 | `kits/10` |
+| 像素/字符 | `kits/04` | `kits/04` |
 | 动态标题 | `kits/07` | `components/12` |
 | 自定义光标 | `kits/06` | `components/09` |
 | 音频可视化 | `kits/09` | `components/11` |
 | 卡片倾斜/材质 | `kits/05` | `components/02` |
 | 地图/相机 | `kits/10` | `components/06` |
 | 无限跑马灯 | `kits/12` | `components/04` |
-| 扫描/glitch | `keyframes.css` | `merged/16` |
-| 视频拼贴 | `kits/08` | `merged/17` |
+| 扫描/glitch | `keyframes.css` | `keyframes` |
+| 视频拼贴 | `kits/08` | `kits/08` |
 | 产品演示状态机 | `kits/11` | `components/03/07/08` |
 
 ## 7. 常见错误

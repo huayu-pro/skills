@@ -115,7 +115,7 @@ CSS 场景里 20–50ms 更适合「同一组一起出现」。
 | 长循环 | 1.4–24s | 呼吸、粒子、玻璃转圈、波浪 |
 | 超长 marquee | 42–148s | logo 墙、ticker |
 
-- **`0.45s`**：343 站 JS bundle 里出现 76 次的手调值，适合作为「进入」的默认。
+- **`0.45s`**：343 站 JS bundle 里出现 76 次的手调值；这是观测众数，**不是进入的默认**。默认来自 `28` 的 motion token 与 register。
 - **`0.7s`**：Angelo 21 条入场统一 700ms；`reveal` 也是 0.7s。
 - 84% 的站点时长落在 0.2 / 0.3 / 0.4 / 0.45 / 0.5 / 0.8 / 1.0 秒。
 - 长循环不是「越慢越高级」：24s 的 Ken Burns 是背景，16s 的 mono turn 是氛围；
@@ -132,9 +132,9 @@ CSS 场景里 20–50ms 更适合「同一组一起出现」。
 | 进度/循环 | `linear` | 匀速，避免呼吸感干扰读数 |
 | 强调 | `cubic-bezier(.22,.8,.2,1)` | 强快起慢停，适合大转场 |
 
-GSAP 实测高频：`expo`（49 站）、`power4`（46）、`power2.out`（35）。不是「必须用」，
-而是这些曲线在长距离位移上更不容易显得拖沓。CSS 里用 `cubic-bezier(.16,1,.3,1)`
-近似 `expo.out`，用 `cubic-bezier(0,0,.2,1)` 近似 `power2.out`。
+GSAP 实测高频：`expo`（49 站）、`power4`（46）、`power2.out`（35）。这些是观测区间，
+不是推荐默认。用 motion casting 从三种 easing/重量里选一版；CSS token 见 `28`。
+`cubic-bezier(.16,1,.3,1)` 只是候选之一，不要把高频曲线升格为全站默认值。
 
 ## 9. 只动 transform 和 opacity（默认）
 
@@ -176,18 +176,18 @@ GSAP 实测高频：`expo`（49 站）、`power4`（46）、`power2.out`（35）
 | 族 | 一句话 | canonical 代码 | 典型时长 |
 |---|---|---|---|
 | F1 滚动叙事 | 滚动位置决定段落/位移/透明度 | kit 01、component 10 | 300–900ms，pin 320vh |
-| F2 横向轨道 | 滚轮/拖拽映射轨道位移 + 惯性 | kit 02、merged 13 | lerp .15，decay .95 |
+| F2 横向轨道 | 滚轮/拖拽映射轨道位移 + 惯性 | kit 02、component 04 | lerp .15，decay .95 |
 | F3 全屏 shader | 全屏片元做背景/液体/textmode | kit 03、component 05 | 700ms 入场，16s 环境 |
-| F4 WebGL 3D | 物体/相机/场景 | merged 14 | 6–24s 循环 |
-| F5 像素 canvas | 低分辨率 + 整数放大 + 调色板 | kit 04、merged 15 | 500–1200ms 逐字 |
+| F4 WebGL 3D | 物体/相机/场景 | kit 10（merged 14 已移出） | 6–24s 循环 |
+| F5 像素 canvas | 低分辨率 + 整数放大 + 调色板 | kit 04 | 500–1200ms 逐字 |
 | F6 排版动效 | 行/字/字重作为结构 | kit 07、component 12 | 20–50ms stagger |
 | F7 光标/磁吸 | dot/ring/磁吸/多层视差 | kit 06、component 09 | 120–300ms |
 | F8 音频/波形 | 音频是状态源，不是背景 | kit 09、component 11 | 1–7.2s 循环 |
 | F9 3D 倾斜/材质 | 倾斜、卷动、箔材、玻璃 | kit 05、component 02 | 760ms 落位 |
 | F10 相机/缩放 | 页面当可移动的地图/画布 | kit 10、component 06 | 900–1800ms |
 | F11 传送带/marquee | 环形内容 + 速度/摩擦 | component 04 | BASE 62，42–148s |
-| F12 扫描/VHS | 扫描线/噪点/色带/glitch | merged 16、24 keyframes | 200ms/1s/8s 三层 |
-| F13 视频拼贴 | 多视频作为版面零件 | kit 08、merged 17 | 镜头时长 2–6s |
+| F12 扫描/VHS | 扫描线/噪点/色带/glitch | 24 keyframes | 200ms/1s/8s 三层 |
+| F13 视频拼贴 | 多视频作为版面零件 | kit 08 | 镜头时长 2–6s |
 | F14 状态机/演示 | 多步骤 UI 的命名状态 | kit 11、component 03/07/08 | 300–9000ms |
 
 **选择规则**：一个页面只选 1 个主族 + 最多 2 个辅族。主族决定结构，辅族只做局部反馈。

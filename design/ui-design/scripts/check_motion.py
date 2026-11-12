@@ -345,9 +345,81 @@ def check_m012(path, text):
     return out
 
 
+def _is_legacy(path):
+    text = str(path).replace("\\", "/")
+    return bool(re.search(
+        r"(?:assets/motion/code/(?:components|merged)/|assets/golden/(?:aperture|atelier|studio)|evals/motion/m0[1-6]-)",
+        text, re.I))
+
+
+def check_m013(path, text):
+    if _is_legacy(path) or "legacy" in text.lower() or "data-motion" in text:
+        return []
+    # New files must use motion tokens; do not flag documentation/token definitions.
+    if "/assets/tokens/" in str(path).replace("\\", "/") or "/references/" in str(path).replace("\\", "/"):
+        return []
+    has_motion = re.search(r"transition\s*:|animation\s*:|@keyframes|requestAnimationFrame", text, re.I)
+    if not has_motion:
+        return []
+    if re.search(r"var\(--dur-|var\(--ease-|data-motion-role|--dur-attention:\s*0ms", text, re.I):
+        return []
+    m = re.search(r"(?:transition|animation)\s*:[^;}]*?\b(\d+(?:\.\d+)?m?s)\b", text, re.I)
+    if m:
+        return [finding("M-013", "P2", path, text, m.start(),
+            "裸时长 %s 未来自 motion token" % m.group(1),
+            "改用 var(--dur-*)；观测值不要直接写进组件")]
+    return []
+
+
+def check_m014(path, text):
+    if _is_legacy(path) or "data-motion-role=\"catalog\"" in text:
+        return []
+    ambient = len(re.findall(r'data-motion-role=["\']ambient["\']', text, re.I))
+    loops = len(re.findall(r"animation[^;{}]*\binfinite\b", text, re.I))
+    marquee = len(re.findall(r"marquee|kf-marquee|ticker", text, re.I))
+    if ambient > 2 or (loops > 2 and marquee > 0):
+        return [finding("M-014", "P1", path, text, 0,
+            "ambient 超预算（roles=%d loops=%d marquee=%d）" % (ambient, loops, marquee),
+            "ambient ≤1/viewport、≤2/page；utility=0；catalog demo 显式声明并自带暂停")]
+    return []
+
+
+def check_m015(path, text):
+    if _is_legacy(path) or "legacy" in text.lower() or "observed frame-based" in text.lower():
+        return []
+    bad_lerp = re.search(r"lerp\s*\([^)]*,\s*0\.\d+\s*\)|\*=\s*0\.9(?:\d+)?\b", text, re.I)
+    bad_spring = re.search(r"(?:stiffness|k)\s*=\s*120[^\n]*damping\s*=\s*20", text, re.I)
+    critical = re.search(r"临界弹簧|critical spring|无回弹", text, re.I)
+    if bad_spring and critical:
+        return [finding("M-015", "P1", path, text, bad_spring.start(),
+            "k=120/damping=20 是欠阻尼，却标注临界/无回弹",
+            "用 ζ/ω；ζ=1 才是临界；ζ≈0.91 要写轻微回弹")]
+    if bad_lerp and not re.search(r"Math\.exp\s*\(\s*-[^)]*dt", text, re.I):
+        return [finding("M-015", "P2", path, text, bad_lerp.start(),
+            "frame-based lerp/decay 没有 dt 换算",
+            "用 alpha=1-exp(-lambda*dt)，或标记 legacy/observed frame-based")]
+    return []
+
+
+def check_m016(path, text):
+    if _is_legacy(path) or "data-motion-role=\"catalog\"" in text:
+        return []
+    m = re.search(r"animation[^;{}]*\binfinite\b", text, re.I)
+    if not m:
+        return []
+    stoppable = re.search(r"animation-play-state\s*:\s*paused|data-pause|is-paused|visibilitychange|hover[^}]*play-state", text, re.I)
+    identity = re.search(r"prefers-reduced-motion", text, re.I)
+    if not (stoppable and identity):
+        return [finding("M-016", "P1", path, text, m.start(),
+            "无限动画缺少可停/visibility 或 reduced identity",
+            "hover/focus/visibility 可停；reduced 到终态并保留物理/功能身份")]
+    return []
+
+
 CHECKS = [
     check_m001, check_m002, check_m003, check_m004, check_m005, check_m006,
     check_m007, check_m008, check_m009, check_m010, check_m011, check_m012,
+    check_m013, check_m014, check_m015, check_m016,
 ]
 
 
@@ -475,8 +547,13 @@ def self_test():
         "M-010": "<style>" + "".join(".a%d{will-change:transform}" % i for i in range(21)) + "</style>",
         "M-011": "<script>addEventListener('wheel',e=>{e.preventDefault()})</script>",
         "M-012": "<style>@keyframes x{to{opacity:0}} .a{transition:opacity .3s;animation:x 1s}</style>",
+        "M-013": "<style>@media (prefers-reduced-motion:reduce){*{animation:none}} .a{transition:opacity 450ms}</style>",
+        "M-014": "<style>@media (prefers-reduced-motion:reduce){*{animation:none}} .a{animation:x 2s infinite} .b{animation:x 2s infinite} .c{animation:x 2s infinite} .t{marquee}</style>",
+        "M-015": "<style>.a{transition:var(--dur-short)}</style><script>const stiffness=120,damping=20; /* 临界弹簧（无回弹） */</script>",
+        "M-016": "<style>@keyframes x{to{opacity:.5}} .a{animation:x 2s infinite}</style>",
     }
     clean = "<style>@media (prefers-reduced-motion: reduce){*{animation:none}}</style><p>ok</p>"
+    synthetic = Path("assets/golden/new-v5.html")
 
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)

@@ -221,7 +221,7 @@
       min-height: 420px;
       touch-action: pan-y;
       cursor: grab;
-      outline: none;
+      outline: 2px solid transparent;
       perspective: 1200px;
     }
     .orbit:active { cursor: grabbing; }
@@ -766,7 +766,8 @@
       text-transform: uppercase;
       text-align: left;
     }
-    .project__acc-btn:hover, .project__acc-btn:focus-visible { color: var(--ink); outline: none; }
+    .project__acc-btn:hover { color: var(--ink); }
+    .project__acc-btn:focus-visible { color: var(--ink); outline: 2px solid var(--accent); outline-offset: 4px; }
     .project__acc-btn span { color: var(--accent); transition: transform .3s var(--ease); }
     .project__acc-btn[aria-expanded="true"] { color: var(--ink); }
     .project__acc-btn[aria-expanded="true"] span { transform: rotate(45deg); }
@@ -860,7 +861,8 @@
       font-size: 11px;
     }
     .sources__group a b { color: var(--accent); font-weight: 400; }
-    .sources__group a:hover, .sources__group a:focus-visible { color: var(--ink); outline: none; }
+    .sources__group a:hover { color: var(--ink); }
+    .sources__group a:focus-visible { color: var(--ink); outline: 2px solid var(--accent); outline-offset: 3px; }
 
     /* ========== responsive ========== */
     @media (max-width: 900px) {
@@ -912,7 +914,7 @@
     }
   </style>
 </head>
-<body class="is-dark">
+<body data-motion="catalog" data-motion-role="catalog" data-legacy-motion="v4" class="is-dark">
   <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
   <canvas class="shader" id="shader" aria-hidden="true"></canvas>
   <div class="fallback" aria-hidden="true"></div>

@@ -11,7 +11,6 @@ python3 -I scripts/query_corpus.py --motion --kind components
 |---|---:|---|
 | kits | 12 | `code/kits/` |
 | components | 12 | `code/components/` |
-| merged | 5 | `code/merged/` |
 | prompts | 10 | `prompts/` |
 | keyframes | 24 | `code/css/keyframes.css` |
 | snippets | 8 | `code/snippets/` |
@@ -39,7 +38,6 @@ python3 -I scripts/query_corpus.py --motion --kind components
 | 类型 | ID | 路径 | 说明 |
 |---|---|---|---|
 | kit | `02-horizontal` | `assets/motion/code/kits/02-horizontal.js` | 横向轨道、wheel/drag、边界 clamp |
-| merged | `13-horizontal-rail` | `assets/motion/code/merged/13-horizontal-rail/index.html` | 滚轮/拖拽映射轨道位移，lerp .15 跟随，释放保留速度，边界橡皮筋；reduced-motion 退回原生横向滚动。 |
 | keyframes | `kf-slide-in-left` | `assets/motion/code/css/keyframes.css` | canonical keyframes recipe |
 | keyframes | `kf-slide-in-right` | `assets/motion/code/css/keyframes.css` | canonical keyframes recipe |
 | snippet | `lerp` | `assets/motion/code/snippets.js#lerp` | clamp / lerp / damp / wrap / rubber |
@@ -58,7 +56,6 @@ python3 -I scripts/query_corpus.py --motion --kind components
 
 | 类型 | ID | 路径 | 说明 |
 |---|---|---|---|
-| merged | `14-webgl-object` | `assets/motion/code/merged/14-webgl-object/index.html` | 裸 WebGL2 + fragment shader 的 raymarch box：指针偏移相机、时间旋转物体、DPR≤2、上下文丢失降级。 |
 | prompt | `F4-tristan-rain-scene.prompt` | `assets/motion/prompts.md#F4-tristan-rain-scene.prompt` | 强提示词：复刻「Tristan Haquenne × Anthony Bayet」的 7 章状态机 + 全屏 Three.js 雨景/水滴 + 章节 overlay |
 
 ## F5 Canvas2D 像素 / 角色
@@ -66,7 +63,6 @@ python3 -I scripts/query_corpus.py --motion --kind components
 | 类型 | ID | 路径 | 说明 |
 |---|---|---|---|
 | kit | `04-canvas-2d` | `assets/motion/code/kits/04-canvas-2d.js` | Canvas 2D 粒子/像素隧道 |
-| merged | `15-pixel-canvas` | `assets/motion/code/merged/15-pixel-canvas/index.html` | 160×120 离屏像素画布，6 色调色板，imageSmoothing=false，整数坐标；角色/太阳/海浪按 phase 动。 |
 | snippet | `dpr-canvas` | `assets/motion/code/snippets.js#dpr-canvas` | DPR≤2 的 canvas 尺寸管理 |
 
 ## F6 排版 / 动态字体
@@ -127,7 +123,6 @@ python3 -I scripts/query_corpus.py --motion --kind components
 
 | 类型 | ID | 路径 | 说明 |
 |---|---|---|---|
-| merged | `16-scan-vhs` | `assets/motion/code/merged/16-scan-vhs/index.html` | 三层速度：扫描线 8s、噪点 1s、glitch 4.2s 短切片；只动 transform/opacity/clip-path，reduced-motion 静态。 |
 | prompt | `F12-unholy-halftone-light.prompt` | `assets/motion/prompts.md#F12-unholy-halftone-light.prompt` | 强提示词：复刻「The Unholy Project」的 半调网点纸 + 灯开关明暗 + 团队档案 + waitlist |
 | keyframes | `kf-scanline` | `assets/motion/code/css/keyframes.css` | canonical keyframes recipe |
 | keyframes | `kf-grain` | `assets/motion/code/css/keyframes.css` | canonical keyframes recipe |
@@ -139,7 +134,6 @@ python3 -I scripts/query_corpus.py --motion --kind components
 | 类型 | ID | 路径 | 说明 |
 |---|---|---|---|
 | kit | `08-collage` | `assets/motion/code/kits/08-collage.js` | 可拖拽拼贴卡片、吸附 |
-| merged | `17-video-collage` | `assets/motion/code/merged/17-video-collage/index.html` | 6 块版面零件，按 depth .6–1.25 做指针视差；离屏 IO 暂停；真实视频替换占位后同一 mount 支持播放/暂停。 |
 | prompt | `F13-scrapbook-collage.prompt` | `assets/motion/prompts.md#F13-scrapbook-collage.prompt` | 强提示词：生成「手作剪贴簿」型个人主页 |
 
 ## F14 状态机 / 产品演示
@@ -160,7 +154,7 @@ python3 -I scripts/query_corpus.py --motion --kind components
 ## 选择规则
 
 - 先按 `09-motion-principles.md` 选 **1 个主族**，再来这里找该族的 canonical 代码。
-- 优先 `components/`（完整、已验证）→ `merged/`（补缺、已验证）→ `kits/`（最小机制）。
+- 优先 `components/`（完整、已验证）→ `kits/`（最小机制）。
 - 需要整页生成时用 `prompts/`；需要单个曲线/原语时用 `snippets/`。
 - `keyframes/` 是 CSS 起手式，不绑定时长；时长从 `PARAMETERS.md` 取。
 - 一个页面不要混超过 1 主族 + 2 辅族。

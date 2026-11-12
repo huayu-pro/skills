@@ -276,3 +276,13 @@ FORBIDDEN: 本页禁止的 3 个默认（从第 8 节选）
 - 原型：`14-pattern-library`；品牌：`19-brand-index`
 - 实现：`21-implementation`；Tailwind：`20-tailwind-mapping`
 - 三库：`15-stack-shadcn`、`16-stack-heroui`、`17-stack-mantine`、`18-stack-selection`
+
+
+## v5.0 · surface profile 与 appropriate gate
+
+先判 profile（expressive / product / utility / editorial / catalog），权重见
+`12-audit-rubric.md`。UI 第一美德是 **appropriate**。utility（设置/表单/定价/后台/财务）
+以克制、完成度、状态与键盘为主；允许功能关系（ledger/queue/workbench/checklist），
+或明确写「本页不需要物理关系」。「一个页面一个物理关系」只在 expressive/editorial 强制。
+Motion casting 与三档预算见 `28-motion-system.md`；CJK/移动端见 `29-cjk-mobile.md`。
+现有三页 golden 是 expressive/editorial 校准，不是通用品味；utility 对照 `assets/golden/ledger.html`。

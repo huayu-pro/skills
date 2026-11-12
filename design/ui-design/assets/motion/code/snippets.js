@@ -209,32 +209,34 @@ function normalizeWheel(event) {
 }
 
 /* ==== spring ==== */
-/* spring.js — critically damped spring for UI landings.
- * No overshoot by default; set damping < 2*sqrt(stiffness) for bounce.
+/* spring.js — v5.0 dt-based spring with explicit damping ratio.
+ * zeta=1 is critically damped (no overshoot); zeta<1 has a small bounce.
+ * Legacy k=120/damping=20 is zeta≈0.91, NOT critical.
  */
 
 function createSpring(options) {
-  const stiffness = (options && options.stiffness) || 120;
-  const damping = (options && options.damping) || 20;
-  const mass = (options && options.mass) || 1;
-  let value = (options && options.value) || 0;
+  const opt = options || {};
+  const zeta = opt.zeta == null ? 1 : opt.zeta;
+  const hz = opt.hz == null ? 1.8 : opt.hz;
+  const omega = 2 * Math.PI * hz;
+  let value = opt.value || 0;
   let velocity = 0;
-  let target = (options && options.target) || 0;
+  let target = opt.target || 0;
 
   return {
     get value() { return value; },
+    get velocity() { return velocity; },
+    get zeta() { return zeta; },
     set target(next) { target = next; },
     step(next, dt) {
       if (typeof next === "number") target = next;
-      const force = -stiffness * (value - target) - damping * velocity;
-      velocity += (force / mass) * dt;
-      value += velocity * dt;
+      const step = Math.min(Math.max(dt, 0), 1 / 30);
+      const accel = omega * omega * (target - value) - 2 * zeta * omega * velocity;
+      velocity += accel * step;
+      value += velocity * step;
       return value;
     },
-    reset(next) {
-      value = next;
-      velocity = 0;
-    },
+    reset(next) { value = next; velocity = 0; },
   };
 }
 

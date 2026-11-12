@@ -174,48 +174,6 @@
    "verified": true
   }
  ],
- "merged": [
-  {
-   "id": "13-horizontal-rail",
-   "family": "F2",
-   "path": "assets/motion/code/merged/13-horizontal-rail/index.html",
-   "summary": "滚轮/拖拽映射轨道位移，lerp .15 跟随，释放保留速度，边界橡皮筋；reduced-motion 退回原生横向滚动。",
-   "duration_ms": 0,
-   "verified": true
-  },
-  {
-   "id": "14-webgl-object",
-   "family": "F4",
-   "path": "assets/motion/code/merged/14-webgl-object/index.html",
-   "summary": "裸 WebGL2 + fragment shader 的 raymarch box：指针偏移相机、时间旋转物体、DPR≤2、上下文丢失降级。",
-   "duration_ms": 0,
-   "verified": true
-  },
-  {
-   "id": "15-pixel-canvas",
-   "family": "F5",
-   "path": "assets/motion/code/merged/15-pixel-canvas/index.html",
-   "summary": "160×120 离屏像素画布，6 色调色板，imageSmoothing=false，整数坐标；角色/太阳/海浪按 phase 动。",
-   "duration_ms": 0,
-   "verified": true
-  },
-  {
-   "id": "16-scan-vhs",
-   "family": "F12",
-   "path": "assets/motion/code/merged/16-scan-vhs/index.html",
-   "summary": "三层速度：扫描线 8s、噪点 1s、glitch 4.2s 短切片；只动 transform/opacity/clip-path，reduced-motion 静态。",
-   "duration_ms": 8000,
-   "verified": true
-  },
-  {
-   "id": "17-video-collage",
-   "family": "F13",
-   "path": "assets/motion/code/merged/17-video-collage/index.html",
-   "summary": "6 块版面零件，按 depth .6–1.25 做指针视差；离屏 IO 暂停；真实视频替换占位后同一 mount 支持播放/暂停。",
-   "duration_ms": 450,
-   "verified": true
-  }
- ],
  "prompts": [
   {
    "id": "F1-magnet-lover-long-scroll.prompt",

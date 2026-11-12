@@ -216,7 +216,7 @@ def cmd_motion(args) -> int:
         sys.exit("motion/index.json missing")
     data = json.loads(index_path.read_text(encoding="utf-8"))
     rows = []
-    for kind in ("kits", "components", "merged", "prompts", "keyframes", "snippets"):
+    for kind in ("kits", "components", "prompts", "keyframes", "snippets"):
         for item in data.get(kind, []):
             item = dict(item)
             item["kind"] = kind
@@ -259,7 +259,7 @@ def main() -> int:
     ap.add_argument("--section", help="with --brand: print one top-level block")
     ap.add_argument("--motion", action="store_true", help="list motion assets")
     ap.add_argument("--family", help="with --motion: F1..F14")
-    ap.add_argument("--kind", choices=["kits", "components", "merged", "prompts",
+    ap.add_argument("--kind", choices=["kits", "components", "prompts",
                                        "keyframes", "snippets"],
                     help="with --motion: asset kind")
     ap.add_argument("--query", help="with --motion: substring filter")
