@@ -1,0 +1,34 @@
+{
+  "recommended_threshold": 0.34,
+  "description_required_concepts": ["magpie", "plugin_action", "provider_auth"],
+  "positive_concepts": {
+    "magpie": ["magpie", "usemagpie"],
+    "plugin_action": ["插件", "plugin", "接入", "对接", "写一个", "写个", "创建", "做一个", "上架", "发布", "中间件", "middleware", "provider"],
+    "provider_auth": ["provider", "auth", "登录", "供应商", "模型", "额度", "quota", "账号"],
+    "troubleshoot": ["排查", "不显示", "额度未知", "登录失败", "误标", "过期", "失效", "报错"]
+  },
+  "negative_patterns": ["翻译", "总结", "vscode", "vs code"],
+  "should_trigger": [
+    { "text": "帮我写个 magpie 插件，接入 FooAI 的 API", "family": "t" },
+    { "text": "magpie 里怎么加一个自定义 provider？", "family": "t" },
+    { "text": "我的 magpie 插件额度显示未知，帮我排查", "family": "t" },
+    { "text": "给 magpie 写一个网关中间件插件", "family": "t" },
+    { "text": "magpie 插件登录总是失败，账号被标成过期了", "family": "t" },
+    { "text": "怎么把我的插件上架 magpie 插件市场", "family": "t" },
+    { "text": "magpie plugin add 我的插件总是失败，列表里显示加载错误", "family": "t" },
+    { "text": "本地插件改了代码，magpie 里一直不生效", "family": "t" }
+  ],
+  "should_not_trigger": [
+    { "text": "帮我写一个 VSCode 插件", "family": "n" },
+    { "text": "把这篇文档翻译成英文", "family": "n" },
+    { "text": "总结一下这场会议的要点", "family": "n" },
+    { "text": "写一个 MCP server 暴露天气查询工具", "family": "n" },
+    { "text": "magpie 官网打不开了", "family": "n" }
+  ],
+  "near_neighbor": [
+    { "text": "用 OpenCode 的插件机制写一个主题切换插件", "family": "nn" },
+    { "text": "给 magpie 本体提个 PR，优化网关路由策略", "family": "nn" },
+    { "text": "开发一个 pi 扩展包给 pi coding agent 用", "family": "nn" },
+    { "text": "给 Claude Code 写一个 statusline 插件", "family": "nn" }
+  ]
+}

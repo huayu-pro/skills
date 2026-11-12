@@ -1,0 +1,20 @@
+{
+  "name": "opencode-acme-auth",
+  "version": "0.1.0",
+  "description": "Magpie/OpenCode provider plugin: Acme Coding Plan",
+  "type": "module",
+  "main": "./index.mjs",
+  "files": ["index.mjs", "README.md"],
+  "keywords": ["opencode", "opencode-plugin", "magpie", "acme"],
+  "license": "MIT",
+  "repository": "github:yourname/opencode-acme-auth",
+  "engines": { "node": ">=22" },
+  "magpie": {
+    "name": "Acme",
+    "summary": {
+      "en": "Use your Acme Coding Plan in every agent.",
+      "zh": "在每个智能体里使用你的 Acme Coding Plan。"
+    },
+    "maxConcurrency": 4
+  }
+}
