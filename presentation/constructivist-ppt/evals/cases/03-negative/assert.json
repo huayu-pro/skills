@@ -1,0 +1,1 @@
+{ "note": "判据写在 run.mjs 的 CASES['03-negative']；负面触发只能关键词兜底 + 人工盲评", "dimension": "A 适用性" }

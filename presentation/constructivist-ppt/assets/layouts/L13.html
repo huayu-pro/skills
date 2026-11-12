@@ -1,0 +1,11 @@
+{{texture}}
+<img data-slot="image" src="{{slot:image}}" alt="" style="position:absolute; left:0; top:0; width:1280px; height:720px; object-fit:cover;">
+<div class="band" data-axis style="left:-100px; top:60px; width:1500px; height:50px; background:var(--pop); transform:rotate({{axisDeg}}deg);"></div>
+<div class="rect" style="left:0; top:390px; width:820px; height:250px; background:var(--fg);"></div>
+
+<div class="meta fg-bg" data-slot="kicker" style="position:absolute; left:56px; top:410px;">{{slot:kicker}}</div>
+<div class="t-h1 fg-bg" data-slot="title1" style="position:absolute; left:56px; top:440px;">{{slot:title1}}</div>
+<div data-slot-block="title2"><div class="t-h1 fg-pop" data-slot="title2" style="position:absolute; left:56px; top:540px;">{{slot:title2}}</div></div>
+<div class="t-small fg-bg" data-slot="caption" style="position:absolute; left:56px; top:610px; width:700px;">{{slot:caption}}</div>
+<div class="meta fg-bg" data-slot="meta" style="position:absolute; left:640px; top:410px; width:150px; text-align:right;">{{slot:meta}}</div>
+{{folio}}

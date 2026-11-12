@@ -1,0 +1,33 @@
+{{texture}}
+<!-- 本版式 axisDegSign=negative：横置斜带的几何只对负角安全，翻正角会压住标题区（plan.mjs 会拦） -->
+<div class="band" data-axis style="left:-90px; top:250px; width:1460px; height:450px; background:var(--fg); transform:rotate({{axisDeg}}deg);"></div>
+
+<div class="meta fg-fg" data-slot="kicker" style="position:absolute; left:56px; top:56px;">{{slot:kicker}}</div>
+<div class="t-h2 fg-fg" data-slot="title" style="position:absolute; left:56px; top:100px;">{{slot:title}}</div>
+<div class="t-small fg-fg" data-slot="lead" style="position:absolute; left:56px; top:190px; width:620px;">{{slot:lead}}</div>
+<div data-slot-block="meta"><div class="meta fg-fg" data-slot="meta" style="position:absolute; left:900px; top:56px; width:324px; text-align:right;">{{slot:meta}}</div></div>
+<div class="rule rule--pop" style="left:56px; top:266px; width:96px;"></div>
+
+<div class="grid4" style="position:absolute; left:56px; top:300px; width:1168px;">
+  <div data-slot-block="items.1" style="display:flex; flex-direction:column;">
+    <div class="num fg-pop" data-slot="items.1.num" style="font-size:104px;">{{slot:items.1.num}}</div>
+    <div class="meta fg-bg" data-slot="items.1.label" style="margin-top:18px;">{{slot:items.1.label}}</div>
+    <div class="t-small fg-bg" data-slot="items.1.text" style="margin-top:8px; width:92%;">{{slot:items.1.text}}</div>
+  </div>
+  <div data-slot-block="items.2" style="display:flex; flex-direction:column;">
+    <div class="num fg-pop" data-slot="items.2.num" style="font-size:104px;">{{slot:items.2.num}}</div>
+    <div class="meta fg-bg" data-slot="items.2.label" style="margin-top:18px;">{{slot:items.2.label}}</div>
+    <div class="t-small fg-bg" data-slot="items.2.text" style="margin-top:8px; width:92%;">{{slot:items.2.text}}</div>
+  </div>
+  <div data-slot-block="items.3" style="display:flex; flex-direction:column;">
+    <div class="num fg-pop" data-slot="items.3.num" style="font-size:104px;">{{slot:items.3.num}}</div>
+    <div class="meta fg-bg" data-slot="items.3.label" style="margin-top:18px;">{{slot:items.3.label}}</div>
+    <div class="t-small fg-bg" data-slot="items.3.text" style="margin-top:8px; width:92%;">{{slot:items.3.text}}</div>
+  </div>
+  <div data-slot-block="items.4" style="display:flex; flex-direction:column;">
+    <div class="num fg-pop" data-slot="items.4.num" style="font-size:104px;">{{slot:items.4.num}}</div>
+    <div class="meta fg-bg" data-slot="items.4.label" style="margin-top:18px;">{{slot:items.4.label}}</div>
+    <div class="t-small fg-bg" data-slot="items.4.text" style="margin-top:8px; width:92%;">{{slot:items.4.text}}</div>
+  </div>
+</div>
+{{folio}}

@@ -1,0 +1,18 @@
+{
+  "note": "pre-refactor 基线（v1）",
+  "capturedAt": "2026-10-21",
+  "version": "v1 (pre-refactor)",
+  "validate": {
+    "pages": 10,
+    "errors": 0,
+    "warnings": 0
+  },
+  "pptx": {
+    "bytes": 163720
+  },
+  "knownDefects": {
+    "P4.sun--outline": "椭圆之外多出 4 条 10px 直条（方框）",
+    "t-h2": "deck.css 缺 white-space:nowrap",
+    "wrap": "单行正文输出 wrap=false（extract.mjs:260 旧逻辑）"
+  }
+}

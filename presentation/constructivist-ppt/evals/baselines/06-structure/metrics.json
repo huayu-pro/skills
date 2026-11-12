@@ -1,0 +1,296 @@
+{
+  "case": "06-structure",
+  "updated": "2026-10-21T11:26:43.544Z",
+  "reason": "v3 structured generation: plan/scaffold determinism and bad-plan rejection",
+  "repeats": 3,
+  "results": [
+    {
+      "bad": 0,
+      "unknown": 0,
+      "results": [
+        {
+          "id": "plan-valid",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "plan-deck-binding",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "validate-clean",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "audit-clean",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "scaffold-ok",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "scaffold-deterministic",
+          "ok": true,
+          "expected": "两次输出字节一致",
+          "actual": "一致"
+        },
+        {
+          "id": "all-pages-bound",
+          "ok": true,
+          "expected": "10 页都有 plan-id/role/layout",
+          "actual": "10/10/10"
+        },
+        {
+          "id": "build-check-ok",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "bad-role-mismatch",
+          "ok": true,
+          "expected": "exit 1 且包含「不支持 role」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-missing-slot",
+          "ok": true,
+          "expected": "exit 1 且包含「缺必填槽位」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-over-budget",
+          "ok": true,
+          "expected": "exit 1 且包含「超过」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-duplicate-claim",
+          "ok": true,
+          "expected": "exit 1 且包含「重复」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-minutes-drift",
+          "ok": true,
+          "expected": "exit 1 且包含「相差」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-layout-run",
+          "ok": true,
+          "expected": "exit 1 且包含「连续」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "plan-deck-drift",
+          "ok": true,
+          "expected": "删页后 plan↔deck 失败",
+          "actual": "exit 1"
+        }
+      ]
+    },
+    {
+      "bad": 0,
+      "unknown": 0,
+      "results": [
+        {
+          "id": "plan-valid",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "plan-deck-binding",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "validate-clean",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "audit-clean",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "scaffold-ok",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "scaffold-deterministic",
+          "ok": true,
+          "expected": "两次输出字节一致",
+          "actual": "一致"
+        },
+        {
+          "id": "all-pages-bound",
+          "ok": true,
+          "expected": "10 页都有 plan-id/role/layout",
+          "actual": "10/10/10"
+        },
+        {
+          "id": "build-check-ok",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "bad-role-mismatch",
+          "ok": true,
+          "expected": "exit 1 且包含「不支持 role」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-missing-slot",
+          "ok": true,
+          "expected": "exit 1 且包含「缺必填槽位」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-over-budget",
+          "ok": true,
+          "expected": "exit 1 且包含「超过」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-duplicate-claim",
+          "ok": true,
+          "expected": "exit 1 且包含「重复」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-minutes-drift",
+          "ok": true,
+          "expected": "exit 1 且包含「相差」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-layout-run",
+          "ok": true,
+          "expected": "exit 1 且包含「连续」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "plan-deck-drift",
+          "ok": true,
+          "expected": "删页后 plan↔deck 失败",
+          "actual": "exit 1"
+        }
+      ]
+    },
+    {
+      "bad": 0,
+      "unknown": 0,
+      "results": [
+        {
+          "id": "plan-valid",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "plan-deck-binding",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "validate-clean",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "audit-clean",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "scaffold-ok",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "scaffold-deterministic",
+          "ok": true,
+          "expected": "两次输出字节一致",
+          "actual": "一致"
+        },
+        {
+          "id": "all-pages-bound",
+          "ok": true,
+          "expected": "10 页都有 plan-id/role/layout",
+          "actual": "10/10/10"
+        },
+        {
+          "id": "build-check-ok",
+          "ok": true,
+          "expected": "exit 0",
+          "actual": "exit 0"
+        },
+        {
+          "id": "bad-role-mismatch",
+          "ok": true,
+          "expected": "exit 1 且包含「不支持 role」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-missing-slot",
+          "ok": true,
+          "expected": "exit 1 且包含「缺必填槽位」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-over-budget",
+          "ok": true,
+          "expected": "exit 1 且包含「超过」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-duplicate-claim",
+          "ok": true,
+          "expected": "exit 1 且包含「重复」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-minutes-drift",
+          "ok": true,
+          "expected": "exit 1 且包含「相差」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "bad-layout-run",
+          "ok": true,
+          "expected": "exit 1 且包含「连续」",
+          "actual": "exit 1"
+        },
+        {
+          "id": "plan-deck-drift",
+          "ok": true,
+          "expected": "删页后 plan↔deck 失败",
+          "actual": "exit 1"
+        }
+      ]
+    }
+  ]
+}

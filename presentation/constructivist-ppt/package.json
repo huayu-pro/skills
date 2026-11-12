@@ -1,0 +1,15 @@
+{
+  "name": "constructivist-ppt-scripts",
+  "private": true,
+  "type": "module",
+  "version": "3.3.1",
+  "description": "HTML -> native PPTX pipeline for the constructivist-ppt skill",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "jszip": "^3.10.2",
+    "playwright-core": "^1.64.0",
+    "pptxgenjs": "4.0.1"
+  }
+}

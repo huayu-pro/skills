@@ -1,0 +1,413 @@
+{
+  "version": 1,
+  "title": "纸张的声音",
+  "audience": "设计 / 出版 / 文化分享",
+  "durationMin": 15,
+  "theme": "theme-press",
+  "substyle": "B",
+  "axisDeg": -11,
+  "folioLabel": "纸张的声音",
+  "slides": [
+    {
+      "id": "d01",
+      "role": "cover",
+      "layout": "L02",
+      "claim": "印刷不是中性容器，排版本身就是立场",
+      "minutes": 1.5,
+      "slots": {
+        "masthead": "PRESS WORKS / NO.07",
+        "title1": "纸张的声音",
+        "subtitle": "从铅字到海报：印刷术如何塑造现代视觉。",
+        "counter1": "07",
+        "counter2": "12",
+        "lead": "一份关于油墨、纸张与目光的简史。图可以没有，结构不能没有。",
+        "meta": "PRESS / 1926 — NOW"
+      },
+      "notes": {
+        "purpose": "建立基调：这是一份报纸气质的分享，不是科技发布会",
+        "talk": [
+          "开场不念标题，让右上角的空窗站两秒",
+          "这页刻意没配图——空窗本身就是设计"
+        ],
+        "transition": "从空窗切到主张",
+        "cue": "语气压低，速度放慢。"
+      }
+    },
+    {
+      "id": "d02",
+      "role": "thesis",
+      "layout": "L17",
+      "axisDeg": 9,
+      "claim": "每一次印刷都是一次取舍，中性排版不存在",
+      "minutes": 1,
+      "slots": {
+        "kicker": "THESIS / 主张",
+        "title1": "印刷不是",
+        "title2": "中性的",
+        "body": "每一次印刷都是一次选择：什么被放大，什么被裁掉，什么压在第一层。所谓中性的排版，只是把选择藏起来了。",
+        "stat": "1889",
+        "statNote": "LINOTYPE",
+        "meta": "THESIS 01"
+      },
+      "notes": {
+        "purpose": "让观众记住：排版的选择本身就是立场",
+        "talk": [
+          "巨圆是这页唯一的巨物",
+          "1889 是铸排机之年，选择的成本从此骤降"
+        ],
+        "transition": "从主张切到方法",
+        "cue": "手指向圆心说那句主张。"
+      }
+    },
+    {
+      "id": "d03",
+      "role": "method",
+      "layout": "L18",
+      "claim": "油墨的工序只有三步：定、压、裁",
+      "minutes": 1.5,
+      "slots": {
+        "kicker": "METHOD / 四级台阶",
+        "title": "油墨的工序",
+        "meta": "ASCENDING"
+      },
+      "groups": {
+        "steps": [
+          {
+            "num": "01",
+            "label": "CLAIM",
+            "text": "先定主张与字级。"
+          },
+          {
+            "num": "02",
+            "label": "SET",
+            "text": "拣字，排成硬线。"
+          },
+          {
+            "num": "03",
+            "label": "PRESS",
+            "text": "一次压印定型。"
+          },
+          {
+            "num": "04",
+            "label": "CROP",
+            "text": "裁掉多余，出血。"
+          }
+        ]
+      },
+      "notes": {
+        "purpose": "让观众带走三步工序，并理解台阶高度就是重要性",
+        "talk": [
+          "台阶从左到右爬升",
+          "最后一级最高，因为裁切决定最终面貌"
+        ],
+        "transition": "从工序切到时间",
+        "cue": "顺着台阶从左往右讲。"
+      }
+    },
+    {
+      "id": "d04",
+      "role": "sequence",
+      "layout": "L20",
+      "claim": "四个节点把语言变成了视觉",
+      "minutes": 1.5,
+      "slots": {
+        "kicker": "TIMELINE / 脊线",
+        "title": "四个节点",
+        "lead": "从铸排机到屏幕，印刷把语言一步步变成视觉。"
+      },
+      "groups": {
+        "nodes": [
+          {
+            "date": "1889",
+            "label": "LINOTYPE",
+            "text": "铸排机落地。"
+          },
+          {
+            "date": "1919",
+            "label": "POSTER",
+            "text": "海报成为武器。"
+          },
+          {
+            "date": "1950",
+            "label": "GRID",
+            "text": "网格接管版面。"
+          },
+          {
+            "date": "2024",
+            "label": "SCREEN",
+            "text": "纸张移到屏幕。"
+          }
+        ]
+      },
+      "notes": {
+        "purpose": "让观众记住四个年份各自改变了什么",
+        "talk": [
+          "节点沿脊线交替上下",
+          "起点最重，其余节点递减"
+        ],
+        "transition": "从时间切到证据",
+        "cue": "不要逐个念年份，讲变化。"
+      }
+    },
+    {
+      "id": "d05",
+      "role": "context",
+      "layout": "L19",
+      "claim": "车间的重量与柜台的广度是一体两面",
+      "minutes": 1,
+      "slots": {
+        "kicker": "CONTEXT / 拼贴",
+        "title": "车间与柜台",
+        "bigLabel": "FIG.01 / WORKSHOP",
+        "cellBHead": "车间",
+        "cellBText": "字架、油墨、滚筒：语言在这里获得重量。",
+        "cellCHead": "柜台",
+        "cellCText": "报纸一毛钱一份，视觉免费进千家万户。",
+        "meta": "COLLAGE"
+      },
+      "notes": {
+        "purpose": "用两个空间给印刷一个物质坐标",
+        "talk": [
+          "左边的大窗留白是刻意的",
+          "有车间照片时它会被压进去，现在几何替班"
+        ],
+        "transition": "从空间切到一张具体的剪影",
+        "cue": "拍一下空窗说：图位在这，但今天不上图。"
+      }
+    },
+    {
+      "id": "d06",
+      "role": "case",
+      "layout": "L21",
+      "axisDeg": 9,
+      "claim": "网点剪影：照片退底，几何上浮",
+      "minutes": 1.5,
+      "slots": {
+        "kicker": "CASE / 一张剪影",
+        "title1": "工业",
+        "title2": "剪影",
+        "body": "烟囱与厂房被压成网点剪影——照片退到最底层，几何浮上来当结构。这是配图版式该有的样子。",
+        "caption": "HALFTONE / INDUSTRY",
+        "meta": "CASE 01"
+      },
+      "media": {
+        "image": "../assets/img/industry.svg"
+      },
+      "notes": {
+        "purpose": "展示配图与几何的正确关系：图被网点化后成为版面本身",
+        "talk": [
+          "这张图是程序生成的，零版权",
+          "它压在兜底构成的正上方，坐标一个没动"
+        ],
+        "transition": "从个案切到数据",
+        "cue": "指出网点与网格的关系。"
+      }
+    },
+    {
+      "id": "d07",
+      "role": "data",
+      "layout": "L11",
+      "claim": "不同介质上，同一张图的可读密度差三档",
+      "minutes": 1.5,
+      "slots": {
+        "title": "网点密度对比",
+        "lead": "同一张图在不同印刷条件下的可读密度。",
+        "maxValue": "100",
+        "meta": "BARS"
+      },
+      "groups": {
+        "items": [
+          {
+            "label": "档案纸",
+            "value": "62",
+            "display": "62"
+          },
+          {
+            "label": "新闻纸",
+            "value": "78",
+            "display": "78"
+          },
+          {
+            "label": "铜版纸",
+            "value": "91",
+            "display": "91"
+          },
+          {
+            "label": "屏幕",
+            "value": "100",
+            "display": "100"
+          }
+        ]
+      },
+      "notes": {
+        "purpose": "用条形对比让介质差异一眼可见",
+        "talk": [
+          "条长按数据等比",
+          "屏幕满格，但它最缺重量"
+        ],
+        "transition": "从密度切到车间里的数字",
+        "cue": "强调这些是示意数据。"
+      }
+    },
+    {
+      "id": "d08",
+      "role": "data",
+      "layout": "L05",
+      "claim": "铅的重量：字号的起点与纸的体格",
+      "minutes": 2,
+      "slots": {
+        "kicker": "NUMBERS / 巨号",
+        "title": "铅的重量",
+        "lead": "排版车间里的三个尺度。",
+        "meta": "BIG NUMBERS"
+      },
+      "groups": {
+        "items": [
+          {
+            "num": "12pt",
+            "label": "FLOOR",
+            "text": "字号从此有了地板。"
+          },
+          {
+            "num": "45s",
+            "label": "BEAT",
+            "text": "一页纸的节拍。"
+          },
+          {
+            "num": "300g",
+            "label": "BODY",
+            "text": "纸张的体格。"
+          }
+        ]
+      },
+      "notes": {
+        "purpose": "用三个车间尺度给抽象的排版一个身体",
+        "talk": [
+          "三个巨号数字都在斜板上",
+          "少一项也能成立，骨架会自动收"
+        ],
+        "transition": "从数字切到一句引语",
+        "cue": "每个数字停半拍。"
+      }
+    },
+    {
+      "id": "d09",
+      "role": "quote",
+      "layout": "L10",
+      "claim": "印刷是思想的重工业",
+      "minutes": 1,
+      "slots": {
+        "kicker": "QUOTE",
+        "quote1": "印刷是思想的",
+        "quote2": "重工业。",
+        "attribution": "— 瓦尔特·本雅明",
+        "meta": "1934"
+      },
+      "notes": {
+        "purpose": "让这句话独自站一页，作为情绪锚点",
+        "talk": [
+          "停顿，念一遍就走",
+          "不解释"
+        ],
+        "transition": "从引语切到对切证据",
+        "cue": "念完停两拍。"
+      }
+    },
+    {
+      "id": "d10",
+      "role": "evidence",
+      "layout": "L06",
+      "axisDeg": 9,
+      "claim": "克制来自纯度与面积，不来自留白",
+      "minutes": 1.5,
+      "slots": {
+        "kicker": "EVIDENCE / 对切",
+        "title1": "一条切边",
+        "body": "左纸右墨，切边是硬的。没有渐变、没有阴影，克制全靠两种实色的纯度差和面积差。",
+        "bigNumber": "45°",
+        "caption": "HARD EDGE / NO GRADIENT",
+        "meta": "SPLIT"
+      },
+      "notes": {
+        "purpose": "证明不靠装饰也能建立张力",
+        "talk": [
+          "右下的空窗是图位，今天留给几何",
+          "切边角度与全篇斜线一致"
+        ],
+        "transition": "从证据切到人物",
+        "cue": "手指沿着切边划一下。"
+      }
+    },
+    {
+      "id": "d11",
+      "role": "case",
+      "layout": "L12",
+      "claim": "四个人把印刷推进了现代",
+      "minutes": 1.5,
+      "slots": {
+        "title": "四个人的车间",
+        "meta": "FIGURES"
+      },
+      "groups": {
+        "items": [
+          {
+            "letter": "G",
+            "name": "谷登堡",
+            "meta": "1400 — 1468",
+            "text": "把字变成零件。"
+          },
+          {
+            "letter": "L",
+            "name": "李西茨基",
+            "meta": "1890 — 1941",
+            "text": "把字变成图形。"
+          },
+          {
+            "letter": "R",
+            "name": "罗德琴柯",
+            "meta": "1891 — 1956",
+            "text": "把照片变成论点。"
+          },
+          {
+            "letter": "S",
+            "name": "斯捷潘诺娃",
+            "meta": "1894 — 1958",
+            "text": "把几何穿上身。"
+          }
+        ]
+      },
+      "notes": {
+        "purpose": "用四个名字收束叙事的人物线",
+        "talk": [
+          "首卡最大，因为他管的是结构",
+          "没有肖像照片，字母就是肖像——首卡留了照片位"
+        ],
+        "transition": "从人物切到行动",
+        "cue": "每人只讲一个动作。"
+      }
+    },
+    {
+      "id": "d12",
+      "role": "closing",
+      "layout": "L16",
+      "axisDeg": 9,
+      "claim": "先写一句主张，再选一张纸",
+      "minutes": 1,
+      "slots": {
+        "title1": "把你的内容",
+        "title2": "压上油墨",
+        "action": "先写一句主张，再选一张纸。不要反过来。",
+        "meta": "START PRESSING"
+      },
+      "notes": {
+        "purpose": "给观众一句可以立刻执行的话作为收束",
+        "talk": [
+          "收尾只给一个动作",
+          "说完就停"
+        ],
+        "transition": "",
+        "cue": "不要说谢谢聆听。"
+      }
+    }
+  ]
+}

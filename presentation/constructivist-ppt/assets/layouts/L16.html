@@ -1,0 +1,15 @@
+{{texture}}
+<div class="sun" style="left:-180px; top:404px; width:440px; height:440px; background:var(--pop);"></div>
+<div class="band" data-axis style="left:840px; top:-80px; width:100px; height:900px; background:var(--pop); transform:rotate({{axisDeg}}deg);"></div>
+
+<div class="rect" style="left:0; top:480px; width:700px; height:120px; background:var(--fg);"></div>
+<div class="rect" style="left:0; top:620px; width:700px; height:100px; background:var(--fg);"></div>
+<div class="meta fg-bg" data-slot="meta" style="position:absolute; left:56px; top:56px;">{{slot:meta}}</div>
+<div class="t-h1 fg-bg" data-slot="title1" style="position:absolute; left:56px; top:196px;">{{slot:title1}}</div>
+<div data-slot-block="title2"><div class="t-h1 fg-pop" data-slot="title2" style="position:absolute; left:56px; top:314px;">{{slot:title2}}</div></div>
+<div class="rule rule--pop" style="left:60px; top:470px; width:180px;"></div>
+<div class="t-lead fg-bg" data-slot="action" style="position:absolute; left:56px; top:500px; width:620px;">{{slot:action}}</div>
+<div class="sun sun--outline" style="left:856px; top:56px; width:368px; height:368px;"></div>
+<div class="rect rect--pop" style="left:856px; top:390px; width:368px; height:34px;"></div>
+<div data-slot-block="photo"><img data-slot="photo" src="{{slot:photo}}" alt="" style="position:absolute; left:856px; top:56px; width:368px; height:368px; object-fit:cover;"></div>
+{{folio}}

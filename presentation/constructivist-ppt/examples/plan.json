@@ -1,0 +1,238 @@
+{
+  "version": 1,
+  "title": "构成主义：用最少的元素，制造最大的力",
+  "audience": "设计 / 品牌 / 文化分享",
+  "durationMin": 15,
+  "theme": "theme-archive",
+  "substyle": "A",
+  "axisDeg": -11,
+  "folioLabel": "构成主义",
+  "slides": [
+    {
+      "id": "s01",
+      "role": "cover",
+      "layout": "L01",
+      "claim": "构成主义是一套压缩信息的方法，不是装饰纹样",
+      "minutes": 1.5,
+      "slots": {
+        "kicker": "CONSTRUCTIVISM / DESIGN STYLE ARCHIVE",
+        "latin": "Constructivism",
+        "title1": "构成主义",
+        "lead": "不是一套装饰纹样，是一套压缩信息的方法。",
+        "meta": "1917 — 1934 · PETROGRAD / MOSCOW"
+      },
+      "notes": {
+        "purpose": "让观众先建立尺度感：这不是一套装饰，是一种工作方法",
+        "talk": ["先不讲话，让这张图站三秒", "这套语言只做一件事：把注意力压到一个点上"],
+        "transition": "从视觉冲击切到历史背景",
+        "cue": "开场别急着介绍自己，让画面先说话。"
+      }
+    },
+    {
+      "id": "s02",
+      "role": "context",
+      "layout": "L07",
+      "claim": "构成主义不是风格，是取消架上绘画的行动",
+      "minutes": 2,
+      "slots": {
+        "title1": "把艺术",
+        "title2": "赶出画室",
+        "body": "1917 年之后，一批俄国先锋派认为：画布上的自娱自乐已经没用了。艺术家应当成为工程师，把形式、材料、印刷和生产组织起来。",
+        "meta": "ORIGIN / 起源"
+      },
+      "notes": {
+        "purpose": "让观众理解构成主义不是风格，是取消架上绘画的行动",
+        "talk": ["他们不是想做一种风格，是想取消架上绘画这件事", "艺术要进入工厂、印刷所、街头"],
+        "transition": "从历史动机切到可执行的视觉语法",
+        "cue": "讲背景，不要急着展示作品。"
+      }
+    },
+    {
+      "id": "s03",
+      "role": "method",
+      "layout": "L04",
+      "claim": "四条法则里第一条压倒其余：一页一条主斜线",
+      "minutes": 2,
+      "slots": {
+        "kicker": "KEY CHARACTERISTICS / 视觉语法",
+        "title": "四条法则，第一条最大",
+        "lead": "几何不是装饰，是把内容压进一个结构里。首栏吃掉份额，其余三栏支撑。"
+      },
+      "groups": {
+        "items": [
+          {"num": "01", "label": "ONE DIAGONAL", "head": "一条主斜线", "body": "整张图只有一个动势方向。其余元素要么与它平行，要么严格水平垂直。"},
+          {"num": "02", "label": "TYPE", "head": "字是结构", "body": "粗、窄、压缩，沿色带排，和形状咬合。"},
+          {"num": "03", "label": "TWO INKS", "head": "两墨一纸", "body": "面积严重不均：主色 50–70%，爆点 8–15%。"},
+          {"num": "04", "label": "SCALE", "head": "极端尺度差", "body": "巨物与微字并置，中间尺寸最没力量。"}
+        ]
+      },
+      "notes": {
+        "purpose": "让观众记住四条法则里第一条压倒其余",
+        "talk": ["四条法则不是并列的", "第一条压倒其余三条——没有主斜线，后面三条都无处安放"],
+        "transition": "从语法切到同一套语法的另一种语气",
+        "cue": "逐条讲，每条给一个可执行的判断标准。"
+      }
+    },
+    {
+      "id": "s04",
+      "role": "thesis",
+      "layout": "L06",
+      "claim": "克制来自高纯度色块，不来自留白",
+      "minutes": 1.5,
+      "slots": {
+        "kicker": "SIGNAL / 同一套语法，另一种语气",
+        "title1": "一条线",
+        "title2": "两个圆",
+        "body": "去掉纸张颗粒和红黑，只留一种重墨与冷白。张力不再来自色块对峙，而来自一条斜切的边界、两个直径比 2:1 的圆，以及被画布切掉的那一块。",
+        "bigNumber": "Ø560",
+        "caption": "SLANT · Ø280 / Ø560 · 2 PX RULE",
+        "meta": "INDIGO AS INK"
+      },
+      "notes": {
+        "purpose": "让观众感受同一套语法换成重墨后的冷与重",
+        "talk": ["这一页换一套语气", "克制来自纯度与面积，不来自空"],
+        "transition": "从语气切到时间轴",
+        "cue": "强调“不是极简双色”，而是同一套语法的另一种墨。"
+      }
+    },
+    {
+      "id": "s05",
+      "role": "data",
+      "layout": "L05",
+      "claim": "十五年时间轴，1917 是绝对起点",
+      "minutes": 2,
+      "slots": {
+        "kicker": "TIMELINE / 十五年内全部结束",
+        "title": "四个年份",
+        "lead": "一场运动从宣言到被禁，只用了十五年。之后它散进包豪斯、瑞士平面设计和整个现代广告业。",
+        "meta": "1917 — 1932"
+      },
+      "groups": {
+        "items": [
+          {"num": "1917", "label": "OCTOBER", "text": "十月革命，先锋派进入生产。"},
+          {"num": "1919", "label": "RED WEDGE", "text": "李西茨基用一块三角形画完内战。"},
+          {"num": "1922", "label": "PRODUCTIVISM", "text": "艺术进入工厂与印刷所。"},
+          {"num": "1932", "label": "BANNED", "text": "运动被禁，语法散进现代设计。"}
+        ]
+      },
+      "notes": {
+        "purpose": "让观众记住十五年时间轴与 1917 的起点",
+        "talk": ["四个年份，第一个最长最大", "它决定后面三条"],
+        "transition": "从时间切到人物",
+        "cue": "不要逐条念年份，讲每个年份改变了什么。"
+      }
+    },
+    {
+      "id": "s06",
+      "role": "case",
+      "layout": "L12",
+      "claim": "四个人把构成主义推进到材料、字、摄影与织物",
+      "minutes": 2,
+      "slots": {
+        "title": "用字母做肖像",
+        "meta": "FOUR FIGURES / 结构里的人"
+      },
+      "groups": {
+        "items": [
+          {"letter": "T", "name": "塔特林", "meta": "1885 — 1953", "text": "把艺术接到材料与结构上。"},
+          {"letter": "L", "name": "李西茨基", "meta": "1890 — 1941", "text": "把字变成图形。"},
+          {"letter": "R", "name": "罗德琴柯", "meta": "1891 — 1956", "text": "仰角、对角线、极端裁切。"},
+          {"letter": "S", "name": "斯捷潘诺娃", "meta": "1894 — 1958", "text": "把几何放进织物与服装。"}
+        ]
+      },
+      "notes": {
+        "purpose": "让观众记住四个人各自把构成主义推进到哪里",
+        "talk": ["不给他们肖像，用字母做肖像", "塔特林那块最大，因为他管的是结构"],
+        "transition": "从人物切到一件具体作品",
+        "cue": "每个人只讲一个动作，不要报生平。"
+      }
+    },
+    {
+      "id": "s07",
+      "role": "evidence",
+      "layout": "L13",
+      "claim": "红楔击败白军：一块三角形画完一场内战",
+      "minutes": 1.5,
+      "slots": {
+        "kicker": "WORK / 1919",
+        "title1": "用红楔",
+        "title2": "击败白军",
+        "caption": "红楔从左边推进白圆，圆里是工业剪影——照片和几何的对抗，正是构成主义的核心。",
+        "meta": "LISSITZKY"
+      },
+      "media": {
+        "image": "../assets/img/industry.png"
+      },
+      "notes": {
+        "purpose": "让观众用一件作品直接理解红楔与白军的对抗",
+        "talk": ["这一页直接用作品本身说话", "红楔从左边推进白圆"],
+        "transition": "从作品切到目录",
+        "cue": "让图说话，只补一句构图关系。"
+      }
+    },
+    {
+      "id": "s08",
+      "role": "sequence",
+      "layout": "L14",
+      "claim": "四个章节：起源、语法、生产、遗产",
+      "minutes": 1,
+      "slots": {
+        "title": "目录",
+        "meta": "CONTENTS / 四个章节"
+      },
+      "groups": {
+        "items": [
+          {"num": "01", "name": "起源", "date": "1917 — 1919"},
+          {"num": "02", "name": "语法", "date": "1919 — 1922"},
+          {"num": "03", "name": "生产", "date": "1922 — 1928"},
+          {"num": "04", "name": "遗产", "date": "1928 — 现在"}
+        ]
+      },
+      "notes": {
+        "purpose": "让观众记住四个章节的顺序",
+        "talk": ["四个章节，一条时间线", "先讲起源，再讲语法，最后讲遗产"],
+        "transition": "从目录切到收束引语",
+        "cue": "快速带过，不要在这里展开。"
+      }
+    },
+    {
+      "id": "s09",
+      "role": "quote",
+      "layout": "L10",
+      "claim": "艺术不是生活的装饰，而是改变生活的力",
+      "minutes": 1,
+      "slots": {
+        "kicker": "ART / MANIFESTO",
+        "quote1": "艺术不是生活的装饰，",
+        "quote2": "而是改变生活的力。",
+        "attribution": "— 罗德琴柯",
+        "meta": "1922"
+      },
+      "notes": {
+        "purpose": "让观众记住“艺术不是生活的装饰”这一句",
+        "talk": ["停顿", "这句是整场的落点，不要解释太多"],
+        "transition": "从引语切到行动",
+        "cue": "念完停两拍。"
+      }
+    },
+    {
+      "id": "s10",
+      "role": "closing",
+      "layout": "L16",
+      "claim": "先写一句主张，再选一个版式",
+      "minutes": 1,
+      "slots": {
+        "title1": "把你的内容",
+        "title2": "压进这个结构",
+        "action": "先写一句主张，再选一个版式。不要反过来。",
+        "meta": "START NOW"
+      },
+      "notes": {
+        "purpose": "让观众带走一句可以立刻执行的话",
+        "talk": ["收尾给一句可以立刻执行的话", "然后停下来"],
+        "transition": "",
+        "cue": "不要用“谢谢聆听”。"
+      }
+    }
+  ]
+}
