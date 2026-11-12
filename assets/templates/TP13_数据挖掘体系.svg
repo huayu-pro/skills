@@ -1,0 +1,121 @@
+<!-- TP13_数据挖掘体系｜骨架取自仿绘 P133；专有名词已换成通用词，结构词保留，使用时改文字即可 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" font-family="Noto Sans CJK SC, sans-serif">
+<defs>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" /></marker>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" /></marker>
+</defs>
+<rect width="1200" height="760" fill="#FFFFFF" />
+
+
+<line x1="48" y1="252" x2="1152" y2="252" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+<line x1="48" y1="468" x2="1152" y2="468" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+<line x1="48" y1="544" x2="1152" y2="544" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+<line x1="48" y1="688" x2="1152" y2="688" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+
+
+<rect x="296" y="48" width="480" height="48" rx="6" fill="#2F6BB0" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="536" y="79" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">结果解释、验证与应用</text>
+
+
+<rect x="48" y="120" width="224" height="48" rx="6" fill="#EEF4FB" stroke="#4A86C5" stroke-width="1.5" />
+<text x="160" y="151" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">概念与规则</text>
+<rect x="296" y="120" width="224" height="48" rx="6" fill="#EEF4FB" stroke="#4A86C5" stroke-width="1.5" />
+<text x="408" y="151" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">模式与模型</text>
+<rect x="544" y="120" width="224" height="48" rx="6" fill="#EEF4FB" stroke="#4A86C5" stroke-width="1.5" />
+<text x="656" y="151" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">报告与表格</text>
+<rect x="792" y="120" width="224" height="48" rx="6" fill="#EEF4FB" stroke="#4A86C5" stroke-width="1.5" />
+<text x="904" y="151" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">图形与图像</text>
+
+
+<rect x="296" y="192" width="480" height="44" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="536" y="220" font-size="15" font-weight="700" fill="#1A1A1A" text-anchor="middle">成果输出与展示</text>
+
+
+<rect x="296" y="268" width="480" height="44" rx="6" fill="#2F6BB0" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="536" y="296" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">数据分析与建模</text>
+
+
+<rect x="48" y="336" width="176" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="136" y="367" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">数理统计技术</text>
+<rect x="248" y="336" width="176" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="336" y="367" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">人工智能技术</text>
+<rect x="448" y="336" width="176" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="536" y="367" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">数据库技术</text>
+<rect x="648" y="336" width="176" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="736" y="367" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">可视化技术</text>
+<rect x="848" y="336" width="176" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="936" y="367" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">相关软件技术</text>
+
+
+<rect x="296" y="408" width="480" height="44" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="536" y="436" font-size="15" font-weight="700" fill="#1A1A1A" text-anchor="middle">算法规划与实现</text>
+
+
+<rect x="296" y="484" width="480" height="44" rx="6" fill="#2F6BB0" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="536" y="512" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">数据预处理：数据清理、转换、归并等</text>
+
+
+<path d="M48,576 L48,656 C48,665 272,665 272,656 L272,576 Z" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<ellipse cx="160" cy="576" rx="112" ry="16" fill="#EEF4FB" stroke="#4A86C5" stroke-width="1.5" />
+<text x="160" y="624" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">结构化</text>
+<text x="160" y="644" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">数据</text>
+
+<path d="M296,576 L296,656 C296,665 520,665 520,656 L520,576 Z" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<ellipse cx="408" cy="576" rx="112" ry="16" fill="#EEF4FB" stroke="#4A86C5" stroke-width="1.5" />
+<text x="408" y="624" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">半结构化</text>
+<text x="408" y="644" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">数据</text>
+
+<path d="M544,576 L544,656 C544,665 768,665 768,656 L768,576 Z" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<ellipse cx="656" cy="576" rx="112" ry="16" fill="#EEF4FB" stroke="#4A86C5" stroke-width="1.5" />
+<text x="656" y="624" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">异构型</text>
+<text x="656" y="644" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">数据</text>
+
+<path d="M792,576 L792,656 C792,665 1016,665 1016,656 L1016,576 Z" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+<ellipse cx="904" cy="576" rx="112" ry="16" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+<text x="904" y="636" font-size="16" font-weight="700" fill="#666666" text-anchor="middle">……</text>
+
+
+<line x1="160" y1="112" x2="160" y2="104" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="408" y1="112" x2="408" y2="104" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="656" y1="112" x2="656" y2="104" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="904" y1="112" x2="904" y2="104" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="160" y1="104" x2="904" y2="104" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="536" y1="104" x2="536" y2="96" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrB)" />
+
+<line x1="136" y1="392" x2="136" y2="400" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="336" y1="392" x2="336" y2="400" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="536" y1="392" x2="536" y2="400" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="736" y1="392" x2="736" y2="400" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="936" y1="392" x2="936" y2="400" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="136" y1="400" x2="936" y2="400" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="536" y1="392" x2="536" y2="384" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrB)" />
+<line x1="536" y1="400" x2="536" y2="408" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrB)" />
+
+
+<line x1="536" y1="192" x2="536" y2="168" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrB)" />
+<line x1="536" y1="268" x2="536" y2="240" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrB)" />
+<line x1="536" y1="484" x2="536" y2="456" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrB)" />
+
+
+<line x1="160" y1="568" x2="160" y2="536" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="408" y1="568" x2="408" y2="536" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="656" y1="568" x2="656" y2="536" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="904" y1="568" x2="904" y2="536" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="160" y1="536" x2="904" y2="536" stroke="#5A6B7E" stroke-width="1.5" />
+<line x1="536" y1="536" x2="536" y2="528" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrB)" />
+
+
+<rect x="1040" y="48" width="112" height="196" rx="10" fill="#2F6BB0" fill-opacity="0.05" stroke="#8A94A6" stroke-width="1.5" />
+<text font-size="12" font-weight="700" fill="#1A1A1A" text-anchor="middle"><tspan x="1096" y="76">结</tspan><tspan x="1096" y="96">果</tspan><tspan x="1096" y="116">解</tspan><tspan x="1096" y="136">释</tspan><tspan x="1096" y="156">与</tspan><tspan x="1096" y="176">评</tspan><tspan x="1096" y="196">价</tspan><tspan x="1096" y="216">体</tspan><tspan x="1096" y="236">系</tspan></text>
+
+<rect x="1040" y="252" width="112" height="208" rx="10" fill="#2F6BB0" fill-opacity="0.05" stroke="#8A94A6" stroke-width="1.5" />
+<text font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle"><tspan x="1096" y="292">建</tspan><tspan x="1096" y="316">模</tspan><tspan x="1096" y="340">与</tspan><tspan x="1096" y="364">挖</tspan><tspan x="1096" y="388">掘</tspan><tspan x="1096" y="412">体</tspan><tspan x="1096" y="436">系</tspan></text>
+
+<rect x="1040" y="468" width="112" height="212" rx="10" fill="#8A94A6" fill-opacity="0.05" stroke="#8A94A6" stroke-width="1.5" />
+<text font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle"><tspan x="1096" y="512">数</tspan><tspan x="1096" y="540">据</tspan><tspan x="1096" y="568">准</tspan><tspan x="1096" y="596">备</tspan><tspan x="1096" y="624">体</tspan><tspan x="1096" y="652">系</tspan></text>
+
+
+<line x1="1096" y1="468" x2="1096" y2="460" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arr)" />
+<line x1="1096" y1="252" x2="1096" y2="244" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arr)" />
+<line x1="1096" y1="48" x2="1096" y2="40" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrB)" />
+</svg>

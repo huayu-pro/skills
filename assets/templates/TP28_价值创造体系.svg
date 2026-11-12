@@ -1,0 +1,83 @@
+<!-- TP28_价值创造体系｜骨架取自仿绘 P071；专有名词已换成通用词，结构词保留，使用时改文字即可 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="840" viewBox="0 0 1400 840">
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#2F6BB0" />
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#5A6B7E" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="840" fill="#FFFFFF" />
+
+  <g font-family="Noto Sans CJK SC, sans-serif">
+
+    
+    <rect x="856" y="56" width="272" height="736" rx="10" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+
+    
+    <g fill="none" stroke="#5A6B7E" stroke-width="1.5" stroke-linejoin="round">
+      <path d="M 1112 344 H 1152 V 400 H 1184" marker-end="url(#arrowGray)" />
+      <path d="M 1112 504 H 1152 V 448 H 1184" marker-end="url(#arrowGray)" />
+    </g>
+
+    
+    <g fill="none" stroke="#2F6BB0" stroke-width="1.5">
+      <path d="M 784 424 H 856" marker-end="url(#arrowBlue)" />
+    </g>
+
+    
+    <g fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5">
+      <rect x="872" y="72" width="240" height="64" rx="6" />
+      <rect x="872" y="152" width="240" height="64" rx="6" />
+      <rect x="872" y="232" width="240" height="64" rx="6" />
+      <rect x="872" y="312" width="240" height="64" rx="6" />
+      <rect x="872" y="392" width="240" height="64" rx="6" />
+      <rect x="872" y="472" width="240" height="64" rx="6" />
+      <rect x="872" y="552" width="240" height="64" rx="6" />
+      <rect x="872" y="632" width="240" height="64" rx="6" />
+      <rect x="872" y="712" width="240" height="64" rx="6" />
+    </g>
+    <g font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle">
+      <text x="992" y="109">产品行为</text>
+      <text x="992" y="189">采购行为</text>
+      <text x="992" y="269">运营行为</text>
+      <text x="992" y="349">销售行为</text>
+      <text x="992" y="429">税收行为</text>
+      <text x="992" y="509">研发行为</text>
+      <text x="992" y="589">投资行为</text>
+      <text x="992" y="669">融资行为</text>
+      <text x="992" y="749">现金行为</text>
+    </g>
+
+    
+    <rect x="1184" y="304" width="160" height="240" rx="6" fill="#EDF7F2" stroke="#3E9B6C" stroke-width="1.5" />
+    <text x="1264" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1A1A">
+      <tspan x="1264" y="415">财务</tspan>
+      <tspan x="1264" y="443">业绩</tspan>
+    </text>
+
+    
+    <g fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" stroke-linejoin="round">
+      <polygon points="48,352 192,352 232,424 192,496 48,496 88,424" />
+      <polygon points="192,352 352,352 392,424 352,496 192,496 232,424" />
+      <polygon points="544,352 744,352 784,424 744,496 544,496 584,424" />
+    </g>
+
+    
+    <polygon points="488,328 503.5,366 536,340.9 530.4,381.6 571.1,376 546,408.5 584,424 546,439.5 571.1,472 530.4,466.4 536,507.1 503.5,482 488,520 472.5,482 440,507.1 445.6,466.4 404.9,472 430,439.5 392,424 430,408.5 404.9,376 445.6,381.6 440,340.9 472.5,366" fill="#E8833A" stroke="#C96A24" stroke-width="1.5" stroke-linejoin="round" />
+
+    
+    <g font-size="16" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+      <text x="140" y="415"><tspan x="140" y="415">价值</tspan><tspan x="140" y="443">最大化</tspan></text>
+      <text x="292" y="415"><tspan x="292" y="415">财务</tspan><tspan x="292" y="443">战略</tspan></text>
+      <text x="664" y="415"><tspan x="664" y="415">盈利</tspan><tspan x="664" y="443">模式</tspan></text>
+    </g>
+    <text x="488" y="415" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">
+      <tspan x="488" y="415">资金流</tspan>
+      <tspan x="488" y="443">结构</tspan>
+    </text>
+
+  </g>
+</svg>

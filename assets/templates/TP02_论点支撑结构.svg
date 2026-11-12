@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1098" height="754" viewBox="31 0 1098 754" font-family="Noto Sans CJK SC, sans-serif">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" /></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" /></marker>
+<marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E8833A" /></marker>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3E9B6C" /></marker>
+<marker id="arrY" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A94A6" /></marker>
+</defs>
+<rect width="1200" height="760" fill="#FFFFFF" />
+<path d="M472,40 H728 L760,72 L728,104 H472 L440,72 Z" fill="#F4F8FD" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="600" y="80" font-size="16" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="600" y="80">INTRODUCTION</tspan>
+</text>
+<rect x="240" y="152" width="200" height="56" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="336" y="184" font-size="16" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="336" y="184">SP1</tspan>
+</text>
+<rect x="760" y="152" width="200" height="56" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="864" y="184" font-size="16" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="864" y="184">AS1</tspan>
+</text>
+<path d="M336,152 V128" fill="none" stroke="#5A6B7E" stroke-width="1.5" />
+<path d="M336,128 H600" fill="none" stroke="#5A6B7E" stroke-width="1.5" />
+<path d="M864,152 V128" fill="none" stroke="#5A6B7E" stroke-width="1.5" />
+<path d="M864,128 H600" fill="none" stroke="#5A6B7E" stroke-width="1.5" />
+<path d="M600,128 V104" fill="none" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arr)" />
+<rect x="80" y="248" width="200" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="176" y="280" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="176" y="280">SP1.R1</tspan>
+</text>
+<rect x="320" y="248" width="200" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="416" y="280" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="416" y="280">SP1.R2</tspan>
+</text>
+<rect x="640" y="248" width="200" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="736" y="280" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="736" y="280">AS1.R1</tspan>
+</text>
+<rect x="880" y="248" width="200" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="976" y="280" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="976" y="280">AS1.R2</tspan>
+</text>
+<path d="M176,248 V224" fill="none" stroke="#5A6B7E" stroke-width="1.5" />
+<path d="M416,248 V224" fill="none" stroke="#5A6B7E" stroke-width="1.5" />
+<path d="M176,224 H416" fill="none" stroke="#5A6B7E" stroke-width="1.5" />
+<path d="M336,224 V208" fill="none" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arr)" />
+<path d="M736,248 V224" fill="none" stroke="#5A6B7E" stroke-width="1.5" />
+<path d="M976,248 V224" fill="none" stroke="#5A6B7E" stroke-width="1.5" />
+<path d="M736,224 H976" fill="none" stroke="#5A6B7E" stroke-width="1.5" />
+<path d="M864,224 V208" fill="none" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arr)" />
+<rect x="80" y="336" width="200" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="176" y="368" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="176" y="368">SP1.R1.R1</tspan>
+</text>
+<path d="M176,336 V296" fill="none" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arr)" />
+<rect x="320" y="336" width="200" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="416" y="368" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="416" y="368">SP1.R2.R1</tspan>
+</text>
+<path d="M416,336 V296" fill="none" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arr)" />
+<rect x="640" y="336" width="200" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="736" y="368" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="736" y="368">AS1.R1.RB1</tspan>
+</text>
+<path d="M736,336 V296" fill="none" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arr)" />
+<rect x="880" y="336" width="200" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="976" y="368" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="976" y="368">AS1.R2.RB1</tspan>
+</text>
+<path d="M976,336 V296" fill="none" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arr)" />
+<rect x="80" y="424" width="200" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="176" y="456" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="176" y="456">SP1.R1.R1.R1</tspan>
+</text>
+<path d="M176,424 V384" fill="none" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arr)" />
+<rect x="320" y="424" width="200" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="416" y="456" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="416" y="456">SP1.R2.R1.R1.R1</tspan>
+</text>
+<path d="M416,424 V384" fill="none" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arr)" />
+<rect x="640" y="408" width="200" height="64" rx="6" fill="#FFFFFF" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+<text x="736" y="440" font-size="11" font-weight="400" fill="#666666" text-anchor="middle">
+<tspan x="736" y="440">（子论据 / 支撑）</tspan>
+</text>
+<path d="M736,384 V408" fill="none" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr)" />
+<rect x="880" y="408" width="200" height="64" rx="6" fill="#FFFFFF" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+<text x="976" y="440" font-size="11" font-weight="400" fill="#666666" text-anchor="middle">
+<tspan x="976" y="440">（子论据 / 支撑）</tspan>
+</text>
+<path d="M976,384 V408" fill="none" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr)" />
+<rect x="320" y="512" width="200" height="48" rx="6" fill="#FDF3EA" stroke="#E8833A" stroke-width="1.5" />
+<text x="416" y="544" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="416" y="544">SP1.R2.R1.R1.R1.R1</tspan>
+</text>
+<path d="M416,512 V472" fill="none" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arr)" />
+<circle cx="1000" cy="592" r="72" fill="#EDF7F2" stroke="#3E9B6C" stroke-width="1.5" />
+<text x="1000" y="600" font-size="16" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+<tspan x="1000" y="600">CONCLUSION</tspan>
+</text>
+<path d="M176,472 V488" fill="none" stroke="#5A6B7E" stroke-width="1.5" />
+<path d="M976,472 V488" fill="none" stroke="#5A6B7E" stroke-width="1.5" />
+<path d="M176,488 H1000" fill="none" stroke="#5A6B7E" stroke-width="1.5" />
+<path d="M1000,488 V520" fill="none" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr)" />
+<path d="M416,560 V600 H928" fill="none" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr)" />
+<text x="600" y="704" font-size="11" font-weight="400" fill="#666666" text-anchor="middle">注：SP = 主张 / 立场，AS = 论证，R = 理由，RB = 反驳；箭头自下而上表示支撑关系。</text>
+</svg>

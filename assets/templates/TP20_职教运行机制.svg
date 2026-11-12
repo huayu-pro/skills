@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1170" height="658" viewBox="15 7 1170 658" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" /></marker>
+    <marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" /></marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E8833A" /></marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3E9B6C" /></marker>
+  </defs>
+  <rect width="1200" height="760" fill="#FFFFFF" />
+  <rect x="432" y="56" width="336" height="64" rx="6" fill="#2F6BB0" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="600" y="93" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+    <tspan x="600" dy="0">主管部门</tspan>
+  </text>
+  <rect x="88" y="200" width="224" height="80" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="200.0" y="234" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+    <tspan x="200.0" dy="0">课程监管</tspan>
+    <tspan x="200.0" dy="20">机构</tspan>
+  </text>
+  <rect x="432" y="200" width="224" height="80" rx="6" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+  <text x="544.0" y="234" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+    <tspan x="544.0" dy="0">行业</tspan>
+    <tspan x="544.0" dy="20">协会</tspan>
+  </text>
+  <rect x="776" y="200" width="224" height="80" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="888.0" y="234" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+    <tspan x="888.0" dy="0">技能发展</tspan>
+    <tspan x="888.0" dy="20">机构</tspan>
+  </text>
+  <rect x="432" y="352" width="224" height="80" rx="6" fill="#FDF3EA" stroke="#E8833A" stroke-width="1.5" />
+  <text x="544.0" y="386" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+    <tspan x="544.0" dy="0">颁证</tspan>
+    <tspan x="544.0" dy="20">机构</tspan>
+  </text>
+  <rect x="88" y="536" width="224" height="80" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="200.0" y="570" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+    <tspan x="200.0" dy="0">资助</tspan>
+    <tspan x="200.0" dy="20">委员会</tspan>
+  </text>
+  <rect x="344" y="536" width="288" height="80" rx="6" fill="#EDF7F2" stroke="#3E9B6C" stroke-width="1.5" />
+  <text x="488.0" y="570" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+    <tspan x="488.0" dy="0">学校与</tspan>
+    <tspan x="488.0" dy="20">培训机构</tspan>
+  </text>
+  <rect x="776" y="536" width="224" height="80" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="888.0" y="570" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+    <tspan x="888.0" dy="0">质量监管</tspan>
+    <tspan x="888.0" dy="20">机构</tspan>
+  </text>
+  <path d="M 480 120 L 232 200" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+  <path d="M 720 120 L 856 200" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+  <path d="M 448 88 H 64 V 576 H 88" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+  <path d="M 768 88 H 1136 V 576 H 1000" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+  <text x="700" y="232" font-size="12" font-weight="700" fill="#666666" text-anchor="middle">
+    <tspan x="700" dy="0">投资</tspan>
+  </text>
+  <path d="M 776 240 H 656" stroke="#E8833A" stroke-width="1.5" fill="none" marker-end="url(#arrO)" />
+  <text x="296" y="340" font-size="11" font-weight="400" fill="#666666" text-anchor="middle">
+    <tspan x="296" dy="0">监控标准制定</tspan>
+  </text>
+  <path d="M 232 280 L 448 372" stroke="#4A86C5" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+  <text x="568" y="328" font-size="11" font-weight="400" fill="#666666" text-anchor="middle">
+    <tspan x="568" dy="0">制定职业标准</tspan>
+  </text>
+  <path d="M 544 280 V 352" stroke="#8A94A6" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+  <text x="568" y="480" font-size="11" font-weight="400" fill="#666666" text-anchor="middle">
+    <tspan x="568" dy="0">制定课程标准</tspan>
+  </text>
+  <path d="M 544 432 V 536" stroke="#E8833A" stroke-width="1.5" fill="none" marker-end="url(#arrO)" />
+  <text x="304" y="572" font-size="12" font-weight="700" fill="#666666" text-anchor="middle">
+    <tspan x="304" dy="0">投资</tspan>
+  </text>
+  <path d="M 312 576 H 344" stroke="#E8833A" stroke-width="1.5" fill="none" marker-end="url(#arrO)" />
+  <text x="680" y="564" font-size="11" font-weight="400" fill="#666666" text-anchor="middle">
+    <tspan x="680" dy="0">教学质量</tspan>
+  </text>
+  <text x="680" y="600" font-size="11" font-weight="400" fill="#666666" text-anchor="middle">
+    <tspan x="680" dy="0">监控</tspan>
+  </text>
+  <path d="M 776 576 H 632" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+</svg>

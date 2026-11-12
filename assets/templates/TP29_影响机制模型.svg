@@ -1,0 +1,80 @@
+<!-- TP29_影响机制模型｜骨架取自仿绘 P090；专有名词已换成通用词，结构词保留，使用时改文字即可 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" />
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" />
+    </marker>
+  </defs>
+  <rect width="1100" height="520" fill="#FFFFFF" />
+
+  
+  <text x="192" y="192" font-size="11" text-anchor="middle" fill="#666666">利益相关</text>
+  <text x="192" y="216" font-size="11" text-anchor="middle" fill="#666666">者理论</text>
+  <text x="192" y="312" font-size="11" text-anchor="middle" fill="#666666">资源依赖</text>
+  <text x="192" y="336" font-size="11" text-anchor="middle" fill="#666666">理论</text>
+  <line x1="192" y1="224" x2="192" y2="256" stroke="#8A94A6" stroke-width="1" />
+  <line x1="192" y1="256" x2="192" y2="296" stroke="#8A94A6" stroke-width="1" />
+
+  
+  <rect x="40" y="184" width="96" height="144" rx="6" fill="#2F6BB0" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="88" y="232" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">企业</text>
+  <text x="88" y="256" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">责任</text>
+  <text x="88" y="280" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">表现</text>
+
+  
+  <line x1="136" y1="256" x2="240" y2="256" stroke="#2F6BB0" stroke-width="1.5" />
+  <line x1="240" y1="112" x2="240" y2="400" stroke="#2F6BB0" stroke-width="1.5" />
+  <line x1="240" y1="112" x2="320" y2="112" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrowBlue)" />
+  <line x1="240" y1="256" x2="320" y2="256" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrowBlue)" />
+  <line x1="240" y1="400" x2="320" y2="400" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrowBlue)" />
+
+  
+  <rect x="320" y="88" width="216" height="48" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="428" y="117" font-size="13" text-anchor="middle" fill="#1A1A1A">缓解融资约束</text>
+  <rect x="320" y="232" width="216" height="48" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="428" y="261" font-size="13" text-anchor="middle" fill="#1A1A1A">提升企业效率</text>
+  <rect x="320" y="376" width="216" height="48" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="428" y="405" font-size="13" text-anchor="middle" fill="#1A1A1A">降低企业风险</text>
+
+  
+  <line x1="536" y1="112" x2="608" y2="112" stroke="#5A6B7E" stroke-width="1.5" />
+  <line x1="536" y1="256" x2="608" y2="256" stroke="#5A6B7E" stroke-width="1.5" />
+  <line x1="608" y1="112" x2="608" y2="256" stroke="#5A6B7E" stroke-width="1.5" />
+  <line x1="608" y1="184" x2="688" y2="184" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="648" y="176" font-size="11" text-anchor="middle" fill="#666666">提升</text>
+
+  
+  <line x1="536" y1="400" x2="688" y2="400" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="608" y="392" font-size="11" text-anchor="middle" fill="#666666">降低</text>
+
+  
+  <rect x="688" y="112" width="112" height="144" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="744" y="136" font-size="13" text-anchor="middle" fill="#1A1A1A">未</text>
+  <text x="744" y="160" font-size="13" text-anchor="middle" fill="#1A1A1A">来</text>
+  <text x="744" y="184" font-size="13" text-anchor="middle" fill="#1A1A1A">现</text>
+  <text x="744" y="208" font-size="13" text-anchor="middle" fill="#1A1A1A">金</text>
+  <text x="744" y="232" font-size="13" text-anchor="middle" fill="#1A1A1A">流</text>
+
+  <rect x="688" y="328" width="112" height="144" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="744" y="352" font-size="13" text-anchor="middle" fill="#1A1A1A">贴</text>
+  <text x="744" y="384" font-size="13" text-anchor="middle" fill="#1A1A1A">现</text>
+  <text x="744" y="416" font-size="13" text-anchor="middle" fill="#1A1A1A">系</text>
+  <text x="744" y="448" font-size="13" text-anchor="middle" fill="#1A1A1A">数</text>
+
+  
+  <line x1="800" y1="184" x2="848" y2="184" stroke="#5A6B7E" stroke-width="1.5" />
+  <line x1="848" y1="184" x2="848" y2="400" stroke="#5A6B7E" stroke-width="1.5" />
+  <line x1="800" y1="400" x2="848" y2="400" stroke="#5A6B7E" stroke-width="1.5" />
+  <line x1="848" y1="256" x2="944" y2="256" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrowBlue)" />
+  <text x="896" y="248" font-size="11" text-anchor="middle" fill="#666666">增加</text>
+
+  
+  <rect x="944" y="184" width="112" height="144" rx="6" fill="#E8833A" stroke="#E8833A" stroke-width="1.5" />
+  <text x="1000" y="216" font-size="16" font-weight="700" text-anchor="middle" fill="#FFFFFF">企</text>
+  <text x="1000" y="248" font-size="16" font-weight="700" text-anchor="middle" fill="#FFFFFF">业</text>
+  <text x="1000" y="280" font-size="16" font-weight="700" text-anchor="middle" fill="#FFFFFF">价</text>
+  <text x="1000" y="312" font-size="16" font-weight="700" text-anchor="middle" fill="#FFFFFF">值</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="625" viewBox="0 0 1200 625" font-family="Noto Sans CJK SC, sans-serif">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" /></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" /></marker>
+<marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E8833A" /></marker>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3E9B6C" /></marker>
+<marker id="arrGy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A94A6" /></marker>
+<marker id="arrK" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1A1A1A" /></marker>
+</defs>
+<rect width="1200" height="760" fill="#FFFFFF" />
+<rect x="48" y="48" width="304" height="48" rx="6" fill="#FFFFFF" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+<text text-anchor="middle"><tspan x="200.0" y="64.8" font-size="16" font-weight="700" fill="#1A1A1A">协同关系框架</tspan></text>
+<rect x="448" y="48" width="304" height="48" rx="6" fill="#FFFFFF" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+<text text-anchor="middle"><tspan x="600.0" y="64.8" font-size="16" font-weight="700" fill="#1A1A1A">协同机制</tspan></text>
+<rect x="936" y="48" width="216" height="48" rx="6" fill="#FFFFFF" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+<text text-anchor="middle"><tspan x="1044.0" y="64.8" font-size="16" font-weight="700" fill="#1A1A1A">协同结果</tspan></text>
+<rect x="48" y="112" width="304" height="464" rx="10" fill="#FFFFFF" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+<rect x="448" y="112" width="304" height="464" rx="10" fill="#FFFFFF" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+<rect x="936" y="112" width="216" height="464" rx="10" fill="#FFFFFF" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+<rect x="80" y="152" width="240" height="96" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="200.0" y="192.8" font-size="16" font-weight="700" fill="#1A1A1A">目标一致性</tspan></text>
+<rect x="80" y="296" width="240" height="96" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="200.0" y="336.8" font-size="16" font-weight="700" fill="#1A1A1A">地位匹配度</tspan></text>
+<rect x="80" y="440" width="240" height="96" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="200.0" y="480.8" font-size="16" font-weight="700" fill="#1A1A1A">绩效差异度</tspan></text>
+<rect x="480" y="152" width="240" height="96" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="600.0" y="192.8" font-size="16" font-weight="700" fill="#1A1A1A">技术共享</tspan></text>
+<rect x="480" y="296" width="240" height="96" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="600.0" y="336.8" font-size="16" font-weight="700" fill="#1A1A1A">资源互补</tspan></text>
+<rect x="480" y="440" width="240" height="96" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="600.0" y="480.8" font-size="16" font-weight="700" fill="#1A1A1A">制度协调</tspan></text>
+<rect x="960" y="152" width="168" height="352" rx="6" fill="#FDF3EA" stroke="#E8833A" stroke-width="2" />
+<text text-anchor="middle"><tspan x="1044.0" y="308.0" font-size="16" font-weight="700" fill="#1A1A1A">双方</tspan><tspan x="1044.0" y="333.6" font-size="16" font-weight="700" fill="#1A1A1A">绩效改善</tspan></text>
+<path d="M360,304 H400 V272 L440,352 L400,432 V400 H360 Z" fill="#2F6BB0" opacity="0.9" />
+<path d="M784,176 C816,176 808,240 808,288 C808,312 832,320 848,328 C832,336 808,344 808,368 C808,416 816,480 784,480" stroke="#8A94A6" stroke-width="2" fill="none" />
+<path d="M848,328 H952" stroke="#E8833A" stroke-width="1.5" fill="none" marker-end="url(#arrO)" />
+<text x="400.0" y="264.0" font-size="11" fill="#666666" text-anchor="middle">协同关系</text>
+<text x="880.0" y="312.0" font-size="11" fill="#666666" text-anchor="middle">协同作用</text>
+</svg>

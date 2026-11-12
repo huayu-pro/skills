@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="704" viewBox="0 0 1024 704" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" />
+    </marker>
+    <marker id="arrDash" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" />
+    </marker>
+  </defs>
+  <rect width="1024" height="704" fill="#FFFFFF" />
+
+  
+  <rect x="240" y="64" width="472" height="488" fill="#E8F4FC" stroke="#2F6BB0" stroke-width="2" />
+  <text x="616" y="516" font-size="14" text-anchor="middle" fill="#1A1A1A">计算节点</text>
+
+  
+  
+  <ellipse cx="296" cy="104" rx="44" ry="32" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+  <path d="M 318,90 C 308,86 296,96 288,104 C 282,110 280,116 274,120" fill="none" stroke="#2F6BB0" stroke-width="1.5" />
+  
+  <ellipse cx="464" cy="208" rx="40" ry="30" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+  <path d="M 484,194 C 474,190 464,200 456,208 C 450,214 448,220 442,224" fill="none" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="392" y="212" font-size="13" text-anchor="middle" fill="#1A1A1A">输出门</text>
+  
+  <ellipse cx="688" cy="336" rx="30" ry="36" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+  <path d="M 704,320 C 697,317 690,326 684,334 C 679,340 677,346 672,350" fill="none" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="664" y="252" font-size="13" text-anchor="middle" fill="#1A1A1A">遗忘门</text>
+  
+  <ellipse cx="248" cy="424" rx="30" ry="26" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+  <path d="M 262,412 C 255,409 248,418 242,425 C 237,431 235,436 230,440" fill="none" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="248" y="482" font-size="13" text-anchor="middle" fill="#1A1A1A">输入门</text>
+  
+  <ellipse cx="488" cy="512" rx="52" ry="30" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+  <path d="M 512,498 C 502,494 492,504 484,511 C 478,517 476,523 469,527" fill="none" stroke="#2F6BB0" stroke-width="1.5" />
+
+  
+  <ellipse cx="480" cy="336" rx="60" ry="46" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="2" />
+  <text x="480" y="342" font-size="15" text-anchor="middle" fill="#1A1A1A">单元</text>
+
+  
+  <circle cx="464" cy="104" r="14" fill="#2F6BB0" />
+  <circle cx="584" cy="320" r="15" fill="#2F6BB0" />
+  <circle cx="472" cy="424" r="15" fill="#2F6BB0" />
+  <circle cx="480" cy="576" r="20" fill="#2F6BB0" />
+  
+  <g stroke="#5A6B7E" stroke-width="1.5">
+    
+    <line x1="256" y1="88" x2="176" y2="56" />
+    <line x1="252" y1="104" x2="176" y2="104" />
+    <line x1="256" y1="120" x2="176" y2="152" />
+    
+    <line x1="224" y1="408" x2="160" y2="384" />
+    <line x1="218" y1="424" x2="160" y2="424" />
+    <line x1="224" y1="440" x2="160" y2="464" />
+    
+    <line x1="716" y1="320" x2="848" y2="304" />
+    <line x1="718" y1="336" x2="848" y2="336" />
+    <line x1="716" y1="352" x2="848" y2="368" />
+    
+    <line x1="464" y1="90" x2="442" y2="52" />
+    <line x1="464" y1="90" x2="464" y2="44" />
+    <line x1="464" y1="90" x2="486" y2="52" />
+    
+    <line x1="480" y1="596" x2="440" y2="640" />
+    <line x1="480" y1="596" x2="480" y2="648" />
+    <line x1="480" y1="596" x2="520" y2="640" />
+  </g>
+
+  
+  <g stroke="#2F6BB0" stroke-width="1.5" fill="none">
+    
+    <line x1="340" y1="104" x2="448" y2="104" marker-end="url(#arr)" />
+    
+    <line x1="456" y1="176" x2="456" y2="122" marker-end="url(#arr)" />
+    
+    <line x1="278" y1="424" x2="455" y2="424" marker-end="url(#arr)" />
+    
+    <line x1="472" y1="409" x2="472" y2="386" marker-end="url(#arr)" />
+    
+    <line x1="472" y1="439" x2="472" y2="480" marker-end="url(#arr)" />
+    
+    <line x1="464" y1="290" x2="464" y2="244" marker-end="url(#arr)" />
+    
+    <path d="M 524,300 Q 560,252 582,296" marker-end="url(#arr)" />
+    
+    <line x1="654" y1="320" x2="602" y2="320" marker-end="url(#arr)" />
+  </g>
+
+  
+  <g stroke="#5A6B7E" stroke-width="1.5" fill="none" stroke-dasharray="6 4">
+    
+    <line x1="436" y1="186" x2="348" y2="136" marker-end="url(#arrDash)" />
+    
+    <line x1="436" y1="370" x2="274" y2="402" marker-end="url(#arrDash)" />
+    
+    <line x1="520" y1="372" x2="536" y2="478" marker-end="url(#arrDash)" />
+    
+    <line x1="525" y1="490" x2="660" y2="376" marker-end="url(#arrDash)" />
+    
+    <line x1="270" y1="444" x2="336" y2="496" marker-end="url(#arrDash)" />
+  </g>
+</svg>

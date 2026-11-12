@@ -1,0 +1,55 @@
+<!-- TP22_区域适配框架｜骨架取自仿绘 P150；专有名词已换成通用词，结构词保留，使用时改文字即可 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" font-family="Noto Sans CJK SC, sans-serif">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" /></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" /></marker>
+<marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E8833A" /></marker>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3E9B6C" /></marker>
+<marker id="arrGy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A94A6" /></marker>
+<marker id="arrK" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1A1A1A" /></marker>
+</defs>
+<rect width="1200" height="760" fill="#FFFFFF" />
+<ellipse cx="600" cy="376" rx="132" ry="120" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="2" />
+<text text-anchor="middle"><tspan x="600.0" y="337.6" font-size="16" font-weight="700" fill="#1A1A1A">交通可达性</tspan><tspan x="600.0" y="363.2" font-size="13" font-weight="400" fill="#1A1A1A">交通运输成本</tspan><tspan x="600.0" y="384.0" font-size="13" font-weight="400" fill="#1A1A1A">交通服务可得性</tspan><tspan x="600.0" y="404.8" font-size="13" font-weight="400" fill="#1A1A1A">区位交通可达度</tspan></text>
+<rect x="48" y="48" width="240" height="104" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="168.0" y="72.0" font-size="16" font-weight="700" fill="#1A1A1A">关键要素布局</tspan><tspan x="168.0" y="97.6" font-size="13" font-weight="400" fill="#1A1A1A">重大产业布局</tspan><tspan x="168.0" y="118.4" font-size="13" font-weight="400" fill="#1A1A1A">重大项目布局</tspan></text>
+<rect x="464" y="56" width="272" height="88" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="600.0" y="82.4" font-size="16" font-weight="700" fill="#1A1A1A">生产力布局</tspan><tspan x="600.0" y="108.0" font-size="13" font-weight="400" fill="#666666">（企业、工程、资源）</tspan></text>
+<rect x="912" y="48" width="240" height="104" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="1032.0" y="82.4" font-size="16" font-weight="700" fill="#1A1A1A">地区间经济</tspan><tspan x="1032.0" y="108.0" font-size="13" font-weight="400" fill="#1A1A1A">相互作用</tspan></text>
+<rect x="48" y="304" width="240" height="80" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="168.0" y="336.8" font-size="16" font-weight="700" fill="#1A1A1A">交通基础设施与服务</tspan></text>
+<rect x="880" y="304" width="240" height="80" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="1000.0" y="336.8" font-size="16" font-weight="700" fill="#1A1A1A">客货交通需求</tspan></text>
+<rect x="48" y="576" width="240" height="104" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="168.0" y="610.4" font-size="16" font-weight="700" fill="#1A1A1A">人口的就业与</tspan><tspan x="168.0" y="636.0" font-size="13" font-weight="400" fill="#1A1A1A">居住区位选择</tspan></text>
+<rect x="464" y="584" width="272" height="88" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="600.0" y="610.4" font-size="16" font-weight="700" fill="#1A1A1A">生产力布局</tspan><tspan x="600.0" y="636.0" font-size="13" font-weight="400" fill="#666666">（人口与劳动力）</tspan></text>
+<rect x="912" y="576" width="240" height="104" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="1032.0" y="620.8" font-size="16" font-weight="700" fill="#1A1A1A">地区间社会联系</tspan></text>
+<path d="M288,100 H464" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+<rect x="350" y="75" width="52" height="17" rx="2" fill="#FFFFFF" /><text x="376.0" y="88.0" font-size="11" fill="#666666" text-anchor="middle">空间功能</text>
+<path d="M736,100 H912" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+<rect x="798" y="75" width="52" height="17" rx="2" fill="#FFFFFF" /><text x="824.0" y="88.0" font-size="11" fill="#666666" text-anchor="middle">空间分离</text>
+<path d="M288,628 H464" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+<rect x="350" y="603" width="52" height="17" rx="2" fill="#FFFFFF" /><text x="376.0" y="616.0" font-size="11" fill="#666666" text-anchor="middle">空间功能</text>
+<path d="M736,628 H912" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+<rect x="798" y="603" width="52" height="17" rx="2" fill="#FFFFFF" /><text x="824.0" y="616.0" font-size="11" fill="#666666" text-anchor="middle">空间分离</text>
+<path d="M600,144 V256" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+<rect x="608" y="191" width="52" height="17" rx="2" fill="#FFFFFF" /><text x="612.0" y="204.0" font-size="11" fill="#666666" text-anchor="start">地理区位</text>
+<path d="M600,496 V584" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+<path d="M288,344 H480" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+<text x="48.0" y="296.0" font-size="11" fill="#666666" text-anchor="start">交通设施</text>
+<path d="M880,344 H720" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+<rect x="823" y="323" width="41" height="17" rx="2" fill="#FFFFFF" /><text x="844.0" y="336.0" font-size="11" fill="#666666" text-anchor="middle">交通流</text>
+<path d="M492,300 C400,296 240,280 168,152" stroke="#8A94A6" stroke-width="1.5" fill="none" marker-end="url(#arrGy)" />
+<text x="48.0" y="176.0" font-size="11" fill="#666666" text-anchor="start">经济机制</text>
+<path d="M492,452 C400,456 240,472 168,576" stroke="#8A94A6" stroke-width="1.5" fill="none" marker-end="url(#arrGy)" />
+<text x="48.0" y="556.0" font-size="11" fill="#666666" text-anchor="start">社会机制</text>
+<path d="M968,152 C900,220 780,268 726,340" stroke="#8A94A6" stroke-width="1.5" fill="none" marker-end="url(#arrGy)" />
+<path d="M968,152 C968,224 968,248 968,304" stroke="#8A94A6" stroke-width="1.5" fill="none" marker-end="url(#arrGy)" />
+<path d="M1064,152 C1064,224 1064,248 1064,304" stroke="#8A94A6" stroke-width="1.5" fill="none" marker-end="url(#arrGy)" />
+<path d="M1140,152 V576" stroke="#8A94A6" stroke-width="1.5" fill="none" marker-end="url(#arrGy)" />
+<rect x="1026" y="203" width="74" height="17" rx="2" fill="#FFFFFF" /><text x="1096.0" y="216.0" font-size="11" fill="#666666" text-anchor="end">空间交互机制</text>
+<rect x="1026" y="539" width="74" height="17" rx="2" fill="#FFFFFF" /><text x="1096.0" y="552.0" font-size="11" fill="#666666" text-anchor="end">空间交互机制</text>
+</svg>

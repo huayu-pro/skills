@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="819" height="735" viewBox="172 24 819 735" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arrowPurple" viewBox="0 0 24 18" refX="20" refY="9" markerWidth="24" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L24,9 L0,18 z" fill="#7B5EA7" />
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 24 18" refX="20" refY="9" markerWidth="24" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L24,9 L0,18 z" fill="#C94F44" />
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 24 18" refX="20" refY="9" markerWidth="24" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L24,9 L0,18 z" fill="#3E9B6C" />
+    </marker>
+    <marker id="arrowBlueOut" viewBox="0 0 24 18" refX="20" refY="9" markerWidth="24" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L24,9 L0,18 z" fill="#2F6BB0" />
+    </marker>
+    <marker id="arrowBlueIn" viewBox="0 0 20 15" refX="16.5" refY="7.5" markerWidth="20" markerHeight="15" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L20,7.5 L0,15 z" fill="#2F6BB0" />
+    </marker>
+  </defs>
+  <rect width="1200" height="800" fill="#FFFFFF" />
+
+  
+  
+  <path d="M 360 216 A 320 320 0 0 1 912 264" fill="none" stroke="#7B5EA7" stroke-width="14" stroke-linecap="round" marker-end="url(#arrowPurple)" />
+  
+  <path d="M 936 456 A 320 320 0 0 1 768 680" fill="none" stroke="#C94F44" stroke-width="14" stroke-linecap="round" marker-end="url(#arrowRed)" />
+  
+  <path d="M 520 704 A 320 320 0 0 1 304 440" fill="none" stroke="#3E9B6C" stroke-width="14" stroke-linecap="round" marker-end="url(#arrowGreen)" />
+
+  
+  <path d="M 540 536 A 160 160 0 0 1 540 256" fill="none" stroke="#2F6BB0" stroke-width="11" stroke-linecap="round" marker-end="url(#arrowBlueIn)" />
+  <path d="M 768 344 A 160 160 0 0 1 756 480" fill="none" stroke="#2F6BB0" stroke-width="11" stroke-linecap="round" marker-end="url(#arrowBlueIn)" />
+
+  
+  <circle cx="620" cy="396" r="100" fill="#E8833A" />
+  <rect x="512" y="328" width="216" height="136" rx="6" fill="#FFFFFF" />
+  <text x="620" y="392" font-size="26" font-weight="700" text-anchor="middle" fill="#1A1A1A">数据结构</text>
+  <text x="620" y="426" font-size="26" font-weight="700" text-anchor="middle" fill="#1A1A1A">分析平台</text>
+
+  
+  
+  <text x="620" y="174" font-size="20" text-anchor="middle" fill="#1A1A1A">开放共享</text>
+  <text x="620" y="204" font-size="20" text-anchor="middle" fill="#1A1A1A">&amp;</text>
+  <text x="620" y="234" font-size="20" text-anchor="middle" fill="#1A1A1A">隐私保护</text>
+
+  
+  <text x="850" y="339" font-size="20" text-anchor="middle" fill="#1A1A1A">本地协同</text>
+  <text x="850" y="369" font-size="20" text-anchor="middle" fill="#1A1A1A">&amp;</text>
+  <text x="850" y="399" font-size="20" text-anchor="middle" fill="#1A1A1A">模型融合</text>
+
+  
+  <text x="280" y="352" font-size="20" text-anchor="middle" fill="#1A1A1A">价值挖掘</text>
+  <text x="280" y="382" font-size="20" text-anchor="middle" fill="#1A1A1A">复杂动态环境</text>
+
+  
+  <text x="620" y="544" font-size="18" text-anchor="middle" fill="#1A1A1A">数据结构</text>
+  <text x="620" y="570" font-size="18" text-anchor="middle" fill="#1A1A1A">应用与知识</text>
+
+  
+  <text x="620" y="626" font-size="18" text-anchor="middle" fill="#1A1A1A">稀疏、不确定、</text>
+  <text x="620" y="654" font-size="18" text-anchor="middle" fill="#1A1A1A">不完整数据</text>
+</svg>

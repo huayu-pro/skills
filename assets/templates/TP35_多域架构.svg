@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" /></marker>
+    <marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" /></marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A94A6" /></marker>
+  </defs>
+  <rect width="1200" height="760" fill="#FFFFFF" />
+
+  
+
+  
+  <rect x="136" y="56" width="824" height="136" rx="10" fill="#2F6BB0" fill-opacity="0.05" stroke="#4A86C5" stroke-width="1.5" />
+  <rect x="136" y="216" width="824" height="136" rx="10" fill="#2F6BB0" fill-opacity="0.05" stroke="#4A86C5" stroke-width="1.5" />
+  <rect x="136" y="376" width="824" height="136" rx="10" fill="#2F6BB0" fill-opacity="0.05" stroke="#4A86C5" stroke-width="1.5" />
+  <rect x="136" y="536" width="824" height="136" rx="10" fill="#2F6BB0" fill-opacity="0.05" stroke="#4A86C5" stroke-width="1.5" />
+
+  
+  <text x="92" y="130" font-size="16" font-weight="700" fill="#2F6BB0" text-anchor="middle">业务域</text>
+  <text x="92" y="290" font-size="16" font-weight="700" fill="#2F6BB0" text-anchor="middle">类型域</text>
+  <text x="92" y="450" font-size="16" font-weight="700" fill="#2F6BB0" text-anchor="middle">功能域</text>
+  <text x="92" y="610" font-size="16" font-weight="700" fill="#2F6BB0" text-anchor="middle">资源域</text>
+
+  
+  <rect x="992" y="56" width="160" height="616" rx="10" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="1072" y="352" font-size="16" font-weight="700" fill="#1A1A1A" text-anchor="middle">
+    <tspan x="1072" dy="0">协同评价</tspan>
+    <tspan x="1072" dy="28">与类型管理</tspan>
+    <tspan x="1072" dy="28" />
+  </text>
+
+  
+  <path d="M960,124 H992" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-start="url(#arrB)" marker-end="url(#arrB)" />
+  <path d="M960,284 H992" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-start="url(#arrB)" marker-end="url(#arrB)" />
+  <path d="M960,444 H992" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-start="url(#arrB)" marker-end="url(#arrB)" />
+  <path d="M960,604 H992" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-start="url(#arrB)" marker-end="url(#arrB)" />
+
+  
+  <path d="M230,152 V216 H296 V260" stroke="#8A94A6" stroke-width="1.5" fill="none" stroke-dasharray="5 4" marker-end="url(#arrG)" />
+  <path d="M430,152 V200 H388 V376" stroke="#8A94A6" stroke-width="1.5" fill="none" stroke-dasharray="5 4" />
+  <path d="M630,152 V200 H672 V376" stroke="#8A94A6" stroke-width="1.5" fill="none" stroke-dasharray="5 4" />
+  <path d="M830,152 V536 H790 V580" stroke="#8A94A6" stroke-width="1.5" fill="none" stroke-dasharray="5 4" marker-end="url(#arrG)" />
+  <path d="M296,308 V376" stroke="#8A94A6" stroke-width="1.5" fill="none" stroke-dasharray="5 4" />
+  <path d="M560,308 V376" stroke="#8A94A6" stroke-width="1.5" fill="none" stroke-dasharray="5 4" />
+  <path d="M790,308 V376" stroke="#8A94A6" stroke-width="1.5" fill="none" stroke-dasharray="5 4" />
+  <path d="M230,468 V536 H270 V580" stroke="#8A94A6" stroke-width="1.5" fill="none" stroke-dasharray="5 4" marker-end="url(#arrG)" />
+  <path d="M630,468 V536 H520 V580" stroke="#8A94A6" stroke-width="1.5" fill="none" stroke-dasharray="5 4" marker-end="url(#arrG)" />
+
+  
+  <ellipse cx="230" cy="124" rx="64" ry="24" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="230" y="130" font-size="13" fill="#1A1A1A" text-anchor="middle">业务1</text>
+  <ellipse cx="430" cy="124" rx="64" ry="24" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="430" y="130" font-size="13" fill="#1A1A1A" text-anchor="middle">业务2</text>
+  <ellipse cx="630" cy="124" rx="64" ry="24" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="630" y="130" font-size="13" fill="#1A1A1A" text-anchor="middle">业务3</text>
+  <ellipse cx="830" cy="124" rx="64" ry="24" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="830" y="130" font-size="13" fill="#1A1A1A" text-anchor="middle">业务Ns</text>
+
+  
+  <ellipse cx="296" cy="284" rx="64" ry="24" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="296" y="290" font-size="13" fill="#1A1A1A" text-anchor="middle">类型1</text>
+  <ellipse cx="560" cy="284" rx="64" ry="24" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="560" y="290" font-size="13" fill="#1A1A1A" text-anchor="middle">类型2</text>
+  <ellipse cx="790" cy="284" rx="64" ry="24" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="790" y="290" font-size="13" fill="#1A1A1A" text-anchor="middle">类型M</text>
+
+  
+  <ellipse cx="230" cy="444" rx="72" ry="24" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="230" y="450" font-size="13" fill="#1A1A1A" text-anchor="middle">基线功能1</text>
+  <ellipse cx="430" cy="444" rx="72" ry="24" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="430" y="450" font-size="13" fill="#1A1A1A" text-anchor="middle">基线功能2</text>
+  <ellipse cx="630" cy="444" rx="72" ry="24" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="630" y="450" font-size="13" fill="#1A1A1A" text-anchor="middle">基线功能3</text>
+  <ellipse cx="830" cy="444" rx="72" ry="24" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="830" y="450" font-size="13" fill="#1A1A1A" text-anchor="middle">基线功能Nf</text>
+
+  
+  <ellipse cx="270" cy="604" rx="64" ry="24" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="270" y="610" font-size="13" fill="#1A1A1A" text-anchor="middle">资源1</text>
+  <ellipse cx="520" cy="604" rx="64" ry="24" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="520" y="610" font-size="13" fill="#1A1A1A" text-anchor="middle">资源2</text>
+  <ellipse cx="790" cy="604" rx="64" ry="24" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="790" y="610" font-size="13" fill="#1A1A1A" text-anchor="middle">资源Nr</text>
+
+  
+  <path d="M430,148 C360,196 320,220 296,260" stroke="#2F6BB0" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrB)" />
+  <path d="M630,420 C630,392 590,340 560,308" stroke="#2F6BB0" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrB)" />
+  <path d="M630,420 C700,392 760,340 790,308" stroke="#2F6BB0" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrB)" />
+  <rect x="336" y="196" width="88" height="22" rx="4" fill="#FFFFFF" />
+  <text x="380" y="211" font-size="11" fill="#666666" text-anchor="middle">共生映射</text>
+</svg>
