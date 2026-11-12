@@ -1,0 +1,185 @@
+{
+  "recommended_threshold": 0.34,
+  "description_required_concepts": [
+    "skill",
+    "authoring_action",
+    "research",
+    "quality"
+  ],
+  "positive_concepts": {
+    "skill": [
+      "skill",
+      "skills",
+      "技能",
+      "技能包",
+      "SKILL.md",
+      "agent skill",
+      "能力包"
+    ],
+    "authoring_action": [
+      "创建",
+      "写个",
+      "做一个",
+      "做成",
+      "弄成",
+      "变成",
+      "初始化",
+      "生成",
+      "规范化",
+      "改进",
+      "优化",
+      "升级",
+      "封装",
+      "打包",
+      "create",
+      "build",
+      "improve",
+      "upgrade",
+      "turn into"
+    ],
+    "research": [
+      "借鉴",
+      "拉取",
+      "参考现成",
+      "找找有没有",
+      "skillhub",
+      "clawhub",
+      "github",
+      "先行研究"
+    ],
+    "quality": [
+      "trace",
+      "评测",
+      "自检",
+      "质量检查",
+      "评估",
+      "验证",
+      "evaluate",
+      "quality check"
+    ]
+  },
+  "negative_patterns": [
+    "翻译一下",
+    "只要总结",
+    "普通文档",
+    "写个脚本就好",
+    "不要做成技能",
+    "安装这个技能就行",
+    "安装到",
+    "帮我安装",
+    "安装这个",
+    "translate only",
+    "just explain",
+    "one off"
+  ],
+  "should_trigger": [
+    {
+      "text": "帮我创建一个把 PDF 转成 Excel 的技能",
+      "family": "cn_create_new"
+    },
+    {
+      "text": "把我这套每周报表的流程做成一个可复用的 skill",
+      "family": "cn_workflow_to_skill"
+    },
+    {
+      "text": "写个skill，专门检查我 markdown 文档的格式规范",
+      "family": "cn_create_check_skill"
+    },
+    {
+      "text": "先去 skillhub 和 github 上找找有没有现成技能可以借鉴，然后帮我做一个更好的",
+      "family": "cn_prior_art_then_create"
+    },
+    {
+      "text": "改进一下我现有的这个 SKILL.md，触发太不灵了",
+      "family": "cn_improve_existing"
+    },
+    {
+      "text": "帮我把这个技能优化一下，补上题录导出再打包",
+      "family": "cn_optimize_existing"
+    },
+    {
+      "text": "升级一下这个 skill，加个断点续传功能",
+      "family": "cn_upgrade_existing"
+    },
+    {
+      "text": "用 TRACE 评测检查一下我这个技能包的质量，不通过就修",
+      "family": "cn_trace_check"
+    },
+    {
+      "text": "把这个提示词集合封装成一个规范的技能包",
+      "family": "cn_package_prompts"
+    },
+    {
+      "text": "给我们的部署流程做一个技能，按规范生成 frontmatter 和目录结构",
+      "family": "cn_create_standard"
+    },
+    {
+      "text": "Create a skill from this workflow; research existing skills on ClawHub first.",
+      "family": "en_create_research"
+    },
+    {
+      "text": "Improve this SKILL.md so the description triggers reliably.",
+      "family": "en_improve_existing"
+    },
+    {
+      "text": "帮我初始化一个新技能的脚手架，按规范建目录和 SKILL.md",
+      "family": "cn_scaffold"
+    },
+    {
+      "text": "做个技能并对比有技能和没技能的效果，验证它真的有用",
+      "family": "cn_behavioral_verify"
+    }
+  ],
+  "should_not_trigger": [
+    {
+      "text": "把这篇文章翻译成英文",
+      "family": "translate_only"
+    },
+    {
+      "text": "总结一下这个 PDF 的内容",
+      "family": "summary_only"
+    },
+    {
+      "text": "帮我写个 Python 脚本清洗 CSV 数据",
+      "family": "script_not_skill"
+    },
+    {
+      "text": "给我讲讲什么是 Agent Skills",
+      "family": "explain_only"
+    },
+    {
+      "text": "把这个普通 npm 包发布到 npm registry",
+      "family": "non_skill_publish"
+    },
+    {
+      "text": "头脑风暴几个技能名字就好，先别动手做",
+      "family": "brainstorm_only"
+    }
+  ],
+  "near_neighbor": [
+    {
+      "text": "帮我把这个下载好的包装到 ~/.claude/skills/ 目录里",
+      "family": "install_only"
+    },
+    {
+      "text": "看看这个包的说明文档里写了什么",
+      "family": "read_only"
+    },
+    {
+      "text": "推荐一个现成好用的 PDF 处理技能",
+      "family": "find_existing_only"
+    },
+    {
+      "text": "评估一下这段代码的时间复杂度",
+      "family": "eval_code_not_skill"
+    },
+    {
+      "text": "帮我修一下这个 bug，改完跑下测试",
+      "family": "fix_code_not_skill"
+    },
+    {
+      "text": "优化一下我这段 SQL 的查询性能",
+      "family": "optimize_code_not_skill"
+    }
+  ]
+}
