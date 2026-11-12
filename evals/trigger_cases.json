@@ -1,0 +1,212 @@
+{
+  "recommended_threshold": 0.34,
+  "description_required_concepts": [
+    "research_depth",
+    "synthesis_type",
+    "traceability",
+    "deliverable"
+  ],
+  "positive_concepts": {
+    "research_intent": [
+      "研究",
+      "调研",
+      "梳理",
+      "分析",
+      "考察",
+      "调查",
+      "考证",
+      "求证",
+      "来龙去脉",
+      "research",
+      "investigate"
+    ],
+    "research_depth": [
+      "深度研究",
+      "深度调研",
+      "深入研究",
+      "系统调研",
+      "系统研究",
+      "系统梳理",
+      "全面调研",
+      "deep research",
+      "systematic investigation",
+      "in-depth"
+    ],
+    "synthesis_type": [
+      "文献综述",
+      "文献回顾",
+      "文献梳理",
+      "综述",
+      "literature review",
+      "survey"
+    ],
+    "traceability": [
+      "可溯源",
+      "回溯到来源",
+      "出处",
+      "逐条定位",
+      "交叉验证",
+      "多方求证",
+      "考证",
+      "查证",
+      "真伪",
+      "来源",
+      "traceable",
+      "citations"
+    ],
+    "controversy": [
+      "多角度",
+      "多视角",
+      "各家观点",
+      "争议",
+      "争论",
+      "分歧",
+      "共识",
+      "对立",
+      "正反",
+      "competing",
+      "multi-perspective",
+      "contested"
+    ],
+    "deliverable": [
+      "调研报告",
+      "研究报告",
+      "研究设计",
+      "报告",
+      "立项",
+      "背景调查",
+      "行业",
+      "答辩",
+      "发表",
+      "决策依据",
+      "research report",
+      "citable"
+    ]
+  },
+  "negative_patterns": [
+    "直接告诉我",
+    "一句话回答",
+    "快速总结",
+    "总结一下就好",
+    "头脑风暴",
+    "翻译",
+    "写个脚本",
+    "修这个bug",
+    "单个事实",
+    "读这份文档",
+    "快速给个观点",
+    "just a quick",
+    "translate only",
+    "one-off"
+  ],
+  "should_trigger": [
+    {
+      "text": "帮我对这个政策的来龙去脉做一次深度研究，结论要站得住",
+      "family": "cn_deep_research"
+    },
+    {
+      "text": "帮我系统地研究一下这个领域现在的共识和分歧",
+      "family": "cn_systematic"
+    },
+    {
+      "text": "我需要一份文献综述，覆盖近五年的主要研究",
+      "family": "cn_lit_review"
+    },
+    {
+      "text": "综述一下这个领域的研究进展，别漏掉对立观点",
+      "family": "cn_survey_field"
+    },
+    {
+      "text": "这个问题各家观点帮我梳理一下，摆开别平均",
+      "family": "cn_perspectives"
+    },
+    {
+      "text": "帮我考证这个说法的真伪，每条结论都要有出处",
+      "family": "cn_verify_sources"
+    },
+    {
+      "text": "多方求证一下这个数据，交叉验证不同来源",
+      "family": "cn_cross_check"
+    },
+    {
+      "text": "立项之前先做一轮背景调查，出一份调研报告",
+      "family": "cn_due_diligence"
+    },
+    {
+      "text": "全面分析这个争议，正反两边的论据都要摆开",
+      "family": "cn_contested"
+    },
+    {
+      "text": "深入研究一下这项技术的历史影响，报告要能拿去答辩",
+      "family": "cn_defense_report"
+    },
+    {
+      "text": "这个行业现状帮我调研一下，要系统一点",
+      "family": "cn_industry"
+    },
+    {
+      "text": "This contested question needs deep research — every claim must trace to a source.",
+      "family": "en_deep_traceable"
+    },
+    {
+      "text": "Do a literature review of the field and lay out the competing accounts.",
+      "family": "en_lit_review"
+    }
+  ],
+  "should_not_trigger": [
+    {
+      "text": "今天A股大盘涨了多少",
+      "family": "single_fact"
+    },
+    {
+      "text": "这个词是什么意思",
+      "family": "definition"
+    },
+    {
+      "text": "帮我把这篇文章翻译成英文",
+      "family": "translate_only"
+    },
+    {
+      "text": "总结一下这个 PDF 讲了什么",
+      "family": "summary_only"
+    },
+    {
+      "text": "帮我头脑风暴几个选题方向",
+      "family": "brainstorm_only"
+    },
+    {
+      "text": "修复这个 Python 脚本的报错",
+      "family": "code_task"
+    },
+    {
+      "text": "这份文档里写了什么？读完直接告诉我",
+      "family": "given_doc"
+    },
+    {
+      "text": "快速给我个建议就行，不用查资料",
+      "family": "quick_opinion"
+    }
+  ],
+  "near_neighbor": [
+    {
+      "text": "帮我查一下这个人的出生日期",
+      "family": "lookup_single_fact"
+    },
+    {
+      "text": "网上搜几个相关链接发给我就行",
+      "family": "casual_search"
+    },
+    {
+      "text": "帮我写一篇关于这个话题的议论文",
+      "family": "writing_not_research"
+    },
+    {
+      "text": "分析一下这段代码为什么慢",
+      "family": "code_analysis"
+    },
+    {
+      "text": "把这两个网页的内容合并整理成一段话",
+      "family": "merge_summarize"
+    }
+  ]
+}
