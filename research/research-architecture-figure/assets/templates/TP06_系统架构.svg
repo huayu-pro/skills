@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="874" height="633" viewBox="63 0 874 633" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arrowBig" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" />
+    </marker>
+  </defs>
+  <rect width="1000" height="640" fill="#FFFFFF" />
+
+  
+  <rect x="112" y="48" width="776" height="104" rx="10" fill="#D9E7F6" stroke="#2F6BB0" stroke-width="1.5" />
+  <rect x="128" y="64" width="176" height="72" rx="6" fill="#2F6BB0" />
+  <text x="216" y="105" font-size="16" font-weight="700" text-anchor="middle" fill="#FFFFFF">前端表示层</text>
+  <rect x="320" y="64" width="552" height="72" rx="6" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="596" y="94" font-size="13" text-anchor="middle" fill="#1A1A1A">负责页面展示与交互，</text>
+  <text x="596" y="116" font-size="13" text-anchor="middle" fill="#1A1A1A">通过接口完成数据交互</text>
+
+  
+  <line x1="500" y1="152" x2="500" y2="192" stroke="#2F6BB0" stroke-width="3" marker-end="url(#arrowBig)" />
+
+  
+  <rect x="112" y="192" width="776" height="104" rx="10" fill="#E4EEF9" stroke="#2F6BB0" stroke-width="1.5" />
+  <rect x="128" y="208" width="176" height="72" rx="6" fill="#2F6BB0" />
+  <text x="216" y="249" font-size="16" font-weight="700" text-anchor="middle" fill="#FFFFFF">控制层</text>
+  <rect x="320" y="208" width="552" height="72" rx="6" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="596" y="238" font-size="13" text-anchor="middle" fill="#1A1A1A">使用后端框架提供</text>
+  <text x="596" y="260" font-size="13" text-anchor="middle" fill="#1A1A1A">REST 服务接收请求</text>
+
+  
+  <line x1="500" y1="296" x2="500" y2="336" stroke="#2F6BB0" stroke-width="3" marker-end="url(#arrowBig)" />
+
+  
+  <rect x="112" y="336" width="776" height="104" rx="10" fill="#EDF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <rect x="128" y="352" width="176" height="72" rx="6" fill="#2F6BB0" />
+  <text x="216" y="393" font-size="16" font-weight="700" text-anchor="middle" fill="#FFFFFF">应用服务层</text>
+  <rect x="320" y="352" width="552" height="72" rx="6" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="596" y="382" font-size="13" text-anchor="middle" fill="#1A1A1A">负责处理业务逻辑，</text>
+  <text x="596" y="404" font-size="13" text-anchor="middle" fill="#1A1A1A">实现系统功能</text>
+
+  
+  <line x1="500" y1="440" x2="500" y2="480" stroke="#2F6BB0" stroke-width="3" marker-end="url(#arrowBig)" />
+
+  
+  <rect x="112" y="480" width="776" height="104" rx="10" fill="#F6FAFD" stroke="#2F6BB0" stroke-width="1.5" />
+  <rect x="128" y="496" width="176" height="72" rx="6" fill="#2F6BB0" />
+  <text x="216" y="537" font-size="16" font-weight="700" text-anchor="middle" fill="#FFFFFF">数据访问层</text>
+  <rect x="320" y="496" width="552" height="72" rx="6" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="596" y="526" font-size="13" text-anchor="middle" fill="#1A1A1A">通过数据访问组件</text>
+  <text x="596" y="548" font-size="13" text-anchor="middle" fill="#1A1A1A">对数据库进行操作</text>
+</svg>

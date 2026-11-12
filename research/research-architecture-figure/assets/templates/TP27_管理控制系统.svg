@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" /></marker>
+    <marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" /></marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A94A6" /></marker>
+  </defs>
+  <rect width="1200" height="760" fill="#FFFFFF" />
+
+  
+
+  
+  <rect x="280" y="48" width="640" height="224" rx="10" fill="#2F6BB0" fill-opacity="0.04" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+  <text x="600" y="76" font-size="16" font-weight="700" fill="#2F6BB0" text-anchor="middle">影响因素</text>
+
+  
+  <rect x="304" y="96" width="592" height="104" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="600" y="120" font-size="16" font-weight="700" fill="#1A1A1A" text-anchor="middle">组织内外环境</text>
+  <path d="M304,136 H896" stroke="#2F6BB0" stroke-width="1.5" />
+  <path d="M600,136 V200" stroke="#2F6BB0" stroke-width="1.5" stroke-dasharray="5 4" />
+  <text x="452" y="158" font-size="13" fill="#1A1A1A" text-anchor="middle">
+    <tspan x="452" dy="0">外部环境（如环境不</tspan>
+    <tspan x="452" dy="22">确定性、产业结构、</tspan>
+    <tspan x="452" dy="22">地区市场化进程等）</tspan>
+  </text>
+  <text x="748" y="158" font-size="13" fill="#1A1A1A" text-anchor="middle">
+    <tspan x="748" dy="0">内部环境（如股权结</tspan>
+    <tspan x="748" dy="22">构、技术、企业文化、</tspan>
+    <tspan x="748" dy="22">等）</tspan>
+  </text>
+
+  
+  <rect x="424" y="216" width="352" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="600" y="246" font-size="16" font-weight="700" fill="#1A1A1A" text-anchor="middle">竞争战略</text>
+
+  
+  <path d="M600,264 V296" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+  <text x="600" y="312" font-size="13" fill="#666666" text-anchor="middle">（中介变量）</text>
+  <path d="M600,320 V336" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+
+  
+  <rect x="280" y="336" width="640" height="168" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <path d="M280,376 H920" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="600" y="362" font-size="16" font-weight="700" fill="#1A1A1A" text-anchor="middle">核心管理控制系统</text>
+  <text x="340" y="404" font-size="13" fill="#1A1A1A">
+    <tspan x="340" dy="0">1.业务信息系统</tspan>
+    <tspan x="340" dy="26">2.组织结构</tspan>
+    <tspan x="340" dy="26">3.控制安排</tspan>
+    <tspan x="340" dy="26" />
+  </text>
+
+  
+  <path d="M600,504 V548" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+  <text x="600" y="564" font-size="13" fill="#666666" text-anchor="middle">（中介变量）</text>
+  <path d="M600,572 V616" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+
+  
+  <rect x="472" y="616" width="256" height="56" rx="6" fill="#2F6BB0" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="600" y="650" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">经济后果</text>
+
+  
+  <rect x="968" y="576" width="176" height="52" rx="6" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+  <text x="1056" y="608" font-size="16" font-weight="700" fill="#1A1A1A" text-anchor="middle">其它因素</text>
+  <path d="M1056,628 V656 H728" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+
+  
+  <path d="M120,272 V648 H472" stroke="#8A94A6" stroke-width="1.5" fill="none" stroke-dasharray="5 4" marker-end="url(#arrG)" />
+  <text x="176" y="300" font-size="13" fill="#1A1A1A">调节作用</text>
+  <path d="M120,308 H576" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+  <text x="176" y="544" font-size="13" fill="#1A1A1A">调节作用</text>
+  <path d="M120,552 H576" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+</svg>

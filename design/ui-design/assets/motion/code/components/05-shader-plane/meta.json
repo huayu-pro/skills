@@ -1,0 +1,129 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "05-shader-plane",
+ "name": "Shader Plane",
+ "family": "F3",
+ "family_name": "WebGL 全屏 shader / lens",
+ "tagline": "覆盖三角形 + 单 fragment shader：时间/分辨率/指针/进度四个 uniform。",
+ "sources": [
+  {
+   "id": "ui3-faq-grid-c5f520fd",
+   "type": "faq-grid",
+   "hierarchy": "page-section",
+   "role": "faq-grid structure"
+  },
+  {
+   "id": "ui3-section-split-94d7508d",
+   "type": "section-split",
+   "hierarchy": "block",
+   "role": "section-split structure"
+  },
+  {
+   "id": "ui3-timeline-steps-fe980e8c",
+   "type": "timeline-steps",
+   "hierarchy": "page-section",
+   "role": "timeline-steps structure"
+  },
+  {
+   "id": "ui3-stats-74b69dcb57",
+   "type": "stats",
+   "hierarchy": "molecule",
+   "role": "stats structure"
+  },
+  {
+   "id": "ui3-footer-mega-1fbe5026",
+   "type": "footer-mega",
+   "hierarchy": "block",
+   "role": "footer-mega structure"
+  }
+ ],
+ "engines": [
+  {
+   "name": "ShaderPlane",
+   "evidence": "authored"
+  }
+ ],
+ "motion": {
+  "trigger": "time",
+  "duration_ms": null,
+  "duration_mode": "indefinite",
+  "easing": "linear",
+  "states": [
+   "running",
+   "paused",
+   "static",
+   "fallback",
+   "context-lost"
+  ],
+  "fallback": "WebGL2 不可用/编译失败: CSS 渐变；reduced-motion: 只画一帧",
+  "properties": [
+   "fragment-color"
+  ],
+  "category": "ambient",
+  "advanced": true,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "geometry",
+   "value": "覆盖三角形 3 顶点",
+   "provenance": "Authored"
+  },
+  {
+   "name": "uniforms",
+   "value": "u_res / u_time / u_mouse / u_progress",
+   "provenance": "Authored"
+  },
+  {
+   "name": "DPR",
+   "value": "min(devicePixelRatio, 2)",
+   "provenance": "Observed（kit 03）+ 修正"
+  },
+  {
+   "name": "rings",
+   "value": "sin(r×13 - t×3.2 + n×3)",
+   "provenance": "Authored"
+  },
+  {
+   "name": "glow",
+   "value": "0.18 × exp(-dist×3.2)",
+   "provenance": "Authored"
+  },
+  {
+   "name": "pause",
+   "value": "visibilitychange + button",
+   "provenance": "Authored"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Tab",
+   "Enter",
+   "Space"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "交互元素有 aria-label / aria-valuenow / aria-pressed"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "shader 是自写近似，不是原站 shader",
+  "kit 03 的 DPR 鼠标坐标 bug 已修"
+ ]
+}

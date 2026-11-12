@@ -1,0 +1,84 @@
+<!-- TP18_教学分析框架｜骨架取自仿绘 P023；专有名词已换成通用词，结构词保留，使用时改文字即可 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="704" viewBox="0 0 1200 704" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" />
+    </marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8A94A6" />
+    </marker>
+  </defs>
+  <rect width="1200" height="704" fill="#FFFFFF" />
+
+  
+  <rect x="48" y="48" width="336" height="520" rx="10" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="216" y="88" font-size="16" font-weight="700" text-anchor="middle" fill="#1A1A1A">准备度</text>
+
+  <rect x="72" y="112" width="176" height="88" rx="6" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="160" y="161" font-size="13" text-anchor="middle" fill="#1A1A1A">组织准备</text>
+  <line x1="248" y1="156" x2="272" y2="156" stroke="#8A94A6" stroke-width="1" />
+  <text x="304" y="151" font-size="13" text-anchor="middle" fill="#1A1A1A">态度</text>
+  <text x="304" y="171" font-size="13" text-anchor="middle" fill="#1A1A1A">能力</text>
+
+  <rect x="72" y="284" width="176" height="88" rx="6" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="160" y="333" font-size="13" text-anchor="middle" fill="#1A1A1A">教师准备</text>
+  <line x1="248" y1="328" x2="272" y2="328" stroke="#8A94A6" stroke-width="1" />
+  <text x="304" y="323" font-size="13" text-anchor="middle" fill="#1A1A1A">态度</text>
+  <text x="304" y="343" font-size="13" text-anchor="middle" fill="#1A1A1A">能力</text>
+
+  <rect x="72" y="456" width="176" height="88" rx="6" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="160" y="505" font-size="13" text-anchor="middle" fill="#1A1A1A">学生准备</text>
+  <line x1="248" y1="500" x2="272" y2="500" stroke="#8A94A6" stroke-width="1" />
+  <text x="304" y="495" font-size="13" text-anchor="middle" fill="#1A1A1A">态度</text>
+  <text x="304" y="515" font-size="13" text-anchor="middle" fill="#1A1A1A">能力</text>
+
+  
+  <rect x="432" y="48" width="336" height="520" rx="10" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="600" y="88" font-size="16" font-weight="700" text-anchor="middle" fill="#1A1A1A">设计与实施</text>
+
+  <rect x="504" y="112" width="192" height="84" rx="6" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="600" y="157" font-size="13" text-anchor="middle" fill="#1A1A1A">模式</text>
+
+  <rect x="504" y="228" width="192" height="84" rx="6" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="600" y="273" font-size="13" text-anchor="middle" fill="#1A1A1A">理论框架</text>
+
+  <rect x="504" y="344" width="192" height="84" rx="6" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="600" y="389" font-size="13" text-anchor="middle" fill="#1A1A1A">策略</text>
+
+  <rect x="504" y="460" width="192" height="84" rx="6" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="600" y="505" font-size="13" text-anchor="middle" fill="#1A1A1A">支持</text>
+
+  
+  <rect x="816" y="48" width="336" height="520" rx="10" fill="#FDF3EA" stroke="#E8833A" stroke-width="1.5" />
+  <text x="984" y="88" font-size="16" font-weight="700" text-anchor="middle" fill="#1A1A1A">影响</text>
+
+  <rect x="866" y="112" width="120" height="84" rx="6" fill="#FFFFFF" stroke="#E8833A" stroke-width="1.5" />
+  <text x="926" y="157" font-size="13" text-anchor="middle" fill="#1A1A1A">评价</text>
+
+  <rect x="998" y="112" width="104" height="24" rx="4" fill="#FFFFFF" stroke="#E8833A" stroke-width="1.2" />
+  <text x="1050" y="129" font-size="13" text-anchor="middle" fill="#1A1A1A">框架</text>
+  <rect x="998" y="142" width="104" height="24" rx="4" fill="#FFFFFF" stroke="#E8833A" stroke-width="1.2" />
+  <text x="1050" y="159" font-size="13" text-anchor="middle" fill="#1A1A1A">方法</text>
+  <rect x="998" y="172" width="104" height="24" rx="4" fill="#FFFFFF" stroke="#E8833A" stroke-width="1.2" />
+  <text x="1050" y="189" font-size="13" text-anchor="middle" fill="#1A1A1A">工具</text>
+
+  <rect x="866" y="228" width="236" height="84" rx="6" fill="#FFFFFF" stroke="#E8833A" stroke-width="1.5" />
+  <text x="984" y="273" font-size="13" text-anchor="middle" fill="#1A1A1A">效果</text>
+
+  <rect x="866" y="344" width="236" height="84" rx="6" fill="#FFFFFF" stroke="#E8833A" stroke-width="1.5" />
+  <text x="984" y="389" font-size="13" text-anchor="middle" fill="#1A1A1A">满意度</text>
+
+  <rect x="866" y="460" width="236" height="84" rx="6" fill="#FFFFFF" stroke="#E8833A" stroke-width="1.5" />
+  <text x="984" y="505" font-size="13" text-anchor="middle" fill="#1A1A1A">影响因素</text>
+
+  
+  <line x1="384" y1="308" x2="432" y2="308" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arr)" />
+  <line x1="768" y1="308" x2="816" y2="308" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arr)" />
+
+  
+  <line x1="984" y1="568" x2="984" y2="632" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="5 4" />
+  <line x1="216" y1="632" x2="984" y2="632" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="5 4" />
+  <line x1="216" y1="632" x2="216" y2="568" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrG)" />
+  <line x1="600" y1="632" x2="600" y2="568" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrG)" />
+  <text x="600" y="660" font-size="11" text-anchor="middle" fill="#666666">反馈修正</text>
+</svg>

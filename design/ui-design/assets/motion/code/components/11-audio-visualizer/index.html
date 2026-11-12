@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audio Visualizer — reverse-final</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='14' width='3' height='4' fill='%23e8b45a'/%3E%3Crect x='10' y='9' width='3' height='14' fill='%23e8b45a'/%3E%3Crect x='16' y='5' width='3' height='22' fill='%23e8b45a'/%3E%3Crect x='22' y='11' width='3' height='10' fill='%23e8b45a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="component.css">
+</head>
+<body>
+  <main class="rf-audio" data-rf="audio-visualizer">
+    <header class="rf-audio__bar">
+      <span class="rf-audio__mark">AUDIO / 11</span>
+      <nav class="rf-audio__nav" aria-label="主导航">
+        <a href="#tracks">Tracks</a>
+        <a href="#about">Signal</a>
+      </nav>
+      <span class="rf-audio__status" data-state aria-live="polite">idle</span>
+    </header>
+
+    <section class="rf-audio__stage" aria-label="音频可视化">
+      <div class="rf-audio__copy">
+        <p class="rf-audio__eyebrow">Oscillator pad · analyser 256</p>
+        <h1>Sound is<br>a state.</h1>
+        <p class="rf-audio__lede">五个 oscillator 组成一个 pad；首次点击才创建 AudioContext。频谱条不是装饰，是 <code>getByteFrequencyData</code> 的读数。</p>
+        <div class="rf-audio__actions">
+          <button type="button" class="rf-audio__play" data-play>Enable sound</button>
+          <button type="button" class="rf-audio__mute" data-mute aria-pressed="false">Mute</button>
+        </div>
+      </div>
+      <div class="rf-audio__visual" aria-hidden="true">
+        <div class="rf-audio__bars" data-bars></div>
+        <div class="rf-audio__readout"><span data-readout>0.000</span><small>master gain</small></div>
+      </div>
+    </section>
+
+    <section class="rf-audio__tracks" id="tracks" aria-label="轨道">
+      <article><span>01</span><h2>Drone</h2><p>110 Hz · triangle</p></article>
+      <article><span>02</span><h2>Fifth</h2><p>164.81 Hz · sine</p></article>
+      <article><span>03</span><h2>Octave</h2><p>220 Hz · triangle</p></article>
+      <article><span>04</span><h2>Major third</h2><p>277.18 Hz · sine</p></article>
+      <article><span>05</span><h2>Fifth up</h2><p>329.63 Hz · triangle</p></article>
+    </section>
+
+    <footer class="rf-audio__foot">
+      <p><strong>Audio Visualizer</strong> 合成 4 个结构来源：menu-mega、form-contact、toggle、footer-mega。音频状态机：idle → starting → on ⇄ muted；页面隐藏时 suspend。</p>
+      <span class="rf-audio__meta">fft 256 · 64 bars · master .035</span>
+    </footer>
+  </main>
+  <script src="component.js"></script>
+</body>
+</html>

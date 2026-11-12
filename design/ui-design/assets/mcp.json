@@ -1,0 +1,33 @@
+{
+  "_comment": "Copy the servers you need into your client's MCP config. Nothing here is required: the skill degrades to bundled references and offline docs.",
+  "mcpServers": {
+    "shadcn": {
+      "command": "npx",
+      "args": ["shadcn@latest", "mcp"],
+      "_requires": "a components.json in the project; 7 tools; project-aware",
+      "_docs": "https://ui.shadcn.com/docs/mcp",
+      "_offline": "curl https://ui.shadcn.com/r/index.json"
+    },
+    "heroui-react": {
+      "command": "npx",
+      "args": ["-y", "@heroui/react-mcp@latest"],
+      "_requires": "Node >= 22.22; @heroui/react v3 only; 6 tools; stateless",
+      "_docs": "https://heroui.com/docs/react/getting-started/mcp-server",
+      "_offline": "npx heroui-cli@latest agents-md --react"
+    },
+    "mantine": {
+      "command": "npx",
+      "args": ["-y", "@mantine/mcp-server"],
+      "_requires": "nothing; 5 tools; stateless",
+      "_docs": "https://mantine.dev/guides/llms/#mcp-server",
+      "_offline": "curl https://mantine.dev/llms-full.txt"
+    }
+  },
+  "_client_paths": {
+    "claude_code": ".mcp.json",
+    "cursor": ".cursor/mcp.json",
+    "vscode": ".vscode/mcp.json (uses \"servers\" not \"mcpServers\")",
+    "codex": "~/.codex/config.toml ([mcp_servers.shadcn])"
+  },
+  "_selection": "Pick one as the theme authority. Do not mix all three on one surface without a boundary; see references/18-stack-selection.md."
+}

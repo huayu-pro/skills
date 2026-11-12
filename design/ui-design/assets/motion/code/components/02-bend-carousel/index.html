@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bend Carousel — reverse-final</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='6' width='26' height='20' rx='3' fill='%230a0b0d' stroke='%23e8b45a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="component.css">
+</head>
+<body>
+  <main class="rf-bend" data-rf="bend-carousel">
+    <header class="rf-bend__bar">
+      <span class="rf-bend__mark">BEND / 02</span>
+      <nav class="rf-bend__nav" aria-label="主导航">
+        <a href="#work">Index</a>
+        <a href="#about">Studio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <span class="rf-bend__count" aria-live="polite">01 / 04</span>
+    </header>
+
+    <section class="rf-bend__stage" aria-label="曲面轮播">
+      <div class="rf-bend__panels" role="list"></div>
+      <div class="rf-bend__controls">
+        <button type="button" data-prev aria-label="上一张">←</button>
+        <div class="rf-bend__dots" role="tablist" aria-label="项目选择"></div>
+        <button type="button" data-next aria-label="下一张">→</button>
+      </div>
+      <p class="rf-bend__hint">滚轮 / 拖拽 40px / ← → 切换 · 点击面板打开</p>
+    </section>
+
+    <footer class="rf-bend__foot">
+      <p><strong>Bend Carousel</strong> 用 32 条竖切片伪造圆柱面：<code>rotateY(t × -17°)</code> + <code>translateZ(-(1 - cos(|t|π/2)) × 92px)</code>。进入时 <code>--curve:1.55</code>，落位 760ms。</p>
+      <span class="rf-bend__meta">32 slices · 760ms · cubic-bezier(.22,.8,.2,1)</span>
+    </footer>
+
+    <dialog class="rf-bend__detail" aria-label="项目详情">
+      <button type="button" class="rf-bend__close" aria-label="关闭详情">×</button>
+      <div class="rf-bend__detail-art" aria-hidden="true"></div>
+      <div class="rf-bend__detail-copy">
+        <p class="rf-bend__eyebrow"></p>
+        <h2></h2>
+        <p class="rf-bend__desc"></p>
+        <dl>
+          <div><dt>Year</dt><dd class="rf-bend__year"></dd></div>
+          <div><dt>Role</dt><dd class="rf-bend__role"></dd></div>
+        </dl>
+      </div>
+    </dialog>
+  </main>
+  <script src="component.js"></script>
+</body>
+</html>

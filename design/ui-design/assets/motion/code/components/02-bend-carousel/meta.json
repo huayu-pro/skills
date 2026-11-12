@@ -1,0 +1,133 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "02-bend-carousel",
+ "name": "Bend Carousel",
+ "family": "F9",
+ "family_name": "3D 倾斜 / 剥皮 / 材质",
+ "tagline": "32 条竖切片伪造圆柱面；进入曲线 1.55，落位 760ms。",
+ "sources": [
+  {
+   "id": "ui3-hero-centered-3ac99847",
+   "type": "hero-centered",
+   "hierarchy": "molecule",
+   "role": "hero-centered structure"
+  },
+  {
+   "id": "ui3-hero-split-ba9e2048",
+   "type": "hero-split",
+   "hierarchy": "block",
+   "role": "hero-split structure"
+  },
+  {
+   "id": "ui3-feature-bento-9db5cf15",
+   "type": "feature-bento",
+   "hierarchy": "page-section",
+   "role": "feature-bento structure"
+  },
+  {
+   "id": "ui3-feature-bento-0b2edec9",
+   "type": "feature-bento",
+   "hierarchy": "page-section",
+   "role": "feature-bento structure"
+  },
+  {
+   "id": "ui3-card-grid-f09aff89",
+   "type": "card-grid",
+   "hierarchy": "block",
+   "role": "card-grid structure"
+  }
+ ],
+ "engines": [
+  {
+   "name": "BendPanel",
+   "evidence": "observed"
+  }
+ ],
+ "motion": {
+  "trigger": "pointer",
+  "duration_ms": 760,
+  "duration_mode": "fixed",
+  "easing": "cubic-bezier(.22,.8,.2,1)",
+  "states": [
+   "active",
+   "prev",
+   "next",
+   "far",
+   "reduced"
+  ],
+  "fallback": "prefers-reduced-motion: 2×2 平面网格，切片不弯曲",
+  "properties": [
+   "transform",
+   "opacity",
+   "filter"
+  ],
+  "category": "gesture",
+  "advanced": true,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "slices",
+   "value": "32",
+   "provenance": "Observed（Mathias 复刻）"
+  },
+  {
+   "name": "edge rotate",
+   "value": "t × -17°",
+   "provenance": "Observed"
+  },
+  {
+   "name": "depth",
+   "value": "-(1 - cos(|t|π/2)) × 92px",
+   "provenance": "Observed"
+  },
+  {
+   "name": "entry curve",
+   "value": "1.55",
+   "provenance": "Observed"
+  },
+  {
+   "name": "transition",
+   "value": "760ms cubic-bezier(.22,.8,.2,1)",
+   "provenance": "Observed"
+  },
+  {
+   "name": "drag commit",
+   "value": "±40px / threshold 10px",
+   "provenance": "Observed"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Tab",
+   "ArrowLeft",
+   "ArrowRight",
+   "Enter",
+   "Escape"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "交互元素有 aria-label / aria-valuenow / aria-pressed"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "切片之间有可见接缝；不是像素级曲面",
+  "原站 CSS 注释 26 片，JS 实际 32 片，本组件取 32"
+ ]
+}

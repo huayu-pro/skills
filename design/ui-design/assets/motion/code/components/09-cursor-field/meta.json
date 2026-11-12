@@ -1,0 +1,130 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "09-cursor-field",
+ "name": "Cursor Field",
+ "family": "F7",
+ "family_name": "光标 / 磁吸 / 角色",
+ "tagline": "dot + ring 光标、磁吸按钮、多层视差、30° 倾斜卡片。",
+ "sources": [
+  {
+   "id": "ui3-faq-grid-bc30c4bd",
+   "type": "faq-grid",
+   "hierarchy": "page-section",
+   "role": "faq-grid structure"
+  },
+  {
+   "id": "ui3-faq-grid-d6d63751",
+   "type": "faq-grid",
+   "hierarchy": "page-section",
+   "role": "faq-grid structure"
+  },
+  {
+   "id": "ui3-modal-dialog-9fe01012",
+   "type": "modal-dialog",
+   "hierarchy": "block",
+   "role": "modal-dialog structure"
+  },
+  {
+   "id": "ui3-pricing-cards-1ea0566b",
+   "type": "pricing-cards",
+   "hierarchy": "page-section",
+   "role": "pricing-cards structure"
+  }
+ ],
+ "engines": [
+  {
+   "name": "CursorLayer",
+   "evidence": "authored"
+  },
+  {
+   "name": "ParallaxField",
+   "evidence": "observed"
+  },
+  {
+   "name": "TiltCard",
+   "evidence": "observed"
+  }
+ ],
+ "motion": {
+  "trigger": "pointer",
+  "duration_ms": 220,
+  "duration_mode": "fixed",
+  "easing": "cubic-bezier(.2,.8,.2,1)",
+  "states": [
+   "idle",
+   "hover",
+   "reduced",
+   "coarse"
+  ],
+  "fallback": "prefers-reduced-motion: 取消视差/倾斜，保留 hover 颜色；pointer: coarse 隐藏光标层",
+  "properties": [
+   "transform",
+   "border-color"
+  ],
+  "category": "gesture",
+  "advanced": true,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "dot / ring",
+   "value": "6px / 34px；hover 58px",
+   "provenance": "Authored（kit 06）"
+  },
+  {
+   "name": "ring lerp",
+   "value": ".16",
+   "provenance": "Observed"
+  },
+  {
+   "name": "magnet",
+   "value": "dx × .18，clamp ±14px",
+   "provenance": "Observed"
+  },
+  {
+   "name": "depth",
+   "value": "1.1–1.8 × 10px",
+   "provenance": "Observed（168）"
+  },
+  {
+   "name": "tilt",
+   "value": "30° / perspective 900px",
+   "provenance": "Observed（186）"
+  },
+  {
+   "name": "deadzone",
+   "value": ".035",
+   "provenance": "Observed（186）"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Tab",
+   "Enter"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "交互元素有 aria-label / aria-valuenow / aria-pressed"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "磁吸是视觉位移，不是可拖拽磁铁",
+  "自定义光标不替代 focus ring"
+ ]
+}

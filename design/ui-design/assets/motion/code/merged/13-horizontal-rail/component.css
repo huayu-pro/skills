@@ -1,0 +1,120 @@
+/* 13-horizontal-rail — F2 merged component.
+   wheel + drag -> targetX; lerp + velocity; rubber boundary; native fallback. */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: #0a0b0d;
+  color: #f4efe4;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, p { margin: 0; }
+button, a { font: inherit; color: inherit; }
+
+.mr-rail {
+  --ink: #f4efe4;
+  --muted: #948e82;
+  --line: rgba(244, 239, 228, .14);
+  --accent: #e8b45a;
+  --ease: cubic-bezier(.22, .8, .2, 1);
+  min-height: 100dvh;
+  padding: 0 clamp(18px, 4vw, 56px) 30px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(22px, 4vw, 44px);
+}
+.mr-rail__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.mr-rail__mark { color: var(--accent); font-weight: 700; }
+.mr-rail__hint { color: var(--muted); }
+.mr-rail__intro { display: grid; gap: 12px; max-width: 720px; }
+.mr-rail__eyebrow {
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.mr-rail__intro h1 {
+  font-size: clamp(40px, 8vw, 92px);
+  line-height: .9;
+  letter-spacing: -.055em;
+  font-weight: 650;
+}
+.mr-rail__lede { color: var(--muted); font-size: 14px; line-height: 1.75; max-width: 52ch; }
+
+.mr-rail__stage { position: relative; }
+.mr-rail__viewport {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  cursor: grab;
+  touch-action: pan-y;
+}
+.mr-rail__viewport.is-dragging { cursor: grabbing; }
+.mr-rail__viewport:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.mr-rail__track {
+  display: flex;
+  gap: clamp(14px, 2vw, 26px);
+  padding: clamp(18px, 3vw, 30px) 0;
+  will-change: transform;
+}
+.mr-rail__panel {
+  flex: 0 0 auto;
+  width: clamp(250px, 40vw, 520px);
+  min-height: clamp(300px, 46vh, 440px);
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: #101114;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mr-rail__num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px;
+  letter-spacing: .16em;
+  color: var(--accent);
+}
+.mr-rail__art { flex: 1; min-height: 180px; border: 1px solid rgba(255,255,255,.06); }
+.art-1 { background: radial-gradient(circle at 30% 20%, #bff3e6, transparent 40%), linear-gradient(145deg, #0f2a33, #071217 70%); }
+.art-2 { background: radial-gradient(circle at 70% 20%, #ffe3b0, transparent 42%), linear-gradient(160deg, #2a1712, #120a08 75%); }
+.art-3 { background: radial-gradient(circle at 35% 25%, #f4c7ff, transparent 40%), linear-gradient(150deg, #1b1030, #0a0614 75%); }
+.art-4 { background: radial-gradient(circle at 25% 75%, #cfe8b0, transparent 42%), linear-gradient(145deg, #101b12, #070b08 75%); }
+.art-5 { background: radial-gradient(circle at 60% 30%, #9fd4ff, transparent 40%), linear-gradient(150deg, #0b1a2e, #060a12 75%); }
+.art-6 { background: radial-gradient(circle at 40% 70%, #ffd2a6, transparent 42%), linear-gradient(145deg, #241a10, #0d0805 75%); }
+.mr-rail__panel h2 { font-size: clamp(20px, 2.4vw, 30px); letter-spacing: -.03em; font-weight: 600; }
+.mr-rail__panel p { color: var(--muted); font-size: 12px; }
+
+.mr-rail__progress { height: 2px; background: rgba(244,239,228,.12); margin-top: 10px; }
+.mr-rail__progress i { display: block; height: 100%; width: 100%; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; }
+.mr-rail__foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .mr-rail__panel { width: 82vw; min-height: 340px; }
+  .mr-rail__foot { flex-direction: column; gap: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mr-rail__viewport { overflow-x: auto; scroll-snap-type: x mandatory; cursor: auto; touch-action: pan-x; }
+  .mr-rail__track { transform: none !important; }
+  .mr-rail__panel { scroll-snap-align: start; }
+  .mr-rail__progress i { transform: scaleX(1); }
+}

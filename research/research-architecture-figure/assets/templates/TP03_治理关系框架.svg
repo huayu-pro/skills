@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="952" height="594" viewBox="48 55 952 594" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" />
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" />
+    </marker>
+    <marker id="arrowDash" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8A94A6" />
+    </marker>
+  </defs>
+  <rect width="1000" height="704" fill="#FFFFFF" />
+
+  
+  <rect x="200" y="104" width="224" height="96" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="312" y="159" font-size="15" font-weight="700" text-anchor="middle" fill="#1A1A1A">公司内部治理</text>
+
+  <rect x="200" y="304" width="224" height="96" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="312" y="359" font-size="15" font-weight="700" text-anchor="middle" fill="#1A1A1A">管理控制</text>
+
+  <rect x="200" y="504" width="224" height="96" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="312" y="559" font-size="15" font-weight="700" text-anchor="middle" fill="#1A1A1A">作业控制</text>
+
+  
+  <rect x="552" y="104" width="304" height="96" rx="6" fill="#FBF0EF" stroke="#C94F44" stroke-width="1.5" />
+  <text x="704" y="148" font-size="15" font-weight="700" text-anchor="middle" fill="#1A1A1A">治理风险</text>
+  <text x="704" y="176" font-size="12" text-anchor="middle" fill="#666666">（含战略决策风险）</text>
+
+  <rect x="552" y="304" width="304" height="96" rx="6" fill="#FBF0EF" stroke="#C94F44" stroke-width="1.5" />
+  <text x="704" y="359" font-size="15" font-weight="700" text-anchor="middle" fill="#1A1A1A">经营风险、财务风险</text>
+
+  <rect x="552" y="504" width="304" height="96" rx="6" fill="#FBF0EF" stroke="#C94F44" stroke-width="1.5" />
+  <text x="704" y="559" font-size="15" font-weight="700" text-anchor="middle" fill="#1A1A1A">作业风险</text>
+
+  
+  <line x1="424" y1="136" x2="552" y2="136" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrowBlue)" />
+  <line x1="552" y1="172" x2="424" y2="172" stroke="#8A94A6" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#arrowDash)" />
+
+  <line x1="424" y1="336" x2="552" y2="336" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrowBlue)" />
+  <line x1="552" y1="372" x2="424" y2="372" stroke="#8A94A6" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#arrowDash)" />
+
+  <line x1="424" y1="536" x2="552" y2="536" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrowBlue)" />
+  <line x1="552" y1="572" x2="424" y2="572" stroke="#8A94A6" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#arrowDash)" />
+
+  
+  <line x1="280" y1="200" x2="280" y2="304" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="344" y1="304" x2="344" y2="200" stroke="#8A94A6" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#arrowDash)" />
+
+  <line x1="280" y1="400" x2="280" y2="504" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="344" y1="504" x2="344" y2="400" stroke="#8A94A6" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#arrowDash)" />
+
+  
+  <line x1="640" y1="200" x2="640" y2="304" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="768" y1="304" x2="768" y2="200" stroke="#8A94A6" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#arrowDash)" />
+
+  <line x1="640" y1="400" x2="640" y2="504" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="768" y1="504" x2="768" y2="400" stroke="#8A94A6" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#arrowDash)" />
+
+  
+  <path d="M 180 104 Q 160 104 160 124 L 160 336 Q 160 356 140 356 Q 160 356 160 376 L 160 580 Q 160 600 180 600" fill="none" stroke="#8A94A6" stroke-width="1.5" />
+  <text x="104" y="292" font-size="16" font-weight="700" text-anchor="middle" fill="#5A6B7E">内</text>
+  <text x="104" y="324" font-size="16" font-weight="700" text-anchor="middle" fill="#5A6B7E">部</text>
+  <text x="104" y="356" font-size="16" font-weight="700" text-anchor="middle" fill="#5A6B7E">控</text>
+  <text x="104" y="388" font-size="16" font-weight="700" text-anchor="middle" fill="#5A6B7E">制</text>
+
+  
+  <path d="M 876 104 Q 896 104 896 124 L 896 336 Q 896 356 916 356 Q 896 356 896 376 L 896 580 Q 896 600 876 600" fill="none" stroke="#8A94A6" stroke-width="1.5" />
+  <text x="952" y="292" font-size="16" font-weight="700" text-anchor="middle" fill="#5A6B7E">风</text>
+  <text x="952" y="324" font-size="16" font-weight="700" text-anchor="middle" fill="#5A6B7E">险</text>
+  <text x="952" y="356" font-size="16" font-weight="700" text-anchor="middle" fill="#5A6B7E">管</text>
+  <text x="952" y="388" font-size="16" font-weight="700" text-anchor="middle" fill="#5A6B7E">理</text>
+</svg>

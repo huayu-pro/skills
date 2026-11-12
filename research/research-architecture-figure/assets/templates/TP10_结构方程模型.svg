@@ -1,0 +1,167 @@
+<!-- TP10_结构方程模型｜骨架取自仿绘 P043（资源整合—动态能力—竞争优势 SEM）；潜变量已改为通用名，指标 X/Y 保留 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="824" viewBox="0 0 1480 824" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arrG" viewBox="0 0 30 20" refX="30" refY="10" markerWidth="6" markerHeight="4" orient="auto">
+      <path d="M0,0 L30,10 L0,20 z" fill="#5A6B7E" />
+    </marker>
+    <marker id="arrB" viewBox="0 0 30 20" refX="30" refY="10" markerWidth="6" markerHeight="4" orient="auto">
+      <path d="M0,0 L30,10 L0,20 z" fill="#2F6BB0" />
+    </marker>
+    <marker id="arrN" viewBox="0 0 30 20" refX="30" refY="10" markerWidth="6" markerHeight="4" orient="auto">
+      <path d="M0,0 L30,10 L0,20 z" fill="#8A94A6" />
+    </marker>
+  </defs>
+  <rect width="1480" height="824" fill="#FFFFFF" />
+
+  
+  <text x="72" y="96" font-size="12" fill="#8A94A6">δ1</text>
+  <line x1="112" y1="92" x2="176" y2="92" stroke="#8A94A6" stroke-width="1.3" marker-end="url(#arrN)" />
+  <rect x="176" y="64" width="176" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="264" y="97" font-size="14" text-anchor="middle" fill="#1A1A1A">X1</text>
+
+  <text x="72" y="168" font-size="12" fill="#8A94A6">δ2</text>
+  <line x1="112" y1="164" x2="176" y2="164" stroke="#8A94A6" stroke-width="1.3" marker-end="url(#arrN)" />
+  <rect x="176" y="136" width="176" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="264" y="169" font-size="14" text-anchor="middle" fill="#1A1A1A">X2</text>
+
+  
+  <text x="72" y="296" font-size="12" fill="#8A94A6">ε1</text>
+  <line x1="112" y1="292" x2="176" y2="292" stroke="#8A94A6" stroke-width="1.3" marker-end="url(#arrN)" />
+  <rect x="176" y="264" width="176" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="264" y="297" font-size="14" text-anchor="middle" fill="#1A1A1A">Y1</text>
+
+  <text x="72" y="368" font-size="12" fill="#8A94A6">ε2</text>
+  <line x1="112" y1="364" x2="176" y2="364" stroke="#8A94A6" stroke-width="1.3" marker-end="url(#arrN)" />
+  <rect x="176" y="336" width="176" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="264" y="369" font-size="14" text-anchor="middle" fill="#1A1A1A">Y2</text>
+
+  <text x="72" y="440" font-size="12" fill="#8A94A6">ε3</text>
+  <line x1="112" y1="436" x2="176" y2="436" stroke="#8A94A6" stroke-width="1.3" marker-end="url(#arrN)" />
+  <rect x="176" y="408" width="176" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="264" y="441" font-size="14" text-anchor="middle" fill="#1A1A1A">Y3</text>
+
+  <text x="72" y="512" font-size="12" fill="#8A94A6">ε4</text>
+  <line x1="112" y1="508" x2="176" y2="508" stroke="#8A94A6" stroke-width="1.3" marker-end="url(#arrN)" />
+  <rect x="176" y="480" width="176" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="264" y="513" font-size="14" text-anchor="middle" fill="#1A1A1A">Y4</text>
+
+  <text x="72" y="584" font-size="12" fill="#8A94A6">ε5</text>
+  <line x1="112" y1="580" x2="176" y2="580" stroke="#8A94A6" stroke-width="1.3" marker-end="url(#arrN)" />
+  <rect x="176" y="552" width="176" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="264" y="585" font-size="14" text-anchor="middle" fill="#1A1A1A">Y5</text>
+
+  
+  <text x="72" y="656" font-size="12" fill="#8A94A6">δ3</text>
+  <line x1="112" y1="652" x2="176" y2="652" stroke="#8A94A6" stroke-width="1.3" marker-end="url(#arrN)" />
+  <rect x="176" y="624" width="176" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="264" y="657" font-size="14" text-anchor="middle" fill="#1A1A1A">X3</text>
+
+  <text x="72" y="728" font-size="12" fill="#8A94A6">δ4</text>
+  <line x1="112" y1="724" x2="176" y2="724" stroke="#8A94A6" stroke-width="1.3" marker-end="url(#arrN)" />
+  <rect x="176" y="696" width="176" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="264" y="729" font-size="14" text-anchor="middle" fill="#1A1A1A">X4</text>
+
+  
+  <rect x="1200" y="264" width="176" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="1288" y="297" font-size="14" text-anchor="middle" fill="#1A1A1A">Y6</text>
+  <text x="1400" y="296" font-size="12" fill="#8A94A6">ε6</text>
+  <line x1="1392" y1="292" x2="1376" y2="292" stroke="#8A94A6" stroke-width="1.3" marker-end="url(#arrN)" />
+
+  <rect x="1200" y="408" width="176" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="1288" y="441" font-size="14" text-anchor="middle" fill="#1A1A1A">Y7</text>
+  <text x="1400" y="440" font-size="12" fill="#8A94A6">ε7</text>
+  <line x1="1392" y1="436" x2="1376" y2="436" stroke="#8A94A6" stroke-width="1.3" marker-end="url(#arrN)" />
+
+  <rect x="1200" y="552" width="176" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="1288" y="585" font-size="14" text-anchor="middle" fill="#1A1A1A">Y8</text>
+  <text x="1400" y="584" font-size="12" fill="#8A94A6">ε8</text>
+  <line x1="1392" y1="580" x2="1376" y2="580" stroke="#8A94A6" stroke-width="1.3" marker-end="url(#arrN)" />
+
+  
+  <ellipse cx="520" cy="200" rx="112" ry="52" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="2" />
+  <text x="520" y="196" font-size="14" text-anchor="middle" fill="#1A1A1A">外生变量一</text>
+  <text x="520" y="218" font-size="13" text-anchor="middle" fill="#2F6BB0">ξ1</text>
+
+  <ellipse cx="520" cy="724" rx="112" ry="52" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="2" />
+  <text x="520" y="720" font-size="14" text-anchor="middle" fill="#1A1A1A">外生变量二</text>
+  <text x="520" y="742" font-size="13" text-anchor="middle" fill="#2F6BB0">ξ2</text>
+
+  <ellipse cx="752" cy="436" rx="112" ry="52" fill="#2F6BB0" stroke="#2F6BB0" stroke-width="2" />
+  <text x="752" y="432" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">中介变量</text>
+  <text x="752" y="454" font-size="13" text-anchor="middle" fill="#D6E4F5">η1</text>
+
+  <ellipse cx="1024" cy="436" rx="112" ry="52" fill="#2F6BB0" stroke="#2F6BB0" stroke-width="2" />
+  <text x="1024" y="432" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">结果变量</text>
+  <text x="1024" y="454" font-size="13" text-anchor="middle" fill="#D6E4F5">η2</text>
+
+  
+  <line x1="417" y1="180" x2="352" y2="92" stroke="#5A6B7E" stroke-width="1.4" marker-end="url(#arrG)" />
+  <line x1="409" y1="193" x2="352" y2="164" stroke="#5A6B7E" stroke-width="1.4" marker-end="url(#arrG)" />
+
+  <line x1="412" y1="710" x2="352" y2="652" stroke="#5A6B7E" stroke-width="1.4" marker-end="url(#arrG)" />
+  <line x1="408" y1="724" x2="352" y2="724" stroke="#5A6B7E" stroke-width="1.4" marker-end="url(#arrG)" />
+
+  <line x1="645" y1="421" x2="352" y2="292" stroke="#5A6B7E" stroke-width="1.4" marker-end="url(#arrG)" />
+  <line x1="641" y1="428" x2="352" y2="364" stroke="#5A6B7E" stroke-width="1.4" marker-end="url(#arrG)" />
+  <line x1="640" y1="436" x2="352" y2="436" stroke="#5A6B7E" stroke-width="1.4" marker-end="url(#arrG)" />
+  <line x1="641" y1="444" x2="352" y2="508" stroke="#5A6B7E" stroke-width="1.4" marker-end="url(#arrG)" />
+  <line x1="645" y1="451" x2="352" y2="580" stroke="#5A6B7E" stroke-width="1.4" marker-end="url(#arrG)" />
+
+  <line x1="1121" y1="410" x2="1200" y2="292" stroke="#5A6B7E" stroke-width="1.4" marker-end="url(#arrG)" />
+  <line x1="1136" y1="436" x2="1200" y2="436" stroke="#5A6B7E" stroke-width="1.4" marker-end="url(#arrG)" />
+  <line x1="1121" y1="462" x2="1200" y2="580" stroke="#5A6B7E" stroke-width="1.4" marker-end="url(#arrG)" />
+
+  
+  <line x1="599" y1="237" x2="674" y2="399" stroke="#2F6BB0" stroke-width="1.8" marker-end="url(#arrB)" />
+
+  <line x1="622" y1="222" x2="923" y2="414" stroke="#2F6BB0" stroke-width="1.8" marker-end="url(#arrB)" />
+
+  <line x1="590" y1="683" x2="682" y2="477" stroke="#2F6BB0" stroke-width="1.8" marker-end="url(#arrB)" />
+
+  <line x1="617" y1="698" x2="927" y2="462" stroke="#2F6BB0" stroke-width="1.8" marker-end="url(#arrB)" />
+
+  <line x1="864" y1="436" x2="912" y2="436" stroke="#2F6BB0" stroke-width="1.8" marker-end="url(#arrB)" />
+
+  
+  <line x1="625" y1="521" x2="673" y2="473" stroke="#8A94A6" stroke-width="1.3" marker-end="url(#arrN)" />
+  <line x1="1024" y1="536" x2="1024" y2="488" stroke="#8A94A6" stroke-width="1.3" marker-end="url(#arrN)" />
+  
+  <rect x="366" y="118" width="36" height="15" fill="#FFFFFF" />
+  <text x="384" y="130" font-size="11" text-anchor="middle" fill="#5A6B7E">λx11</text>
+  <rect x="362" y="160" width="36" height="15" fill="#FFFFFF" />
+  <text x="380" y="172" font-size="11" text-anchor="middle" fill="#5A6B7E">λx21</text>
+  <rect x="364" y="663" width="36" height="15" fill="#FFFFFF" />
+  <text x="382" y="675" font-size="11" text-anchor="middle" fill="#5A6B7E">λx32</text>
+  <rect x="362" y="706" width="36" height="15" fill="#FFFFFF" />
+  <text x="380" y="718" font-size="11" text-anchor="middle" fill="#5A6B7E">λx42</text>
+  <rect x="374" y="291" width="36" height="15" fill="#FFFFFF" />
+  <text x="392" y="303" font-size="11" text-anchor="middle" fill="#5A6B7E">λy11</text>
+  <rect x="374" y="354" width="36" height="15" fill="#FFFFFF" />
+  <text x="392" y="366" font-size="11" text-anchor="middle" fill="#5A6B7E">λy21</text>
+  <rect x="374" y="416" width="36" height="15" fill="#FFFFFF" />
+  <text x="392" y="428" font-size="11" text-anchor="middle" fill="#5A6B7E">λy31</text>
+  <rect x="374" y="481" width="36" height="15" fill="#FFFFFF" />
+  <text x="392" y="493" font-size="11" text-anchor="middle" fill="#5A6B7E">λy41</text>
+  <rect x="374" y="544" width="36" height="15" fill="#FFFFFF" />
+  <text x="392" y="556" font-size="11" text-anchor="middle" fill="#5A6B7E">λy51</text>
+  <rect x="1126" y="324" width="36" height="15" fill="#FFFFFF" />
+  <text x="1144" y="336" font-size="11" text-anchor="middle" fill="#5A6B7E">λy62</text>
+  <rect x="1150" y="418" width="36" height="15" fill="#FFFFFF" />
+  <text x="1168" y="430" font-size="11" text-anchor="middle" fill="#5A6B7E">λy72</text>
+  <rect x="1126" y="532" width="36" height="15" fill="#FFFFFF" />
+  <text x="1144" y="544" font-size="11" text-anchor="middle" fill="#5A6B7E">λy82</text>
+  <rect x="662" y="336" width="28" height="15" fill="#FFFFFF" />
+  <text x="664" y="348" font-size="11" text-anchor="start" fill="#2F6BB0">γ11</text>
+  <rect x="774" y="288" width="28" height="15" fill="#FFFFFF" />
+  <text x="776" y="300" font-size="11" text-anchor="start" fill="#2F6BB0">γ21</text>
+  <rect x="646" y="580" width="28" height="15" fill="#FFFFFF" />
+  <text x="648" y="592" font-size="11" text-anchor="start" fill="#2F6BB0">γ12</text>
+  <rect x="750" y="540" width="28" height="15" fill="#FFFFFF" />
+  <text x="752" y="552" font-size="11" text-anchor="start" fill="#2F6BB0">γ22</text>
+  <rect x="876" y="412" width="23" height="15" fill="#FFFFFF" />
+  <text x="888" y="424" font-size="11" text-anchor="middle" fill="#2F6BB0">β21</text>
+  <rect x="598" y="532" width="24" height="15" fill="#FFFFFF" />
+  <text x="600" y="544" font-size="11" text-anchor="start" fill="#8A94A6">ζ1</text>
+  <rect x="1038" y="516" width="24" height="15" fill="#FFFFFF" />
+  <text x="1040" y="528" font-size="11" text-anchor="start" fill="#8A94A6">ζ2</text>
+</svg>

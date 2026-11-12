@@ -1,0 +1,251 @@
+/* 04-belt-conveyor — physics belt with speed/friction, not position mapping */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: #0a0b0d;
+  color: #f4efe4;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button, a { font: inherit; color: inherit; }
+button { cursor: pointer; }
+
+.rf-belt {
+  --ink: #f4efe4;
+  --muted: #948e82;
+  --line: rgba(244, 239, 228, .13);
+  --accent: #e8b45a;
+  --ease: cubic-bezier(.22, .8, .2, 1);
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+  overflow: hidden;
+  background:
+    radial-gradient(1100px 600px at 50% 50%, rgba(232, 180, 90, .07), transparent 62%),
+    #0a0b0d;
+}
+.rf-belt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(90deg, rgba(244, 239, 228, .06) 1px, transparent 1px);
+  background-size: 120px 100%;
+  mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+  opacity: .5;
+}
+
+.rf-belt__bar {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px clamp(18px, 4vw, 56px);
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.rf-belt__mark { color: var(--accent); font-weight: 700; }
+.rf-belt__nav { display: flex; gap: 22px; }
+.rf-belt__nav a { color: var(--muted); text-decoration: none; }
+.rf-belt__nav a:hover, .rf-belt__nav a:focus-visible { color: var(--ink); }
+.rf-belt__count { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.rf-belt__stage {
+  position: relative;
+  min-height: 600px;
+  height: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+}
+.rf-belt__stage.is-dragging { cursor: grabbing; }
+.rf-belt__track { position: absolute; inset: 0; }
+
+.rf-belt__card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(168px, 17vw, 240px);
+  aspect-ratio: 3 / 4;
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #131418;
+  color: var(--ink);
+  text-align: left;
+  transform-origin: 50% 50%;
+  will-change: transform, opacity, filter;
+  box-shadow: 0 40px 90px -40px rgba(0, 0, 0, .95);
+  transition: box-shadow .25s ease;
+}
+.rf-belt__card:hover, .rf-belt__card:focus-visible {
+  box-shadow: 0 0 0 2px var(--accent), 0 40px 100px -36px rgba(232, 180, 90, .4);
+  outline: none;
+}
+.rf-belt__art {
+  position: absolute;
+  inset: 0;
+  background: var(--art);
+  transition: transform .4s var(--ease);
+}
+.rf-belt__card:hover .rf-belt__art { transform: scale(1.04); }
+.rf-belt__meta {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 44px 14px 14px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, .84));
+}
+.rf-belt__no {
+  display: block;
+  color: rgba(255, 255, 255, .6);
+  font-size: 10px;
+  letter-spacing: .16em;
+}
+.rf-belt__title {
+  display: block;
+  margin-top: 4px;
+  font-family: ui-serif, Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-size: clamp(16px, 1.7vw, 22px);
+  line-height: 1.1;
+}
+.rf-belt__tag {
+  display: block;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, .52);
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.rf-belt__fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 16vw;
+  pointer-events: none;
+  z-index: 5;
+}
+.rf-belt__fade--l { left: 0; background: linear-gradient(90deg, #0a0b0d, transparent); }
+.rf-belt__fade--r { right: 0; background: linear-gradient(270deg, #0a0b0d, transparent); }
+
+.rf-belt__hint {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 8;
+}
+
+.rf-belt__foot {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px clamp(18px, 4vw, 56px) 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.rf-belt__foot p { margin: 0; max-width: 80ch; }
+.rf-belt__foot strong { color: var(--ink); font-weight: 600; }
+.rf-belt__foot code { color: var(--accent); font-size: 11px; }
+.rf-belt__meta { flex: 0 0 auto; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+
+.rf-belt__detail {
+  width: min(820px, 92vw);
+  max-height: 86dvh;
+  padding: 0;
+  border: 1px solid rgba(244, 239, 228, .18);
+  border-radius: 22px;
+  overflow: hidden;
+  background: #121316;
+  color: var(--ink);
+  box-shadow: 0 60px 140px -40px rgba(0, 0, 0, .9);
+  clip-path: circle(0 at var(--cx, 50%) var(--cy, 50%));
+  transition: clip-path .72s var(--ease);
+}
+.rf-belt__detail[open] { display: block; }
+.rf-belt__detail.is-open { clip-path: circle(150vmax at var(--cx, 50%) var(--cy, 50%)); }
+.rf-belt__detail::backdrop { background: rgba(4, 5, 7, .72); backdrop-filter: blur(6px); }
+.rf-belt__close {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  z-index: 3;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .25);
+  background: rgba(0, 0, 0, .35);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+}
+.rf-belt__detail-art { height: 250px; background: var(--art); }
+.rf-belt__detail-copy { padding: 26px 30px 32px; }
+.rf-belt__eyebrow { margin: 0; color: var(--accent); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+.rf-belt__detail h2 {
+  margin: 8px 0 12px;
+  font-family: ui-serif, Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 500;
+  line-height: 1.05;
+}
+.rf-belt__desc { margin: 0; max-width: 60ch; color: #c9c2b5; font-size: 14px; line-height: 1.7; }
+.rf-belt__detail dl { display: flex; gap: 34px; margin: 22px 0 0; }
+.rf-belt__detail dt { color: var(--muted); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.rf-belt__detail dd { margin: 4px 0 0; font-size: 13px; }
+
+.rf-belt.is-reduced .rf-belt__stage { overflow: visible; cursor: default; }
+.rf-belt.is-reduced .rf-belt__track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  padding: 28px clamp(18px, 4vw, 56px) 70px;
+}
+.rf-belt.is-reduced .rf-belt__card {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  transform: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+.rf-belt.is-reduced .rf-belt__hint,
+.rf-belt.is-reduced .rf-belt__fade { display: none; }
+
+@media (max-width: 900px) {
+  .rf-belt__card { width: 220px; }
+}
+
+@media (max-width: 760px) {
+  .rf-belt__bar { padding: 16px 18px; }
+  .rf-belt__nav { display: none; }
+  .rf-belt__stage { min-height: 540px; }
+  .rf-belt__card { width: 62vw; }
+  .rf-belt__foot { display: block; }
+  .rf-belt__meta { display: none; }
+  .rf-belt.is-reduced .rf-belt__track { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rf-belt__card, .rf-belt__art, .rf-belt__detail { transition: none; }
+}

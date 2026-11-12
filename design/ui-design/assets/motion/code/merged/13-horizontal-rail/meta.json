@@ -1,0 +1,104 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "13-horizontal-rail",
+ "name": "Horizontal Rail",
+ "family": "F2",
+ "family_name": "横向轨道 / 惯性",
+ "tagline": "滚轮/拖拽映射轨道位移，lerp .15 跟随，释放保留速度，边界橡皮筋；reduced-motion 退回原生横向滚动。",
+ "sources": [
+  {
+   "id": "kit-02-horizontal",
+   "type": "mechanism-kit",
+   "role": "wheel/drag/lerp base"
+  },
+  {
+   "id": "pilot-04-typographic-jungle",
+   "type": "replica-script",
+   "role": "belt/track vocabulary"
+  },
+  {
+   "id": "repro-164-spatial",
+   "type": "replica-script",
+   "role": "boundary/decay constants"
+  }
+ ],
+ "engines": [
+  {
+   "name": "RailEngine",
+   "evidence": "authored"
+  }
+ ],
+ "motion": {
+  "trigger": "wheel/pointer/keyboard",
+  "duration_ms": 0,
+  "duration_mode": "continuous",
+  "easing": "lerp .15",
+  "states": [
+   "idle",
+   "dragging",
+   "inertia",
+   "reduced"
+  ],
+  "fallback": "prefers-reduced-motion: 原生 overflow-x:auto + scroll-snap，取消 JS 位移",
+  "properties": [
+   "transform"
+  ],
+  "category": "horizontal",
+  "advanced": true,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "follow",
+   "value": "lerp .15",
+   "provenance": "Observed（Tegra 组）"
+  },
+  {
+   "name": "release",
+   "value": "velocity * 10, then * .92",
+   "provenance": "Authored"
+  },
+  {
+   "name": "boundary",
+   "value": "clamp + rubber .15",
+   "provenance": "Observed/ Authored"
+  },
+  {
+   "name": "panel width",
+   "value": "clamp(250px, 40vw, 520px)",
+   "provenance": "Authored"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "ArrowLeft",
+   "ArrowRight",
+   "Home",
+   "End"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "viewport role=group + aria-label"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "没有实现 snap-to-panel；需要吸附时用 CSS scroll-snap 的 reduced 路径或自行加目标索引",
+  "拖拽在触屏上只保留水平通道；纵向滚动交给浏览器"
+ ]
+}

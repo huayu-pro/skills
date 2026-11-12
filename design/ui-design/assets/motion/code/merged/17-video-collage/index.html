@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Collage — merged 17</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='6' width='12' height='9' rx='1' fill='none' stroke='%23e8b45a' stroke-width='2'/%3E%3Crect x='17' y='12' width='12' height='9' rx='1' fill='none' stroke='%23e8b45a' stroke-width='2'/%3E%3Crect x='8' y='20' width='16' height='7' rx='1' fill='none' stroke='%23e8b45a' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="component.css">
+</head>
+<body>
+  <main class="mr-collage" data-rf="video-collage">
+    <header class="mr-collage__bar">
+      <span class="mr-collage__mark">MERGED / 17</span>
+      <span class="mr-collage__hint">6 slots · pointer parallax · IO pause</span>
+    </header>
+
+    <section class="mr-collage__intro">
+      <p class="mr-collage__eyebrow">F13 · video collage / multi-layer</p>
+      <h1>Footage as<br>composition.</h1>
+      <p class="mr-collage__lede">每块是一个版面零件，不是背景视频。指针产生不同深度的视差；离屏自动暂停；真实视频用 <code>&lt;video muted playsinline&gt;</code> 替换占位。</p>
+    </section>
+
+    <section class="mr-collage__stage" aria-label="视频拼贴">
+      <div class="mr-collage__grid">
+        <article class="mr-collage__card span-a" data-depth="0.6">
+          <div class="mr-collage__media art-a"></div>
+          <div class="mr-collage__meta"><span>01 / FIELD</span><h2>Low tide</h2></div>
+        </article>
+        <article class="mr-collage__card span-b" data-depth="1.1">
+          <div class="mr-collage__media art-b"></div>
+          <div class="mr-collage__meta"><span>02 / STUDIO</span><h2>Soft light</h2></div>
+        </article>
+        <article class="mr-collage__card span-c" data-depth="0.85">
+          <div class="mr-collage__media art-c"></div>
+          <div class="mr-collage__meta"><span>03 / PORTRAIT</span><h2>Still</h2></div>
+        </article>
+        <article class="mr-collage__card span-d" data-depth="1.25">
+          <div class="mr-collage__media art-d"></div>
+          <div class="mr-collage__meta"><span>04 / CITY</span><h2>Night bus</h2></div>
+        </article>
+        <article class="mr-collage__card span-e" data-depth="0.7">
+          <div class="mr-collage__media art-e"></div>
+          <div class="mr-collage__meta"><span>05 / OBJECT</span><h2>Glass</h2></div>
+        </article>
+        <article class="mr-collage__card span-f" data-depth="1.0">
+          <div class="mr-collage__media art-f"></div>
+          <div class="mr-collage__meta"><span>06 / TEXTURE</span><h2>Paper</h2></div>
+        </article>
+      </div>
+      <div class="mr-collage__hud">
+        <span class="mr-collage__tag">CSS placeholders · replace with video</span>
+        <button type="button" class="mr-collage__pause" data-pause aria-pressed="false">Pause all</button>
+      </div>
+    </section>
+
+    <footer class="mr-collage__foot">
+      <span>depth .6–1.25 · IO pause · reduced static</span>
+      <output class="mr-collage__readout" aria-live="off">playing</output>
+    </footer>
+  </main>
+  <script src="component.js"></script>
+</body>
+</html>

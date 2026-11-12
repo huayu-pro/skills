@@ -1,0 +1,134 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "08-rotary-controls",
+ "name": "Rotary Controls",
+ "family": "F14",
+ "family_name": "状态机 / 产品演示",
+ "tagline": "三个 270° 旋钮 + 物理灯开关；中心 12px 退化，键盘 ±4。",
+ "sources": [
+  {
+   "id": "ui3-pricing-cards-7128ba01",
+   "type": "pricing-cards",
+   "hierarchy": "page-section",
+   "role": "pricing-cards structure"
+  },
+  {
+   "id": "ui3-pricing-cards-a1663abc",
+   "type": "pricing-cards",
+   "hierarchy": "page-section",
+   "role": "pricing-cards structure"
+  },
+  {
+   "id": "ui3-toggle-5e5664fb",
+   "type": "toggle",
+   "hierarchy": "molecule",
+   "role": "toggle structure"
+  },
+  {
+   "id": "ui3-modal-dialog-5687378625",
+   "type": "modal-dialog",
+   "hierarchy": "block",
+   "role": "modal-dialog structure"
+  },
+  {
+   "id": "ui3-modal-dialog-5d88beb3",
+   "type": "modal-dialog",
+   "hierarchy": "block",
+   "role": "modal-dialog structure"
+  }
+ ],
+ "engines": [
+  {
+   "name": "RotaryKnob",
+   "evidence": "observed"
+  },
+  {
+   "name": "LightSwitch",
+   "evidence": "observed"
+  }
+ ],
+ "motion": {
+  "trigger": "pointer",
+  "duration_ms": 280,
+  "duration_mode": "fixed",
+  "easing": "cubic-bezier(.2,.8,.2,1)",
+  "states": [
+   "off",
+   "on",
+   "dragging",
+   "reduced"
+  ],
+  "fallback": "prefers-reduced-motion: 取消过渡；旋钮/开关仍可操作",
+  "properties": [
+   "transform",
+   "background-color"
+  ],
+  "category": "state-transition",
+  "advanced": true,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "sweep",
+   "value": "270° (-135 → +135)",
+   "provenance": "Observed（163-app-flow）"
+  },
+  {
+   "name": "center fallback",
+   "value": "12px 内用 (dx-dy)/5",
+   "provenance": "Observed"
+  },
+  {
+   "name": "wheel / keyboard",
+   "value": "±4",
+   "provenance": "Observed"
+  },
+  {
+   "name": "switch travel",
+   "value": "20px / .28s",
+   "provenance": "Observed（188）"
+  },
+  {
+   "name": "theme transition",
+   "value": ".5s",
+   "provenance": "Observed"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Tab",
+   "ArrowUp",
+   "ArrowDown",
+   "ArrowLeft",
+   "ArrowRight",
+   "Home",
+   "End",
+   "Enter",
+   "Escape"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "交互元素有 aria-label / aria-valuenow / aria-pressed"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "三个旋钮的 value 是演示值，不驱动真实音频",
+  "灯开关只切换本组件主题，不改系统主题"
+ ]
+}

@@ -1,0 +1,569 @@
+{
+  "version": "1.5.1",
+  "grid": 8,
+  "note": "37 个模板全部取自 150 张仿绘成品：结构词保留、专有名词换成通用词、坐标未改（v1.5 修订 4 处缺陷除外）。改文字即可用；增删模块按 edit 提示重算。",
+  "families": [
+    {
+      "id": "hierarchy",
+      "name": "层级/分层",
+      "members": [
+        "TP01",
+        "TP06",
+        "TP11",
+        "TP12",
+        "TP13",
+        "TP25"
+      ],
+      "signal": "横向层带、技术分层"
+    },
+    {
+      "id": "relation",
+      "name": "关系/机制",
+      "members": [
+        "TP02",
+        "TP03",
+        "TP07",
+        "TP10",
+        "TP14",
+        "TP17",
+        "TP27",
+        "TP29",
+        "TP31"
+      ],
+      "signal": "因果链、支撑树、治理关系、潜变量路径"
+    },
+    {
+      "id": "process",
+      "name": "流程/闭环",
+      "members": [
+        "TP04",
+        "TP05",
+        "TP19",
+        "TP20",
+        "TP21",
+        "TP22",
+        "TP23"
+      ],
+      "signal": "循环、闭环、反馈、阶段推进"
+    },
+    {
+      "id": "breakdown",
+      "name": "分解",
+      "members": [
+        "TP09",
+        "TP24"
+      ],
+      "signal": "总—分、功能树"
+    },
+    {
+      "id": "evaluate",
+      "name": "评价",
+      "members": [
+        "TP08",
+        "TP18"
+      ],
+      "signal": "指标体系、评估流程"
+    },
+    {
+      "id": "structure",
+      "name": "结构/其他",
+      "members": [
+        "TP15",
+        "TP16",
+        "TP26",
+        "TP28",
+        "TP30",
+        "TP32",
+        "TP33",
+        "TP34",
+        "TP35",
+        "TP36",
+        "TP37"
+      ],
+      "signal": "矩阵、总线、关系网、集群、拓扑、多域"
+    }
+  ],
+  "templates": [
+    {
+      "id": "TP01",
+      "name": "三层架构",
+      "file": "TP01_三层架构.svg",
+      "source": "P052",
+      "family": "hierarchy",
+      "canvas": [
+        1200,
+        640
+      ],
+      "skeleton": "三层 + 左右纵向保障带",
+      "edit": "增层时整体重算各带 y（带高按内容定，层距 40）；模块数按等分重算"
+    },
+    {
+      "id": "TP02",
+      "name": "论点支撑结构",
+      "file": "TP02_论点支撑结构.svg",
+      "source": "P100",
+      "family": "relation",
+      "canvas": [
+        1098,
+        754
+      ],
+      "skeleton": "论点—论证—理由支撑树（SP/AS/R）",
+      "edit": "符号体系可换；兄弟节点等距"
+    },
+    {
+      "id": "TP03",
+      "name": "治理关系框架",
+      "file": "TP03_治理关系框架.svg",
+      "source": "P005",
+      "family": "relation",
+      "canvas": [
+        952,
+        594
+      ],
+      "skeleton": "治理—控制—风险三方传导",
+      "edit": "三方名称与两条关系线"
+    },
+    {
+      "id": "TP04",
+      "name": "循环框架",
+      "file": "TP04_循环框架.svg",
+      "source": "P011",
+      "family": "process",
+      "canvas": [
+        819,
+        735
+      ],
+      "skeleton": "中心平台 + 三角弧形循环",
+      "edit": "三段弧词换三环节"
+    },
+    {
+      "id": "TP05",
+      "name": "闭环体系",
+      "file": "TP05_闭环体系.svg",
+      "source": "P104",
+      "family": "process",
+      "canvas": [
+        1200,
+        760
+      ],
+      "skeleton": "企业级/项目级双闭环 + 数据底座",
+      "edit": "两级闭环与反馈标签"
+    },
+    {
+      "id": "TP06",
+      "name": "系统架构",
+      "file": "TP06_系统架构.svg",
+      "source": "P016",
+      "family": "hierarchy",
+      "canvas": [
+        874,
+        633
+      ],
+      "skeleton": "表示—控制—服务—数据四层",
+      "edit": "层名保留，说明换技术栈"
+    },
+    {
+      "id": "TP07",
+      "name": "理论模型",
+      "file": "TP07_理论模型.svg",
+      "source": "P001",
+      "family": "relation",
+      "canvas": [
+        1200,
+        680
+      ],
+      "skeleton": "前因—机制—结果 + 流程/支撑 + 双语",
+      "edit": "列标题与模块；双语副标题可删整行"
+    },
+    {
+      "id": "TP08",
+      "name": "评估框架",
+      "file": "TP08_评估框架.svg",
+      "source": "P125",
+      "family": "evaluate",
+      "canvas": [
+        1200,
+        760
+      ],
+      "skeleton": "内容—技术—模型三段评估",
+      "edit": "模型名与步骤换方法"
+    },
+    {
+      "id": "TP09",
+      "name": "功能分解树",
+      "file": "TP09_功能分解树.svg",
+      "source": "P015",
+      "family": "breakdown",
+      "canvas": [
+        1074,
+        505
+      ],
+      "skeleton": "系统→角色→功能三级树",
+      "edit": "角色数与功能数可增删"
+    },
+    {
+      "id": "TP10",
+      "name": "结构方程模型",
+      "file": "TP10_结构方程模型.svg",
+      "source": "P043",
+      "family": "relation",
+      "canvas": [
+        1480,
+        824
+      ],
+      "skeleton": "潜变量路径 + 测量指标",
+      "edit": "潜变量与指标数量；载荷符号保留"
+    },
+    {
+      "id": "TP11",
+      "name": "平台架构三层",
+      "file": "TP11_平台架构三层.svg",
+      "source": "P076",
+      "family": "hierarchy",
+      "canvas": [
+        1400,
+        712
+      ],
+      "skeleton": "客户层—业务层—数据层 + 子系统",
+      "edit": "子系统数按层宽等分"
+    },
+    {
+      "id": "TP12",
+      "name": "三层端架构",
+      "file": "TP12_三层端架构.svg",
+      "source": "P051",
+      "family": "hierarchy",
+      "canvas": [
+        1200,
+        800
+      ],
+      "skeleton": "云端—网端—物端三层端架构",
+      "edit": "应用场景与设备名"
+    },
+    {
+      "id": "TP13",
+      "name": "数据挖掘体系",
+      "file": "TP13_数据挖掘体系.svg",
+      "source": "P133",
+      "family": "hierarchy",
+      "canvas": [
+        1200,
+        760
+      ],
+      "skeleton": "数据准备—建模挖掘—结果解释体系",
+      "edit": "三层内容与右侧输出"
+    },
+    {
+      "id": "TP14",
+      "name": "数字化转型机理",
+      "file": "TP14_数字化转型机理.svg",
+      "source": "P092",
+      "family": "relation",
+      "canvas": [
+        1256,
+        848
+      ],
+      "skeleton": "外部/内部驱动—能力—结果三列",
+      "edit": "三列标题与能力名"
+    },
+    {
+      "id": "TP15",
+      "name": "因果回路图",
+      "file": "TP15_因果回路图.svg",
+      "source": "P122",
+      "family": "structure",
+      "canvas": [
+        1177,
+        689
+      ],
+      "skeleton": "带正负反馈的因果回路图",
+      "edit": "节点与正负号；回路方向"
+    },
+    {
+      "id": "TP16",
+      "name": "总线调度结构",
+      "file": "TP16_总线调度结构.svg",
+      "source": "P078",
+      "family": "structure",
+      "canvas": [
+        1185,
+        673
+      ],
+      "skeleton": "通信总线 + 多模块仲裁结构",
+      "edit": "模块数与寄存器访问路径"
+    },
+    {
+      "id": "TP17",
+      "name": "协同机制框架",
+      "file": "TP17_协同机制框架.svg",
+      "source": "P144",
+      "family": "relation",
+      "canvas": [
+        1200,
+        625
+      ],
+      "skeleton": "协同关系—机制—结果三角",
+      "edit": "机制名与结果指标"
+    },
+    {
+      "id": "TP18",
+      "name": "教学分析框架",
+      "file": "TP18_教学分析框架.svg",
+      "source": "P023",
+      "family": "evaluate",
+      "canvas": [
+        1200,
+        704
+      ],
+      "skeleton": "准备度—设计实施—效果评价",
+      "edit": "三段时间顺序与要素"
+    },
+    {
+      "id": "TP19",
+      "name": "协同机制流程",
+      "file": "TP19_协同机制流程.svg",
+      "source": "P109",
+      "family": "process",
+      "canvas": [
+        1125,
+        681
+      ],
+      "skeleton": "目标—差距—机会—整合—结果闭环",
+      "edit": "环节名与迭代条件"
+    },
+    {
+      "id": "TP20",
+      "name": "职教运行机制",
+      "file": "TP20_职教运行机制.svg",
+      "source": "P115",
+      "family": "process",
+      "canvas": [
+        1170,
+        658
+      ],
+      "skeleton": "多主体投资—标准—监控运行机制",
+      "edit": "机构名换成你的主体"
+    },
+    {
+      "id": "TP21",
+      "name": "主体演化流程",
+      "file": "TP21_主体演化流程.svg",
+      "source": "P121",
+      "family": "process",
+      "canvas": [
+        1098,
+        760
+      ],
+      "skeleton": "主体适应学习流程图",
+      "edit": "判断分支与反馈回路"
+    },
+    {
+      "id": "TP22",
+      "name": "区域适配框架",
+      "file": "TP22_区域适配框架.svg",
+      "source": "P150",
+      "family": "process",
+      "canvas": [
+        1200,
+        760
+      ],
+      "skeleton": "要素布局—空间交互—机制三段",
+      "edit": "要素与机制名"
+    },
+    {
+      "id": "TP23",
+      "name": "系统分析框架",
+      "file": "TP23_系统分析框架.svg",
+      "source": "P065",
+      "family": "process",
+      "canvas": [
+        1170,
+        562
+      ],
+      "skeleton": "输入—转换—输出—反馈系统",
+      "edit": "主体与转换环节"
+    },
+    {
+      "id": "TP24",
+      "name": "功能模块图",
+      "file": "TP24_功能模块图.svg",
+      "source": "P014",
+      "family": "breakdown",
+      "canvas": [
+        1101,
+        521
+      ],
+      "skeleton": "系统→角色→功能两级模块图",
+      "edit": "功能项按行等分"
+    },
+    {
+      "id": "TP25",
+      "name": "技术架构分层",
+      "file": "TP25_技术架构分层.svg",
+      "source": "P022",
+      "family": "hierarchy",
+      "canvas": [
+        1162,
+        476
+      ],
+      "skeleton": "前端—后端—数据三层技术栈",
+      "edit": "框架名换技术栈"
+    },
+    {
+      "id": "TP26",
+      "name": "协同创新框架",
+      "file": "TP26_协同创新框架.svg",
+      "source": "P013a",
+      "family": "structure",
+      "canvas": [
+        939,
+        681
+      ],
+      "skeleton": "协同要素—能力—匹配度关系网",
+      "edit": "要素名与连接强度"
+    },
+    {
+      "id": "TP27",
+      "name": "管理控制系统",
+      "file": "TP27_管理控制系统.svg",
+      "source": "P139",
+      "family": "relation",
+      "canvas": [
+        1200,
+        760
+      ],
+      "skeleton": "环境—战略—控制系统—经济后果",
+      "edit": "控制安排条目"
+    },
+    {
+      "id": "TP28",
+      "name": "价值创造体系",
+      "file": "TP28_价值创造体系.svg",
+      "source": "P071",
+      "family": "structure",
+      "canvas": [
+        1400,
+        840
+      ],
+      "skeleton": "八类行为—财务业绩—价值最大化",
+      "edit": "行为项与战略路径"
+    },
+    {
+      "id": "TP29",
+      "name": "影响机制模型",
+      "file": "TP29_影响机制模型.svg",
+      "source": "P090",
+      "family": "relation",
+      "canvas": [
+        1100,
+        520
+      ],
+      "skeleton": "责任表现—中介机制—企业价值",
+      "edit": "前因与中介变量"
+    },
+    {
+      "id": "TP30",
+      "name": "篇章层级框架",
+      "file": "TP30_篇章层级框架.svg",
+      "source": "P110",
+      "family": "structure",
+      "canvas": [
+        1200,
+        760
+      ],
+      "skeleton": "四层篇章分析框架（总—分—功能）",
+      "edit": "层级名与分析动作"
+    },
+    {
+      "id": "TP31",
+      "name": "机理分析框架",
+      "file": "TP31_机理分析框架.svg",
+      "source": "P025",
+      "family": "relation",
+      "canvas": [
+        1400,
+        672
+      ],
+      "skeleton": "技术—成本—效率—均衡机理链",
+      "edit": "技术项与效率路径"
+    },
+    {
+      "id": "TP32",
+      "name": "集群架构",
+      "file": "TP32_集群架构.svg",
+      "source": "P013",
+      "family": "structure",
+      "canvas": [
+        1200,
+        800
+      ],
+      "skeleton": "主节点—协调服务—从节点集群架构",
+      "edit": "节点数与角色"
+    },
+    {
+      "id": "TP33",
+      "name": "网络拓扑",
+      "file": "TP33_网络拓扑.svg",
+      "source": "P079",
+      "family": "structure",
+      "canvas": [
+        1200,
+        704
+      ],
+      "skeleton": "天地一体网络拓扑（卫星/汇聚/终端）",
+      "edit": "接入方式与节点"
+    },
+    {
+      "id": "TP34",
+      "name": "计算单元结构",
+      "file": "TP34_计算单元结构.svg",
+      "source": "P082",
+      "family": "structure",
+      "canvas": [
+        1024,
+        704
+      ],
+      "skeleton": "计算单元内部结构（门控 + 单元）",
+      "edit": "门与单元命名"
+    },
+    {
+      "id": "TP35",
+      "name": "多域架构",
+      "file": "TP35_多域架构.svg",
+      "source": "P138",
+      "family": "structure",
+      "canvas": [
+        1200,
+        760
+      ],
+      "skeleton": "业务—类型—功能—资源四域",
+      "edit": "各域条目与映射关系"
+    },
+    {
+      "id": "TP36",
+      "name": "云服务架构",
+      "file": "TP36_云服务架构.svg",
+      "source": "P020",
+      "family": "structure",
+      "canvas": [
+        1224,
+        824
+      ],
+      "skeleton": "用户—服务管理—资源三层",
+      "edit": "服务类型与资源项"
+    },
+    {
+      "id": "TP37",
+      "name": "算法与网络结构",
+      "file": "TP37_算法与网络结构.svg",
+      "source": "P149",
+      "family": "structure",
+      "canvas": [
+        1200,
+        760
+      ],
+      "skeleton": "双面板：算法流程图 + 网络权重结构",
+      "edit": "两面板可拆分使用"
+    }
+  ]
+}

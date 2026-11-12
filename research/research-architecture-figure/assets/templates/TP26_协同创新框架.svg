@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="939" height="681" viewBox="61 72 939 681" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" />
+    </marker>
+    <marker id="arrowDash" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8A94A6" />
+    </marker>
+  </defs>
+  <rect width="1000" height="820" fill="#FFFFFF" />
+  <line x1="150" y1="620" x2="960" y2="620" stroke="#8A94A6" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  
+  <rect x="110" y="260" width="470" height="360" fill="#D2E2F5" stroke="#2F6BB0" stroke-width="1.5" />
+  <rect x="140" y="330" width="380" height="290" fill="#E4EEF9" stroke="#4A86C5" stroke-width="1.5" />
+  <rect x="170" y="400" width="300" height="220" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <rect x="200" y="470" width="240" height="150" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+
+  
+  <text x="122" y="284" font-size="15" font-weight="700" fill="#2F6BB0">绩效</text>
+  <text x="152" y="354" font-size="15" font-weight="700" fill="#4A86C5">行动</text>
+  <text x="182" y="424" font-size="15" font-weight="700" fill="#4A86C5">资源</text>
+  <text x="212" y="494" font-size="15" font-weight="700" fill="#2F6BB0">知识</text>
+
+  
+  <rect x="700" y="540" width="120" height="48" rx="4" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="760" y="569" font-size="14" text-anchor="middle" fill="#1A1A1A">沟通</text>
+  <line x1="760" y1="540" x2="760" y2="492" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <rect x="700" y="440" width="120" height="48" rx="4" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="760" y="469" font-size="14" text-anchor="middle" fill="#1A1A1A">协调</text>
+  <line x1="760" y1="440" x2="760" y2="392" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <rect x="700" y="340" width="120" height="48" rx="4" fill="#E4EEF9" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="760" y="369" font-size="14" text-anchor="middle" fill="#1A1A1A">合作</text>
+  <line x1="760" y1="340" x2="760" y2="292" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <rect x="700" y="240" width="120" height="48" rx="4" fill="#2F6BB0" />
+  <text x="760" y="269" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">协同</text>
+
+  
+  <rect x="200" y="656" width="160" height="48" rx="6" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+  <text x="280" y="685" font-size="13" text-anchor="middle" fill="#1A1A1A">互惠知识共享</text>
+  <rect x="400" y="656" width="160" height="48" rx="6" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+  <text x="480" y="685" font-size="13" text-anchor="middle" fill="#1A1A1A">资源优化配置</text>
+  <rect x="600" y="656" width="160" height="48" rx="6" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+  <text x="680" y="685" font-size="13" text-anchor="middle" fill="#1A1A1A">行动最优同步</text>
+  <rect x="800" y="656" width="160" height="48" rx="6" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+  <text x="880" y="685" font-size="13" text-anchor="middle" fill="#1A1A1A">系统的匹配度</text>
+
+  
+  <line x1="320" y1="620" x2="280" y2="652" stroke="#8A94A6" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#arrowDash)" />
+  <line x1="320" y1="620" x2="480" y2="652" stroke="#8A94A6" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#arrowDash)" />
+  <line x1="330" y1="620" x2="680" y2="652" stroke="#8A94A6" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#arrowDash)" />
+  <line x1="580" y1="620" x2="880" y2="652" stroke="#8A94A6" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#arrowDash)" />
+
+  
+  <line x1="580" y1="440" x2="696" y2="440" stroke="#8A94A6" stroke-width="1.2" stroke-dasharray="5 4" />
+</svg>

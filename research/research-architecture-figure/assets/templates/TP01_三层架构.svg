@@ -1,0 +1,57 @@
+<!-- TP01_三层架构｜骨架取自仿绘 P052（三层架构 + 左右纵向保障带）；专有名词已替换为通用词，结构词保留，使用时直接改文字 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" />
+    </marker>
+  </defs>
+  <rect width="1200" height="640" fill="#FFFFFF" />
+
+  
+  <rect x="48" y="48" width="64" height="552" rx="8" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+  <text x="80" y="284" font-size="14" font-weight="700" text-anchor="middle" fill="#5A6B7E" dominant-baseline="central">运</text>
+  <text x="80" y="300" font-size="14" font-weight="700" text-anchor="middle" fill="#5A6B7E" dominant-baseline="central">行</text>
+  <text x="80" y="316" font-size="14" font-weight="700" text-anchor="middle" fill="#5A6B7E" dominant-baseline="central">维</text>
+  <text x="80" y="332" font-size="14" font-weight="700" text-anchor="middle" fill="#5A6B7E" dominant-baseline="central">护</text>
+  <text x="80" y="348" font-size="14" font-weight="700" text-anchor="middle" fill="#5A6B7E" dominant-baseline="central">体</text>
+  <text x="80" y="364" font-size="14" font-weight="700" text-anchor="middle" fill="#5A6B7E" dominant-baseline="central">系</text>
+
+  <rect x="1088" y="48" width="64" height="552" rx="8" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+  <text x="1120" y="284" font-size="14" font-weight="700" text-anchor="middle" fill="#5A6B7E" dominant-baseline="central">安</text>
+  <text x="1120" y="300" font-size="14" font-weight="700" text-anchor="middle" fill="#5A6B7E" dominant-baseline="central">全</text>
+  <text x="1120" y="316" font-size="14" font-weight="700" text-anchor="middle" fill="#5A6B7E" dominant-baseline="central">管</text>
+  <text x="1120" y="332" font-size="14" font-weight="700" text-anchor="middle" fill="#5A6B7E" dominant-baseline="central">理</text>
+  <text x="1120" y="348" font-size="14" font-weight="700" text-anchor="middle" fill="#5A6B7E" dominant-baseline="central">体</text>
+  <text x="1120" y="364" font-size="14" font-weight="700" text-anchor="middle" fill="#5A6B7E" dominant-baseline="central">系</text>
+
+  
+  <rect x="176" y="48" width="896" height="120" rx="10" fill="#2F6BB0" fill-opacity="0.08" />
+  <rect x="176" y="56" width="6" height="104" rx="3" fill="#2F6BB0"/>
+  <text x="168" y="108" font-size="13" font-weight="700" text-anchor="end" fill="#2F6BB0" dominant-baseline="central">展现层</text>
+  <rect x="208" y="64" width="400" height="88" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="408" y="108" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">业务管理界面</text>
+  <rect x="680" y="64" width="400" height="88" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="880" y="108" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">业务操作界面</text>
+
+  
+  <rect x="176" y="208" width="896" height="232" rx="10" fill="#4A86C5" fill-opacity="0.08" />
+  <rect x="176" y="216" width="6" height="216" rx="3" fill="#4A86C5"/>
+  <text x="168" y="324" font-size="13" font-weight="700" text-anchor="end" fill="#4A86C5" dominant-baseline="central">应用层</text>
+  <rect x="208" y="224" width="400" height="88" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="408" y="268" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">业务子系统一</text>
+  <rect x="680" y="224" width="400" height="88" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="880" y="268" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">业务子系统二</text>
+  <rect x="208" y="336" width="400" height="88" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="408" y="380" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">业务子系统三</text>
+  <rect x="680" y="336" width="400" height="88" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="880" y="380" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">后台子系统</text>
+
+  
+  <rect x="176" y="480" width="896" height="120" rx="10" fill="#3E9B6C" fill-opacity="0.08" />
+  <rect x="176" y="488" width="6" height="104" rx="3" fill="#3E9B6C"/>
+  <text x="168" y="540" font-size="13" font-weight="700" text-anchor="end" fill="#3E9B6C" dominant-baseline="central">数据层</text>
+  <rect x="208" y="496" width="400" height="88" rx="6" fill="#EDF7F2" stroke="#3E9B6C" stroke-width="1.5" />
+  <text x="408" y="540" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">基础数据库</text>
+  <rect x="680" y="496" width="400" height="88" rx="6" fill="#EDF7F2" stroke="#3E9B6C" stroke-width="1.5" />
+  <text x="880" y="540" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">统计数据库</text>
+</svg>

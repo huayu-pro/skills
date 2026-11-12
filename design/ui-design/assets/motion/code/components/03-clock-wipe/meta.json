@@ -1,0 +1,133 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "03-clock-wipe",
+ "name": "Clock Wipe",
+ "family": "F14",
+ "family_name": "状态机 / 产品演示",
+ "tagline": "可拖时钟 + 从点击点扩散的圆形换肤 + 滚轮抬升面板。",
+ "sources": [
+  {
+   "id": "ui3-menu-mega-f683afae",
+   "type": "menu-mega",
+   "hierarchy": "page-section",
+   "role": "menu-mega structure"
+  },
+  {
+   "id": "ui3-menu-mega-34870e2a",
+   "type": "menu-mega",
+   "hierarchy": "page-section",
+   "role": "menu-mega structure"
+  },
+  {
+   "id": "ui3-menu-mega-8214ed87",
+   "type": "menu-mega",
+   "hierarchy": "page-section",
+   "role": "menu-mega structure"
+  },
+  {
+   "id": "ui3-section-split-b1a4821f",
+   "type": "section-split",
+   "hierarchy": "page-section",
+   "role": "section-split structure"
+  },
+  {
+   "id": "ui3-testimonial-grid-b82795f6",
+   "type": "testimonial-grid",
+   "hierarchy": "page-section",
+   "role": "testimonial-grid structure"
+  }
+ ],
+ "engines": [
+  {
+   "name": "ClockDial",
+   "evidence": "observed"
+  },
+  {
+   "name": "CircularWipe",
+   "evidence": "observed"
+  }
+ ],
+ "motion": {
+  "trigger": "pointer",
+  "duration_ms": 680,
+  "duration_mode": "fixed",
+  "easing": "cubic-bezier(.3,.85,.15,1)",
+  "states": [
+   "light",
+   "dark",
+   "dragging",
+   "lifted",
+   "reduced"
+  ],
+  "fallback": "prefers-reduced-motion: 直接切换主题，无圆形擦除；面板直接抬起",
+  "properties": [
+   "clip-path",
+   "transform",
+   "background-color"
+  ],
+  "category": "state-transition",
+  "advanced": true,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "wipe",
+   "value": "circle(0 → 165vmax) / 680ms",
+   "provenance": "Observed"
+  },
+  {
+   "name": "clock drag",
+   "value": "delta angle / 360 × 720min",
+   "provenance": "Observed"
+  },
+  {
+   "name": "lift",
+   "value": "wheel / 1200 → 0..1 / 560ms",
+   "provenance": "Observed"
+  },
+  {
+   "name": "idle",
+   "value": "20s 下滑（原站）",
+   "provenance": "Observed；本组件未启用 idle"
+  },
+  {
+   "name": "hand easing",
+   "value": "880ms cubic-bezier(.65,0,.35,1)",
+   "provenance": "Observed"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Tab",
+   "ArrowUp",
+   "ArrowDown",
+   "Space",
+   "F",
+   "Escape"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "交互元素有 aria-label / aria-valuenow / aria-pressed"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "日期是合成映射，不是真实日历",
+  "原站把交互内容放在 aria-hidden 容器，本组件已修正"
+ ]
+}

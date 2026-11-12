@@ -1,0 +1,70 @@
+<!-- TP11_平台架构三层｜骨架取自仿绘 P076；专有名词已换成通用词，结构词保留，使用时改文字即可 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="712" viewBox="0 0 1400 712" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" />
+    </marker>
+  </defs>
+  <rect width="1400" height="712" fill="#FFFFFF" />
+
+  
+  <rect x="56" y="48" width="1288" height="616" rx="10" fill="#2F6BB0" fill-opacity="0.04" />
+
+  
+  <rect x="88" y="72" width="1248" height="160" rx="10" fill="#2F6BB0" fill-opacity="0.06" />
+  <rect x="112" y="124" width="128" height="56" rx="6" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="176" y="156" font-size="16" font-weight="700" text-anchor="middle" fill="#1A1A1A">客户层</text>
+
+  <rect x="264" y="116" width="296" height="72" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="412" y="158" font-size="15" text-anchor="middle" fill="#1A1A1A">移动客户端</text>
+
+  <rect x="640" y="116" width="296" height="72" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="788" y="146" font-size="15" text-anchor="middle" fill="#1A1A1A">浏览器/服务器(B/S)</text>
+  <text x="788" y="170" font-size="15" text-anchor="middle" fill="#1A1A1A">浏览器客户端</text>
+
+  <rect x="1016" y="116" width="296" height="72" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="1164" y="146" font-size="15" text-anchor="middle" fill="#1A1A1A">客户机/服务器(C/S)</text>
+  <text x="1164" y="170" font-size="15" text-anchor="middle" fill="#1A1A1A">专用客户端</text>
+
+  
+  <rect x="88" y="256" width="1248" height="160" rx="10" fill="#4A86C5" fill-opacity="0.06" />
+  <rect x="112" y="308" width="128" height="56" rx="6" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="176" y="340" font-size="16" font-weight="700" text-anchor="middle" fill="#1A1A1A">业务层</text>
+
+  <ellipse cx="356" cy="336" rx="92" ry="48" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="356" y="330" font-size="14" text-anchor="middle" fill="#1A1A1A">生产管理</text>
+  <text x="356" y="350" font-size="14" text-anchor="middle" fill="#1A1A1A">子系统</text>
+
+  <ellipse cx="572" cy="336" rx="92" ry="48" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="572" y="330" font-size="14" text-anchor="middle" fill="#1A1A1A">库存管理</text>
+  <text x="572" y="350" font-size="14" text-anchor="middle" fill="#1A1A1A">子系统</text>
+
+  <ellipse cx="788" cy="336" rx="92" ry="48" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="788" y="330" font-size="14" text-anchor="middle" fill="#1A1A1A">销售管理</text>
+  <text x="788" y="350" font-size="14" text-anchor="middle" fill="#1A1A1A">子系统</text>
+
+  <ellipse cx="1004" cy="336" rx="92" ry="48" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="1004" y="326" font-size="13" text-anchor="middle" fill="#1A1A1A">标识采集</text>
+  <text x="1004" y="346" font-size="14" text-anchor="middle" fill="#1A1A1A">子系统</text>
+
+  <ellipse cx="1220" cy="336" rx="92" ry="48" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="1220" y="330" font-size="14" text-anchor="middle" fill="#1A1A1A">追溯管理</text>
+  <text x="1220" y="350" font-size="14" text-anchor="middle" fill="#1A1A1A">子系统</text>
+
+  
+  <rect x="88" y="456" width="1248" height="176" rx="10" fill="#8A94A6" fill-opacity="0.08" />
+  <rect x="112" y="516" width="128" height="56" rx="6" fill="#FFFFFF" stroke="#8A94A6" stroke-width="1.5" />
+  <text x="176" y="548" font-size="16" font-weight="700" text-anchor="middle" fill="#1A1A1A">数据层</text>
+
+  
+  <path d="M456,504 L456,584 A104,24 0 0 0 664,584 L664,504" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+  <ellipse cx="560" cy="504" rx="104" ry="24" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+  <text x="560" y="538" font-size="15" text-anchor="middle" fill="#1A1A1A">平台</text>
+  <text x="560" y="562" font-size="15" text-anchor="middle" fill="#1A1A1A">数据库</text>
+
+  
+  <path d="M912,504 L912,584 A104,24 0 0 0 1120,584 L1120,504" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+  <ellipse cx="1016" cy="504" rx="104" ry="24" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" />
+  <text x="1016" y="538" font-size="15" text-anchor="middle" fill="#1A1A1A">业务</text>
+  <text x="1016" y="562" font-size="15" text-anchor="middle" fill="#1A1A1A">数据库</text>
+</svg>

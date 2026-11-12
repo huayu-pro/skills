@@ -1,0 +1,37 @@
+# NOTICE
+
+ui-design 4.x is a mixed-license package. The MIT license in `LICENSE` applies to
+the original code and documentation authored for this package. It does not
+relicense third-party or derived material.
+
+## Original code
+
+- `scripts/`, `references/` (original text), `assets/motion/code/kits/`,
+  `assets/motion/code/merged/`, `assets/motion/code/snippets/`,
+  `assets/motion/prompts/`, and the skill's own docs: MIT.
+
+## Third-party
+
+- **awesome-design-md** — Copyright (c) VoltAgent, MIT.
+  The 84 `assets/brands/*/DESIGN.md` files are third-party analyses; see the
+  upstream repository for the full MIT text.
+- **refactoring-ui-skill** — MIT. The 8 `evals/cases/` fixtures and the audit
+  scoring contract are adapted from it; the rule IDs and Chinese explanations
+  are this package's own paraphrase.
+- **One Page Love derived archetype ranges** — the 14 cards in
+  `assets/patterns/` are statistical summaries (ranges, distributions, section
+  order), not copies of site assets. They are provided for internal design
+  reference only and are **not** cleared for commercial redistribution. No
+  original corpus, screenshots, or site assets are included.
+- **reverse corpora** — the 12 kits, 12 composite components, 5 merged
+  components, 10 prompts, and 24 keyframe recipes are self-written rewrites.
+  No original site scripts, images, videos, fonts, or shader source are
+  included. The 19 original engine scripts and 57 structure sources are
+  excluded from this package.
+
+## Boundary
+
+This package is delivered for the user's internal design work. Before
+publishing, redistributing, or selling it, review `ATTRIBUTION.md` and confirm
+the upstream licenses and the One Page Love terms. The presence of the MIT
+`LICENSE` file does not grant rights to the third-party or derived material.

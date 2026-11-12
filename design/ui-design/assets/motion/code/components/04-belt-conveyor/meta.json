@@ -1,0 +1,131 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "04-belt-conveyor",
+ "name": "Belt Conveyor",
+ "family": "F11",
+ "family_name": "传送带 / marquee / ticker",
+ "tagline": "速度驱动的无限带：BASE 62、MAX 900、exp(-dt×1.1) 摩擦。",
+ "sources": [
+  {
+   "id": "ui3-section-split-155f4926",
+   "type": "section-split",
+   "hierarchy": "page-section",
+   "role": "section-split structure"
+  },
+  {
+   "id": "ui3-section-split-cd4b2b1f",
+   "type": "section-split",
+   "hierarchy": "page-section",
+   "role": "section-split structure"
+  },
+  {
+   "id": "ui3-section-grid-2051e484",
+   "type": "section-grid",
+   "hierarchy": "block",
+   "role": "section-grid structure"
+  },
+  {
+   "id": "ui3-section-content-d279510f",
+   "type": "section-content",
+   "hierarchy": "block",
+   "role": "section-content structure"
+  },
+  {
+   "id": "ui3-faq-grid-e3329526",
+   "type": "faq-grid",
+   "hierarchy": "page-section",
+   "role": "faq-grid structure"
+  }
+ ],
+ "engines": [
+  {
+   "name": "BeltEngine",
+   "evidence": "observed"
+  }
+ ],
+ "motion": {
+  "trigger": "pointer",
+  "duration_ms": null,
+  "duration_mode": "indefinite",
+  "easing": "linear",
+  "states": [
+   "idle",
+   "dragging",
+   "coasting",
+   "reduced"
+  ],
+  "fallback": "prefers-reduced-motion: 4×3 静态卡片网格，无传送带",
+  "properties": [
+   "transform",
+   "opacity"
+  ],
+  "category": "gesture",
+  "advanced": true,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "cards / spacing",
+   "value": "11 / 300px",
+   "provenance": "Observed（JUNGLE 复刻）"
+  },
+  {
+   "name": "belt",
+   "value": "3300px 环",
+   "provenance": "Observed"
+  },
+  {
+   "name": "BASE / MAX",
+   "value": "62 / 900 px/s",
+   "provenance": "Observed"
+  },
+  {
+   "name": "friction",
+   "value": "exp(-dt × 1.1)",
+   "provenance": "Observed"
+  },
+  {
+   "name": "wrap",
+   "value": "mod(i × SPACING + offset, TOTAL)",
+   "provenance": "Observed"
+  },
+  {
+   "name": "distance channels",
+   "value": "scale / rotate / rise / opacity / z",
+   "provenance": "Observed"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Tab",
+   "ArrowLeft",
+   "ArrowRight",
+   "Enter",
+   "Escape"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "交互元素有 aria-label / aria-valuenow / aria-pressed"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "原站 REPORT 写每帧 .935，代码用 exp(-dt×1.1)；本组件按代码实现",
+  "卡片是自绘渐变，不是原站图片"
+ ]
+}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rotary Controls — reverse-final</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23e8b45a' stroke-width='2'/%3E%3Cpath d='M16 16V7' stroke='%23e8b45a' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="component.css">
+</head>
+<body>
+  <main class="rf-rotary" data-rf="rotary-controls">
+    <header class="rf-rotary__bar">
+      <span class="rf-rotary__mark">ROTARY / 08</span>
+      <nav class="rf-rotary__nav" aria-label="主导航">
+        <a href="#console">Console</a>
+        <a href="#settings">Settings</a>
+      </nav>
+      <button type="button" class="rf-rotary__theme" aria-pressed="false">
+        <span aria-hidden="true">◐</span><span data-theme-label>Dark</span>
+      </button>
+    </header>
+
+    <section class="rf-rotary__console" id="console" aria-label="旋钮控制台">
+      <div class="rf-rotary__stage">
+        <div class="rf-rotary__ring" aria-hidden="true"></div>
+        <div class="rf-rotary__knobs" role="group" aria-label="三个旋钮">
+          <div class="rf-rotary__knob" data-knob="level" data-min="0" data-max="100" data-value="68" data-label="Level">
+            <button type="button" class="rf-rotary__dial" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="68" aria-label="Level">
+              <span class="rf-rotary__ticks" aria-hidden="true"></span>
+              <span class="rf-rotary__pointer" aria-hidden="true"></span>
+              <span class="rf-rotary__center" aria-hidden="true"></span>
+            </button>
+            <span class="rf-rotary__name">Level</span>
+            <output class="rf-rotary__value">68</output>
+          </div>
+          <div class="rf-rotary__knob" data-knob="tone" data-min="0" data-max="100" data-value="42" data-label="Tone">
+            <button type="button" class="rf-rotary__dial" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="42" aria-label="Tone">
+              <span class="rf-rotary__ticks" aria-hidden="true"></span>
+              <span class="rf-rotary__pointer" aria-hidden="true"></span>
+              <span class="rf-rotary__center" aria-hidden="true"></span>
+            </button>
+            <span class="rf-rotary__name">Tone</span>
+            <output class="rf-rotary__value">42</output>
+          </div>
+          <div class="rf-rotary__knob" data-knob="mix" data-min="0" data-max="100" data-value="24" data-label="Mix">
+            <button type="button" class="rf-rotary__dial" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="24" aria-label="Mix">
+              <span class="rf-rotary__ticks" aria-hidden="true"></span>
+              <span class="rf-rotary__pointer" aria-hidden="true"></span>
+              <span class="rf-rotary__center" aria-hidden="true"></span>
+            </button>
+            <span class="rf-rotary__name">Mix</span>
+            <output class="rf-rotary__value">24</output>
+          </div>
+        </div>
+      </div>
+
+      <aside class="rf-rotary__side">
+        <div class="rf-rotary__readout">
+          <p class="rf-rotary__eyebrow">Live console</p>
+          <h1 class="rf-rotary__title">Turn the<br>machine.</h1>
+          <p class="rf-rotary__lede">三个 270° 旋钮 + 一个物理灯开关。中心 12px 内用线性 delta，离开中心用角度差；wheel 与键盘各 ±4。</p>
+        </div>
+        <div class="rf-rotary__lamp">
+          <button type="button" class="rf-rotary__switch" aria-pressed="false" aria-label="切换灯光">
+            <span class="rf-rotary__switch-track" aria-hidden="true"><span class="rf-rotary__switch-thumb"></span></span>
+            <span class="rf-rotary__switch-label">Lights off</span>
+          </button>
+          <p class="rf-rotary__hint">物理位移 20px · .28s · cubic-bezier(.2,.8,.2,1)</p>
+        </div>
+        <button type="button" class="rf-rotary__open" data-open>Open settings</button>
+      </aside>
+    </section>
+
+    <footer class="rf-rotary__foot">
+      <p><strong>Rotary Controls</strong> 合成 5 个结构来源：pricing-cards ×2、toggle、modal ×2。旋钮是 <code>role=slider</code>，键盘可操作；灯开关是 <code>aria-pressed</code>。</p>
+      <span class="rf-rotary__meta">3 knobs · 270° sweep · step 4</span>
+    </footer>
+
+    <dialog class="rf-rotary__modal" aria-label="设置">
+      <button type="button" class="rf-rotary__close" aria-label="关闭设置">×</button>
+      <p class="rf-rotary__eyebrow">Settings</p>
+      <h2>Current console</h2>
+      <dl class="rf-rotary__summary">
+        <div><dt>Level</dt><dd data-sum="level">68</dd></div>
+        <div><dt>Tone</dt><dd data-sum="tone">42</dd></div>
+        <div><dt>Mix</dt><dd data-sum="mix">24</dd></div>
+        <div><dt>Lights</dt><dd data-sum="lights">off</dd></div>
+      </dl>
+      <p class="rf-rotary__modal-note">这个 modal 来自结构来源里的 modal-dialog；焦点在打开时进入关闭按钮，Esc 关闭。</p>
+    </dialog>
+  </main>
+  <script src="component.js"></script>
+</body>
+</html>

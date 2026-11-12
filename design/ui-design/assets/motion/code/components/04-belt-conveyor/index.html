@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Belt Conveyor — reverse-final</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='10' width='26' height='12' rx='6' fill='none' stroke='%23e8b45a' stroke-width='2'/%3E%3Ccircle cx='10' cy='16' r='2' fill='%23e8b45a'/%3E%3Ccircle cx='22' cy='16' r='2' fill='%23e8b45a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="component.css">
+</head>
+<body>
+  <main class="rf-belt" data-rf="belt-conveyor">
+    <header class="rf-belt__bar">
+      <span class="rf-belt__mark">BELT / 04</span>
+      <nav class="rf-belt__nav" aria-label="主导航">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <span class="rf-belt__count" aria-live="polite">01 / 11</span>
+    </header>
+
+    <section class="rf-belt__stage" aria-label="物理传送带">
+      <div class="rf-belt__track" role="list"></div>
+      <div class="rf-belt__fade rf-belt__fade--l" aria-hidden="true"></div>
+      <div class="rf-belt__fade rf-belt__fade--r" aria-hidden="true"></div>
+      <p class="rf-belt__hint">滚轮 / 拖拽甩动 · ← → 轻推 · 点击聚焦</p>
+    </section>
+
+    <footer class="rf-belt__foot">
+      <p><strong>Belt Conveyor</strong> 用速度而不是位置：<code>boost *= exp(-dt × 1.1)</code>，<code>BASE 62</code>，<code>MAX 900</code>，<code>SPACING 300</code>。卡片按 <code>mod(i × SPACING + offset, TOTAL)</code> 回绕。</p>
+      <span class="rf-belt__meta">11 cards · 3300px belt · 62→900 px/s</span>
+    </footer>
+
+    <dialog class="rf-belt__detail" aria-label="项目详情">
+      <button type="button" class="rf-belt__close" aria-label="关闭详情">×</button>
+      <div class="rf-belt__detail-art" aria-hidden="true"></div>
+      <div class="rf-belt__detail-copy">
+        <p class="rf-belt__eyebrow"></p>
+        <h2></h2>
+        <p class="rf-belt__desc"></p>
+        <dl>
+          <div><dt>Year</dt><dd class="rf-belt__year"></dd></div>
+          <div><dt>Role</dt><dd class="rf-belt__role"></dd></div>
+        </dl>
+      </div>
+    </dialog>
+  </main>
+  <script src="component.js"></script>
+</body>
+</html>

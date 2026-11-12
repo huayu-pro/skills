@@ -1,0 +1,132 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "06-tunnel-scene",
+ "name": "Tunnel Scene",
+ "family": "F10",
+ "family_name": "相机 / 缩放 / 多 canvas",
+ "tagline": "26 层圆角矩形 + 46 粒子；滚动推进相位，拖拽横向旋转。",
+ "sources": [
+  {
+   "id": "ui3-accordion-faq-1302c874",
+   "type": "accordion-faq",
+   "hierarchy": "molecule",
+   "role": "accordion-faq structure"
+  },
+  {
+   "id": "ui3-accordion-faq-728a4bf3",
+   "type": "accordion-faq",
+   "hierarchy": "block",
+   "role": "accordion-faq structure"
+  },
+  {
+   "id": "ui3-faq-grid-72d3021d",
+   "type": "faq-grid",
+   "hierarchy": "page-section",
+   "role": "faq-grid structure"
+  },
+  {
+   "id": "ui3-timeline-steps-62e5d6ba",
+   "type": "timeline-steps",
+   "hierarchy": "molecule",
+   "role": "timeline-steps structure"
+  },
+  {
+   "id": "ui3-section-split-7d45cf44",
+   "type": "section-split",
+   "hierarchy": "page-section",
+   "role": "section-split structure"
+  }
+ ],
+ "engines": [
+  {
+   "name": "TunnelScene",
+   "evidence": "observed-repro"
+  }
+ ],
+ "motion": {
+  "trigger": "scroll",
+  "duration_ms": null,
+  "duration_mode": "scroll-progress",
+  "easing": "n/a",
+  "states": [
+   "initial",
+   "scrolled",
+   "dragging",
+   "reduced"
+  ],
+  "fallback": "prefers-reduced-motion: 停 rAF，画一帧静态隧道",
+  "properties": [
+   "canvas-pixels",
+   "text-transform",
+   "opacity"
+  ],
+  "category": "scroll",
+  "advanced": true,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "layers",
+   "value": "26",
+   "provenance": "Observed-repro（164-spatial）"
+  },
+  {
+   "name": "phase",
+   "value": "pow(phase, 1.8)",
+   "provenance": "Observed-repro"
+  },
+  {
+   "name": "scroll gain",
+   "value": "scrollN × 1.35",
+   "provenance": "Observed-repro"
+  },
+  {
+   "name": "lerp",
+   "value": "scroll .14 / drag .12",
+   "provenance": "Observed-repro"
+  },
+  {
+   "name": "clamp",
+   "value": "±220 / ±180",
+   "provenance": "Observed-repro"
+  },
+  {
+   "name": "release",
+   "value": "500ms 后 ×0.94 / 40ms",
+   "provenance": "Observed-repro"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Tab",
+   "ArrowUp",
+   "ArrowDown",
+   "Home",
+   "End"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "交互元素有 aria-label / aria-valuenow / aria-pressed"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "Canvas2D 隧道是复刻近似，不是原站同帧",
+  "原站 interval 生命周期 bug 已改为逐帧衰减"
+ ]
+}

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1125" height="681" viewBox="47 0 1125 681" font-family="Noto Sans CJK SC, sans-serif">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" /></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" /></marker>
+<marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E8833A" /></marker>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3E9B6C" /></marker>
+<marker id="arrY" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A94A6" /></marker>
+</defs>
+<rect width="1200" height="760" fill="#FFFFFF" />
+
+<rect x="152" y="48" width="224" height="56" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="264" y="76" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="264" y="76" font-size="13" font-weight="700" fill="#1A1A1A">协同目标</tspan></text>
+<rect x="488" y="48" width="224" height="56" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="600" y="76" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="600" y="76" font-size="13" font-weight="700" fill="#1A1A1A">评估差距</tspan></text>
+<rect x="824" y="48" width="224" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="936" y="76" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="936" y="76" font-size="13" font-weight="700" fill="#1A1A1A">目前状况</tspan></text>
+<path d="M376,76 H488" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+<path d="M824,76 H712" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+
+<rect x="144" y="128" width="912" height="224" rx="10" fill="#2F6BB0" fill-opacity="0.06" stroke="#2F6BB0" stroke-width="1.5" />
+<rect x="176" y="152" width="256" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="304" y="180" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="304" y="180" font-size="13" font-weight="700" fill="#1A1A1A">协同机会识别</tspan></text>
+<rect x="768" y="152" width="256" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="896" y="180" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="896" y="180" font-size="13" font-weight="700" fill="#1A1A1A">协同价值评估</tspan></text>
+<path d="M432,180 H768" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" marker-start="url(#arrB)" />
+<ellipse cx="600" cy="248" rx="112" ry="32" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="600" y="253" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">沟通</text>
+<path d="M432,208 L536,236" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+<path d="M768,208 L664,236" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+<rect x="488" y="296" width="224" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="600" y="320" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="600" y="320" font-size="13" font-weight="700" fill="#1A1A1A">要素整合、配置</tspan></text>
+<path d="M600,280 V296" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+<path d="M600,104 V128" stroke="#2F6BB0" stroke-width="1.5" fill="none" />
+<path d="M600,152 V128" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+
+<rect x="464" y="384" width="272" height="56" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="600" y="412" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="600" y="412" font-size="13" font-weight="700" fill="#1A1A1A">关键序参量</tspan></text>
+<path d="M600,344 V384" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+<ellipse cx="600" cy="512" rx="128" ry="32" fill="#FDF3EA" stroke="#E8833A" stroke-width="1.5" />
+<text x="600" y="517" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">协同结果</text>
+<path d="M600,440 V480" stroke="#E8833A" stroke-width="1.5" fill="none" marker-end="url(#arrO)" />
+<rect x="464" y="576" width="272" height="56" rx="6" fill="#EDF7F2" stroke="#3E9B6C" stroke-width="1.5" />
+<text x="600" y="604" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="600" y="604" font-size="13" font-weight="700" fill="#1A1A1A">实现协同效应</tspan></text>
+<path d="M600,544 V576" stroke="#3E9B6C" stroke-width="1.5" fill="none" marker-end="url(#arrG)" />
+
+<path d="M728,512 H1120 V116 H1056 V128" stroke="#8A94A6" stroke-width="1.5" fill="none" marker-end="url(#arrY)" stroke-dasharray="5 4" />
+<rect x="1029" y="325" width="102" height="15" fill="#FFFFFF" /><text x="1080" y="336" font-size="11" font-weight="400" fill="#666666" text-anchor="middle">N（未达标则迭代）</text>
+<path d="M472,512 H96 V116 H264 V104" stroke="#8A94A6" stroke-width="1.5" fill="none" marker-end="url(#arrY)" stroke-dasharray="5 4" />
+<rect x="93" y="325" width="70" height="15" fill="#FFFFFF" /><text x="128" y="336" font-size="11" font-weight="400" fill="#666666" text-anchor="middle">反馈修正目标</text>
+</svg>

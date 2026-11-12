@@ -1,0 +1,120 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "12-editorial-motion",
+ "name": "Editorial Motion",
+ "family": "F6",
+ "family_name": "排版 / 动态字体",
+ "tagline": "110% 行 mask + 逐字波 1.4s/0.07s + dt marquee + ±3° 速度 skew。",
+ "sources": [
+  {
+   "id": "ui3-footer-mega-6d9e4a93",
+   "type": "footer-mega",
+   "hierarchy": "block",
+   "role": "footer-mega structure"
+  },
+  {
+   "id": "ui3-tabs-content-15c8d48c",
+   "type": "tabs-content",
+   "hierarchy": "block",
+   "role": "tabs-content structure"
+  },
+  {
+   "id": "ui3-menu-mega-42a32747",
+   "type": "menu-mega",
+   "hierarchy": "page-section",
+   "role": "menu-mega structure"
+  },
+  {
+   "id": "ui3-pricing-cards-d5b8fae0",
+   "type": "pricing-cards",
+   "hierarchy": "block",
+   "role": "pricing-cards structure"
+  }
+ ],
+ "engines": [
+  {
+   "name": "TypeMotion",
+   "evidence": "authored"
+  },
+  {
+   "name": "EditorialChrome",
+   "evidence": "authored"
+  }
+ ],
+ "motion": {
+  "trigger": "load",
+  "duration_ms": 1400,
+  "duration_mode": "mixed",
+  "easing": "cubic-bezier(.2,.75,.2,1)",
+  "states": [
+   "initial",
+   "visible",
+   "reduced"
+  ],
+  "fallback": "prefers-reduced-motion: 行直接显示，停止逐字波/marquee/skew",
+  "properties": [
+   "transform",
+   "opacity"
+  ],
+  "category": "entrance",
+  "advanced": false,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "line mask",
+   "value": "translateY(110%) → 0 / .8s",
+   "provenance": "Observed（kit 07）"
+  },
+  {
+   "name": "char wave",
+   "value": "1.4s / 0.07s delay",
+   "provenance": "Observed（PP Neue Montreal）"
+  },
+  {
+   "name": "marquee",
+   "value": "60 px/s，dt 基准",
+   "provenance": "Observed（kit 07 修正）"
+  },
+  {
+   "name": "velocity skew",
+   "value": "±3° / lerp .12",
+   "provenance": "Observed（kit 07）"
+  },
+  {
+   "name": "tab switch",
+   "value": "即时",
+   "provenance": "Authored"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Tab",
+   "Enter"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "交互元素有 aria-label / aria-valuenow / aria-pressed"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "逐字波只用于短词 MOTION，不用于正文",
+  "marquee 是装饰层，aria-hidden"
+ ]
+}

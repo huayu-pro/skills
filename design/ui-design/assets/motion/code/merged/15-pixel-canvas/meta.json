@@ -1,0 +1,101 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "15-pixel-canvas",
+ "name": "Pixel Canvas",
+ "family": "F5",
+ "family_name": "Canvas2D 像素 / 角色",
+ "tagline": "160×120 离屏像素画布，6 色调色板，imageSmoothing=false，整数坐标；角色/太阳/海浪按 phase 动。",
+ "sources": [
+  {
+   "id": "kit-04-canvas-2d",
+   "type": "mechanism-kit",
+   "role": "canvas2d loop"
+  },
+  {
+   "id": "case-155-032-starboy",
+   "type": "atlas-case",
+   "role": "charReveal / pixel character"
+  },
+  {
+   "id": "case-155-129-rene",
+   "type": "atlas-case",
+   "role": "palette / low-res world"
+  }
+ ],
+ "engines": [
+  {
+   "name": "PixelScene",
+   "evidence": "authored"
+  }
+ ],
+ "motion": {
+  "trigger": "time",
+  "duration_ms": 0,
+  "duration_mode": "continuous",
+  "easing": "phase 0..1, speed slider",
+  "states": [
+   "running",
+   "paused",
+   "reduced"
+  ],
+  "fallback": "prefers-reduced-motion: 只画 phase .3 的静止帧",
+  "properties": [
+   "canvas pixels"
+  ],
+  "category": "canvas2d",
+  "advanced": true,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "canvas",
+   "value": "160 × 120",
+   "provenance": "Authored"
+  },
+  {
+   "name": "palette",
+   "value": "6 colors",
+   "provenance": "Authored"
+  },
+  {
+   "name": "scale",
+   "value": "CSS min(100%, 640px), pixelated",
+   "provenance": "Authored"
+  },
+  {
+   "name": "speed",
+   "value": "0–2× slider",
+   "provenance": "Authored"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Speed slider",
+   "Pause button"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "canvas aria-label + pause aria-pressed"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "角色是 7×10 的手写 sprite，不是动画帧序列；要更丰富需扩展 HERO 帧",
+  "像素画布是 160×120 固定分辨率；更高分辨率需同比放大坐标"
+ ]
+}

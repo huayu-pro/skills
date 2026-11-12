@@ -1,0 +1,102 @@
+<!-- TP37_算法与网络结构｜骨架取自仿绘 P149；专有名词已换成通用词，结构词保留，使用时改文字即可 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" font-family="Noto Sans CJK SC, sans-serif">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" /></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" /></marker>
+<marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E8833A" /></marker>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3E9B6C" /></marker>
+<marker id="arrGy" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A94A6" /></marker>
+<marker id="arrK" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1A1A1A" /></marker>
+</defs>
+<rect width="1200" height="760" fill="#FFFFFF" />
+<text x="48.0" y="60.0" font-size="11" fill="#666666" text-anchor="start">(a) 优化算法流程</text>
+<rect x="48" y="80" width="120" height="64" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="108.0" y="104.8" font-size="16" font-weight="700" fill="#1A1A1A">开始</tspan></text>
+<rect x="200" y="80" width="240" height="64" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="320.0" y="104.8" font-size="16" font-weight="700" fill="#1A1A1A">随机生成初始种群</tspan></text>
+<rect x="472" y="80" width="176" height="64" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="560.0" y="104.8" font-size="16" font-weight="700" fill="#1A1A1A">选择双亲个体</tspan></text>
+<rect x="680" y="80" width="232" height="64" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="796.0" y="104.8" font-size="16" font-weight="700" fill="#1A1A1A">重组和产生子代</tspan></text>
+<path d="M168,112 H200" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+<path d="M440,112 H472" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+<path d="M648,112 H680" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+<rect x="432" y="208" width="120" height="80" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="492.0" y="240.8" font-size="16" font-weight="700" fill="#1A1A1A">结束</tspan></text>
+<rect x="632" y="208" width="216" height="80" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="740.0" y="240.8" font-size="16" font-weight="700" fill="#1A1A1A">达到预设子代数目</tspan></text>
+<rect x="912" y="208" width="240" height="80" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="1032.0" y="228.0" font-size="16" font-weight="700" fill="#1A1A1A">适应性评估并用子代替换最差</tspan><tspan x="1032.0" y="253.6" font-size="16" font-weight="700" fill="#1A1A1A">个体</tspan></text>
+<path d="M796,144 V180 H1032 V208" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+<rect x="878" y="159" width="70" height="17" rx="2" fill="#FFFFFF" /><text x="914.0" y="172.0" font-size="11" fill="#666666" text-anchor="middle">交叉 · 变异</text>
+<path d="M912,248 H848" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+<path d="M632,248 H552" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+<rect x="582" y="227" width="19" height="17" rx="2" fill="#FFFFFF" /><text x="592.0" y="240.0" font-size="11" fill="#666666" text-anchor="middle">是</text>
+<path d="M740,208 V176 H560 V144" stroke="#8A94A6" stroke-width="1.5" fill="none" marker-end="url(#arrGy)" stroke-dasharray="5 4" />
+<rect x="640" y="155" width="19" height="17" rx="2" fill="#FFFFFF" /><text x="650.0" y="168.0" font-size="11" fill="#666666" text-anchor="middle">否</text>
+<path d="M48,320 H1152" stroke="#D5DCE5" stroke-width="1" stroke-dasharray="6 4" fill="none" />
+<text x="48.0" y="344.0" font-size="11" fill="#666666" text-anchor="start">(b) 网络权重调整流程</text>
+<ellipse cx="600" cy="360" rx="88" ry="24" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="5 4" />
+<text x="600" y="365" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">调整比重</text>
+<path d="M804,400 V360 H688" stroke="#8A94A6" stroke-width="1.5" fill="none" stroke-dasharray="5 4" />
+<path d="M512,360 H124 V400" stroke="#8A94A6" stroke-width="1.5" fill="none" marker-end="url(#arrGy)" stroke-dasharray="5 4" />
+<text x="872.0" y="352.0" font-size="11" fill="#666666" text-anchor="middle">误差过高</text>
+<rect x="48" y="400" width="152" height="64" rx="6" fill="#FDF3EA" stroke="#E8833A" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="124.0" y="424.8" font-size="16" font-weight="700" fill="#1A1A1A">开始</tspan></text>
+<rect x="320" y="400" width="216" height="64" rx="6" fill="#FDF3EA" stroke="#E8833A" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="428.0" y="424.8" font-size="16" font-weight="700" fill="#1A1A1A">传递阶段</tspan></text>
+<rect x="696" y="400" width="216" height="64" rx="6" fill="#FDF3EA" stroke="#E8833A" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="804.0" y="424.8" font-size="16" font-weight="700" fill="#1A1A1A">计算结果与误差</tspan></text>
+<rect x="976" y="400" width="176" height="64" rx="6" fill="#EDF7F2" stroke="#3E9B6C" stroke-width="1.5" />
+<text text-anchor="middle"><tspan x="1064.0" y="424.8" font-size="16" font-weight="700" fill="#1A1A1A">结束</tspan></text>
+<path d="M200,432 H320" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+<path d="M536,432 H696" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+<path d="M912,432 H976" stroke="#5A6B7E" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
+<rect x="206" y="411" width="106" height="17" rx="2" fill="#FFFFFF" /><text x="260.0" y="424.0" font-size="11" fill="#666666" text-anchor="middle">初始权重 w_ij^(1)</text>
+<rect x="587" y="411" width="56" height="17" rx="2" fill="#FFFFFF" /><text x="616.0" y="424.0" font-size="11" fill="#666666" text-anchor="middle">w_ij^(2)</text>
+<rect x="918" y="411" width="52" height="17" rx="2" fill="#FFFFFF" /><text x="944.0" y="424.0" font-size="11" fill="#666666" text-anchor="middle">允许误差</text>
+<rect x="48" y="480" width="200" height="208" rx="6" fill="#FFFFFF" stroke="#8A94A6" stroke-width="1.5" />
+<text x="148" y="672" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">输入层</text>
+<rect x="320" y="480" width="304" height="208" rx="6" fill="#FFFFFF" stroke="#8A94A6" stroke-width="1.5" />
+<text x="472" y="672" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">隐藏层</text>
+<rect x="696" y="480" width="240" height="208" rx="6" fill="#FFFFFF" stroke="#8A94A6" stroke-width="1.5" />
+<text x="816" y="672" font-size="13" font-weight="700" fill="#1A1A1A" text-anchor="middle">输出层</text>
+<circle cx="96" cy="536" r="16" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="96" y="540" font-size="12" fill="#1A1A1A" text-anchor="middle">a</text>
+<circle cx="96" cy="592" r="16" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="96" y="596" font-size="12" fill="#1A1A1A" text-anchor="middle">b</text>
+<circle cx="96" cy="648" r="16" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="96" y="652" font-size="12" fill="#1A1A1A" text-anchor="middle">c</text>
+<circle cx="368" cy="536" r="16" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="368" y="540" font-size="12" fill="#1A1A1A" text-anchor="middle">z1</text>
+<circle cx="368" cy="592" r="16" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="368" y="596" font-size="12" fill="#1A1A1A" text-anchor="middle">z2</text>
+<circle cx="368" cy="648" r="16" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="368" y="652" font-size="12" fill="#1A1A1A" text-anchor="middle">zj</text>
+<circle cx="568" cy="536" r="16" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="568" y="540" font-size="12" fill="#1A1A1A" text-anchor="middle">f1</text>
+<circle cx="568" cy="592" r="16" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="568" y="596" font-size="12" fill="#1A1A1A" text-anchor="middle">f2</text>
+<circle cx="568" cy="648" r="16" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="568" y="652" font-size="12" fill="#1A1A1A" text-anchor="middle">fj</text>
+<circle cx="816" cy="592" r="16" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="816" y="596" font-size="12" fill="#1A1A1A" text-anchor="middle">Ic</text>
+<path d="M112,536 L352,536" stroke="#9AA7B8" stroke-width="1" fill="none" opacity="0.7" />
+<path d="M112,536 L352,592" stroke="#9AA7B8" stroke-width="1" fill="none" opacity="0.7" />
+<path d="M112,536 L352,648" stroke="#9AA7B8" stroke-width="1" fill="none" opacity="0.7" />
+<path d="M384,536 H552" stroke="#5A6B7E" stroke-width="1" fill="none" />
+<path d="M584,536 L800,592" stroke="#9AA7B8" stroke-width="1" fill="none" opacity="0.7" />
+<path d="M112,592 L352,536" stroke="#9AA7B8" stroke-width="1" fill="none" opacity="0.7" />
+<path d="M112,592 L352,592" stroke="#9AA7B8" stroke-width="1" fill="none" opacity="0.7" />
+<path d="M112,592 L352,648" stroke="#9AA7B8" stroke-width="1" fill="none" opacity="0.7" />
+<path d="M384,592 H552" stroke="#5A6B7E" stroke-width="1" fill="none" />
+<path d="M584,592 L800,592" stroke="#9AA7B8" stroke-width="1" fill="none" opacity="0.7" />
+<path d="M112,648 L352,536" stroke="#9AA7B8" stroke-width="1" fill="none" opacity="0.7" />
+<path d="M112,648 L352,592" stroke="#9AA7B8" stroke-width="1" fill="none" opacity="0.7" />
+<path d="M112,648 L352,648" stroke="#9AA7B8" stroke-width="1" fill="none" opacity="0.7" />
+<path d="M384,648 H552" stroke="#5A6B7E" stroke-width="1" fill="none" />
+<path d="M584,648 L800,592" stroke="#9AA7B8" stroke-width="1" fill="none" opacity="0.7" />
+<text x="468.0" y="508.0" font-size="11" fill="#E8833A" text-anchor="middle">Sigmoid 函数</text>
+<rect x="255" y="555" width="56" height="17" rx="2" fill="#FFFFFF" /><text x="284.0" y="568.0" font-size="11" fill="#666666" text-anchor="middle">w_ij^(1)</text>
+<rect x="631" y="555" width="56" height="17" rx="2" fill="#FFFFFF" /><text x="660.0" y="568.0" font-size="11" fill="#666666" text-anchor="middle">w_ij^(2)</text>
+</svg>

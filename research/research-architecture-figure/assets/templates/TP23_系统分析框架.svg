@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1170" height="562" viewBox="15 39 1170 562" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arrB" viewBox="0 0 30 20" refX="30" refY="10" markerWidth="6" markerHeight="4" orient="auto">
+      <path d="M0,0 L30,10 L0,20 z" fill="#2F6BB0" />
+    </marker>
+    <marker id="arrG" viewBox="0 0 30 20" refX="30" refY="10" markerWidth="6" markerHeight="4" orient="auto">
+      <path d="M0,0 L30,10 L0,20 z" fill="#5A6B7E" />
+    </marker>
+  </defs>
+  <rect width="1200" height="640" fill="#FFFFFF" />
+
+  
+  <rect x="64" y="88" width="400" height="176" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <rect x="96" y="104" width="336" height="56" rx="6" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" stroke-dasharray="6 3" />
+  <text x="264" y="138" font-size="13" text-anchor="middle" fill="#1A1A1A">外部环境</text>
+  <rect x="96" y="192" width="336" height="56" rx="6" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" stroke-dasharray="6 3" />
+  <text x="264" y="226" font-size="13" text-anchor="middle" fill="#1A1A1A">内部环境</text>
+
+  
+  <rect x="736" y="88" width="400" height="176" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="936" y="170" font-size="16" font-weight="700" text-anchor="middle" fill="#1A1A1A">研究对象</text>
+  <text x="936" y="194" font-size="16" font-weight="700" text-anchor="middle" fill="#1A1A1A">系统</text>
+
+  
+  <rect x="736" y="376" width="400" height="176" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="936" y="456" font-size="16" font-weight="700" text-anchor="middle" fill="#1A1A1A">决策主体</text>
+  <text x="936" y="480" font-size="13" text-anchor="middle" fill="#1A1A1A">（转换/加工）</text>
+
+  
+  <rect x="64" y="376" width="400" height="176" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="264" y="456" font-size="16" font-weight="700" text-anchor="middle" fill="#1A1A1A">研究对象</text>
+  <text x="264" y="480" font-size="16" font-weight="700" text-anchor="middle" fill="#1A1A1A">系统意识</text>
+
+  
+  <line x1="464" y1="176" x2="736" y2="176" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrB)" />
+  <text x="600" y="166" font-size="12" text-anchor="middle" fill="#5A6B7E">输入</text>
+
+  
+  <line x1="936" y1="264" x2="936" y2="376" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrB)" />
+  <text x="920" y="326" font-size="12" text-anchor="end" fill="#5A6B7E">反映</text>
+  <text x="952" y="326" font-size="11" text-anchor="start" fill="#666666">（社会化感知）</text>
+
+  
+  <line x1="736" y1="464" x2="464" y2="464" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrB)" />
+  <text x="600" y="452" font-size="12" text-anchor="middle" fill="#5A6B7E">输出</text>
+
+  
+  <line x1="264" y1="376" x2="264" y2="264" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrB)" />
+  <text x="248" y="326" font-size="12" text-anchor="end" fill="#5A6B7E">反馈</text>
+  <text x="280" y="326" font-size="11" text-anchor="start" fill="#666666">（社会实践）</text>
+</svg>

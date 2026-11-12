@@ -1,0 +1,137 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "01-orbit-gallery",
+ "name": "Orbit Gallery",
+ "family": "F3",
+ "family_name": "WebGL 全屏 shader / lens",
+ "tagline": "六张卡片绕一个核心轨道；深度同时驱动 scale/blur/z-index/opacity。",
+ "sources": [
+  {
+   "id": "ui3-carousel-cards-0611d180",
+   "type": "carousel-cards",
+   "hierarchy": "molecule",
+   "role": "carousel-cards structure"
+  },
+  {
+   "id": "ui3-carousel-cards-9c165069",
+   "type": "carousel-cards",
+   "hierarchy": "block",
+   "role": "carousel-cards structure"
+  },
+  {
+   "id": "ui3-carousel-cards-a0c34418",
+   "type": "carousel-cards",
+   "hierarchy": "block",
+   "role": "carousel-cards structure"
+  },
+  {
+   "id": "ui3-carousel-cards-8fa18225",
+   "type": "carousel-cards",
+   "hierarchy": "block",
+   "role": "carousel-cards structure"
+  },
+  {
+   "id": "ui3-carousel-cards-2e561db1",
+   "type": "carousel-cards",
+   "hierarchy": "block",
+   "role": "carousel-cards structure"
+  },
+  {
+   "id": "ui3-gallery-grid-a60a4f72",
+   "type": "gallery-grid",
+   "hierarchy": "atom",
+   "role": "gallery-grid structure"
+  }
+ ],
+ "engines": [
+  {
+   "name": "OrbitEngine",
+   "evidence": "observed"
+  },
+  {
+   "name": "LensGallery",
+   "evidence": "observed"
+  }
+ ],
+ "motion": {
+  "trigger": "pointer",
+  "duration_ms": 700,
+  "duration_mode": "mixed",
+  "easing": "cubic-bezier(.22,.8,.2,1)",
+  "states": [
+   "initial",
+   "orbit",
+   "focused",
+   "reduced"
+  ],
+  "fallback": "prefers-reduced-motion: 静态 3×2 网格，无轨道旋转/模糊",
+  "properties": [
+   "transform",
+   "opacity",
+   "filter"
+  ],
+  "category": "gesture",
+  "advanced": true,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "lerp",
+   "value": "0.08",
+   "provenance": "Observed（Angelo）"
+  },
+  {
+   "name": "velocity damping",
+   "value": "0.9 / 帧",
+   "provenance": "Observed"
+  },
+  {
+   "name": "wheel",
+   "value": "deltaY × 0.0014",
+   "provenance": "Observed"
+  },
+  {
+   "name": "drag",
+   "value": "dx × 0.004",
+   "provenance": "Observed"
+  },
+  {
+   "name": "depth 通道",
+   "value": "scale .72–1.06 / blur / z 60±40 / opacity .62–1",
+   "provenance": "Observed"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Tab",
+   "ArrowLeft",
+   "ArrowRight",
+   "Enter",
+   "Escape"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "交互元素有 aria-label / aria-valuenow / aria-pressed"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "轨道不是原站同帧；lens shader 的运行时参数未采样",
+  "8/8 拖拽但原站 0/8 inertia"
+ ]
+}

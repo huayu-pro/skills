@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scroll Narrative — reverse-final</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='6' width='24' height='4' fill='%23e8b45a'/%3E%3Crect x='4' y='14' width='16' height='4' fill='%23e8b45a'/%3E%3Crect x='4' y='22' width='20' height='4' fill='%23e8b45a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="component.css">
+</head>
+<body>
+  <main class="rf-scroll" data-rf="scroll-narrative">
+    <header class="rf-scroll__bar">
+      <span class="rf-scroll__mark">SCROLL / 10</span>
+      <nav class="rf-scroll__nav" aria-label="主导航">
+        <a href="#pin">Narrative</a>
+        <a href="#work">Work</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button type="button" class="rf-scroll__cta" data-open>Start a project</button>
+    </header>
+
+    <section class="rf-scroll__hero">
+      <p class="rf-scroll__eyebrow">IO 200px · 450ms · 16px</p>
+      <h1>Scroll is a<br>sequence,<br>not a slide.</h1>
+      <p class="rf-scroll__lede">这一段用 IntersectionObserver 做分段揭示，下一段用 sticky + progress 做钉住叙事。两者不叠加在同一条元素上。</p>
+      <a class="rf-scroll__cue" href="#pin">Scroll to the pinned stage <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="rf-scroll__pin" id="pin" aria-label="钉住叙事">
+      <div class="rf-scroll__pin-inner">
+        <div class="rf-scroll__pin-copy" data-pin-copy>
+          <p class="rf-scroll__eyebrow">Pinned stage</p>
+          <h2>Three beats,<br>one viewport.</h2>
+          <p class="rf-scroll__lede">滚动进度 <code>p</code> 同时驱动三张卡的透明度、位移和缩放。pin 的 <code>end</code> 用 <code>innerHeight × duration × .78</code>。</p>
+        </div>
+        <div class="rf-scroll__panels" aria-hidden="true">
+          <article class="rf-scroll__panel is-1"><span>01</span><h3>Surface</h3></article>
+          <article class="rf-scroll__panel is-2"><span>02</span><h3>Signal</h3></article>
+          <article class="rf-scroll__panel is-3"><span>03</span><h3>Arrival</h3></article>
+        </div>
+        <div class="rf-scroll__progress" aria-hidden="true"><i></i></div>
+      </div>
+    </section>
+
+    <section class="rf-scroll__grid" id="work" aria-label="分段揭示">
+      <article class="rf-scroll__tile" data-reveal><span>01</span><h3>Field notes</h3><p>Research archive</p></article>
+      <article class="rf-scroll__tile" data-reveal><span>02</span><h3>Soft machine</h3><p>Editorial system</p></article>
+      <article class="rf-scroll__tile" data-reveal><span>03</span><h3>Night bloom</h3><p>Campaign</p></article>
+      <article class="rf-scroll__tile" data-reveal><span>04</span><h3>Mono house</h3><p>Practice site</p></article>
+    </section>
+
+    <section class="rf-scroll__faq" id="faq" aria-label="常见问题">
+      <p class="rf-scroll__eyebrow">Disclosure</p>
+      <h2>Questions,<br>answered.</h2>
+      <div class="rf-scroll__acc">
+        <div class="rf-scroll__acc-item">
+          <button type="button" class="rf-scroll__acc-btn" aria-expanded="false">Why pin only one section?<span aria-hidden="true">+</span></button>
+          <div class="rf-scroll__acc-body"><div><p>因为 pin 是“买滚动距离”的手段；每个段落都 pin 会让页面变成拖不动的幻灯片。</p></div></div>
+        </div>
+        <div class="rf-scroll__acc-item">
+          <button type="button" class="rf-scroll__acc-btn" aria-expanded="false">Why 450ms?<span aria-hidden="true">+</span></button>
+          <div class="rf-scroll__acc-body"><div><p>450ms 是 343 站 JS bundle 里出现 76 次的手调值；比 500ms 稍快，但不显得仓促。</p></div></div>
+        </div>
+        <div class="rf-scroll__acc-item">
+          <button type="button" class="rf-scroll__acc-btn" aria-expanded="false">What if reduced motion?<span aria-hidden="true">+</span></button>
+          <div class="rf-scroll__acc-body"><div><p>所有 reveal 直接终态，pin 改为普通的三段堆叠，导航不再隐藏。</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="rf-scroll__foot">
+      <p><strong>Scroll Narrative</strong> 合成 4 个结构来源：navigation-bar ×2、footer-mega ×2。IO reveal、sticky pin、accordion、modal 各自独立。</p>
+      <span class="rf-scroll__meta">200px · 450ms · 16px · scrub 1</span>
+    </footer>
+
+    <dialog class="rf-scroll__modal" aria-label="开始项目">
+      <button type="button" class="rf-scroll__close" aria-label="关闭">×</button>
+      <p class="rf-scroll__eyebrow">Contact</p>
+      <h2>Start a project.</h2>
+      <p class="rf-scroll__lede">这个 modal 来自结构来源的 modal-dialog；打开时焦点进入关闭按钮，Esc 关闭。</p>
+      <form class="rf-scroll__form">
+        <label>Name <input type="text" name="name" autocomplete="name"></label>
+        <label>Email <input type="email" name="email" autocomplete="email"></label>
+        <button type="submit" class="rf-scroll__submit">Send</button>
+      </form>
+    </dialog>
+  </main>
+  <script src="component.js"></script>
+</body>
+</html>

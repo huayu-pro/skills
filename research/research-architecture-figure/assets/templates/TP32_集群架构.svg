@@ -1,0 +1,106 @@
+<!-- TP32_集群架构｜骨架取自仿绘 P013；专有名词已换成通用词，结构词保留，使用时改文字即可 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arrowB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" />
+    </marker>
+  </defs>
+  <rect width="1200" height="800" fill="#FFFFFF" />
+
+  
+  <rect x="96" y="48" width="1008" height="112" rx="10" fill="#2F6BB0" fill-opacity="0.06" />
+  <rect x="496" y="80" width="208" height="48" rx="24" fill="#2F6BB0" />
+  <text x="600" y="109" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">主控节点</text>
+
+  
+  <rect x="96" y="216" width="1008" height="112" rx="10" fill="#2F6BB0" fill-opacity="0.06" />
+  <rect x="152" y="248" width="192" height="44" rx="22" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="248" y="275" font-size="13" text-anchor="middle" fill="#1A1A1A">协调服务</text>
+  <rect x="504" y="248" width="192" height="44" rx="22" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="600" y="275" font-size="13" text-anchor="middle" fill="#1A1A1A">协调服务</text>
+  <rect x="856" y="248" width="192" height="44" rx="22" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="952" y="275" font-size="13" text-anchor="middle" fill="#1A1A1A">协调服务</text>
+  
+  <circle cx="416" cy="270" r="1.8" fill="#8A94A6" />
+  <circle cx="424" cy="270" r="1.8" fill="#8A94A6" />
+  <circle cx="432" cy="270" r="1.8" fill="#8A94A6" />
+  <circle cx="768" cy="270" r="1.8" fill="#8A94A6" />
+  <circle cx="776" cy="270" r="1.8" fill="#8A94A6" />
+  <circle cx="784" cy="270" r="1.8" fill="#8A94A6" />
+
+  
+  <rect x="96" y="384" width="1008" height="336" rx="10" fill="#2F6BB0" fill-opacity="0.06" />
+
+  
+  <rect x="120" y="400" width="240" height="304" rx="8" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <rect x="160" y="416" width="160" height="40" rx="20" fill="#4A86C5" />
+  <text x="240" y="440" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">从节点管理</text>
+  <rect x="136" y="472" width="208" height="224" rx="6" fill="none" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+  <rect x="176" y="488" width="128" height="36" rx="18" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="240" y="510" font-size="12" text-anchor="middle" fill="#1A1A1A">工作进程</text>
+  <circle cx="240" cy="535" r="1.6" fill="#8A94A6" />
+  <circle cx="240" cy="542" r="1.6" fill="#8A94A6" />
+  <circle cx="240" cy="549" r="1.6" fill="#8A94A6" />
+  <rect x="176" y="560" width="128" height="36" rx="18" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="240" y="582" font-size="12" text-anchor="middle" fill="#1A1A1A">工作进程</text>
+  <circle cx="240" cy="607" r="1.6" fill="#8A94A6" />
+  <circle cx="240" cy="614" r="1.6" fill="#8A94A6" />
+  <circle cx="240" cy="621" r="1.6" fill="#8A94A6" />
+  <rect x="176" y="632" width="128" height="36" rx="18" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="240" y="654" font-size="12" text-anchor="middle" fill="#1A1A1A">工作进程</text>
+
+  
+  <rect x="472" y="400" width="240" height="304" rx="8" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <rect x="520" y="416" width="160" height="40" rx="20" fill="#4A86C5" />
+  <text x="600" y="440" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">从节点管理</text>
+  <rect x="496" y="472" width="208" height="224" rx="6" fill="none" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+  <rect x="536" y="488" width="128" height="36" rx="18" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="600" y="510" font-size="12" text-anchor="middle" fill="#1A1A1A">工作进程</text>
+  <circle cx="600" cy="535" r="1.6" fill="#8A94A6" />
+  <circle cx="600" cy="542" r="1.6" fill="#8A94A6" />
+  <circle cx="600" cy="549" r="1.6" fill="#8A94A6" />
+  <rect x="536" y="560" width="128" height="36" rx="18" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="600" y="582" font-size="12" text-anchor="middle" fill="#1A1A1A">工作进程</text>
+  <circle cx="600" cy="607" r="1.6" fill="#8A94A6" />
+  <circle cx="600" cy="614" r="1.6" fill="#8A94A6" />
+  <circle cx="600" cy="621" r="1.6" fill="#8A94A6" />
+  <rect x="536" y="632" width="128" height="36" rx="18" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="600" y="654" font-size="12" text-anchor="middle" fill="#1A1A1A">工作进程</text>
+
+  
+  <rect x="824" y="400" width="240" height="304" rx="8" fill="#FFFFFF" stroke="#4A86C5" stroke-width="1.5" />
+  <rect x="872" y="416" width="160" height="40" rx="20" fill="#4A86C5" />
+  <text x="952" y="440" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">从节点管理</text>
+  <rect x="848" y="472" width="208" height="224" rx="6" fill="none" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+  <rect x="888" y="488" width="128" height="36" rx="18" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="952" y="510" font-size="12" text-anchor="middle" fill="#1A1A1A">工作进程</text>
+  <circle cx="952" cy="535" r="1.6" fill="#8A94A6" />
+  <circle cx="952" cy="542" r="1.6" fill="#8A94A6" />
+  <circle cx="952" cy="549" r="1.6" fill="#8A94A6" />
+  <rect x="888" y="560" width="128" height="36" rx="18" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="952" y="582" font-size="12" text-anchor="middle" fill="#1A1A1A">工作进程</text>
+  <circle cx="952" cy="607" r="1.6" fill="#8A94A6" />
+  <circle cx="952" cy="614" r="1.6" fill="#8A94A6" />
+  <circle cx="952" cy="621" r="1.6" fill="#8A94A6" />
+  <rect x="888" y="632" width="128" height="36" rx="18" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="952" y="654" font-size="12" text-anchor="middle" fill="#1A1A1A">工作进程</text>
+
+  
+  <circle cx="412" cy="436" r="1.8" fill="#8A94A6" />
+  <circle cx="420" cy="436" r="1.8" fill="#8A94A6" />
+  <circle cx="428" cy="436" r="1.8" fill="#8A94A6" />
+  <circle cx="764" cy="436" r="1.8" fill="#8A94A6" />
+  <circle cx="772" cy="436" r="1.8" fill="#8A94A6" />
+  <circle cx="780" cy="436" r="1.8" fill="#8A94A6" />
+
+  
+  <line x1="600" y1="128" x2="600" y2="248" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrowB)" marker-start="url(#arrowB)" />
+  <line x1="248" y1="292" x2="248" y2="400" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrowB)" marker-start="url(#arrowB)" />
+  <line x1="600" y1="292" x2="600" y2="400" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrowB)" marker-start="url(#arrowB)" />
+  <line x1="952" y1="292" x2="952" y2="400" stroke="#2F6BB0" stroke-width="1.5" marker-end="url(#arrowB)" marker-start="url(#arrowB)" />
+
+  
+  <text transform="translate(1120, 104) rotate(-90)" font-size="15" font-weight="700" text-anchor="middle" fill="#2F6BB0">主节点</text>
+  <text transform="translate(1120, 272) rotate(-90)" font-size="15" font-weight="700" text-anchor="middle" fill="#4A86C5">集群</text>
+  <text transform="translate(1120, 552) rotate(-90)" font-size="15" font-weight="700" text-anchor="middle" fill="#5A6B7E">从节点</text>
+</svg>

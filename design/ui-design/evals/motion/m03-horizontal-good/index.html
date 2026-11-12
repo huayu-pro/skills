@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>m03 horizontal good</title>
+  <style>
+    body { margin: 0; background: #0b0d10; color: #f4efe4; font-family: system-ui, sans-serif; }
+    .rail { overflow: hidden; }
+    .track { display: flex; gap: 16px; padding: 80px 24px; will-change: transform; }
+    .panel { flex: 0 0 auto; width: 320px; height: 220px; border: 1px solid #2a2f36; background: #14181d; }
+    @media (prefers-reduced-motion: reduce) {
+      .rail { overflow-x: auto; }
+      .track { transform: none !important; will-change: auto; animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="rail" tabindex="0" role="group" aria-label="rail">
+    <div class="track">
+      <div class="panel"></div><div class="panel"></div><div class="panel"></div><div class="panel"></div>
+    </div>
+  </div>
+  <script>
+    const rail = document.querySelector(".rail");
+    const track = document.querySelector(".track");
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+    let x = 0, target = 0, raf = 0;
+    function frame() {
+      raf = 0;
+      x += (target - x) * 0.15;
+      track.style.transform = "translate3d(" + x + "px,0,0)";
+      if (Math.abs(target - x) > 0.1) raf = requestAnimationFrame(frame);
+    }
+    rail.addEventListener("wheel", (event) => {
+      if (reduce.matches) return;
+      target -= event.deltaY;
+      event.preventDefault();
+      if (!raf) raf = requestAnimationFrame(frame);
+    }, { passive: false });
+    rail.addEventListener("keydown", (event) => {
+      if (reduce.matches) return;
+      if (event.key === "ArrowRight") target -= 320;
+      if (event.key === "ArrowLeft") target += 320;
+      if (!raf) raf = requestAnimationFrame(frame);
+    });
+  </script>
+</body>
+</html>

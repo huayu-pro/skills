@@ -1,0 +1,188 @@
+<!-- TP12_三层端架构｜骨架取自仿绘 P051；专有名词已换成通用词，结构词保留，使用时改文字即可 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" />
+    </marker>
+    <marker id="arrowB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" />
+    </marker>
+  </defs>
+  <rect width="1200" height="800" fill="#FFFFFF" />
+
+  
+  <rect x="96" y="48" width="1008" height="192" rx="10" fill="#2F6BB0" fill-opacity="0.06" />
+  <text x="120" y="76" font-size="13" font-weight="700" fill="#2F6BB0" dominant-baseline="central">云端</text>
+
+  
+  <rect x="132" y="96" width="168" height="48" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="216" y="120" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">应用场景一</text>
+  <rect x="324" y="96" width="168" height="48" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="408" y="120" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">应用场景二</text>
+  <rect x="516" y="96" width="168" height="48" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="600" y="120" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">应用场景三</text>
+  <rect x="708" y="96" width="168" height="48" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="792" y="120" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">应用场景四</text>
+  <rect x="900" y="96" width="168" height="48" rx="6" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="1.5" />
+  <text x="984" y="120" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">应用场景五</text>
+
+  
+  <rect x="132" y="168" width="136" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="200" y="192" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">云计算平台</text>
+  <rect x="292" y="168" width="136" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="360" y="192" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">计算服务</text>
+  <rect x="452" y="168" width="136" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="520" y="192" font-size="12" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">泛在Web服务</text>
+  <rect x="612" y="168" width="136" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="680" y="192" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">存储服务</text>
+  <rect x="772" y="168" width="136" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="840" y="192" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">信息处理服务</text>
+  <rect x="932" y="168" width="136" height="48" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="1000" y="192" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">空间信息服务</text>
+
+  
+  <rect x="96" y="264" width="1008" height="248" rx="10" fill="#4A86C5" fill-opacity="0.06" />
+  <text x="120" y="292" font-size="13" font-weight="700" fill="#4A86C5" dominant-baseline="central">网端</text>
+
+  
+  <rect x="152" y="312" width="200" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="252" y="340" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">智能设备</text>
+  <rect x="384" y="312" width="200" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="484" y="332" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">智能网关</text>
+  <text x="484" y="352" font-size="12" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">标签阅读器</text>
+  <rect x="616" y="312" width="200" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="716" y="340" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">智能网关</text>
+  <rect x="848" y="312" width="200" height="56" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="948" y="340" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">传感器网关</text>
+
+  
+  <rect x="232" y="400" width="736" height="80" rx="40" fill="#EEF4FB" stroke="#2F6BB0" stroke-width="2" />
+  <g stroke="#4A86C5" stroke-width="1.2">
+    <line x1="272" y1="420" x2="272" y2="460" />
+    <line x1="352" y1="420" x2="352" y2="460" />
+    <line x1="432" y1="420" x2="432" y2="460" />
+    <line x1="512" y1="420" x2="512" y2="460" />
+    <line x1="688" y1="420" x2="688" y2="460" />
+    <line x1="768" y1="420" x2="768" y2="460" />
+    <line x1="848" y1="420" x2="848" y2="460" />
+    <line x1="928" y1="420" x2="928" y2="460" />
+    <line x1="272" y1="420" x2="512" y2="420" />
+    <line x1="688" y1="420" x2="928" y2="420" />
+    <line x1="272" y1="460" x2="512" y2="460" />
+    <line x1="688" y1="460" x2="928" y2="460" />
+    <line x1="272" y1="420" x2="352" y2="460" />
+    <line x1="432" y1="420" x2="512" y2="460" />
+    <line x1="688" y1="420" x2="768" y2="460" />
+    <line x1="848" y1="420" x2="928" y2="460" />
+  </g>
+  <g fill="#EEF4FB" stroke="#4A86C5" stroke-width="1.5">
+    <circle cx="272" cy="420" r="5" />
+    <circle cx="352" cy="420" r="5" />
+    <circle cx="432" cy="420" r="5" />
+    <circle cx="512" cy="420" r="5" />
+    <circle cx="688" cy="420" r="5" />
+    <circle cx="768" cy="420" r="5" />
+    <circle cx="848" cy="420" r="5" />
+    <circle cx="928" cy="420" r="5" />
+    <circle cx="272" cy="460" r="5" />
+    <circle cx="352" cy="460" r="5" />
+    <circle cx="432" cy="460" r="5" />
+    <circle cx="512" cy="460" r="5" />
+    <circle cx="688" cy="460" r="5" />
+    <circle cx="768" cy="460" r="5" />
+    <circle cx="848" cy="460" r="5" />
+    <circle cx="928" cy="460" r="5" />
+  </g>
+  <text x="600" y="440" font-size="14" font-weight="700" text-anchor="middle" fill="#2F6BB0" dominant-baseline="central">互联网</text>
+
+  
+  <g stroke="#5A6B7E" stroke-width="1.5" marker-start="url(#arrow)" marker-end="url(#arrow)">
+    <line x1="252" y1="368" x2="252" y2="400" />
+    <line x1="484" y1="368" x2="484" y2="400" />
+    <line x1="716" y1="368" x2="716" y2="400" />
+    <line x1="948" y1="368" x2="948" y2="400" />
+  </g>
+
+  
+  <rect x="96" y="536" width="1008" height="216" rx="10" fill="#3E9B6C" fill-opacity="0.06" />
+  <text x="120" y="564" font-size="13" font-weight="700" fill="#3E9B6C" dominant-baseline="central">物端</text>
+
+  
+  <g stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="280" y1="480" x2="280" y2="584" />
+    <line x1="600" y1="480" x2="600" y2="584" />
+    <line x1="920" y1="480" x2="920" y2="584" />
+  </g>
+
+  
+  <rect x="136" y="584" width="288" height="136" rx="10" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+  <g stroke="#8A94A6" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="224" y1="620" x2="264" y2="620" />
+    <line x1="288" y1="620" x2="328" y2="620" />
+    <line x1="224" y1="660" x2="264" y2="660" />
+    <line x1="288" y1="660" x2="328" y2="660" />
+    <line x1="212" y1="632" x2="212" y2="648" />
+    <line x1="276" y1="632" x2="276" y2="648" />
+    <line x1="340" y1="632" x2="340" y2="648" />
+  </g>
+  <g fill="#EEF4FB" stroke="#4A86C5" stroke-width="1.5">
+    <rect x="200" y="608" width="24" height="24" rx="4" />
+    <rect x="264" y="608" width="24" height="24" rx="4" />
+    <rect x="328" y="608" width="24" height="24" rx="4" />
+    <rect x="200" y="648" width="24" height="24" rx="4" />
+    <rect x="264" y="648" width="24" height="24" rx="4" />
+    <rect x="328" y="648" width="24" height="24" rx="4" />
+  </g>
+  <g fill="#2F6BB0">
+    <circle cx="212" cy="620" r="3" />
+    <circle cx="276" cy="620" r="3" />
+    <circle cx="340" cy="620" r="3" />
+    <circle cx="212" cy="660" r="3" />
+    <circle cx="276" cy="660" r="3" />
+    <circle cx="340" cy="660" r="3" />
+  </g>
+  <text x="280" y="704" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">智能物品</text>
+
+  
+  <rect x="456" y="584" width="288" height="136" rx="10" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+  <g stroke="#8A94A6" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="500" y1="620" x2="560" y2="648" />
+    <line x1="500" y1="620" x2="620" y2="620" />
+    <line x1="500" y1="620" x2="560" y2="592" />
+    <line x1="560" y1="648" x2="620" y2="620" />
+    <line x1="560" y1="592" x2="620" y2="620" />
+    <line x1="560" y1="592" x2="680" y2="648" />
+    <line x1="620" y1="620" x2="680" y2="648" />
+  </g>
+  <g fill="#EEF4FB" stroke="#4A86C5" stroke-width="1.5">
+    <circle cx="500" cy="620" r="10" />
+    <circle cx="560" cy="592" r="10" />
+    <circle cx="620" cy="620" r="10" />
+    <circle cx="560" cy="648" r="10" />
+    <circle cx="680" cy="648" r="10" />
+  </g>
+  <text x="600" y="704" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">局部智能系统</text>
+
+  
+  <rect x="776" y="584" width="288" height="136" rx="10" fill="#F3F5F8" stroke="#8A94A6" stroke-width="1.5" stroke-dasharray="6 3" />
+  <g stroke="#8A94A6" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="812" y1="628" x2="860" y2="648" />
+    <line x1="812" y1="628" x2="884" y2="616" />
+    <line x1="860" y1="648" x2="884" y2="616" />
+    <line x1="860" y1="648" x2="924" y2="644" />
+    <line x1="884" y1="616" x2="924" y2="644" />
+    <line x1="812" y1="628" x2="812" y2="628" />
+  </g>
+  <g fill="#EEF4FB" stroke="#4A86C5" stroke-width="1.5">
+    <circle cx="812" cy="628" r="9" />
+    <circle cx="860" cy="648" r="9" />
+    <circle cx="884" cy="616" r="9" />
+    <circle cx="924" cy="644" r="9" />
+  </g>
+  
+  <g stroke="#4A86C5" stroke-width="1.5" fill="#EEF4FB">
+    <path d="M 988 644 L 1004 628 L 1020 644 Z" />
+    <rect x="992" y="644" width="24" height="20" rx="2" />
+  </g>
+  <text x="920" y="704" font-size="13" text-anchor="middle" fill="#1A1A1A" dominant-baseline="central">传感器网络</text>
+</svg>

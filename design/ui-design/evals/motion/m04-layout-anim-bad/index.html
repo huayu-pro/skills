@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>m04 layout animation bad</title>
+  <style>
+    body { margin: 0; background: #0b0d10; color: #f4efe4; font-family: system-ui, sans-serif; }
+    main { max-width: 720px; margin: 0 auto; padding: 80px 24px; }
+    @keyframes widen { from { width: 0; } to { width: 100%; } }
+    .bar { height: 6px; background: #e8b45a; animation: widen 1200ms ease both; }
+    @media (prefers-reduced-motion: reduce) { .bar { animation: none; width: 100%; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Layout is not an animation channel.</h1>
+    <div class="bar"></div>
+  </main>
+</body>
+</html>

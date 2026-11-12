@@ -1,0 +1,106 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "14-webgl-object",
+ "name": "WebGL Object",
+ "family": "F4",
+ "family_name": "WebGL 3D 物体 / 相机",
+ "tagline": "裸 WebGL2 + fragment shader 的 raymarch box：指针偏移相机、时间旋转物体、DPR≤2、上下文丢失降级。",
+ "sources": [
+  {
+   "id": "component-05-shader-plane",
+   "type": "component",
+   "role": "WebGL2 boilerplate / compile guards"
+  },
+  {
+   "id": "component-06-tunnel-scene",
+   "type": "component",
+   "role": "camera + depth vocabulary"
+  },
+  {
+   "id": "prompt-f4-tristan",
+   "type": "prompt",
+   "role": "3D scene intent"
+  }
+ ],
+ "engines": [
+  {
+   "name": "RaymarchBox",
+   "evidence": "authored"
+  }
+ ],
+ "motion": {
+  "trigger": "time/pointer",
+  "duration_ms": 0,
+  "duration_mode": "continuous",
+  "easing": "linear time; lerp .12 mouse",
+  "states": [
+   "running",
+   "paused",
+   "reduced",
+   "context-lost"
+  ],
+  "fallback": "prefers-reduced-motion: 只画一帧；WebGL2 不可用：CSS 3D cube",
+  "properties": [
+   "shader uniforms"
+  ],
+  "category": "webgl",
+  "advanced": true,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "steps",
+   "value": "80",
+   "provenance": "Authored"
+  },
+  {
+   "name": "box",
+   "value": "0.82",
+   "provenance": "Authored"
+  },
+  {
+   "name": "rotation",
+   "value": "time * 0.35",
+   "provenance": "Authored"
+  },
+  {
+   "name": "mouse follow",
+   "value": "lerp .12",
+   "provenance": "Observed（cursor 组）"
+  },
+  {
+   "name": "DPR cap",
+   "value": "2",
+   "provenance": "Authored"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Pause button"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "canvas aria-label + pause aria-pressed"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "raymarch 是单物体演示，不是完整 3D 场景；复杂模型用 Three.js 提示词",
+  "context restore 未重建资源，只显示降级；生产环境需 reload 或重建 program"
+ ]
+}

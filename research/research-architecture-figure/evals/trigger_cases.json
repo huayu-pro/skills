@@ -1,0 +1,188 @@
+{
+  "recommended_threshold": 0.34,
+  "description_required_concepts": [
+    "figure_noun",
+    "drawing_action",
+    "academic"
+  ],
+  "positive_concepts": {
+    "figure_noun": [
+      "架构图",
+      "框架图",
+      "机制图",
+      "技术路线图",
+      "研究模型",
+      "结构图",
+      "框图",
+      "模型图",
+      "流程图",
+      "示意图",
+      "diagram",
+      "分层图",
+      "组织图"
+    ],
+    "drawing_action": [
+      "画",
+      "绘制",
+      "仿绘",
+      "重画",
+      "出图",
+      "画成",
+      "做一张",
+      "作图",
+      "生成图"
+    ],
+    "academic": [
+      "论文",
+      "期刊",
+      "学术",
+      "投稿",
+      "研究",
+      "课题",
+      "文献",
+      "学位"
+    ],
+    "format": [
+      "svg",
+      "png",
+      "矢量",
+      "可编辑",
+      "排版",
+      "高清"
+    ],
+    "quality": [
+      "规范",
+      "质检",
+      "对齐",
+      "配色",
+      "风格统一",
+      "模板",
+      "审美",
+      "统一风格"
+    ]
+  },
+  "negative_patterns": [
+    "柱状图",
+    "折线图",
+    "森林图",
+    "roc 曲线",
+    "roc曲线",
+    "热图",
+    "箱线图",
+    "生存曲线",
+    "火山图",
+    "翻译",
+    "下载文献",
+    "爬取",
+    "检索文献",
+    "美化照片",
+    "修图",
+    "excel 图表"
+  ],
+  "should_trigger": [
+    {
+      "text": "帮我把这段研究框架画成论文里的架构图",
+      "family": "cn_new_draw"
+    },
+    {
+      "text": "这张期刊里的理论框架图帮我仿绘一版 SVG",
+      "family": "cn_redraw"
+    },
+    {
+      "text": "把我们的系统技术架构画成一张分层图，要能放进论文",
+      "family": "cn_layered"
+    },
+    {
+      "text": "画个机制图，说明自变量怎么通过中介影响因变量",
+      "family": "cn_mechanism"
+    },
+    {
+      "text": "论文里的机制图太丑了，帮我重画一版，文字保留，风格统一成学术蓝",
+      "family": "cn_restyle"
+    },
+    {
+      "text": "论文里的技术路线图太丑了，帮我按规范出个新的 PPT 用不了，要 SVG",
+      "family": "cn_redraw_svg"
+    },
+    {
+      "text": "把这些文字整理成一张研究模型图，模块不要超过六层",
+      "family": "cn_from_text"
+    },
+    {
+      "text": "画一张三阶段的流程图，能直接投稿用的那种",
+      "family": "cn_flow"
+    },
+    {
+      "text": "帮我做一张论文用的结构图，并检查文字有没有出框",
+      "family": "cn_with_qc"
+    },
+    {
+      "text": "Draw an architecture diagram for my paper as editable SVG.",
+      "family": "en_draw"
+    },
+    {
+      "text": "把这张组织架构图重新画一遍，风格要统一",
+      "family": "cn_org"
+    },
+    {
+      "text": "论文里需要一个概念框架图，帮我从这段摘要里抽结构出来画",
+      "family": "cn_conceptual"
+    }
+  ],
+  "should_not_trigger": [
+    {
+      "text": "把这篇文章翻译成英文",
+      "family": "translate"
+    },
+    {
+      "text": "帮我下载二十篇关于数字经济的文献",
+      "family": "literature_fetch"
+    },
+    {
+      "text": "用这份数据画个柱状图，对比三组均值",
+      "family": "bar_chart"
+    },
+    {
+      "text": "画一条 ROC 曲线并标注 AUC",
+      "family": "roc"
+    },
+    {
+      "text": "把这个实验结果做成森林图",
+      "family": "forest"
+    },
+    {
+      "text": "这张实验照片太暗了，帮我美化一下",
+      "family": "photo"
+    },
+    {
+      "text": "总结一下这个 PDF 讲了什么",
+      "family": "summary"
+    },
+    {
+      "text": "把 Excel 表格整理成热图",
+      "family": "heatmap"
+    }
+  ],
+  "near_neighbor": [
+    {
+      "text": "画一个 UML 类图，标注继承关系",
+      "family": "uml"
+    },
+    {
+      "text": "用 mermaid 画一个部署拓扑，能渲染成图片就行",
+      "family": "mermaid"
+    },
+    {
+      "text": "帮我做一个 PPT 封面的版式",
+      "family": "slide_layout"
+    },
+    {
+      "text": "把这个系统的数据库表关系画成 ER 图",
+      "family": "er"
+    },
+    {
+      "text": "画个思维导图整理会议纪要",
+      "family": "mindmap"
+    }
+  ]
+}

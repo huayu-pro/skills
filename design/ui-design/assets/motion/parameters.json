@@ -1,0 +1,275 @@
+[
+ {
+  "category": "duration",
+  "name": "微交互",
+  "value": "120–300ms",
+  "provenance": "Observed（65 站 + pilots）",
+  "source": "09 §7"
+ },
+ {
+  "category": "duration",
+  "name": "段落转场",
+  "value": "400–900ms",
+  "provenance": "Observed（65 站 + pilots）",
+  "source": "09 §7"
+ },
+ {
+  "category": "duration",
+  "name": "长循环",
+  "value": "1.4–24s",
+  "provenance": "Observed（pilots）",
+  "source": "09 §7"
+ },
+ {
+  "category": "duration",
+  "name": "超长 marquee",
+  "value": "42–148s",
+  "provenance": "Observed（65 站）",
+  "source": "09 §7"
+ },
+ {
+  "category": "duration",
+  "name": "手调进入值",
+  "value": "450ms",
+  "provenance": "Observed（343 站 76 次）",
+  "source": "09 §7"
+ },
+ {
+  "category": "duration",
+  "name": "Angelo 统一入场",
+  "value": "700ms × 21",
+  "provenance": "Observed（case 155-001）",
+  "source": "23 F1"
+ },
+ {
+  "category": "duration",
+  "name": "mono turn",
+  "value": "16s",
+  "provenance": "Observed（case 155-001）",
+  "source": "23 F1"
+ },
+ {
+  "category": "easing",
+  "name": "进入",
+  "value": "cubic-bezier(0,0,.2,1)",
+  "provenance": "Observed（主流）",
+  "source": "09 §8"
+ },
+ {
+  "category": "easing",
+  "name": "退出",
+  "value": "cubic-bezier(.4,0,1,1)",
+  "provenance": "Inferred",
+  "source": "09 §8"
+ },
+ {
+  "category": "easing",
+  "name": "强调/大转场",
+  "value": "cubic-bezier(.22,.8,.2,1)",
+  "provenance": "Observed",
+  "source": "09 §8"
+ },
+ {
+  "category": "easing",
+  "name": "GSAP 高频",
+  "value": "expo / power4 / power2.out",
+  "provenance": "Observed（343 站）",
+  "source": "09 §8"
+ },
+ {
+  "category": "reveal",
+  "name": "rootMargin",
+  "value": "200px",
+  "provenance": "Observed（87 站）",
+  "source": "09 §7"
+ },
+ {
+  "category": "reveal",
+  "name": "threshold",
+  "value": "0",
+  "provenance": "Observed（97 站）",
+  "source": "09 §7"
+ },
+ {
+  "category": "reveal",
+  "name": "位移",
+  "value": "16px",
+  "provenance": "Observed",
+  "source": "09 §7"
+ },
+ {
+  "category": "stagger",
+  "name": "CSS 同组",
+  "value": "20–50ms",
+  "provenance": "Observed/Authored",
+  "source": "09 §6"
+ },
+ {
+  "category": "stagger",
+  "name": "GSAP",
+  "value": "0.05–0.1s",
+  "provenance": "Observed（27 站）",
+  "source": "09 §6"
+ },
+ {
+  "category": "stagger",
+  "name": "总时长",
+  "value": "≤300ms",
+  "provenance": "Authored",
+  "source": "09 §6"
+ },
+ {
+  "category": "horizontal",
+  "name": "follow",
+  "value": "lerp .15",
+  "provenance": "Observed（Tegra）",
+  "source": "22 F2"
+ },
+ {
+  "category": "horizontal",
+  "name": "decay",
+  "value": ".95 / .92",
+  "provenance": "Observed（Tegra）",
+  "source": "22 F2"
+ },
+ {
+  "category": "horizontal",
+  "name": "velocity",
+  "value": "touch 12 / mouse 8",
+  "provenance": "Observed（Tegra）",
+  "source": "22 F2"
+ },
+ {
+  "category": "horizontal",
+  "name": "boundary",
+  "value": "*.15",
+  "provenance": "Observed（Tegra）",
+  "source": "22 F2"
+ },
+ {
+  "category": "belt",
+  "name": "BASE",
+  "value": "62px/s",
+  "provenance": "Observed（pilots case 04）",
+  "source": "22 F11"
+ },
+ {
+  "category": "belt",
+  "name": "MAX",
+  "value": "900",
+  "provenance": "Observed（pilots case 04）",
+  "source": "22 F11"
+ },
+ {
+  "category": "belt",
+  "name": "friction",
+  "value": "1.1",
+  "provenance": "Observed（pilots case 04）",
+  "source": "22 F11"
+ },
+ {
+  "category": "belt",
+  "name": "SPACING",
+  "value": "300",
+  "provenance": "Observed（pilots case 04）",
+  "source": "22 F11"
+ },
+ {
+  "category": "depth",
+  "name": "scale",
+  "value": "0.72–1.06",
+  "provenance": "Observed（pilots case 01）",
+  "source": "09 §4"
+ },
+ {
+  "category": "depth",
+  "name": "blur",
+  "value": "(1-depth)*1.1",
+  "provenance": "Observed（pilots case 01）",
+  "source": "09 §4"
+ },
+ {
+  "category": "depth",
+  "name": "z-index",
+  "value": "60 ± depth*40",
+  "provenance": "Observed（pilots case 01）",
+  "source": "09 §4"
+ },
+ {
+  "category": "depth",
+  "name": "opacity",
+  "value": "0.62–1.0",
+  "provenance": "Observed（pilots case 01）",
+  "source": "09 §4"
+ },
+ {
+  "category": "pin",
+  "name": "budget",
+  "value": "320vh",
+  "provenance": "Authored",
+  "source": "22 F1"
+ },
+ {
+  "category": "pin",
+  "name": "end",
+  "value": "innerHeight * duration * .78",
+  "provenance": "Observed（mappy）",
+  "source": "22 F1"
+ },
+ {
+  "category": "audio",
+  "name": "fftSize",
+  "value": "256（128 bins；64 bars）",
+  "provenance": "Authored",
+  "source": "22 F8"
+ },
+ {
+  "category": "audio",
+  "name": "bar mapping",
+  "value": "scaleY(0.06 + v * 0.94)",
+  "provenance": "Authored",
+  "source": "22 F8"
+ },
+ {
+  "category": "cursor",
+  "name": "dot follow",
+  "value": "direct set (no lerp)",
+  "provenance": "Authored",
+  "source": "22 F7"
+ },
+ {
+  "category": "cursor",
+  "name": "ring follow",
+  "value": "lerp .16",
+  "provenance": "Authored",
+  "source": "22 F7"
+ },
+ {
+  "category": "perf",
+  "name": "rAF dt cap",
+  "value": "1/30s",
+  "provenance": "Authored",
+  "source": "22 §2.1"
+ },
+ {
+  "category": "perf",
+  "name": "DPR cap",
+  "value": "2",
+  "provenance": "Authored",
+  "source": "22 §4"
+ },
+ {
+  "category": "perf",
+  "name": "frame budget",
+  "value": "<8ms",
+  "provenance": "Authored",
+  "source": "22 §4"
+ },
+ {
+  "category": "a11y",
+  "name": "flash",
+  "value": "≤3 次/秒",
+  "provenance": "WCAG",
+  "source": "09 §10"
+ }
+]

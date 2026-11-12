@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" font-family="Noto Sans CJK SC, sans-serif">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" /></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6BB0" /></marker>
+<marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E8833A" /></marker>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3E9B6C" /></marker>
+<marker id="arrY" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8A94A6" /></marker>
+</defs>
+<rect width="1200" height="760" fill="#FFFFFF" />
+
+<rect x="48" y="48" width="1104" height="104" rx="10" fill="#2F6BB0" fill-opacity="0.06" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="64" y="72" font-size="13" font-weight="700" fill="#2F6BB0" text-anchor="start">篇章层</text>
+<rect x="48" y="176" width="1104" height="112" rx="10" fill="#E8833A" fill-opacity="0.06" stroke="#E8833A" stroke-width="1.5" />
+<text x="64" y="200" font-size="13" font-weight="700" fill="#E8833A" text-anchor="start">最高层</text>
+<rect x="48" y="312" width="1104" height="216" rx="10" fill="#3E9B6C" fill-opacity="0.06" stroke="#3E9B6C" stroke-width="1.5" />
+<text x="64" y="336" font-size="13" font-weight="700" fill="#3E9B6C" text-anchor="start">第二层</text>
+<rect x="48" y="552" width="1104" height="120" rx="10" fill="#8A94A6" fill-opacity="0.06" stroke="#8A94A6" stroke-width="1.5" />
+<text x="64" y="576" font-size="13" font-weight="700" fill="#8A94A6" text-anchor="start">分析维度</text>
+<rect x="144" y="72" width="1008" height="56" rx="6" fill="#2F6BB0" stroke="#2F6BB0" stroke-width="1.5" />
+<text x="648" y="100" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="648" y="100" font-size="16" font-weight="700" fill="#FFFFFF">文本层级分析框架</tspan></text>
+<rect x="144" y="200" width="1008" height="64" rx="6" fill="#FDF3EA" stroke="#E8833A" stroke-width="1.5" />
+<text x="648" y="232" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="648" y="232" font-size="16" font-weight="700" fill="#1A1A1A">第一层：总体主题界定</tspan></text>
+<rect x="144" y="336" width="240" height="176" rx="6" fill="#EDF7F2" stroke="#3E9B6C" stroke-width="1.5" />
+<text x="264" y="413" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="264" y="413" font-size="13" font-weight="700" fill="#1A1A1A">第二层·要素一</tspan><tspan x="264" y="434" font-size="13" font-weight="400" fill="#1A1A1A">界定说明</tspan></text>
+<rect x="400" y="336" width="240" height="176" rx="6" fill="#EDF7F2" stroke="#3E9B6C" stroke-width="1.5" />
+<text x="520" y="413" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="520" y="413" font-size="13" font-weight="700" fill="#1A1A1A">第二层·要素二</tspan><tspan x="520" y="434" font-size="13" font-weight="400" fill="#1A1A1A">界定说明</tspan></text>
+<rect x="656" y="336" width="240" height="176" rx="6" fill="#EDF7F2" stroke="#3E9B6C" stroke-width="1.5" />
+<text x="776" y="413" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="776" y="413" font-size="13" font-weight="700" fill="#1A1A1A">第二层·要素三</tspan><tspan x="776" y="434" font-size="13" font-weight="400" fill="#1A1A1A">界定说明</tspan></text>
+<rect x="912" y="336" width="240" height="176" rx="6" fill="#EDF7F2" stroke="#3E9B6C" stroke-width="1.5" />
+<text x="1032" y="413" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="1032" y="413" font-size="13" font-weight="700" fill="#1A1A1A">第二层·要素四</tspan><tspan x="1032" y="434" font-size="13" font-weight="400" fill="#1A1A1A">界定说明</tspan></text>
+<path d="M600,264 V296" stroke="#3E9B6C" stroke-width="1.5" fill="none" marker-end="url(#arrG)" />
+<path d="M264,296 H1032" stroke="#3E9B6C" stroke-width="1.5" fill="none" />
+<path d="M264,296 V336" stroke="#3E9B6C" stroke-width="1.5" fill="none" marker-end="url(#arrG)" />
+<path d="M520,296 V336" stroke="#3E9B6C" stroke-width="1.5" fill="none" marker-end="url(#arrG)" />
+<path d="M776,296 V336" stroke="#3E9B6C" stroke-width="1.5" fill="none" marker-end="url(#arrG)" />
+<path d="M1032,296 V336" stroke="#3E9B6C" stroke-width="1.5" fill="none" marker-end="url(#arrG)" />
+<rect x="144" y="576" width="320" height="72" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="304" y="612" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="304" y="612" font-size="13" font-weight="700" fill="#1A1A1A">文本识别与标注</tspan></text>
+<rect x="488" y="576" width="320" height="72" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="648" y="612" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="648" y="612" font-size="13" font-weight="700" fill="#1A1A1A">层级关系判定</tspan></text>
+<rect x="832" y="576" width="320" height="72" rx="6" fill="#F4F8FD" stroke="#4A86C5" stroke-width="1.5" />
+<text x="992" y="612" font-size="13" font-weight="400" fill="#1A1A1A" text-anchor="middle"><tspan x="992" y="612" font-size="13" font-weight="700" fill="#1A1A1A">功能阐释</tspan></text>
+<path d="M600,152 V176" stroke="#2F6BB0" stroke-width="1.5" fill="none" marker-end="url(#arrB)" />
+<path d="M600,528 V552" stroke="#8A94A6" stroke-width="1.5" fill="none" marker-end="url(#arrY)" />
+</svg>

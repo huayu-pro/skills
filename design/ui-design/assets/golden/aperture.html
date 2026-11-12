@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Aperture — Every decision needs its evidence</title>
+<!--
+  Built with UI Design 3.0.
+  Component patterns: ui3-hero-split-d83e01ab, ui3-feature-bento-9db5cf1510,
+  ui3-pricing-cards-b596dea6, ui3-testimonial-grid-1e5ca7fa,
+  ui3-footer-mega-9b7a6230. Page art direction rewritten for this demo.
+-->
+<style>
+:root{
+  --paper:#f1eee4;
+  --paper-2:#e9e4d6;
+  --ink:#111110;
+  --red:#df3f26;
+  --blue:#1e33c8;
+  --mute:#6e6c62;
+  --line:rgba(17,17,16,.16);
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);overflow-x:hidden}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(90deg,rgba(17,17,16,.05) 1px,transparent 1px),
+    linear-gradient(rgba(17,17,16,.05) 1px,transparent 1px);
+  background-size:64px 64px;
+}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p,dl,dd,dt,figure,blockquote{margin:0}
+.sheet{position:relative;z-index:1;max-width:1440px;margin:0 auto;background:var(--paper);border-left:1px solid var(--line);border-right:1px solid var(--line)}
+
+/* status strip */
+.strip{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:9px 40px;border-bottom:1px solid var(--line);font:9.5px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--mute)}
+.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--red);margin-right:6px;animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* nav */
+.bar{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:0 40px;height:72px}
+.brand{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:600;letter-spacing:-.03em}
+.brand-mark{width:13px;height:13px;border:2px solid var(--ink);border-radius:50%;position:relative;flex:none}
+.brand-mark::after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:var(--red);left:2px;top:2px}
+.links{display:flex;gap:26px}
+.links a{font:10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:6px 0;border-bottom:1px solid transparent}
+.links a:hover{border-color:var(--red);color:var(--red)}
+.nav-cta{font:10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--ink);padding:11px 16px}
+.nav-cta:hover{background:var(--ink);color:var(--paper)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.06fr .94fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hero-copy{padding:62px 54px 52px 40px;border-right:1px solid var(--line)}
+.kicker{font:10px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+h1{font-size:clamp(44px,6.4vw,98px);line-height:.84;letter-spacing:-.052em;font-weight:500}
+h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--red);letter-spacing:-.03em}
+.lede{max-width:430px;margin-top:30px;font-size:13.5px;line-height:1.74;color:#3b3a33}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 20px;border:1px solid var(--ink);font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase;transition:background .2s,color .2s,border-color .2s}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--red);border-color:var(--red);color:#fff}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px;padding-top:20px;border-top:1px solid var(--line)}
+.facts dt{font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.facts dd{font:15px var(--mono);letter-spacing:-.02em}
+
+/* ledger panel */
+.hero-panel{display:flex;flex-direction:column;background:#f6f3ea}
+.panel-head{display:flex;justify-content:space-between;gap:12px;padding:15px 20px;border-bottom:1px solid var(--line);font:9.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:40px 1fr 50px 58px;gap:10px;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line);font-size:12.5px;transition:background .18s,color .18s}
+.rows li:hover{background:var(--red);color:#fff}
+.no{font:10px var(--mono);color:var(--mute)}
+.rows li:hover .no{color:rgba(255,255,255,.72)}
+.conf{font:10px var(--mono);text-align:right}
+.tag{font:8.5px var(--mono);text-transform:uppercase;letter-spacing:.1em;border:1px solid currentColor;padding:4px 5px;text-align:center}
+.chart{padding:20px;border-bottom:1px solid var(--line)}
+.chart svg{display:block;width:100%;height:auto}
+.panel-foot{display:flex;justify-content:space-between;gap:10px;padding:13px 20px;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:auto}
+
+/* measure bar */
+.measure{padding:0 40px}
+.ticks{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:8px;margin-top:24px}
+.ticks i{font:9px var(--mono);font-style:normal;color:var(--mute);position:relative;width:1px}
+.ticks i::before{content:"";position:absolute;left:0;top:-8px;width:1px;height:7px;background:var(--line)}
+
+/* section head */
+.sec-head{display:grid;grid-template-columns:1.35fr .65fr;gap:48px;align-items:end;padding:48px 0 30px;border-bottom:1px solid var(--line)}
+.sec-head h2{font-size:clamp(26px,3.2vw,44px);line-height:1;letter-spacing:-.04em;font-weight:500}
+.sec-note{font-size:12.5px;line-height:1.72;color:var(--mute);max-width:330px}
+
+/* method */
+.method,.records,.plans{padding-left:40px;padding-right:40px}
+.tri{display:grid;grid-template-columns:repeat(3,1fr)}
+.tri article{padding:34px 28px 38px 0;border-right:1px solid var(--line);transition:color .2s}
+.tri article:nth-child(2){padding-left:28px}
+.tri article:last-child{border-right:0;padding-left:28px;padding-right:0}
+.tri article:hover .idx{color:var(--red)}
+.idx{display:block;font:10px var(--mono);letter-spacing:.16em;color:var(--mute);transition:color .2s}
+.tri h3{font-size:26px;letter-spacing:-.03em;margin:14px 0 12px;font-weight:500}
+.tri p{font-size:12.5px;line-height:1.76;color:var(--mute);margin-bottom:20px;max-width:300px}
+.tri ul{list-style:none;margin:0;padding:0;font:9.5px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.tri li{padding:9px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}
+.tri li span{color:var(--mute)}
+
+/* records */
+.records{padding-bottom:72px}
+.tr{display:grid;grid-template-columns:52px 1.7fr 1fr 64px 92px;gap:16px;align-items:center;padding:17px 0;border-top:1px solid var(--line);font-size:13px;transition:background .18s,color .18s}
+.tr.th{font:9px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);padding:12px 0}
+.tr:not(.th):hover{background:var(--ink);color:var(--paper);padding-left:14px;padding-right:14px;margin:0 -14px}
+.tr .num{font:10px var(--mono);color:var(--mute)}
+.tr .src{font:10.5px var(--mono);color:var(--mute)}
+.tr .status{font:8.5px var(--mono);text-transform:uppercase;letter-spacing:.1em;text-align:center;padding:5px 0;border:1px solid currentColor}
+.status.red{color:var(--red)}
+
+/* quote */
+.quote{padding:76px 40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2)}
+blockquote{font-family:var(--serif);font-size:clamp(23px,3.1vw,42px);line-height:1.24;letter-spacing:-.02em;max-width:1010px}
+blockquote em{color:var(--red);font-style:italic}
+figcaption{margin-top:28px;font:9.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+
+/* plans */
+.plans{padding-bottom:76px}
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+.plan{padding:28px 26px 30px;border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:420px;transition:background .25s}
+.plan:last-child{border-right:0}
+.plan.feat{background:var(--ink);color:var(--paper)}
+.plan-top{display:flex;justify-content:space-between;gap:10px;font:9px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.plan.feat .plan-top{color:rgba(241,238,228,.62)}
+.plan h3{font-size:29px;margin-top:28px;letter-spacing:-.03em;font-weight:500}
+.price{font:clamp(34px,3.3vw,48px)/1 var(--mono);letter-spacing:-.05em;margin:26px 0 8px}
+.per{font:9.5px var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute);margin-bottom:26px}
+.plan.feat .per{color:#a8a49a}
+.plan ul{list-style:none;margin:0 0 30px;padding:0;font-size:12px}
+.plan li{padding:10px 0;border-top:1px solid var(--line);display:flex;gap:10px}
+.plan.feat li{border-color:rgba(241,238,228,.18)}
+.plan li::before{content:"—";color:var(--red)}
+.plan .btn{margin-top:auto;justify-content:center}
+.plan.feat .btn{border-color:var(--paper);color:var(--paper)}
+
+/* cta */
+.cta{padding:84px 40px 76px;border-top:1px solid var(--ink);display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end}
+.cta h2{font-size:clamp(38px,5.6vw,82px);line-height:.9;letter-spacing:-.05em;font-weight:500}
+.cta h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--red)}
+.cta-side p{font-size:12.5px;line-height:1.72;color:var(--mute);margin-bottom:22px;max-width:340px}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:38px 40px 26px;display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:30px}
+footer h4{font:9px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin:0 0 14px;font-weight:400}
+footer a{display:block;font-size:12px;margin-bottom:9px}
+footer a:hover{color:var(--red)}
+.foot-brand p{font-size:12px;line-height:1.7;color:var(--mute);max-width:290px;margin-top:12px}
+.legal{grid-column:1/-1;display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);margin-top:18px;padding-top:14px;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+
+/* motion */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:1000px){
+  .hero{grid-template-columns:1fr}
+  .hero-copy{border-right:0;border-bottom:1px solid var(--line)}
+  .sec-head{grid-template-columns:1fr;gap:18px}
+  .tri{grid-template-columns:1fr}
+  .tri article,.tri article:nth-child(2),.tri article:last-child{border-right:0;border-bottom:1px solid var(--line);padding:28px 0}
+  .plan-grid{grid-template-columns:1fr}
+  .plan{border-right:0;border-bottom:1px solid var(--line);min-height:0}
+  .cta{grid-template-columns:1fr;align-items:start}
+}
+@media (max-width:720px){
+  .sheet{border:0}
+  .strip{padding:9px 18px}
+  .strip-mid{display:none}
+  .links{display:none}
+  .bar{height:64px;padding:0 18px}
+  .hero-copy{padding:40px 18px 36px}
+  h1{font-size:clamp(40px,12vw,62px)}
+  .facts{grid-template-columns:1fr 1fr}
+  .measure{padding:0 18px}
+  .method,.records,.plans{padding-left:18px;padding-right:18px}
+  .sec-head{padding:34px 0 22px}
+  .tr{grid-template-columns:34px 1fr 56px;gap:10px;font-size:12px}
+  .tr .src,.tr .status,.tr .th-src,.tr .th-status{display:none}
+  .tr:not(.th):hover{margin:0;padding-left:0;padding-right:0}
+  .quote{padding:52px 18px}
+  .cta{padding:56px 18px 52px;gap:26px}
+  footer{padding:30px 18px 22px;grid-template-columns:1fr 1fr;gap:22px}
+  .legal{display:block;line-height:1.9}
+  .plan{padding:24px 0 26px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation:none !important}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="strip">
+    <span>Aperture Systems</span>
+    <span class="strip-mid">Instrument No. 07 — Product evidence ledger</span>
+    <span><i class="dot"></i>Live · 08 Nov 2026</span>
+  </div>
+
+  <nav class="bar">
+    <a class="brand" href="#"><span class="brand-mark" aria-hidden="true"></span>Aperture</a>
+    <nav class="links" aria-label="Primary">
+      <a href="#method">Method</a>
+      <a href="#records">Records</a>
+      <a href="#plans">Plans</a>
+      <a href="#company">Company</a>
+    </nav>
+    <a class="nav-cta" href="#plans">Request access ↗</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-copy">
+      <p class="kicker">Evidence infrastructure for product teams</p>
+      <h1>Every<br>decision<br>needs its<br><em>evidence.</em></h1>
+      <p class="lede">Aperture records what your product actually did — the cohort, the moment, the abandoned path — so the next move is argued from proof instead of memory.</p>
+      <div class="actions">
+        <a class="btn solid" href="#method">Open the ledger</a>
+        <a class="btn" href="#records">Read a record ↗</a>
+      </div>
+      <dl class="facts">
+        <div><dt>Sources traced</dt><dd>42</dd></div>
+        <div><dt>Median time to proof</dt><dd>11 min</dd></div>
+        <div><dt>Records retained</dt><dd>13 mo</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero-panel" aria-label="Signal ledger excerpt">
+      <div class="panel-head"><span>Signal ledger</span><span>Excerpt · 04 rows</span></div>
+      <ol class="rows">
+        <li><span class="no">001</span><span>Onboarding drop at step 3</span><span class="conf">0.94</span><span class="tag">open</span></li>
+        <li><span class="no">002</span><span>Enterprise cohort expanded</span><span class="conf">0.88</span><span class="tag">closed</span></li>
+        <li><span class="no">003</span><span>Retention signal confirmed</span><span class="conf">0.91</span><span class="tag">open</span></li>
+        <li><span class="no">004</span><span>Pricing page recoil</span><span class="conf">0.76</span><span class="tag">watch</span></li>
+      </ol>
+      <div class="chart">
+        <svg viewBox="0 0 420 132" role="img" aria-label="Signal volume over thirty days, rising, with one cohort annotation">
+          <g stroke="rgba(17,17,16,.13)" stroke-width="1">
+            <line x1="0" y1="24" x2="420" y2="24"/>
+            <line x1="0" y1="56" x2="420" y2="56"/>
+            <line x1="0" y1="88" x2="420" y2="88"/>
+            <line x1="0" y1="120" x2="420" y2="120"/>
+          </g>
+          <path d="M0 108 L38 100 L76 104 L114 86 L152 90 L190 68 L228 72 L266 50 L304 56 L342 34 L380 40 L420 26" fill="none" stroke="#111110" stroke-width="1.6"/>
+          <line x1="304" y1="12" x2="304" y2="120" stroke="#df3f26" stroke-width="1" stroke-dasharray="3 3"/>
+          <circle cx="304" cy="56" r="3.6" fill="#df3f26"/>
+          <text x="310" y="18" font-family="monospace" font-size="8" letter-spacing="1" fill="#df3f26">COHORT SHIFT</text>
+        </svg>
+      </div>
+      <div class="panel-foot"><span>Window 30d</span><span>Cohort · enterprise</span><span>Verified</span></div>
+    </div>
+  </div>
+
+  <section class="measure" aria-hidden="true">
+    <div class="ticks"><i>0</i><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i></div>
+  </section>
+
+  <section class="method" id="method">
+    <div class="sec-head">
+      <div>
+        <p class="kicker">Method</p>
+        <h2>Three moves,<br>one record.</h2>
+      </div>
+      <p class="sec-note">No dashboards to interpret, no screenshots to trust. Each claim in the ledger carries the path that produced it.</p>
+    </div>
+    <div class="tri">
+      <article>
+        <span class="idx">01</span>
+        <h3>Observe</h3>
+        <p>Capture behavior at the moment it happens: the step, the dwell, the drop, the return visit.</p>
+        <ul><li>Event capture <span>always on</span></li><li>Session context <span>30d</span></li><li>Sampling bias <span>none</span></li></ul>
+      </article>
+      <article>
+        <span class="idx">02</span>
+        <h3>Trace</h3>
+        <p>Follow a signal back through the funnel and forward into the cohort it actually belongs to.</p>
+        <ul><li>Path reconstruction <span>full</span></li><li>Cohort match <span>0.94</span></li><li>Attribution <span>explicit</span></li></ul>
+      </article>
+      <article>
+        <span class="idx">03</span>
+        <h3>Defend</h3>
+        <p>Publish the record with its source, confidence and dissent attached, so it survives the meeting.</p>
+        <ul><li>Claim record <span>signed</span></li><li>Revision history <span>kept</span></li><li>Dissent <span>attached</span></li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="records" id="records">
+    <div class="sec-head">
+      <div>
+        <p class="kicker">Ledger excerpt</p>
+        <h2>Claims with<br>receipts.</h2>
+      </div>
+      <p class="sec-note">A record is not a chart. It is a statement, its evidence and the confidence the team assigned to it.</p>
+    </div>
+    <div class="table">
+      <div class="tr th"><span>No.</span><span>Claim</span><span class="th-src">Source</span><span>Conf.</span><span class="th-status">Status</span></div>
+      <div class="tr"><span class="num">001</span><span>Users abandon onboarding at the workspace step</span><span class="src">funnel · 30d</span><span class="num">0.94</span><span class="status red">open</span></div>
+      <div class="tr"><span class="num">002</span><span>Enterprise seats grew after the audit release</span><span class="src">billing · 90d</span><span class="num">0.88</span><span class="status">closed</span></div>
+      <div class="tr"><span class="num">003</span><span>Week two retention is the real activation moment</span><span class="src">cohort · 13mo</span><span class="num">0.91</span><span class="status red">open</span></div>
+      <div class="tr"><span class="num">004</span><span>Pricing page recoil concentrates above the third tier</span><span class="src">heat · 14d</span><span class="num">0.76</span><span class="status">watch</span></div>
+      <div class="tr"><span class="num">005</span><span>Support threads predict churn nine days earlier</span><span class="src">notes · 6mo</span><span class="num">0.83</span><span class="status">watch</span></div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <figure class="reveal">
+      <blockquote>We stopped arguing about what users <em>wanted</em> and started looking at the same record. Aperture gave the team a shared memory — and a shorter meeting.</blockquote>
+      <figcaption>Maya Chen · VP Product, Northstar</figcaption>
+    </figure>
+  </section>
+
+  <section class="plans" id="plans">
+    <div class="sec-head">
+      <div>
+        <p class="kicker">Plans</p>
+        <h2>Priced like<br>an instrument.</h2>
+      </div>
+      <p class="sec-note">The ledger is the product. Seats and retention are the only variables.</p>
+    </div>
+    <div class="plan-grid">
+      <div class="plan">
+        <div class="plan-top"><span>01 · Field</span><span>Free</span></div>
+        <h3>Field</h3>
+        <p class="price">$0</p>
+        <p class="per">Per seat · forever</p>
+        <ul><li>1 workspace</li><li>3 sources traced</li><li>30-day record</li><li>Community support</li></ul>
+        <a class="btn" href="#plans">Start free</a>
+      </div>
+      <div class="plan feat">
+        <div class="plan-top"><span>02 · Signal</span><span>Most used</span></div>
+        <h3>Signal</h3>
+        <p class="price">$49</p>
+        <p class="per">Per seat / month</p>
+        <ul><li>Unlimited workspaces</li><li>Unlimited sources</li><li>12-month record</li><li>Signed claim records</li><li>Priority support</li></ul>
+        <a class="btn" href="#plans">Book a demo ↗</a>
+      </div>
+      <div class="plan">
+        <div class="plan-top"><span>03 · Archive</span><span>Custom</span></div>
+        <h3>Archive</h3>
+        <p class="price">Custom</p>
+        <p class="per">Annual · enterprise</p>
+        <ul><li>SSO and audit trail</li><li>Custom retention</li><li>Dedicated partner</li><li>Security review</li></ul>
+        <a class="btn" href="#plans">Talk to us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="company">
+    <h2>Bring <em>evidence</em><br>to the room.</h2>
+    <div class="cta-side">
+      <p>Start with one signal worth defending. We will help you trace it, record it and take it into the next decision.</p>
+      <div class="actions">
+        <a class="btn solid" href="#plans">Request access</a>
+        <a class="btn" href="#method">Read the method</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-brand">
+      <a class="brand" href="#"><span class="brand-mark" aria-hidden="true"></span>Aperture</a>
+      <p>Evidence infrastructure for teams who would rather see clearly than guess confidently.</p>
+    </div>
+    <div><h4>Product</h4><a href="#records">Ledger</a><a href="#method">Method</a><a href="#plans">Plans</a><a href="#company">Changelog</a></div>
+    <div><h4>Company</h4><a href="#company">About</a><a href="#company">Careers</a><a href="#company">Press</a><a href="#company">Contact</a></div>
+    <div><h4>Resources</h4><a href="#records">Record index</a><a href="#method">Documentation</a><a href="#plans">Security</a><a href="#company">Status</a></div>
+    <div class="legal"><span>© 2026 Aperture Systems, Inc.</span><span>Built with UI Design 3.0 · no external assets</span></div>
+  </footer>
+</div>
+<script>
+(function(){
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    items.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+    });
+  }, {threshold: .15, rootMargin: '0px 0px -8% 0px'});
+  items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

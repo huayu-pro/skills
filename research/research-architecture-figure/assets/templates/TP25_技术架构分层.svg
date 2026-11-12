@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1162" height="476" viewBox="23 103 1162 476" font-family="Noto Sans CJK SC, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6B7E" />
+    </marker>
+  </defs>
+  <rect width="1200" height="600" fill="#FFFFFF" />
+
+  
+  <circle cx="128" cy="320" r="56" fill="#FFFFFF" stroke="#2F6BB0" stroke-width="1.5" />
+  <path d="M 84,320 A 44,44 0 0 1 150,282" fill="none" stroke="#2F6BB0" stroke-width="10" />
+  <path d="M 150,282 A 44,44 0 0 1 150,358" fill="none" stroke="#A9C6E4" stroke-width="10" />
+  <path d="M 150,358 A 44,44 0 0 1 84,320" fill="none" stroke="#5E93CC" stroke-width="10" />
+  <circle cx="128" cy="320" r="21" fill="#2F6BB0" />
+  <circle cx="128" cy="320" r="21" fill="none" stroke="#FFFFFF" stroke-width="3" />
+
+  
+  <rect x="312" y="152" width="240" height="336" rx="16" fill="#F7FAFD" stroke="#4A86C5" stroke-width="1.5" />
+  <rect x="352" y="224" width="160" height="64" rx="6" fill="#DCE7F5" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="432" y="260" font-size="14" text-anchor="middle" fill="#1A1A1A">Vue</text>
+  <rect x="352" y="352" width="160" height="64" rx="6" fill="#DCE7F5" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="432" y="388" font-size="13" text-anchor="middle" fill="#1A1A1A">Element UI</text>
+  <text x="432" y="528" font-size="14" font-weight="700" text-anchor="middle" fill="#1A1A1A">前端页面</text>
+
+  
+  <rect x="672" y="152" width="240" height="336" rx="16" fill="#F7FAFD" stroke="#4A86C5" stroke-width="1.5" />
+  <rect x="712" y="184" width="160" height="64" rx="6" fill="#DCE7F5" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="792" y="220" font-size="14" text-anchor="middle" fill="#1A1A1A">Controller</text>
+  <rect x="712" y="288" width="160" height="64" rx="6" fill="#DCE7F5" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="792" y="324" font-size="14" text-anchor="middle" fill="#1A1A1A">Service</text>
+  <rect x="712" y="392" width="160" height="64" rx="6" fill="#DCE7F5" stroke="#4A86C5" stroke-width="1.5" />
+  <text x="792" y="428" font-size="14" text-anchor="middle" fill="#1A1A1A">DAO</text>
+  <line x1="792" y1="248" x2="792" y2="288" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)" marker-start="url(#arrow)" />
+  <line x1="792" y1="352" x2="792" y2="392" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)" marker-start="url(#arrow)" />
+  <text x="792" y="528" font-size="14" font-weight="700" text-anchor="middle" fill="#1A1A1A">后端服务器</text>
+
+  
+  <line x1="184" y1="320" x2="312" y2="320" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)" />
+  <line x1="552" y1="320" x2="672" y2="320" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)" />
+  <text x="612" y="304" font-size="12" text-anchor="middle" fill="#1A1A1A">Ajax</text>
+  <line x1="912" y1="320" x2="1040" y2="320" stroke="#5A6B7E" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  
+  <path d="M 1040,260 A 48,14 0 0 1 1136,260 L 1136,316 A 48,14 0 0 1 1040,316 Z" fill="#E8EDF4" stroke="#5A6B7E" stroke-width="1.5" />
+  <path d="M 1040,260 A 48,14 0 0 0 1136,260" fill="none" stroke="#5A6B7E" stroke-width="1.5" />
+  <text x="1088" y="296" font-size="13" text-anchor="middle" fill="#1A1A1A">MySQL</text>
+  <text x="1088" y="356" font-size="13" text-anchor="middle" fill="#1A1A1A">Server</text>
+</svg>

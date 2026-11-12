@@ -1,0 +1,130 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "07-color-lab",
+ "name": "Color Lab",
+ "family": "F14",
+ "family_name": "状态机 / 产品演示",
+ "tagline": "6 档明度 + hue shift + 饱和衰减；WCAG relative luminance 对比度。",
+ "sources": [
+  {
+   "id": "ui3-form-contact-585e8164",
+   "type": "form-contact",
+   "hierarchy": "molecule",
+   "role": "form-contact structure"
+  },
+  {
+   "id": "ui3-form-contact-634765d0",
+   "type": "form-contact",
+   "hierarchy": "block",
+   "role": "form-contact structure"
+  },
+  {
+   "id": "ui3-form-contact-b3462718",
+   "type": "form-contact",
+   "hierarchy": "block",
+   "role": "form-contact structure"
+  },
+  {
+   "id": "ui3-form-contact-5c0a0677",
+   "type": "form-contact",
+   "hierarchy": "block",
+   "role": "form-contact structure"
+  },
+  {
+   "id": "ui3-form-contact-22b7248f",
+   "type": "form-contact",
+   "hierarchy": "molecule",
+   "role": "form-contact structure"
+  }
+ ],
+ "engines": [
+  {
+   "name": "ColorEngine",
+   "evidence": "observed-repro"
+  }
+ ],
+ "motion": {
+  "trigger": "click",
+  "duration_ms": 360,
+  "duration_mode": "fixed",
+  "easing": "cubic-bezier(.2,.8,.2,1)",
+  "states": [
+   "idle",
+   "rendering",
+   "reduced"
+  ],
+  "fallback": "prefers-reduced-motion: 色阶直接出现，无 360ms/20ms stagger",
+  "properties": [
+   "opacity",
+   "transform",
+   "background-color"
+  ],
+  "category": "state-transition",
+  "advanced": false,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "bases",
+   "value": "Graphite / Vermilion / Amber / Blue",
+   "provenance": "Observed-repro"
+  },
+  {
+   "name": "lightness",
+   "value": "94 / 82 / 68 / 54 / 38 / 22",
+   "provenance": "Observed-repro"
+  },
+  {
+   "name": "hue shift",
+   "value": "t × 10° + 用户 -30..30°",
+   "provenance": "Observed-repro"
+  },
+  {
+   "name": "saturation",
+   "value": "s × (1 - |50-L|/180) × 1.05 × spread",
+   "provenance": "Observed-repro"
+  },
+  {
+   "name": "contrast",
+   "value": "WCAG relative luminance",
+   "provenance": "Observed-repro"
+  },
+  {
+   "name": "reveal",
+   "value": "360ms / 20ms stagger",
+   "provenance": "Authored"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Tab",
+   "Arrow keys",
+   "Home",
+   "End"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "交互元素有 aria-label / aria-valuenow / aria-pressed"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "picker 用 HSL 映射，不是 OKLCH",
+  "对比度按 WCAG 2.1，不含 APCA"
+ ]
+}

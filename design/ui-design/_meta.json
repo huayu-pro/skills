@@ -1,0 +1,10 @@
+{
+ "name": "ui-design",
+ "version": "4.5.1",
+ "publishedAt": "2026-11-12",
+ "author": "workspace",
+ "category": "design",
+ "entry": "SKILL.md",
+ "license": "MIT",
+ "notes": "Aesthetic-first website design skill. 17 runtime-verified motion components, 84 brand languages, 14 archetypes, three component-library adapters. Compact package: 195 files (collections consolidated)."
+}
