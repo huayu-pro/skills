@@ -1,0 +1,102 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "17-video-collage",
+ "name": "Video Collage",
+ "family": "F13",
+ "family_name": "视频拼贴 / 多图层",
+ "tagline": "6 块版面零件，按 depth .6–1.25 做指针视差；离屏 IO 暂停；真实视频替换占位后同一 mount 支持播放/暂停。",
+ "sources": [
+  {
+   "id": "kit-08-collage",
+   "type": "mechanism-kit",
+   "role": "collage drag/snap"
+  },
+  {
+   "id": "case-155-067-flowjam",
+   "type": "atlas-case",
+   "role": "video + cursor narrative"
+  },
+  {
+   "id": "case-156-159-shopify",
+   "type": "atlas-case",
+   "role": "60-screen video composition"
+  }
+ ],
+ "engines": [
+  {
+   "name": "CollageField",
+   "evidence": "authored"
+  }
+ ],
+ "motion": {
+  "trigger": "pointer",
+  "duration_ms": 450,
+  "duration_mode": "mixed",
+  "easing": "lerp .12 / cubic-bezier(.22,.8,.2,1)",
+  "states": [
+   "idle",
+   "parallax",
+   "paused",
+   "offscreen",
+   "reduced"
+  ],
+  "fallback": "prefers-reduced-motion: 取消视差与 CSS 漂移；视频暂停并保留 poster",
+  "properties": [
+   "transform"
+  ],
+  "category": "video",
+  "advanced": true,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "depths",
+   "value": ".6 / .7 / .85 / 1 / 1.1 / 1.25",
+   "provenance": "Authored"
+  },
+  {
+   "name": "parallax",
+   "value": "±10px × depth",
+   "provenance": "Authored"
+  },
+  {
+   "name": "follow",
+   "value": "lerp .12",
+   "provenance": "Observed（cursor 组）"
+  },
+  {
+   "name": "IO rootMargin",
+   "value": "120px",
+   "provenance": "Observed（接近 200px 主流）"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Pause all"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "pause aria-pressed + section aria-label"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "演示用 CSS 渐变占位，不包含真实视频资产；替换为 <video muted playsinline> 后同一 mount 生效",
+  "视差是 transform translate，不模拟 3D 透视；需要透视时加 perspective"
+ ]
+}

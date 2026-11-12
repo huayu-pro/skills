@@ -1,0 +1,280 @@
+/* 08-rotary-controls — 270° knobs + physical light switch */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: #0b0c0e;
+  color: #f4efe4;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a, button { font: inherit; color: inherit; }
+a { text-decoration: none; }
+button { cursor: pointer; }
+
+.rf-rotary {
+  --paper: #0b0c0e;
+  --ink: #f4efe4;
+  --muted: #948e82;
+  --line: rgba(244, 239, 228, .14);
+  --accent: #e8b45a;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+  transition: background .5s var(--ease), color .5s var(--ease);
+}
+.rf-rotary.is-light {
+  --paper: #f2eee4;
+  --ink: #1b1a17;
+  --muted: #6f6a60;
+  --line: rgba(27, 26, 23, .16);
+  --accent: #b3541e;
+}
+
+.rf-rotary__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px clamp(18px, 4vw, 56px);
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.rf-rotary__mark { color: var(--accent); font-weight: 700; }
+.rf-rotary__nav { display: flex; gap: 22px; }
+.rf-rotary__nav a { color: var(--muted); }
+.rf-rotary__nav a:hover, .rf-rotary__nav a:focus-visible { color: var(--ink); }
+.rf-rotary__theme {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  background: transparent;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.rf-rotary__theme:hover, .rf-rotary__theme:focus-visible { border-color: var(--accent); }
+
+.rf-rotary__console {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+  gap: clamp(28px, 5vw, 80px);
+  align-items: center;
+  padding: clamp(26px, 5vw, 72px) clamp(18px, 5vw, 72px);
+}
+.rf-rotary__stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 460px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 62%),
+    color-mix(in srgb, var(--paper) 92%, var(--ink) 8%);
+  overflow: hidden;
+}
+.rf-rotary__ring {
+  position: absolute;
+  width: min(52vw, 420px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(from -135deg, var(--accent) calc(var(--level, .68) * 270deg), color-mix(in srgb, var(--ink) 8%, transparent) 0);
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
+  opacity: .7;
+  transition: background .3s linear;
+}
+.rf-rotary__knobs {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(18px, 3vw, 40px);
+}
+.rf-rotary__knob { display: grid; justify-items: center; gap: 10px; }
+.rf-rotary__dial {
+  position: relative;
+  width: clamp(128px, 13vw, 178px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 36% 30%, color-mix(in srgb, var(--ink) 10%, transparent), transparent 36%),
+    radial-gradient(circle at 50% 55%, color-mix(in srgb, var(--paper) 80%, var(--ink) 20%), var(--paper) 72%);
+  touch-action: none;
+  box-shadow: 0 20px 60px -30px color-mix(in srgb, var(--ink) 50%, transparent);
+  transition: border-color .2s ease, background .5s var(--ease);
+}
+.rf-rotary__dial:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.rf-rotary__ticks { position: absolute; inset: 0; }
+.rf-rotary__tick {
+  position: absolute;
+  left: 50%;
+  top: 8%;
+  width: 1px;
+  height: 7px;
+  background: color-mix(in srgb, var(--ink) 28%, transparent);
+  transform-origin: 50% 50%;
+}
+.rf-rotary__pointer {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  width: 2px;
+  height: 34%;
+  margin-left: -1px;
+  background: var(--accent);
+  border-radius: 999px;
+  transform-origin: 50% 100%;
+  transform: rotate(var(--angle, 0deg));
+  transition: transform .12s linear;
+}
+.rf-rotary__center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+}
+.rf-rotary__name { color: var(--muted); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
+.rf-rotary__value {
+  font-family: ui-serif, Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.rf-rotary__side { display: grid; gap: 28px; }
+.rf-rotary__eyebrow { margin: 0; color: var(--accent); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+.rf-rotary__title {
+  margin: 10px 0 14px;
+  font-family: ui-serif, Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-size: clamp(42px, 5.4vw, 78px);
+  font-weight: 400;
+  line-height: .92;
+  letter-spacing: -.02em;
+}
+.rf-rotary__lede { margin: 0; max-width: 48ch; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.rf-rotary__lamp { display: grid; gap: 8px; }
+.rf-rotary__switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  justify-self: start;
+}
+.rf-rotary__switch-track {
+  position: relative;
+  width: 54px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 80%, var(--ink) 20%);
+  transition: background .28s var(--ease);
+}
+.rf-rotary__switch-thumb {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--ink);
+  transition: transform .28s var(--ease), background .28s var(--ease);
+}
+.rf-rotary__switch[aria-pressed="true"] .rf-rotary__switch-track { background: color-mix(in srgb, var(--accent) 55%, var(--paper)); }
+.rf-rotary__switch[aria-pressed="true"] .rf-rotary__switch-thumb { transform: translateY(20px); background: var(--paper); }
+.rf-rotary__switch-label { color: var(--muted); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.rf-rotary__hint { margin: 0; color: var(--muted); font-size: 11px; }
+.rf-rotary__open {
+  justify-self: start;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: color-mix(in srgb, var(--paper) 90%, #000 10%);
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.rf-rotary__open:hover, .rf-rotary__open:focus-visible { filter: brightness(1.05); }
+
+.rf-rotary__foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px clamp(18px, 4vw, 56px) 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.rf-rotary__foot p { margin: 0; max-width: 78ch; }
+.rf-rotary__foot strong { color: var(--ink); font-weight: 600; }
+.rf-rotary__foot code { color: var(--accent); font-size: 11px; }
+.rf-rotary__meta { flex: 0 0 auto; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+
+.rf-rotary__modal {
+  width: min(520px, 92vw);
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 50px 120px -40px rgba(0, 0, 0, .8);
+}
+.rf-rotary__modal::backdrop { background: rgba(4, 5, 7, .7); backdrop-filter: blur(6px); }
+.rf-rotary__close {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  font-size: 19px;
+}
+.rf-rotary__modal h2 {
+  margin: 8px 0 18px;
+  font-family: ui-serif, Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-size: 34px;
+  font-weight: 400;
+}
+.rf-rotary__summary { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; margin: 0 0 18px; }
+.rf-rotary__summary dt { color: var(--muted); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.rf-rotary__summary dd { margin: 3px 0 0; font-family: ui-serif, Georgia, "Times New Roman", "Noto Serif SC", serif; font-size: 24px; }
+.rf-rotary__modal-note { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+
+.rf-rotary.is-reduced .rf-rotary__dial,
+.rf-rotary.is-reduced .rf-rotary__pointer,
+.rf-rotary.is-reduced .rf-rotary__switch-thumb { transition: none; }
+
+@media (max-width: 860px) {
+  .rf-rotary__bar { padding: 16px 18px; }
+  .rf-rotary__nav { display: none; }
+  .rf-rotary__console { grid-template-columns: 1fr; padding: 20px 18px; }
+  .rf-rotary__stage { min-height: 380px; }
+  .rf-rotary__knobs { gap: 14px; }
+  .rf-rotary__dial { width: 112px; }
+  .rf-rotary__foot { display: block; }
+  .rf-rotary__meta { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rf-rotary, .rf-rotary__dial, .rf-rotary__pointer, .rf-rotary__switch-thumb, .rf-rotary__switch-track { transition: none; }
+}

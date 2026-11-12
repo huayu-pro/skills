@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>m05 autoplay bad</title>
+  <style>
+    body { margin: 0; background: #0b0d10; color: #f4efe4; font-family: system-ui, sans-serif; }
+    main { max-width: 720px; margin: 0 auto; padding: 80px 24px; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
+    .dot { width: 12px; height: 12px; border-radius: 50%; background: #e8b45a; animation: pulse 2s infinite; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Autoplay and no fallback.</h1>
+    <video autoplay src="clip.mp4"></video>
+    <div class="dot"></div>
+  </main>
+</body>
+</html>

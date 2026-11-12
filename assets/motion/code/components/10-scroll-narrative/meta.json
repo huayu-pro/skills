@@ -1,0 +1,129 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "10-scroll-narrative",
+ "name": "Scroll Narrative",
+ "family": "F1",
+ "family_name": "滚动叙事 / 分段揭示",
+ "tagline": "IO reveal 200px/450ms/16px + sticky pin 三段 + accordion + modal。",
+ "sources": [
+  {
+   "id": "ui3-navigation-bar-06c7a80c",
+   "type": "navigation-bar",
+   "hierarchy": "block",
+   "role": "navigation-bar structure"
+  },
+  {
+   "id": "ui3-navigation-bar-d0c95c6c",
+   "type": "navigation-bar",
+   "hierarchy": "page-section",
+   "role": "navigation-bar structure"
+  },
+  {
+   "id": "ui3-footer-mega-4bab00da",
+   "type": "footer-mega",
+   "hierarchy": "page-section",
+   "role": "footer-mega structure"
+  },
+  {
+   "id": "ui3-footer-mega-c5f68b11",
+   "type": "footer-mega",
+   "hierarchy": "page-section",
+   "role": "footer-mega structure"
+  }
+ ],
+ "engines": [
+  {
+   "name": "ScrollNarrative",
+   "evidence": "authored"
+  },
+  {
+   "name": "EditorialChrome",
+   "evidence": "authored"
+  }
+ ],
+ "motion": {
+  "trigger": "scroll",
+  "duration_ms": 450,
+  "duration_mode": "mixed",
+  "easing": "cubic-bezier(0,0,0.2,1)",
+  "states": [
+   "hidden",
+   "visible",
+   "pinned",
+   "reduced"
+  ],
+  "fallback": "prefers-reduced-motion: reveal 直接终态，pin 改为三段堆叠，导航不隐藏",
+  "properties": [
+   "opacity",
+   "transform",
+   "grid-template-rows"
+  ],
+  "category": "scroll",
+  "advanced": true,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "IO",
+   "value": "rootMargin 200px / threshold 0",
+   "provenance": "Observed（343 站）"
+  },
+  {
+   "name": "reveal",
+   "value": "450ms / 16px / cubic-bezier(0,0,0.2,1)",
+   "provenance": "Observed"
+  },
+  {
+   "name": "pin budget",
+   "value": "320vh",
+   "provenance": "Authored"
+  },
+  {
+   "name": "pin end",
+   "value": "innerHeight × duration × .78",
+   "provenance": "Observed（mappy）"
+  },
+  {
+   "name": "accordion",
+   "value": "grid-template-rows 0fr→1fr / .35s",
+   "provenance": "Observed（v2 ch09）"
+  },
+  {
+   "name": "nav hide",
+   "value": "scroll down > 160px",
+   "provenance": "Observed（kit 12）"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Tab",
+   "Enter",
+   "Space",
+   "Escape"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "交互元素有 aria-label / aria-valuenow / aria-pressed"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "pin 段落只有 3 个 beat，不是完整叙事",
+  "accordion 用 button + grid rows，不是原生 details"
+ ]
+}

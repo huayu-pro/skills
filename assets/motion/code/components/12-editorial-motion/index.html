@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editorial Motion — reverse-final</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='4' y='24' font-size='22' fill='%23e8b45a' font-family='Georgia'%3EE%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="component.css">
+</head>
+<body>
+  <main class="rf-editorial" data-rf="editorial-motion">
+    <header class="rf-editorial__bar">
+      <span class="rf-editorial__mark">EDITORIAL / 12</span>
+      <nav class="rf-editorial__nav" aria-label="主导航">
+        <a href="#issue">Issue</a>
+        <a href="#tabs">Index</a>
+        <a href="#colophon">Colophon</a>
+      </nav>
+      <span class="rf-editorial__issue">No. 12 / 2026</span>
+    </header>
+
+    <section class="rf-editorial__hero" id="issue">
+      <p class="rf-editorial__eyebrow">Line reveal .8s · char wave 1.4s · skew ±3°</p>
+      <h1 class="rf-editorial__lines" data-lines>
+        <span class="rf-editorial__line"><span>Type is</span></span>
+        <span class="rf-editorial__line"><span>a material.</span></span>
+        <span class="rf-editorial__line rf-editorial__line--wave"><span data-wave="MOTION"></span></span>
+      </h1>
+      <p class="rf-editorial__lede">行揭示用 110% mask + <code>.8s cubic-bezier(.2,.75,.2,1)</code>；逐字波 1.4s / 0.07s；marquee 用 <code>dt</code> 而不是帧。</p>
+    </section>
+
+    <div class="rf-editorial__marquee" aria-hidden="true">
+      <div class="rf-editorial__track" data-marquee></div>
+    </div>
+
+    <section class="rf-editorial__tabs-wrap" id="tabs" aria-label="编辑内容">
+      <div class="rf-editorial__tabs" role="tablist">
+        <button type="button" role="tab" data-tab="one" aria-selected="true">01 / Surface</button>
+        <button type="button" role="tab" data-tab="two" aria-selected="false">02 / Rhythm</button>
+        <button type="button" role="tab" data-tab="three" aria-selected="false">03 / Grain</button>
+      </div>
+      <div class="rf-editorial__panels">
+        <article class="rf-editorial__panel is-active" data-panel="one" role="tabpanel">
+          <h2>Surface</h2>
+          <p>标题不是“居中大字 + 副标题”，而是一块被轨道夹住的材料。行与行之间的留白是结构，不是 padding。</p>
+        </article>
+        <article class="rf-editorial__panel" data-panel="two" role="tabpanel">
+          <h2>Rhythm</h2>
+          <p>错峰 50–80ms，总长 ≤300ms；超过 8 项只对前 8 项错峰，其余直接出现。</p>
+        </article>
+        <article class="rf-editorial__panel" data-panel="three" role="tabpanel">
+          <h2>Grain</h2>
+          <p>噪点、纸纹、油墨渗印参与构图；不是全屏 overlay 的装饰。</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="rf-editorial__colophon" id="colophon">
+      <p><strong>Editorial Motion</strong> 合成 4 个结构来源：footer-mega、tabs-content、menu-mega、pricing-cards。动画名按语义拆分：line、wave、marquee、skew。</p>
+      <span class="rf-editorial__meta">110% mask · 1.4s wave · 42–148s marquee</span>
+    </footer>
+  </main>
+  <script src="component.js"></script>
+</body>
+</html>

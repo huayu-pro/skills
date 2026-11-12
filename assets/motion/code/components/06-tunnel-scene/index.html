@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tunnel Scene — reverse-final</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='4' width='24' height='24' rx='3' fill='none' stroke='%23e8b45a'/%3E%3Crect x='9' y='9' width='14' height='14' rx='2' fill='none' stroke='%23e8b45a'/%3E%3Crect x='13' y='13' width='6' height='6' fill='%23e8b45a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="component.css">
+</head>
+<body>
+  <main class="rf-tunnel" data-rf="tunnel-scene">
+    <canvas class="rf-tunnel__canvas" aria-hidden="true"></canvas>
+    <header class="rf-tunnel__bar">
+      <span class="rf-tunnel__mark">TUNNEL / 06</span>
+      <nav class="rf-tunnel__nav" aria-label="主导航">
+        <a href="#one">Depth</a>
+        <a href="#two">Type</a>
+        <a href="#three">Arrival</a>
+      </nav>
+      <span class="rf-tunnel__progress" aria-live="polite">00</span>
+    </header>
+
+    <section class="rf-tunnel__panel rf-tunnel__panel--hero" data-panel>
+      <p class="rf-tunnel__eyebrow">26 layers · pow(phase, 1.8)</p>
+      <h1>Move through<br>the surface.</h1>
+      <p class="rf-tunnel__lede">滚动不是翻页，是推进相位。每一层都是圆角矩形；越近越大，越远越透明。拖拽可以横向旋转隧道。</p>
+      <a class="rf-tunnel__cue" href="#one">Continue <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="rf-tunnel__panel" id="one" data-panel>
+      <p class="rf-tunnel__eyebrow">01 / depth</p>
+      <h2>Depth is a<br>projection.</h2>
+      <p class="rf-tunnel__lede">26 层 <code>phase^1.8</code> 让近层更密、远层更疏；滚动只改 <code>scrollN</code>，不改每层速度。</p>
+    </section>
+
+    <section class="rf-tunnel__panel" id="two" data-panel>
+      <p class="rf-tunnel__eyebrow">02 / type</p>
+      <h2>Type rides<br>the tunnel.</h2>
+      <p class="rf-tunnel__lede">文字位移与缩放和隧道同源：<code>translateY((1-v) × 38px)</code>，透明度 <code>.35 + v × .65</code>。</p>
+    </section>
+
+    <section class="rf-tunnel__panel" id="three" data-panel>
+      <p class="rf-tunnel__eyebrow">03 / arrival</p>
+      <h2>Arrive at<br>the center.</h2>
+      <p class="rf-tunnel__lede">释放拖拽后 <code>0.94 / 40ms</code> 衰减回中；<code>prefers-reduced-motion</code> 下只画一帧静态隧道。</p>
+    </section>
+
+    <footer class="rf-tunnel__foot">
+      <p><strong>Tunnel Scene</strong> 26 层圆角矩形 + 46 粒子；<code>scroll lerp .14</code>，<code>drag lerp .12</code>，<code>clamp ±220/±180</code>。</p>
+      <span class="rf-tunnel__meta">Canvas2D · DPR 2 · 26 layers</span>
+    </footer>
+  </main>
+  <script src="component.js"></script>
+</body>
+</html>

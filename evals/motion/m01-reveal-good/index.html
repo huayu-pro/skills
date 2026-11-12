@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>m01 reveal good</title>
+  <style>
+    body { margin: 0; background: #0b0d10; color: #f4efe4; font-family: system-ui, sans-serif; }
+    main { max-width: 720px; margin: 0 auto; padding: 80px 24px; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 450ms cubic-bezier(0,0,.2,1), transform 450ms cubic-bezier(0,0,.2,1); }
+    .reveal.is-in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>One reveal, one moment.</h1>
+    <p class="reveal">This paragraph is the single reveal on the page.</p>
+  </main>
+  <script>
+    const el = document.querySelector(".reveal");
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.classList.add("is-in");
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-in");
+            io.unobserve(entry.target);
+          }
+        }
+      }, { rootMargin: "200px", threshold: 0 });
+      io.observe(el);
+    }
+  </script>
+</body>
+</html>

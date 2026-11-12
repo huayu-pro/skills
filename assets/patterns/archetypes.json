@@ -1,0 +1,1174 @@
+{
+ "seed": 20261107,
+ "k": 14,
+ "archetypes": [
+  {
+   "id": "arch-b6d0c4",
+   "name": "浅色高饱和·minimal",
+   "description": "浅色界面，高饱和配色，双色相，紧凑字阶，平面表面。样本 76 个站点。",
+   "n": 76,
+   "profile": {
+    "dark": 0.0,
+    "light": 1.0,
+    "chroma": 0.854,
+    "hue_families": 3.487,
+    "ratio": 1.175,
+    "material": "flat"
+   },
+   "styles": [
+    [
+     "minimal",
+     28
+    ],
+    [
+     "scroll-effects",
+     15
+    ],
+    [
+     "typographic",
+     14
+    ],
+    [
+     "fun",
+     12
+    ],
+    [
+     "illustrative",
+     10
+    ],
+    [
+     "3d",
+     9
+    ]
+   ],
+   "genres": [
+    [
+     "landing-page",
+     35
+    ],
+    [
+     "portfolio",
+     16
+    ],
+    [
+     "product",
+     16
+    ],
+    [
+     "app",
+     14
+    ],
+    [
+     "personal",
+     10
+    ],
+    [
+     "service",
+     9
+    ]
+   ],
+   "colors": [
+    [
+     "white",
+     12
+    ],
+    [
+     "colorful",
+     12
+    ],
+    [
+     "blue",
+     9
+    ],
+    [
+     "dark",
+     8
+    ]
+   ]
+  },
+  {
+   "id": "arch-d7281e",
+   "name": "浅色高饱和·scroll-effects",
+   "description": "浅色界面，高饱和配色，双色相，紧凑字阶，平面表面。样本 65 个站点。",
+   "n": 65,
+   "profile": {
+    "dark": 0.0,
+    "light": 1.0,
+    "chroma": 0.866,
+    "hue_families": 3.246,
+    "ratio": 1.173,
+    "material": "flat"
+   },
+   "styles": [
+    [
+     "scroll-effects",
+     23
+    ],
+    [
+     "typographic",
+     17
+    ],
+    [
+     "minimal",
+     15
+    ],
+    [
+     "illustrative",
+     8
+    ],
+    [
+     "3d",
+     7
+    ],
+    [
+     "editorial",
+     7
+    ]
+   ],
+   "genres": [
+    [
+     "landing-page",
+     28
+    ],
+    [
+     "portfolio",
+     15
+    ],
+    [
+     "product",
+     14
+    ],
+    [
+     "informational",
+     7
+    ],
+    [
+     "service",
+     7
+    ],
+    [
+     "personal",
+     6
+    ]
+   ],
+   "colors": [
+    [
+     "colorful",
+     9
+    ],
+    [
+     "white",
+     8
+    ],
+    [
+     "beige",
+     8
+    ],
+    [
+     "blue",
+     8
+    ]
+   ]
+  },
+  {
+   "id": "arch-b63c5c",
+   "name": "暗色高饱和·scroll-effects",
+   "description": "暗色界面，高饱和配色，双色相，紧凑字阶，平面表面。样本 41 个站点。",
+   "n": 41,
+   "profile": {
+    "dark": 1.0,
+    "light": 0.0,
+    "chroma": 0.88,
+    "hue_families": 3.902,
+    "ratio": 1.162,
+    "material": "flat"
+   },
+   "styles": [
+    [
+     "scroll-effects",
+     13
+    ],
+    [
+     "typographic",
+     8
+    ],
+    [
+     "retro-vintage",
+     7
+    ],
+    [
+     "3d",
+     6
+    ],
+    [
+     "fun",
+     6
+    ],
+    [
+     "minimal",
+     5
+    ]
+   ],
+   "genres": [
+    [
+     "landing-page",
+     25
+    ],
+    [
+     "product",
+     14
+    ],
+    [
+     "portfolio",
+     11
+    ],
+    [
+     "app",
+     7
+    ],
+    [
+     "personal",
+     6
+    ],
+    [
+     "service",
+     5
+    ]
+   ],
+   "colors": [
+    [
+     "dark",
+     27
+    ],
+    [
+     "black",
+     6
+    ],
+    [
+     "blue",
+     5
+    ],
+    [
+     "colorful",
+     5
+    ]
+   ]
+  },
+  {
+   "id": "arch-1a1b08",
+   "name": "浅色低饱和·minimal",
+   "description": "浅色界面，低饱和配色，单色相，常规字阶，平面表面。样本 38 个站点。",
+   "n": 38,
+   "profile": {
+    "dark": 0.009,
+    "light": 0.991,
+    "chroma": 0.084,
+    "hue_families": 1.053,
+    "ratio": 1.223,
+    "material": "flat"
+   },
+   "styles": [
+    [
+     "minimal",
+     16
+    ],
+    [
+     "scroll-effects",
+     15
+    ],
+    [
+     "typographic",
+     7
+    ],
+    [
+     "3d",
+     6
+    ],
+    [
+     "narrow",
+     6
+    ],
+    [
+     "editorial",
+     5
+    ]
+   ],
+   "genres": [
+    [
+     "landing-page",
+     11
+    ],
+    [
+     "portfolio",
+     10
+    ],
+    [
+     "service",
+     6
+    ],
+    [
+     "personal",
+     5
+    ],
+    [
+     "app",
+     5
+    ],
+    [
+     "product",
+     5
+    ]
+   ],
+   "colors": [
+    [
+     "white",
+     10
+    ],
+    [
+     "beige",
+     6
+    ],
+    [
+     "grey",
+     4
+    ],
+    [
+     "brown",
+     4
+    ]
+   ]
+  },
+  {
+   "id": "arch-f595ae",
+   "name": "浅色高饱和",
+   "description": "浅色界面，高饱和配色，双色相，紧凑字阶，有质感表面。样本 37 个站点。",
+   "n": 37,
+   "profile": {
+    "dark": 0.0,
+    "light": 1.0,
+    "chroma": 0.886,
+    "hue_families": 4.351,
+    "ratio": 1.127,
+    "material": "textured"
+   },
+   "styles": [
+    [
+     "scroll-effects",
+     11
+    ],
+    [
+     "minimal",
+     11
+    ],
+    [
+     "fun",
+     8
+    ],
+    [
+     "typographic",
+     7
+    ],
+    [
+     "illustrative",
+     5
+    ],
+    [
+     "editorial",
+     3
+    ]
+   ],
+   "genres": [
+    [
+     "landing-page",
+     24
+    ],
+    [
+     "app",
+     12
+    ],
+    [
+     "product",
+     9
+    ],
+    [
+     "portfolio",
+     5
+    ],
+    [
+     "saas",
+     5
+    ],
+    [
+     "service",
+     4
+    ]
+   ],
+   "colors": [
+    [
+     "white",
+     11
+    ],
+    [
+     "colorful",
+     8
+    ],
+    [
+     "blue",
+     5
+    ],
+    [
+     "green",
+     5
+    ]
+   ]
+  },
+  {
+   "id": "arch-5c258e",
+   "name": "中性高饱和",
+   "description": "中性界面，高饱和配色，双色相，常规字阶，平面表面。样本 30 个站点。",
+   "n": 30,
+   "profile": {
+    "dark": 0.036,
+    "light": 0.045,
+    "chroma": 0.838,
+    "hue_families": 2.7,
+    "ratio": 1.215,
+    "material": "flat"
+   },
+   "styles": [
+    [
+     "scroll-effects",
+     8
+    ],
+    [
+     "typographic",
+     7
+    ],
+    [
+     "minimal",
+     7
+    ],
+    [
+     "fun",
+     5
+    ],
+    [
+     "illustrative",
+     4
+    ],
+    [
+     "3d",
+     4
+    ]
+   ],
+   "genres": [
+    [
+     "landing-page",
+     15
+    ],
+    [
+     "portfolio",
+     9
+    ],
+    [
+     "informational",
+     6
+    ],
+    [
+     "personal",
+     6
+    ],
+    [
+     "service",
+     4
+    ],
+    [
+     "event",
+     3
+    ]
+   ],
+   "colors": [
+    [
+     "dark",
+     6
+    ],
+    [
+     "colorful",
+     6
+    ],
+    [
+     "red",
+     6
+    ],
+    [
+     "blue",
+     3
+    ]
+   ]
+  },
+  {
+   "id": "arch-720f08",
+   "name": "暗色高饱和·scroll-effects",
+   "description": "暗色界面，高饱和配色，双色相，紧凑字阶，平面表面。样本 24 个站点。",
+   "n": 24,
+   "profile": {
+    "dark": 1.0,
+    "light": 0.0,
+    "chroma": 0.957,
+    "hue_families": 3.625,
+    "ratio": 1.158,
+    "material": "flat"
+   },
+   "styles": [
+    [
+     "scroll-effects",
+     9
+    ],
+    [
+     "minimal",
+     5
+    ],
+    [
+     "3d",
+     5
+    ],
+    [
+     "typographic",
+     4
+    ],
+    [
+     "corporate",
+     3
+    ],
+    [
+     "bold",
+     2
+    ]
+   ],
+   "genres": [
+    [
+     "landing-page",
+     12
+    ],
+    [
+     "portfolio",
+     8
+    ],
+    [
+     "personal",
+     5
+    ],
+    [
+     "service",
+     4
+    ],
+    [
+     "product",
+     3
+    ],
+    [
+     "launching-soon",
+     2
+    ]
+   ],
+   "colors": [
+    [
+     "dark",
+     12
+    ],
+    [
+     "colorful",
+     2
+    ],
+    [
+     "blue",
+     2
+    ],
+    [
+     "grey",
+     2
+    ]
+   ]
+  },
+  {
+   "id": "arch-452bc0",
+   "name": "暗色低饱和·3d",
+   "description": "暗色界面，低饱和配色，单色相，常规字阶，平面表面。样本 16 个站点。",
+   "n": 16,
+   "profile": {
+    "dark": 0.837,
+    "light": 0.09,
+    "chroma": 0.063,
+    "hue_families": 0.562,
+    "ratio": 1.296,
+    "material": "flat"
+   },
+   "styles": [
+    [
+     "3d",
+     6
+    ],
+    [
+     "typographic",
+     5
+    ],
+    [
+     "fun",
+     4
+    ],
+    [
+     "scroll-effects",
+     4
+    ],
+    [
+     "futuristic",
+     3
+    ],
+    [
+     "minimal",
+     3
+    ]
+   ],
+   "genres": [
+    [
+     "landing-page",
+     6
+    ],
+    [
+     "launching-soon",
+     4
+    ],
+    [
+     "service",
+     4
+    ],
+    [
+     "experimental",
+     3
+    ],
+    [
+     "portfolio",
+     3
+    ],
+    [
+     "personal",
+     2
+    ]
+   ],
+   "colors": [
+    [
+     "dark",
+     10
+    ],
+    [
+     "black",
+     4
+    ],
+    [
+     "red",
+     2
+    ],
+    [
+     "blue",
+     2
+    ]
+   ]
+  },
+  {
+   "id": "arch-a0bcd3",
+   "name": "暗色高饱和",
+   "description": "暗色界面，高饱和配色，单色相，紧凑字阶，平面表面。样本 13 个站点。",
+   "n": 13,
+   "profile": {
+    "dark": 1.0,
+    "light": 0.0,
+    "chroma": 0.884,
+    "hue_families": 1.615,
+    "ratio": 1.183,
+    "material": "flat"
+   },
+   "styles": [
+    [
+     "scroll-effects",
+     3
+    ],
+    [
+     "gradients",
+     3
+    ],
+    [
+     "modular",
+     2
+    ],
+    [
+     "minimal",
+     2
+    ],
+    [
+     "grid-layout",
+     2
+    ],
+    [
+     "bold",
+     2
+    ]
+   ],
+   "genres": [
+    [
+     "landing-page",
+     5
+    ],
+    [
+     "personal",
+     4
+    ],
+    [
+     "portfolio",
+     4
+    ],
+    [
+     "product",
+     2
+    ],
+    [
+     "resume",
+     2
+    ],
+    [
+     "app",
+     2
+    ]
+   ],
+   "colors": [
+    [
+     "dark",
+     7
+    ],
+    [
+     "colorful",
+     2
+    ],
+    [
+     "white",
+     1
+    ],
+    [
+     "yellow",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "arch-2a2955",
+   "name": "暗色低饱和",
+   "description": "暗色界面，低饱和配色，单色相，紧凑字阶，平面表面。样本 11 个站点。",
+   "n": 11,
+   "profile": {
+    "dark": 1.0,
+    "light": 0.0,
+    "chroma": 0.105,
+    "hue_families": 0.909,
+    "ratio": 1.17,
+    "material": "flat"
+   },
+   "styles": [
+    [
+     "minimal",
+     2
+    ],
+    [
+     "typographic",
+     1
+    ],
+    [
+     "grid-layout",
+     1
+    ],
+    [
+     "scroll-effects",
+     1
+    ],
+    [
+     "bold",
+     1
+    ],
+    [
+     "fun",
+     1
+    ]
+   ],
+   "genres": [
+    [
+     "portfolio",
+     4
+    ],
+    [
+     "landing-page",
+     2
+    ],
+    [
+     "restaurant",
+     1
+    ],
+    [
+     "startup",
+     1
+    ],
+    [
+     "service",
+     1
+    ],
+    [
+     "experimental",
+     1
+    ]
+   ],
+   "colors": [
+    [
+     "dark",
+     8
+    ],
+    [
+     "purple",
+     1
+    ],
+    [
+     "black-and-white",
+     1
+    ],
+    [
+     "black",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "arch-c76067",
+   "name": "中性高饱和·minimal",
+   "description": "中性界面，高饱和配色，双色相，常规字阶，有质感表面。样本 10 个站点。",
+   "n": 10,
+   "profile": {
+    "dark": 0.132,
+    "light": 0.114,
+    "chroma": 0.955,
+    "hue_families": 3.9,
+    "ratio": 1.21,
+    "material": "textured"
+   },
+   "styles": [
+    [
+     "minimal",
+     3
+    ],
+    [
+     "scroll-effects",
+     3
+    ],
+    [
+     "typographic",
+     2
+    ],
+    [
+     "glassmorphism",
+     1
+    ],
+    [
+     "pixel-art",
+     1
+    ],
+    [
+     "horizontal-layout",
+     1
+    ]
+   ],
+   "genres": [
+    [
+     "landing-page",
+     3
+    ],
+    [
+     "service",
+     2
+    ],
+    [
+     "saas",
+     2
+    ],
+    [
+     "experimental",
+     2
+    ],
+    [
+     "portfolio",
+     2
+    ],
+    [
+     "personal",
+     1
+    ]
+   ],
+   "colors": [
+    [
+     "blue",
+     3
+    ],
+    [
+     "colorful",
+     2
+    ],
+    [
+     "duotone",
+     1
+    ],
+    [
+     "yellow",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "arch-e8fb80",
+   "name": "浅色高饱和·scroll-effects",
+   "description": "浅色界面，高饱和配色，多色相，紧凑字阶，柔和表面。样本 7 个站点。",
+   "n": 7,
+   "profile": {
+    "dark": 0.0,
+    "light": 1.0,
+    "chroma": 0.906,
+    "hue_families": 5.0,
+    "ratio": 1.093,
+    "material": "soft"
+   },
+   "styles": [
+    [
+     "scroll-effects",
+     4
+    ],
+    [
+     "minimal",
+     2
+    ],
+    [
+     "gradients",
+     2
+    ],
+    [
+     "3d",
+     1
+    ],
+    [
+     "fun",
+     1
+    ],
+    [
+     "typographic",
+     1
+    ]
+   ],
+   "genres": [
+    [
+     "app",
+     5
+    ],
+    [
+     "landing-page",
+     3
+    ],
+    [
+     "product",
+     3
+    ],
+    [
+     "annual-report",
+     1
+    ],
+    [
+     "portfolio",
+     1
+    ],
+    [
+     "service",
+     1
+    ]
+   ],
+   "colors": [
+    [
+     "dark",
+     3
+    ],
+    [
+     "orange",
+     2
+    ],
+    [
+     "beige",
+     2
+    ],
+    [
+     "colorful",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "arch-2c2f13",
+   "name": "暗色高饱和·scroll-effects",
+   "description": "暗色界面，高饱和配色，多色相，紧凑字阶，平面表面。样本 6 个站点。",
+   "n": 6,
+   "profile": {
+    "dark": 1.0,
+    "light": 0.0,
+    "chroma": 0.947,
+    "hue_families": 6.833,
+    "ratio": 1.187,
+    "material": "flat"
+   },
+   "styles": [
+    [
+     "scroll-effects",
+     3
+    ],
+    [
+     "retro-vintage",
+     2
+    ],
+    [
+     "horizontal-layout",
+     1
+    ],
+    [
+     "typographic",
+     1
+    ],
+    [
+     "3d",
+     1
+    ],
+    [
+     "glassmorphism",
+     1
+    ]
+   ],
+   "genres": [
+    [
+     "landing-page",
+     3
+    ],
+    [
+     "portfolio",
+     2
+    ],
+    [
+     "experimental",
+     1
+    ],
+    [
+     "photography",
+     1
+    ],
+    [
+     "app",
+     1
+    ],
+    [
+     "newsletters",
+     1
+    ]
+   ],
+   "colors": [
+    [
+     "dark",
+     5
+    ],
+    [
+     "colorful",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "arch-a12a74",
+   "name": "暗色低饱和·scroll-effects",
+   "description": "暗色界面，低饱和配色，双色相，紧凑字阶，平面表面。样本 5 个站点。",
+   "n": 5,
+   "profile": {
+    "dark": 0.67,
+    "light": 0.06,
+    "chroma": 0.401,
+    "hue_families": 3.0,
+    "ratio": 1.117,
+    "material": "flat"
+   },
+   "styles": [
+    [
+     "scroll-effects",
+     2
+    ],
+    [
+     "typographic",
+     2
+    ],
+    [
+     "3d",
+     1
+    ],
+    [
+     "retro-vintage",
+     1
+    ],
+    [
+     "minimal",
+     1
+    ],
+    [
+     "narrow",
+     1
+    ]
+   ],
+   "genres": [
+    [
+     "landing-page",
+     3
+    ],
+    [
+     "app",
+     1
+    ],
+    [
+     "game",
+     1
+    ],
+    [
+     "launching-soon",
+     1
+    ],
+    [
+     "portfolio",
+     1
+    ],
+    [
+     "product-physical",
+     1
+    ]
+   ],
+   "colors": [
+    [
+     "dark",
+     3
+    ],
+    [
+     "grey",
+     1
+    ],
+    [
+     "beige",
+     1
+    ],
+    [
+     "duotone",
+     1
+    ]
+   ]
+  }
+ ]
+}

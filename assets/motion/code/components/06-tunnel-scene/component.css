@@ -1,0 +1,144 @@
+/* 06-tunnel-scene — Canvas2D tunnel + scroll typography */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: #07080a;
+  color: #f4efe4;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+.rf-tunnel {
+  --ink: #f4efe4;
+  --muted: #948e82;
+  --line: rgba(244, 239, 228, .14);
+  --accent: #e8b45a;
+  --ease: cubic-bezier(.22, .8, .2, 1);
+  position: relative;
+  background: #07080a;
+  min-height: 100dvh;
+}
+.rf-tunnel__canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+}
+.rf-tunnel::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%, transparent 35%, rgba(7, 8, 10, .72) 82%);
+}
+
+.rf-tunnel__bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px clamp(18px, 4vw, 56px);
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(rgba(7, 8, 10, .82), rgba(7, 8, 10, 0));
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+}
+.rf-tunnel__mark { color: var(--accent); font-weight: 700; }
+.rf-tunnel__nav { display: flex; gap: 22px; }
+.rf-tunnel__nav a { color: var(--muted); transition: color .2s ease; }
+.rf-tunnel__nav a:hover, .rf-tunnel__nav a:focus-visible { color: var(--ink); }
+.rf-tunnel__progress { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.rf-tunnel__panel {
+  position: relative;
+  z-index: 10;
+  min-height: 100dvh;
+  display: grid;
+  align-content: center;
+  gap: 0;
+  padding: 120px clamp(18px, 8vw, 120px) 80px;
+  max-width: 1100px;
+  will-change: transform, opacity;
+}
+.rf-tunnel__panel--hero { padding-top: 160px; }
+.rf-tunnel__eyebrow {
+  margin: 0 0 18px;
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.rf-tunnel h1,
+.rf-tunnel h2 {
+  margin: 0;
+  font-family: ui-serif, Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-weight: 400;
+  line-height: .9;
+  letter-spacing: -.02em;
+}
+.rf-tunnel h1 { font-size: clamp(52px, 9vw, 132px); }
+.rf-tunnel h2 { font-size: clamp(42px, 7vw, 104px); }
+.rf-tunnel__lede {
+  max-width: 58ch;
+  margin: 26px 0 0;
+  color: #c9c2b5;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.rf-tunnel__lede code { color: var(--accent); font-size: 12px; }
+.rf-tunnel__cue {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 28px;
+  min-height: 44px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.rf-tunnel__cue:hover, .rf-tunnel__cue:focus-visible { color: var(--accent); }
+
+.rf-tunnel__foot {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px clamp(18px, 4vw, 56px) 28px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+  background: #07080a;
+}
+.rf-tunnel__foot p { margin: 0; max-width: 78ch; }
+.rf-tunnel__foot strong { color: var(--ink); font-weight: 600; }
+.rf-tunnel__foot code { color: var(--accent); font-size: 11px; }
+.rf-tunnel__meta { flex: 0 0 auto; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+
+.rf-tunnel.is-reduced .rf-tunnel__panel { transform: none !important; opacity: 1 !important; }
+
+@media (max-width: 760px) {
+  .rf-tunnel__bar { padding: 16px 18px; }
+  .rf-tunnel__nav { display: none; }
+  .rf-tunnel__panel { padding: 110px 20px 60px; }
+  .rf-tunnel__foot { display: block; }
+  .rf-tunnel__meta { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

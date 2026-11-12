@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cursor Field — reverse-final</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='4' fill='%23e8b45a'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23e8b45a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="component.css">
+</head>
+<body>
+  <main class="rf-cursor" data-rf="cursor-field">
+    <div class="rf-cursor__layer" aria-hidden="true">
+      <span class="rf-cursor__dot"></span>
+      <span class="rf-cursor__ring"></span>
+    </div>
+
+    <header class="rf-cursor__bar">
+      <span class="rf-cursor__mark">CURSOR / 09</span>
+      <nav class="rf-cursor__nav" aria-label="主导航">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <span class="rf-cursor__status">pointer: fine</span>
+    </header>
+
+    <section class="rf-cursor__hero">
+      <div class="rf-cursor__hero-copy" data-depth="0.6">
+        <p class="rf-cursor__eyebrow">Magnetic field / depth 1.1–1.8</p>
+        <h1>Stay in<br>the field.</h1>
+        <p class="rf-cursor__lede">自定义光标、磁吸按钮、多层视差、30° 倾斜卡片。所有位移都通过 CSS 变量合成，不覆盖元素原有 transform。</p>
+        <div class="rf-cursor__cta">
+          <a class="rf-cursor__btn magnet" href="#work">See the work</a>
+          <a class="rf-cursor__btn rf-cursor__btn--ghost magnet" href="#contact">Say hello</a>
+        </div>
+      </div>
+      <div class="rf-cursor__orb" data-depth="1.6" aria-hidden="true"></div>
+      <div class="rf-cursor__orb rf-cursor__orb--small" data-depth="1.1" aria-hidden="true"></div>
+      <div class="rf-cursor__grid" data-depth="0.3" aria-hidden="true"></div>
+    </section>
+
+    <section class="rf-cursor__work" id="work" aria-label="项目卡片">
+      <article class="rf-cursor__card" data-tilt data-depth="0.8">
+        <div class="rf-cursor__card-art" style="--art: radial-gradient(circle at 30% 24%, #e8d6b8 0%, transparent 40%), radial-gradient(circle at 72% 76%, #6f4a2e 0%, transparent 58%), linear-gradient(150deg, #241811, #0d0805 78%)"></div>
+        <div class="rf-cursor__card-copy"><span>01</span><h2>Ritual Objects</h2><p>Identity</p></div>
+      </article>
+      <article class="rf-cursor__card" data-tilt data-depth="1.2">
+        <div class="rf-cursor__card-art" style="--art: radial-gradient(circle at 68% 20%, #ffd7a1 0%, transparent 38%), radial-gradient(circle at 28% 78%, #a8461f 0%, transparent 58%), linear-gradient(155deg, #2a140c, #0f0704 78%)"></div>
+        <div class="rf-cursor__card-copy"><span>02</span><h2>Warm Index</h2><p>Editorial</p></div>
+      </article>
+      <article class="rf-cursor__card" data-tilt data-depth="1.6">
+        <div class="rf-cursor__card-art" style="--art: radial-gradient(circle at 34% 28%, #cfe8ff 0%, transparent 40%), radial-gradient(circle at 74% 76%, #2b4f79 0%, transparent 58%), linear-gradient(150deg, #102033, #070d15 78%)"></div>
+        <div class="rf-cursor__card-copy"><span>03</span><h2>Soft Grid</h2><p>Digital</p></div>
+      </article>
+    </section>
+
+    <footer class="rf-cursor__foot">
+      <p><strong>Cursor Field</strong> 合成 5 个结构来源：feature-bento、card-grid、gallery、navigation-bar、section。磁吸用 <code>--mx/--my</code>，倾斜用 <code>--rx/--ry</code>，都保留原有 transform。</p>
+      <span class="rf-cursor__meta">ring lerp .16 · magnet .18 · tilt 30°</span>
+    </footer>
+  </main>
+  <script src="component.js"></script>
+</body>
+</html>

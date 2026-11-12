@@ -1,0 +1,477 @@
+{
+ "schema_version": "ui-design/motion-index@1",
+ "generated_at": "2026-11-12",
+ "families": 14,
+ "kits": [
+  {
+   "id": "01-scroll-narrative",
+   "family": "F1",
+   "path": "assets/motion/code/kits/01-scroll-narrative.js",
+   "summary": "滚动叙事、分段 reveal、进度条"
+  },
+  {
+   "id": "02-horizontal",
+   "family": "F2",
+   "path": "assets/motion/code/kits/02-horizontal.js",
+   "summary": "横向轨道、wheel/drag、边界 clamp"
+  },
+  {
+   "id": "03-webgl-shader",
+   "family": "F3",
+   "path": "assets/motion/code/kits/03-webgl-shader.js",
+   "summary": "全屏 WebGL fragment shader"
+  },
+  {
+   "id": "04-canvas-2d",
+   "family": "F5",
+   "path": "assets/motion/code/kits/04-canvas-2d.js",
+   "summary": "Canvas 2D 粒子/像素隧道"
+  },
+  {
+   "id": "05-orbit-3d",
+   "family": "F9",
+   "path": "assets/motion/code/kits/05-orbit-3d.js",
+   "summary": "CSS 3D 轨道/卡片"
+  },
+  {
+   "id": "06-cursor",
+   "family": "F7",
+   "path": "assets/motion/code/kits/06-cursor.js",
+   "summary": "自定义光标、磁吸、拖尾"
+  },
+  {
+   "id": "07-typography",
+   "family": "F6",
+   "path": "assets/motion/code/kits/07-typography.js",
+   "summary": "动态字体、marquee、行 reveal"
+  },
+  {
+   "id": "08-collage",
+   "family": "F13",
+   "path": "assets/motion/code/kits/08-collage.js",
+   "summary": "可拖拽拼贴卡片、吸附"
+  },
+  {
+   "id": "09-audio",
+   "family": "F8",
+   "path": "assets/motion/code/kits/09-audio.js",
+   "summary": "WebAudio 解锁、频谱条"
+  },
+  {
+   "id": "10-map",
+   "family": "F10",
+   "path": "assets/motion/code/kits/10-map.js",
+   "summary": "地图 pan/zoom、pin"
+  },
+  {
+   "id": "11-game",
+   "family": "F14",
+   "path": "assets/motion/code/kits/11-game.js",
+   "summary": "Canvas 小游戏循环、输入"
+  },
+  {
+   "id": "12-editorial-landing",
+   "family": "F1",
+   "path": "assets/motion/code/kits/12-editorial-landing.js",
+   "summary": "编辑落地页、sticky/nav/accordion"
+  }
+ ],
+ "components": [
+  {
+   "id": "01-orbit-gallery",
+   "family": "F3",
+   "path": "assets/motion/code/components/01-orbit-gallery/index.html",
+   "summary": "六张卡片绕一个核心轨道；深度同时驱动 scale/blur/z-index/opacity。",
+   "duration_ms": 700,
+   "verified": true
+  },
+  {
+   "id": "02-bend-carousel",
+   "family": "F9",
+   "path": "assets/motion/code/components/02-bend-carousel/index.html",
+   "summary": "32 条竖切片伪造圆柱面；进入曲线 1.55，落位 760ms。",
+   "duration_ms": 760,
+   "verified": true
+  },
+  {
+   "id": "03-clock-wipe",
+   "family": "F14",
+   "path": "assets/motion/code/components/03-clock-wipe/index.html",
+   "summary": "可拖时钟 + 从点击点扩散的圆形换肤 + 滚轮抬升面板。",
+   "duration_ms": 680,
+   "verified": true
+  },
+  {
+   "id": "04-belt-conveyor",
+   "family": "F11",
+   "path": "assets/motion/code/components/04-belt-conveyor/index.html",
+   "summary": "速度驱动的无限带：BASE 62、MAX 900、exp(-dt×1.1) 摩擦。",
+   "duration_ms": null,
+   "verified": true
+  },
+  {
+   "id": "05-shader-plane",
+   "family": "F3",
+   "path": "assets/motion/code/components/05-shader-plane/index.html",
+   "summary": "覆盖三角形 + 单 fragment shader：时间/分辨率/指针/进度四个 uniform。",
+   "duration_ms": null,
+   "verified": true
+  },
+  {
+   "id": "06-tunnel-scene",
+   "family": "F10",
+   "path": "assets/motion/code/components/06-tunnel-scene/index.html",
+   "summary": "26 层圆角矩形 + 46 粒子；滚动推进相位，拖拽横向旋转。",
+   "duration_ms": null,
+   "verified": true
+  },
+  {
+   "id": "07-color-lab",
+   "family": "F14",
+   "path": "assets/motion/code/components/07-color-lab/index.html",
+   "summary": "6 档明度 + hue shift + 饱和衰减；WCAG relative luminance 对比度。",
+   "duration_ms": 360,
+   "verified": true
+  },
+  {
+   "id": "08-rotary-controls",
+   "family": "F14",
+   "path": "assets/motion/code/components/08-rotary-controls/index.html",
+   "summary": "三个 270° 旋钮 + 物理灯开关；中心 12px 退化，键盘 ±4。",
+   "duration_ms": 280,
+   "verified": true
+  },
+  {
+   "id": "09-cursor-field",
+   "family": "F7",
+   "path": "assets/motion/code/components/09-cursor-field/index.html",
+   "summary": "dot + ring 光标、磁吸按钮、多层视差、30° 倾斜卡片。",
+   "duration_ms": 220,
+   "verified": true
+  },
+  {
+   "id": "10-scroll-narrative",
+   "family": "F1",
+   "path": "assets/motion/code/components/10-scroll-narrative/index.html",
+   "summary": "IO reveal 200px/450ms/16px + sticky pin 三段 + accordion + modal。",
+   "duration_ms": 450,
+   "verified": true
+  },
+  {
+   "id": "11-audio-visualizer",
+   "family": "F8",
+   "path": "assets/motion/code/components/11-audio-visualizer/index.html",
+   "summary": "五个 oscillator 的 pad + analyser 64 bars；手势解锁、状态机、mute。",
+   "duration_ms": null,
+   "verified": true
+  },
+  {
+   "id": "12-editorial-motion",
+   "family": "F6",
+   "path": "assets/motion/code/components/12-editorial-motion/index.html",
+   "summary": "110% 行 mask + 逐字波 1.4s/0.07s + dt marquee + ±3° 速度 skew。",
+   "duration_ms": 1400,
+   "verified": true
+  }
+ ],
+ "merged": [
+  {
+   "id": "13-horizontal-rail",
+   "family": "F2",
+   "path": "assets/motion/code/merged/13-horizontal-rail/index.html",
+   "summary": "滚轮/拖拽映射轨道位移，lerp .15 跟随，释放保留速度，边界橡皮筋；reduced-motion 退回原生横向滚动。",
+   "duration_ms": 0,
+   "verified": true
+  },
+  {
+   "id": "14-webgl-object",
+   "family": "F4",
+   "path": "assets/motion/code/merged/14-webgl-object/index.html",
+   "summary": "裸 WebGL2 + fragment shader 的 raymarch box：指针偏移相机、时间旋转物体、DPR≤2、上下文丢失降级。",
+   "duration_ms": 0,
+   "verified": true
+  },
+  {
+   "id": "15-pixel-canvas",
+   "family": "F5",
+   "path": "assets/motion/code/merged/15-pixel-canvas/index.html",
+   "summary": "160×120 离屏像素画布，6 色调色板，imageSmoothing=false，整数坐标；角色/太阳/海浪按 phase 动。",
+   "duration_ms": 0,
+   "verified": true
+  },
+  {
+   "id": "16-scan-vhs",
+   "family": "F12",
+   "path": "assets/motion/code/merged/16-scan-vhs/index.html",
+   "summary": "三层速度：扫描线 8s、噪点 1s、glitch 4.2s 短切片；只动 transform/opacity/clip-path，reduced-motion 静态。",
+   "duration_ms": 8000,
+   "verified": true
+  },
+  {
+   "id": "17-video-collage",
+   "family": "F13",
+   "path": "assets/motion/code/merged/17-video-collage/index.html",
+   "summary": "6 块版面零件，按 depth .6–1.25 做指针视差；离屏 IO 暂停；真实视频替换占位后同一 mount 支持播放/暂停。",
+   "duration_ms": 450,
+   "verified": true
+  }
+ ],
+ "prompts": [
+  {
+   "id": "F1-magnet-lover-long-scroll.prompt",
+   "family": "F1",
+   "path": "assets/motion/prompts.md#F1-magnet-lover-long-scroll.prompt",
+   "summary": "强提示词：复刻「Magnet Lover」的 网格纸背景 + 巨型字 + 磁贴拼贴 + 长滚动论证"
+  },
+  {
+   "id": "F1-scroll-narrative-angelo.prompt",
+   "family": "F1",
+   "path": "assets/motion/prompts.md#F1-scroll-narrative-angelo.prompt",
+   "summary": "强提示词：生成「玻璃球体轨道」型作品集"
+  },
+  {
+   "id": "F11-conveyor-typographic.prompt",
+   "family": "F11",
+   "path": "assets/motion/prompts.md#F11-conveyor-typographic.prompt",
+   "summary": "强提示词：生成「工厂传送带」型排版作品集"
+  },
+  {
+   "id": "F12-unholy-halftone-light.prompt",
+   "family": "F12",
+   "path": "assets/motion/prompts.md#F12-unholy-halftone-light.prompt",
+   "summary": "强提示词：复刻「The Unholy Project」的 半调网点纸 + 灯开关明暗 + 团队档案 + waitlist"
+  },
+  {
+   "id": "F13-scrapbook-collage.prompt",
+   "family": "F13",
+   "path": "assets/motion/prompts.md#F13-scrapbook-collage.prompt",
+   "summary": "强提示词：生成「手作剪贴簿」型个人主页"
+  },
+  {
+   "id": "F14-app-flow-console.prompt",
+   "family": "F14",
+   "path": "assets/motion/prompts.md#F14-app-flow-console.prompt",
+   "summary": "强提示词：复刻「App & Flow」的 旋钮/调音台隐喻 + 服务卡片 + 大面积留白 + 主题切换"
+  },
+  {
+   "id": "F14-clock-dial-petrillo.prompt",
+   "family": "F14",
+   "path": "assets/motion/prompts.md#F14-clock-dial-petrillo.prompt",
+   "summary": "强提示词：生成「可拖拽日历仪表」型单页"
+  },
+  {
+   "id": "F4-tristan-rain-scene.prompt",
+   "family": "F4",
+   "path": "assets/motion/prompts.md#F4-tristan-rain-scene.prompt",
+   "summary": "强提示词：复刻「Tristan Haquenne × Anthony Bayet」的 7 章状态机 + 全屏 Three.js 雨景/水滴 + 章节 overlay"
+  },
+  {
+   "id": "F9-bend-panel-mathias.prompt",
+   "family": "F9",
+   "path": "assets/motion/prompts.md#F9-bend-panel-mathias.prompt",
+   "summary": "强提示词：生成「弯曲 3D 面板」型作品集"
+  },
+  {
+   "id": "F9-janna-deloume-peel-tilt.prompt",
+   "family": "F9",
+   "path": "assets/motion/prompts.md#F9-janna-deloume-peel-tilt.prompt",
+   "summary": "强提示词：复刻「Janna Deloume」的 插画 hero + 蓝色横幅 + 痛点卡片 + peel/tilt/sheen 卡片"
+  }
+ ],
+ "keyframes": [
+  {
+   "id": "kf-fade-up",
+   "family": "F1",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-fade-in",
+   "family": "F1",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-mask-reveal",
+   "family": "F1",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-line-mask",
+   "family": "F6",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-marquee",
+   "family": "F11",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-ticker",
+   "family": "F11",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-float",
+   "family": "F9",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-orbit",
+   "family": "F9",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-spin",
+   "family": "F14",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-pulse-soft",
+   "family": "F14",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-ping",
+   "family": "F14",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-shimmer",
+   "family": "F9",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-scanline",
+   "family": "F12",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-grain",
+   "family": "F12",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-glitch-slice",
+   "family": "F12",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-flicker",
+   "family": "F12",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-dash",
+   "family": "F6",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-wipe-circle",
+   "family": "F1",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-scale-in",
+   "family": "F1",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-slide-in-left",
+   "family": "F2",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-slide-in-right",
+   "family": "F2",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-progress",
+   "family": "F14",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-caret",
+   "family": "F6",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  },
+  {
+   "id": "kf-drop-in",
+   "family": "F1",
+   "path": "assets/motion/code/css/keyframes.css",
+   "summary": "canonical keyframes recipe"
+  }
+ ],
+ "snippets": [
+  {
+   "id": "dpr-canvas",
+   "family": "F5",
+   "path": "assets/motion/code/snippets.js#dpr-canvas",
+   "summary": "DPR≤2 的 canvas 尺寸管理"
+  },
+  {
+   "id": "friction",
+   "family": "F11",
+   "path": "assets/motion/code/snippets.js#friction",
+   "summary": "速度 + 指数摩擦 + wheel 归一化"
+  },
+  {
+   "id": "io-reveal",
+   "family": "F1",
+   "path": "assets/motion/code/snippets.js#io-reveal",
+   "summary": "IO reveal 200px/threshold 0/终态"
+  },
+  {
+   "id": "lerp",
+   "family": "F2",
+   "path": "assets/motion/code/snippets.js#lerp",
+   "summary": "clamp / lerp / damp / wrap / rubber"
+  },
+  {
+   "id": "pointer-gestures",
+   "family": "F2",
+   "path": "assets/motion/code/snippets.js#pointer-gestures",
+   "summary": "8 方向拖拽 + wheel 归一化"
+  },
+  {
+   "id": "spring",
+   "family": "F9",
+   "path": "assets/motion/code/snippets.js#spring",
+   "summary": "临界阻尼弹簧 + 落位进度"
+  },
+  {
+   "id": "sticky-pin",
+   "family": "F1",
+   "path": "assets/motion/code/snippets.js#sticky-pin",
+   "summary": "pin 进度 0..1，不劫持滚动"
+  },
+  {
+   "id": "webgl-boilerplate",
+   "family": "F3",
+   "path": "assets/motion/code/snippets.js#webgl-boilerplate",
+   "summary": "WebGL2 全屏三角形/编译守卫"
+  }
+ ]
+}

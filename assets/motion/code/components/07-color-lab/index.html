@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color Lab — reverse-final</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='4' width='10' height='10' fill='%23ff6038'/%3E%3Crect x='18' y='4' width='10' height='10' fill='%23ffa411'/%3E%3Crect x='4' y='18' width='10' height='10' fill='%232e8cff'/%3E%3Crect x='18' y='18' width='10' height='10' fill='%233b3a40'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="component.css">
+</head>
+<body>
+  <main class="rf-color" data-rf="color-lab">
+    <header class="rf-color__bar">
+      <span class="rf-color__mark">COLOR / 07</span>
+      <nav class="rf-color__nav" aria-label="主导航">
+        <a href="#scales">Scales</a>
+        <a href="#picker">Picker</a>
+        <a href="#export">Export</a>
+      </nav>
+      <span class="rf-color__badge">WCAG 2.1</span>
+    </header>
+
+    <section class="rf-color__layout">
+      <aside class="rf-color__controls" aria-label="颜色控制">
+        <div class="rf-color__group">
+          <p class="rf-color__eyebrow">Base</p>
+          <div class="rf-color__bases" role="radiogroup" aria-label="基础色"></div>
+        </div>
+
+        <div class="rf-color__group">
+          <label class="rf-color__range">
+            <span>Contrast <output data-out="contrast">6.0</output></span>
+            <input type="range" data-contrast min="3" max="12" step="0.1" value="6">
+          </label>
+          <label class="rf-color__range">
+            <span>Spread <output data-out="spread">1.00</output></span>
+            <input type="range" data-spread min="0.72" max="1.28" step="0.01" value="1">
+          </label>
+          <label class="rf-color__range">
+            <span>Hue shift <output data-out="hue">0°</output></span>
+            <input type="range" data-hue min="-30" max="30" step="1" value="0">
+          </label>
+        </div>
+
+        <div class="rf-color__tabs" role="tablist" aria-label="视图">
+          <button type="button" role="tab" data-tab="scales" aria-selected="true">Scales</button>
+          <button type="button" role="tab" data-tab="picker" aria-selected="false">Picker</button>
+          <button type="button" role="tab" data-tab="export" aria-selected="false">Export</button>
+        </div>
+
+        <div class="rf-color__panel is-active" data-panel="scales" role="tabpanel">
+          <p class="rf-color__hint">点击色块查看对比度；滑块改变明度分布。</p>
+        </div>
+        <div class="rf-color__panel" data-panel="picker" role="tabpanel">
+          <canvas class="rf-color__picker" width="320" height="180" aria-label="取色器"></canvas>
+          <p class="rf-color__hint">拖动取色器；数值来自 HSL 的 light/sat 映射。</p>
+        </div>
+        <div class="rf-color__panel" data-panel="export" role="tabpanel">
+          <pre class="rf-color__code"></pre>
+          <button type="button" class="rf-color__copy">Copy CSS</button>
+        </div>
+      </aside>
+
+      <section class="rf-color__preview" aria-label="颜色预览">
+        <div class="rf-color__big">
+          <div class="rf-color__big-inner">
+            <p class="rf-color__eyebrow">Selected</p>
+            <h1 class="rf-color__hex">#FF6038</h1>
+            <p class="rf-color__big-meta">Vermilion · step 03</p>
+          </div>
+        </div>
+        <div class="rf-color__scales" aria-label="色阶"></div>
+        <div class="rf-color__audit" aria-label="对比度审计"></div>
+      </section>
+    </section>
+
+    <footer class="rf-color__foot">
+      <p><strong>Color Lab</strong> 6 档明度 + hue shift + 饱和衰减；对比度用 WCAG relative luminance。色阶的入场是 360ms / 20ms stagger。</p>
+      <span class="rf-color__meta">6 steps · 4 bases · WCAG</span>
+    </footer>
+  </main>
+  <script src="component.js"></script>
+</body>
+</html>

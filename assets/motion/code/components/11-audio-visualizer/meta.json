@@ -1,0 +1,124 @@
+{
+ "schema_version": "ui-design/motion-component@1",
+ "id": "11-audio-visualizer",
+ "name": "Audio Visualizer",
+ "family": "F8",
+ "family_name": "音频 / 波形 / 可视化",
+ "tagline": "五个 oscillator 的 pad + analyser 64 bars；手势解锁、状态机、mute。",
+ "sources": [
+  {
+   "id": "ui3-menu-mega-f90fa91b",
+   "type": "menu-mega",
+   "hierarchy": "block",
+   "role": "menu-mega structure"
+  },
+  {
+   "id": "ui3-form-contact-818faee1",
+   "type": "form-contact",
+   "hierarchy": "molecule",
+   "role": "form-contact structure"
+  },
+  {
+   "id": "ui3-toggle-04df5cc0",
+   "type": "toggle",
+   "hierarchy": "molecule",
+   "role": "toggle structure"
+  },
+  {
+   "id": "ui3-footer-mega-05ef457b",
+   "type": "footer-mega",
+   "hierarchy": "page-section",
+   "role": "footer-mega structure"
+  }
+ ],
+ "engines": [
+  {
+   "name": "AudioState",
+   "evidence": "authored"
+  }
+ ],
+ "motion": {
+  "trigger": "click",
+  "duration_ms": null,
+  "duration_mode": "indefinite",
+  "easing": "linear",
+  "states": [
+   "idle",
+   "starting",
+   "on",
+   "muted",
+   "error",
+   "reduced"
+  ],
+  "fallback": "无 WebAudio/失败: 静态频谱 + error；reduced-motion: 静态频谱",
+  "properties": [
+   "transform"
+  ],
+  "category": "ambient",
+  "advanced": true,
+  "verified": true,
+  "verified_at": "2026-11-12",
+  "verified_by": "scripts/verify_motion.mjs"
+ },
+ "params": [
+  {
+   "name": "frequencies",
+   "value": "110 / 164.81 / 220 / 277.18 / 329.63 Hz",
+   "provenance": "Authored（kit 09）"
+  },
+  {
+   "name": "master",
+   "value": "0.035",
+   "provenance": "Authored"
+  },
+  {
+   "name": "fft",
+   "value": "256 / 64 bars",
+   "provenance": "Authored"
+  },
+  {
+   "name": "unlock",
+   "value": "用户手势后 new AudioContext",
+   "provenance": "Authored"
+  },
+  {
+   "name": "mute",
+   "value": "GainNode setTargetAtTime",
+   "provenance": "Authored"
+  },
+  {
+   "name": "visibility",
+   "value": "hidden 时 suspend",
+   "provenance": "Authored"
+  }
+ ],
+ "responsive": {
+  "breakpoints": [
+   375,
+   768,
+   1280
+  ],
+  "overflow_guard": true
+ },
+ "a11y": {
+  "keyboard": [
+   "Tab",
+   "Enter",
+   "Space"
+  ],
+  "focus_visible": true,
+  "reduced_motion": true,
+  "labels": "交互元素有 aria-label / aria-valuenow / aria-pressed"
+ },
+ "files": {
+  "html": "index.html",
+  "css": "component.css",
+  "js": "component.js",
+  "readme": "README.md",
+  "meta": "meta.json"
+ },
+ "limits": [
+  "pad 是合成音，不是原站音频",
+  "没有做 LUFS 测量；master 0.035 是保守值"
+ ]
+}

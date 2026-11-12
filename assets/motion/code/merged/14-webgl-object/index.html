@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebGL Object — merged 14</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 4l10 6v12l-10 6-10-6V10z' fill='none' stroke='%23e8b45a' stroke-width='2'/%3E%3Cpath d='M16 4v24M6 10l20 12M26 10L6 22' stroke='%23e8b45a' stroke-width='1'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="component.css">
+</head>
+<body>
+  <main class="mr-webgl" data-rf="webgl-object">
+    <header class="mr-webgl__bar">
+      <span class="mr-webgl__mark">MERGED / 14</span>
+      <span class="mr-webgl__hint">WebGL2 · raymarch · no library</span>
+    </header>
+
+    <section class="mr-webgl__intro">
+      <p class="mr-webgl__eyebrow">F4 · WebGL 3D object / camera</p>
+      <h1>An object,<br>not a backdrop.</h1>
+      <p class="mr-webgl__lede">裸 WebGL2 + 一个 fragment shader 的 raymarch box。相机由指针轻微偏移，物体自己旋转；暂停即停，reduced-motion 只画一帧。</p>
+    </section>
+
+    <section class="mr-webgl__stage">
+      <canvas class="mr-webgl__canvas" aria-label="WebGL 3D 物体"></canvas>
+      <div class="mr-webgl__fallback" hidden>
+        <div class="mr-webgl__cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p>WebGL2 不可用，显示 CSS 3D 回退。</p>
+      </div>
+      <div class="mr-webgl__hud">
+        <span class="mr-webgl__tag">raymarch · 80 steps</span>
+        <button type="button" class="mr-webgl__pause" data-pause aria-pressed="false">Pause</button>
+      </div>
+    </section>
+
+    <footer class="mr-webgl__foot">
+      <span>DPR ≤ 2 · context-loss guarded</span>
+      <output class="mr-webgl__readout" aria-live="off">frames 0</output>
+    </footer>
+  </main>
+  <script src="component.js"></script>
+</body>
+</html>

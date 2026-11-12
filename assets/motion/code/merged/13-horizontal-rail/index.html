@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horizontal Rail — merged 13</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='13' width='26' height='6' rx='3' fill='none' stroke='%23e8b45a' stroke-width='2'/%3E%3Ccircle cx='10' cy='16' r='2' fill='%23e8b45a'/%3E%3Ccircle cx='22' cy='16' r='2' fill='%23e8b45a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="component.css">
+</head>
+<body>
+  <main class="mr-rail" data-rf="horizontal-rail">
+    <header class="mr-rail__bar">
+      <span class="mr-rail__mark">MERGED / 13</span>
+      <span class="mr-rail__hint">wheel · drag · ← →</span>
+    </header>
+
+    <section class="mr-rail__intro">
+      <p class="mr-rail__eyebrow">F2 · horizontal track / inertia</p>
+      <h1>A rail,<br>not a scrollbar.</h1>
+      <p class="mr-rail__lede">滚轮和拖拽都映射成轨道速度；释放后保留惯性，边界用橡皮筋。reduced-motion 直接退回原生横向滚动。</p>
+    </section>
+
+    <section class="mr-rail__stage" aria-label="横向轨道">
+      <div class="mr-rail__viewport" tabindex="0" role="group" aria-label="横向作品轨道">
+        <div class="mr-rail__track">
+          <article class="mr-rail__panel">
+            <span class="mr-rail__num">01</span>
+            <div class="mr-rail__art art-1"></div>
+            <h2>Field notes</h2>
+            <p>Research archive · 2026</p>
+          </article>
+          <article class="mr-rail__panel">
+            <span class="mr-rail__num">02</span>
+            <div class="mr-rail__art art-2"></div>
+            <h2>Soft machine</h2>
+            <p>Editorial system · 2025</p>
+          </article>
+          <article class="mr-rail__panel">
+            <span class="mr-rail__num">03</span>
+            <div class="mr-rail__art art-3"></div>
+            <h2>Night bloom</h2>
+            <p>Campaign · 2026</p>
+          </article>
+          <article class="mr-rail__panel">
+            <span class="mr-rail__num">04</span>
+            <div class="mr-rail__art art-4"></div>
+            <h2>Mono house</h2>
+            <p>Practice site · 2024</p>
+          </article>
+          <article class="mr-rail__panel">
+            <span class="mr-rail__num">05</span>
+            <div class="mr-rail__art art-5"></div>
+            <h2>Signal room</h2>
+            <p>Product launch · 2025</p>
+          </article>
+          <article class="mr-rail__panel">
+            <span class="mr-rail__num">06</span>
+            <div class="mr-rail__art art-6"></div>
+            <h2>Quiet index</h2>
+            <p>Archive · 2023</p>
+          </article>
+        </div>
+      </div>
+      <div class="mr-rail__progress" aria-hidden="true"><i></i></div>
+    </section>
+
+    <footer class="mr-rail__foot">
+      <span>lerp .15 · decay .95 · boundary .15</span>
+      <output class="mr-rail__readout" aria-live="off">x 0 / 0</output>
+    </footer>
+  </main>
+  <script src="component.js"></script>
+</body>
+</html>

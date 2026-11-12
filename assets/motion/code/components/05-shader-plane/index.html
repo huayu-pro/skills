@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shader Plane — reverse-final</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='4' fill='%230a0b0d' stroke='%23e8b45a'/%3E%3Cpath d='M2 22c6-8 12 4 18-4s8-2 10-4' stroke='%23e8b45a' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="component.css">
+</head>
+<body>
+  <main class="rf-shader" data-rf="shader-plane">
+    <canvas class="rf-shader__canvas" aria-hidden="true"></canvas>
+    <div class="rf-shader__fallback" aria-hidden="true"></div>
+
+    <header class="rf-shader__bar">
+      <span class="rf-shader__mark">SHADER / 05</span>
+      <nav class="rf-shader__nav" aria-label="主导航">
+        <a href="#work">Surface</a>
+        <a href="#about">Method</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="rf-shader__actions">
+        <button type="button" class="rf-shader__pause" aria-pressed="false">Pause</button>
+        <span class="rf-shader__badge">WebGL2</span>
+      </div>
+    </header>
+
+    <section class="rf-shader__hero">
+      <p class="rf-shader__eyebrow">Full-screen fragment plane</p>
+      <h1>A surface<br>for signals.</h1>
+      <p class="rf-shader__lede">一个覆盖三角形的 fragment shader：<code>u_time</code>、<code>u_res</code>、<code>u_mouse</code>、<code>u_progress</code> 四个输入，一层噪声、一层环、一层指针光斑。</p>
+      <div class="rf-shader__cta">
+        <a class="rf-shader__btn" href="#work">See the surface</a>
+        <button type="button" class="rf-shader__btn rf-shader__btn--ghost" data-pulse>Send a pulse</button>
+      </div>
+    </section>
+
+    <section class="rf-shader__stats" aria-label="Shader 读数">
+      <div><span>Draw calls</span><strong>1</strong></div>
+      <div><span>DPR cap</span><strong>2.0</strong></div>
+      <div><span>Uniforms</span><strong>4</strong></div>
+      <div><span>Fallback</span><strong>CSS</strong></div>
+    </section>
+
+    <footer class="rf-shader__foot">
+      <p><strong>Shader Plane</strong> 用覆盖三角形 + 单 fragment shader 做背景；指针光斑和环层都来自同一个 <code>p</code> 坐标。暂停时停 rAF，<code>prefers-reduced-motion</code> 只画一帧。</p>
+      <span class="rf-shader__meta" data-status>running</span>
+    </footer>
+  </main>
+  <script src="component.js"></script>
+</body>
+</html>
