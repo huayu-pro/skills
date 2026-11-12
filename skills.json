@@ -1,0 +1,62 @@
+{
+  "repository": "https://github.com/huayu-pro/skills",
+  "updated": "2026-11-12",
+  "skills": [
+    {
+      "name": "ui-design",
+      "category": "design",
+      "path": "design/ui-design",
+      "branch": "ui-design",
+      "version": "4.5.1",
+      "description": "审美优先的网站 UI 设计、改造与评审；含动效、品牌语言、组件库适配。"
+    },
+    {
+      "name": "research-architecture-figure",
+      "category": "research",
+      "path": "research/research-architecture-figure",
+      "branch": "research-architecture-figure",
+      "version": "1.5.1",
+      "description": "把论文的研究框架、理论模型、技术架构、机制图画成可投稿的 SVG 架构图。"
+    },
+    {
+      "name": "literature-collection",
+      "category": "research",
+      "path": "research/literature-collection",
+      "branch": "literature-collection",
+      "version": "1.4.0",
+      "description": "批量文献检索（知网/WOS）、筛选、下载全文、转 Markdown 并建立索引。"
+    },
+    {
+      "name": "deep-research",
+      "category": "research",
+      "path": "research/deep-research",
+      "branch": "deep-research",
+      "version": "1.3.0",
+      "description": "可溯源、可引用的深度研究流程：研究设计、并行取证、对抗审查、成稿。"
+    },
+    {
+      "name": "auto-resume-tasks",
+      "category": "productivity",
+      "path": "productivity/auto-resume-tasks",
+      "branch": "auto-resume-tasks",
+      "version": "1.2.1",
+      "description": "后台任务失败后的自动恢复决策：重试、续跑、放弃或转人工。"
+    },
+    {
+      "name": "skill-creator-cn",
+      "category": "meta",
+      "path": "meta/skill-creator-cn",
+      "branch": "skill-creator-cn",
+      "version": "1.5.0",
+      "description": "中文生态的技能创建、优化与 TRACE 五维评测。"
+    },
+    {
+      "name": "ascii-web-design",
+      "category": "creative",
+      "path": "creative/ascii-web-design",
+      "branch": "ascii-web-design",
+      "version": "1.4.0",
+      "description": "ASCII/字符化网页视觉与动画：图片/视频转字符、CRT、字符雨、Remotion 导出。"
+    }
+  ]
+}
