@@ -16,8 +16,11 @@ SKILL_PATHS=(
   "research/research-architecture-figure"
   "research/literature-collection"
   "research/deep-research"
+  "presentation/constructivist-ppt"
+  "presentation/huayu-hanako-ppt"
   "productivity/auto-resume-tasks"
   "meta/skill-creator-cn"
+  "meta/magpie-plugin-dev"
   "creative/ascii-web-design"
 )
 

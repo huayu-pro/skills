@@ -35,6 +35,24 @@
       "description": "可溯源、可引用的深度研究流程：研究设计、并行取证、对抗审查、成稿。"
     },
     {
+      "name": "constructivist-ppt",
+      "category": "presentation",
+      "path": "presentation/constructivist-ppt",
+      "branch": "constructivist-ppt",
+      "version": "3.3.1",
+      "package_label": "3.1.1",
+      "description": "构成主义风格演示文稿：先规划、再排版、再编译为原生可编辑 PPTX。"
+    },
+    {
+      "name": "huayu-hanako-ppt",
+      "category": "presentation",
+      "path": "presentation/huayu-hanako-ppt",
+      "branch": "huayu-hanako-ppt",
+      "version": "2.1.0",
+      "package_label": "2.0.0",
+      "description": "学术/学习类 PPT 全自动生成：文本、大纲、配图、图表到 PPTX。"
+    },
+    {
       "name": "auto-resume-tasks",
       "category": "productivity",
       "path": "productivity/auto-resume-tasks",
@@ -49,6 +67,14 @@
       "branch": "skill-creator-cn",
       "version": "1.5.0",
       "description": "中文生态的技能创建、优化与 TRACE 五维评测。"
+    },
+    {
+      "name": "magpie-plugin-dev",
+      "category": "meta",
+      "path": "meta/magpie-plugin-dev",
+      "branch": "magpie-plugin-dev",
+      "version": "1.1.0",
+      "description": "创建、调试与发布 Magpie 插件：provider/auth、钩子、agent、tool。"
     },
     {
       "name": "ascii-web-design",

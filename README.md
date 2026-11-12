@@ -10,9 +10,14 @@
 | 科研 | [research-architecture-figure](research/research-architecture-figure/) | 1.5.1 | 把论文的研究框架/理论模型/技术架构/机制图画成可投稿的 SVG 架构图 | `research-architecture-figure` |
 | 科研 | [literature-collection](research/literature-collection/) | 1.4.0 | 批量文献检索（知网/WOS）、筛选、下载全文、转 Markdown 并建立索引 | `literature-collection` |
 | 科研 | [deep-research](research/deep-research/) | 1.3.0 | 可溯源、可引用的深度研究流程：研究设计 → 并行取证 → 对抗审查 → 成稿 | `deep-research` |
+| 演示 | [constructivist-ppt](presentation/constructivist-ppt/) | 3.3.1 | 构成主义风格演示文稿：先规划、再排版、再编译为原生可编辑 PPTX | `constructivist-ppt` |
+| 演示 | [huayu-hanako-ppt](presentation/huayu-hanako-ppt/) | 2.1.0 | 学术/学习类 PPT 全自动生成：文本 → 大纲 → 配图 → 图表 → PPTX | `huayu-hanako-ppt` |
 | 效率 | [auto-resume-tasks](productivity/auto-resume-tasks/) | 1.2.1 | 后台任务失败后的自动恢复决策：重试/续跑/放弃/转人工 | `auto-resume-tasks` |
 | 元工具 | [skill-creator-cn](meta/skill-creator-cn/) | 1.5.0 | 中文生态的技能创建、优化与 TRACE 五维评测 | `skill-creator-cn` |
+| 元工具 | [magpie-plugin-dev](meta/magpie-plugin-dev/) | 1.1.0 | 创建、调试与发布 Magpie 插件（provider/auth/钩子/agent/tool） | `magpie-plugin-dev` |
 | 创意 | [ascii-web-design](creative/ascii-web-design/) | 1.4.0 | ASCII/字符化网页视觉与动画：图片/视频转字符、CRT、字符雨、Remotion 导出 | `ascii-web-design` |
+
+> `constructivist-ppt` 与 `huayu-hanako-ppt` 的 `_meta.json` 仍是平台发布记录 **3.1.1 / 2.0.0**；技能本体（`SKILL.md` + `CHANGELOG`）为 **3.3.1 / 2.1.0**，表中取技能本体版本。
 
 ## 目录结构
 
@@ -24,10 +29,14 @@ skills/
 │   ├── research-architecture-figure/
 │   ├── literature-collection/
 │   └── deep-research/
+├── presentation/
+│   ├── constructivist-ppt/
+│   └── huayu-hanako-ppt/
 ├── productivity/
 │   └── auto-resume-tasks/
 ├── meta/
-│   └── skill-creator-cn/
+│   ├── skill-creator-cn/
+│   └── magpie-plugin-dev/
 ├── creative/
 │   └── ascii-web-design/
 ├── scripts/
@@ -78,8 +87,11 @@ cp -r skills/design/ui-design ~/.zcode/skills/
 | `research-architecture-figure` | 仅该技能内容 |
 | `literature-collection` | 仅该技能内容 |
 | `deep-research` | 仅该技能内容 |
+| `constructivist-ppt` | 仅该技能内容 |
+| `huayu-hanako-ppt` | 仅该技能内容 |
 | `auto-resume-tasks` | 仅该技能内容 |
 | `skill-creator-cn` | 仅该技能内容 |
+| `magpie-plugin-dev` | 仅该技能内容 |
 | `ascii-web-design` | 仅该技能内容 |
 
 **单技能分支由脚本生成，请勿直接在分支上修改**——改动只提交到 `main`，再同步下来。
@@ -116,8 +128,12 @@ git push origin --all
 | `huayu-pro/skill-creator-cn` | `meta/skill-creator-cn/` | `skill-creator-cn` |
 | `huayu-pro/literature-collection` | `research/literature-collection/` | `literature-collection` |
 | `huayu-pro/deepreaserch` | `research/deep-research/` | `deep-research` |
+| `huayu-pro/constructivistppt` | `presentation/constructivist-ppt/` | `constructivist-ppt` |
+| `huayu-pro/huayuhanappt` | `presentation/huayu-hanako-ppt/` | `huayu-hanako-ppt` |
 | `huayu-pro/auto-resume-tasks` | `productivity/auto-resume-tasks/` | `auto-resume-tasks` |
 | `huayu-pro/ascii01` | `creative/ascii-web-design/` | `ascii-web-design` |
+
+`magpie-plugin-dev` 没有对应的旧仓库（首次发布）。
 
 各原仓库的提交历史已通过 `git subtree` 保留在 `main` 中。`deepreaserch`、`ascii01` 是原仓库 slug；技能本体声明的 `name` 分别为 `deep-research`、`ascii-web-design`，目录与分支均以技能名为准。
 
