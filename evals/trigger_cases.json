@@ -1,0 +1,113 @@
+{
+  "recommended_threshold": 0.34,
+  "description_required_concepts": [
+    "ascii_domain",
+    "creation_action"
+  ],
+  "positive_concepts": {
+    "ascii_domain": [
+      "ascii",
+      "字符画",
+      "字符雨",
+      "字符艺术",
+      "字符化",
+      "字符动画",
+      "字符风格",
+      "字符帧",
+      "转成字符",
+      "字符频谱",
+      "字符"
+    ],
+    "visual_scene": [
+      "终端",
+      "crt",
+      "复古",
+      "黑客帝国",
+      "matrix",
+      "网点",
+      "halftone",
+      "打字机",
+      "频谱",
+      "作品集",
+      "伪终端"
+    ],
+    "creation_action": [
+      "做",
+      "生成",
+      "转成",
+      "创建",
+      "帮我",
+      "写",
+      "导出",
+      "加",
+      "变成",
+      "设计",
+      "来一个",
+      "来个"
+    ],
+    "output_form": [
+      "网页",
+      "网站",
+      "页面",
+      "视频",
+      "mp4",
+      "动画",
+      "首屏",
+      "html",
+      "背景",
+      "logo",
+      "标题",
+      "图表"
+    ],
+    "tech_route": [
+      "remotion",
+      "canvas",
+      "滚动",
+      "鼠标",
+      "批量",
+      "离线",
+      "摄像头",
+      "gif",
+      "three"
+    ]
+  },
+  "negative_patterns": [
+    "echarts",
+    "matplotlib",
+    "不要字符",
+    "非字符化",
+    "纯 css",
+    "码表",
+    "转码",
+    "hex 转",
+    "编码转换",
+    "推荐"
+  ],
+  "should_trigger": [
+    { "text": "把这张 logo 图片转成 ASCII 字符画", "family": "cn_image_static" },
+    { "text": "帮我做个黑客帝国字符雨网站首屏", "family": "cn_matrix_rain" },
+    { "text": "这个 GIF 能变成字符动画吗", "family": "cn_gif_anim" },
+    { "text": "用 Remotion 做一个字符动画视频", "family": "cn_remotion_create" },
+    { "text": "把刚才那个字符雨动画导出成 mp4", "family": "cn_export_video" },
+    { "text": "给首页标题加个打字机效果，字符风格的", "family": "cn_typewriter" },
+    { "text": "做一个随音乐节奏跳动的字符频谱页面", "family": "cn_audio_visual" },
+    { "text": "滚动页面的时候字符画越来越清晰怎么做", "family": "cn_scroll_gradient" },
+    { "text": "鼠标移过去字符画被照亮的效果", "family": "cn_pointer_light" },
+    { "text": "批量把这些产品图预生成字符帧，要离线可用", "family": "cn_pipeline_batch" },
+    { "text": "给我的终端风作品集做个伪命令行界面", "family": "cn_terminal_ui" },
+    { "text": "把摄像头画面实时转成字符", "family": "cn_camera_live" }
+  ],
+  "should_not_trigger": [
+    { "text": "用 ECharts 画个月度销售柱状图", "family": "chart_lib" },
+    { "text": "matplotlib 画散点图怎么调颜色", "family": "chart_lib" },
+    { "text": "做一张复古海报，不要字符化的那种", "family": "non_ascii_retro" },
+    { "text": "纯 CSS 的故障风格按钮怎么写", "family": "pure_css_glitch" },
+    { "text": "ASCII 码表第 65 号是什么字符", "family": "ascii_encoding_qa" },
+    { "text": "帮我写个 HEX 转 ASCII 的转码小工具", "family": "ascii_transcode_tool" }
+  ],
+  "near_neighbor": [
+    { "text": "有没有现成的 ASCII 艺术生成库推荐", "family": "find_existing_only" },
+    { "text": "这个网站的字体内存占用怎么优化", "family": "perf_debug" },
+    { "text": "Remotion 的许可证政策是什么意思", "family": "knowledge_qa" }
+  ]
+}
