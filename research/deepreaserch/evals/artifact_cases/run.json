@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "run_id": "r_golden",
+  "created_at": "2026-10-25T00:00:00Z",
+  "updated_at": "2026-10-25T01:00:00Z",
+  "project": "/tmp/golden",
+  "question": "1918年大流感改变了日本的公共卫生立法吗？",
+  "language": "zh",
+  "status": "done",
+  "independent": true,
+  "independent_note": "",
+  "limits": {
+    "depth": 1,
+    "max_nodes": 4,
+    "parallel": 3,
+    "cards": 3,
+    "followups": 1,
+    "revisions": 1,
+    "plan_approval": "require"
+  },
+  "consent": {
+    "dissolution": null,
+    "note": "子代理并行上限 3；外部站点不可达时须报告。"
+  },
+  "nodes": [
+    {
+      "id": "n_golden01",
+      "folder": "01-golden",
+      "seq": 1,
+      "depth": 0,
+      "kind": "root",
+      "question": "1918年大流感改变了日本的公共卫生立法吗？",
+      "parents": [],
+      "opened_by": null,
+      "status": "closed",
+      "cards": [
+        "c1-statutes"
+      ],
+      "synthesis": "synthesis.md",
+      "synthesis_versions": 1,
+      "review_rounds": 1,
+      "review_files": [
+        "review-01.md"
+      ],
+      "possibility_file": "possibility.md",
+      "no_forks": true,
+      "dissolves": null,
+      "issues": [
+        {
+          "id": "i1",
+          "kind": "因果推断",
+          "question": "该令的十月日期真的早于东京的第二波吗？",
+          "rationale": "结论把第二波定为'1918 年秋'而无月份。",
+          "priority": 3,
+          "material": true,
+          "round": 1,
+          "disposition": "rebut",
+          "reason": "据府县死亡序列，东京峰值为 1918-10-18；该令早于峰值一周。",
+          "covered_by": "",
+          "revision": ""
+        },
+        {
+          "id": "i2",
+          "kind": "样式",
+          "question": "'epidemic' 该大写吗？",
+          "rationale": "仅表述问题。",
+          "priority": 0,
+          "material": false,
+          "round": 1,
+          "disposition": "",
+          "reason": ""
+        }
+      ],
+      "gaps": [
+        {
+          "id": "g1",
+          "kind": "缺口",
+          "proposal": "北海道执行未查。",
+          "material": true,
+          "disposition": "concede",
+          "reason": "结论收窄到三个府县，并把北海道列为未决。"
+        }
+      ]
+    }
+  ],
+  "decisions": [],
+  "joins": [],
+  "not_pursued": [],
+  "declined": [
+    {
+      "issue_id": "a1",
+      "disposition": "decline",
+      "reason": "节点预算已用尽：4/4，且本层只容一条回答线。",
+      "covered_by": ""
+    }
+  ],
+  "relations": [],
+  "alternatives": [
+    {
+      "id": "a1",
+      "kind": "框架",
+      "proposal": "把该立法读作殖民行政的工具。",
+      "premise": "1918 年各项敕令出自同时管辖台湾与朝鲜的同一局。",
+      "rationale": "比较对象会从欧洲国家换成殖民当局。",
+      "gap": false,
+      "covered_by": "",
+      "outcome": "declined",
+      "outcome_ref": ""
+    },
+    {
+      "id": "a2",
+      "kind": "缺口",
+      "proposal": "没有任何卡查过敕令在北海道的执行。",
+      "premise": "",
+      "rationale": "结论从三个府县概括'日本'。",
+      "gap": true,
+      "covered_by": "",
+      "outcome": "gap_concede",
+      "outcome_ref": ""
+    }
+  ],
+  "errata": [],
+  "final": {
+    "survey": "r_golden-survey.md",
+    "draft": "r_golden-draft.md",
+    "review": "r_golden-review.md",
+    "final": "r_golden-final.md"
+  },
+  "cost": {
+    "tokens": 12400,
+    "calls": 6,
+    "usd": 0.74,
+    "entries": [
+      {
+        "at": "2026-10-25T00:30:00Z",
+        "node": "n_golden01",
+        "tokens": 8400,
+        "calls": 4,
+        "usd": 0.52,
+        "what": "两卡 + 一轮批判"
+      },
+      {
+        "at": "2026-10-25T01:00:00Z",
+        "node": "n_golden01",
+        "tokens": 4000,
+        "calls": 2,
+        "usd": 0.22,
+        "what": "可能性审查 + 终稿"
+      }
+    ]
+  }
+}

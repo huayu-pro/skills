@@ -1,0 +1,33 @@
+{
+  "findings": [
+    {
+      "id": "f1",
+      "text": "1918 年内务省防疫令发布于 1918-10-25，早于第二波抵达东京。",
+      "claim_type": "fact",
+      "source_file": "sources/kampo.txt",
+      "page": 3,
+      "quote": "流行性感冒ニ関スル件",
+      "citation_state": "verified",
+      "single_source": true
+    },
+    {
+      "id": "f2",
+      "text": "时点提示该令回应的是第一波造成的行政紧张，而非第二波。",
+      "claim_type": "inference",
+      "basis": "由发布时点与第一波高峰的先后推出",
+      "depends_on": [
+        "f1"
+      ],
+      "uncertain": "该日期无第二来源可复核"
+    },
+    {
+      "id": "f3",
+      "text": "当时医师把该令读作既有惯例的法典化。",
+      "claim_type": "interpretation",
+      "source_file": "sources/kampo.txt",
+      "page": 4,
+      "quote": "從來ノ慣行ヲ成文化セルモノ",
+      "citation_state": "verified"
+    }
+  ]
+}
